@@ -5,20 +5,10 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version ```2.3.2```
 
-* System dependencies
+* Database ```postgresql```
 
-* Configuration
+* How to run the test suite ```bundele exec foreman start -f Procfile.dev```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Services (job queues, cache servers, search engines, etc.) ```angular-server: localhost: 5100; rails-server: localhost: 5000```
