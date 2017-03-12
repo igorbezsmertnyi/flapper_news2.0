@@ -1,0 +1,17 @@
+<div class="posts-cont">
+  <div *ngFor="let post of posts" class="posts-cont__post-list">
+    <h3>{{post.title}}</h3>
+    <p>
+      {{post.description}}
+    </p>
+    Likes: <i>{{post.likes}}</i>
+  </div>
+
+  <div class="posts-cont__new-post">
+    <form (ngSubmit)="createPost()" class="posts-cont__new-post__form">
+      <input type="text" placeholder="Title" [(ngModel)]="newPost.title" name="title"/>
+      <textarea type="text" placeholder="Description" [(ngModel)]="newPost.description" name="description"></textarea>
+      <button type="submit" name="button">Create</button>
+    </form>
+  </div>
+</div>
