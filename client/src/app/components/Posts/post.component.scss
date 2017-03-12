@@ -1,0 +1,26 @@
+.posts-cont {
+  &__post-list {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    h3, p {
+      margin-right: 10px;
+    }
+  }
+
+  &__new-post {
+    width: 400px;
+    margin-top: 50px;
+
+    &__form {
+      display: flex;
+      flex-flow: column nowrap;
+
+      input,
+      textarea {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
