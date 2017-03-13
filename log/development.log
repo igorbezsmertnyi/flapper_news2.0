@@ -1289,3 +1289,31 @@ Processing by NewsPageController#index as JSON
 Completed 200 OK in 24ms (Views: 10.7ms | ActiveRecord: 9.5ms)
 
 
+Started GET "/" for ::1 at 2017-03-13 22:53:20 +0100
+Started GET "/news_page.json" for ::1 at 2017-03-13 22:53:21 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2017-03-13 22:57:39 +0100
+Started GET "/news_page.json" for ::1 at 2017-03-13 22:57:40 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (307.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 407ms (Views: 99.7ms | ActiveRecord: 307.0ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-13 22:58:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 18ms (Views: 8.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/news_page.json" for 127.0.0.1 at 2017-03-13 23:02:56 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 28ms (Views: 11.7ms | ActiveRecord: 8.5ms)
+
+

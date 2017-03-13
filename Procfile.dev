@@ -1,3 +1,2 @@
-#web: bundle exec puma -C config/puma.rb
 rails-server: rails s
 angular-server: sh -c 'cd Client/ && ng s'
