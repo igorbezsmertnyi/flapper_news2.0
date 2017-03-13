@@ -8,13 +8,13 @@ export class PostService {
   constructor(private http: Http) { }
 
   getPosts() {
-    return this.http.get('http://localhost:5000/news_page.json')
+    return this.http.get('/news_page.json')
            .map(response => <Post[]>response.json())
   }
 
   createPost(post) {
     console.log(post)
-    return this.http.post('http://localhost:5000/news_page.json', post)
+    return this.http.post('/news_page.json', post)
            .map(response => response.json())
   }
 }
