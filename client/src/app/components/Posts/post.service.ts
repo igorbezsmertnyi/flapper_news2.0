@@ -8,7 +8,7 @@ export class PostService {
   constructor(private http: Http) { }
 
   getPosts() {
-    return this.http.get('http://localhost:3000/news_page.json')
+    return this.http.get('/news_page.json')
            .map(response => <Post[]>response.json())
   }
 
@@ -23,7 +23,7 @@ export class PostService {
                                 'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS'
                               });
     let options = new RequestOptions({ headers: headers });
-    return this.http.post('http://localhost:3000/news_page.json', body, options)
+    return this.http.post('/news_page.json', body, options)
            .map((res: Response) => res.json())
   }
 }
