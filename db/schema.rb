@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20170310151545) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
-    t.string   "description"
-    t.string   "author"
-    t.integer  "likes"
+    t.text   "description"
+    t.string   "author",      user: 'author'
+    t.integer  "likes",       default: 0
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

@@ -1346,3 +1346,1505 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 36ms (Views: 27.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/news_page.json" for ::1 at 2017-03-16 23:03:37 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (3.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 47ms (Views: 6.0ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-16 23:03:48 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"ffosdjfosdghdsfo", "news_page"=>{"title"=>"Post 1", "description"=>"ffosdjfosdghdsfo"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-16 23:04:13 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-16 23:04:21 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-16 23:06:21 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (16.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 18ms (Views: 1.5ms | ActiveRecord: 16.3ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-16 23:06:32 +0100
+Processing by NewsPageController#create as JSON
+Completed 500 Internal Server Error in 52867ms (ActiveRecord: 0.0ms)
+
+
+  
+DRb::DRbConnError (druby://127.0.0.1:62874 - #<Errno::ECONNREFUSED: Connection refused - connect(2) for "127.0.0.1" port 62874>):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started POST "/news_page.json" for ::1 at 2017-03-16 23:10:23 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-16 23:12:26 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (31.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 164ms (Views: 65.7ms | ActiveRecord: 44.3ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-16 23:12:33 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:10:59 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (101.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (99.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 304ms (Views: 3.3ms | ActiveRecord: 198.5ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:11:37 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (197.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 199ms (Views: 1.5ms | ActiveRecord: 197.0ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:12:26 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 11:12:52 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:13:23 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 11:13:31 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:13:37 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (176.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 177ms (Views: 0.9ms | ActiveRecord: 176.2ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 11:13:52 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:17:10 +0100
+Started POST "/news_page.json" for ::1 at 2017-03-18 11:17:28 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (100.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (101.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#index as JSON
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 309ms (ActiveRecord: 0.0ms)
+
+
+  [1m[36mPost Load (104.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Completed 200 OK in 416ms (Views: 3.5ms | ActiveRecord: 206.6ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:25:19 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 11:25:25 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started POST "/news_page.json" for ::1 at 2017-03-18 11:25:59 +0100
+Processing by NewsPageController#create as JSON
+Completed   in 163057ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info" for ::1 at 2017-03-18 11:29:23 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::InfoController#index as HTML
+  Parameters: {"internal"=>true}
+Redirected to http://localhost:3000/rails/info/routes
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for ::1 at 2017-03-18 11:29:24 +0100
+Processing by Rails::InfoController#routes as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/igor/.rvm/gems/ruby-2.3.2/gems/railties-5.0.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/igor/.rvm/gems/ruby-2.3.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [3 times] (35.1ms)
+  Rendered /Users/igor/.rvm/gems/ruby-2.3.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (32.4ms)
+  Rendered /Users/igor/.rvm/gems/ruby-2.3.2/gems/railties-5.0.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application (83.3ms)
+Completed 200 OK in 118ms (Views: 107.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:29:51 +0100
+  
+ActionController::RoutingError (undefined method `respond_to' for ApplicationController:Class
+Did you mean?  respond_to?):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/news_page_controller.rb:1:in `<top (required)>'
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:30:16 +0100
+  
+ActionController::RoutingError (undefined method `respond_to' for ApplicationController:Class
+Did you mean?  respond_to?):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/news_page_controller.rb:1:in `<top (required)>'
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:30:45 +0100
+  
+ActionController::RoutingError (undefined method `respond_to' for ApplicationController:Class
+Did you mean?  respond_to?):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/news_page_controller.rb:1:in `<top (required)>'
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:31:38 +0100
+  
+ActionController::RoutingError (undefined method `respond_to' for ApplicationController:Class
+Did you mean?  respond_to?):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/news_page_controller.rb:1:in `<top (required)>'
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:32:19 +0100
+  
+ActionController::RoutingError (undefined method `respond_to' for ApplicationController:Class
+Did you mean?  respond_to?):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/news_page_controller.rb:1:in `<top (required)>'
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:32:22 +0100
+  
+ActionController::RoutingError (undefined method `respond_to' for ApplicationController:Class
+Did you mean?  respond_to?):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/news_page_controller.rb:1:in `<top (required)>'
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:32:49 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 20ms (Views: 3.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:33:13 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (99.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 102ms (Views: 1.2ms | ActiveRecord: 99.7ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 11:33:31 +0100
+Processing by NewsPageController#create as JSON
+Completed 500 Internal Server Error in 68327ms (ActiveRecord: 0.0ms)
+
+
+  
+DRb::DRbConnError (druby://127.0.0.1:56381 - #<Errno::ECONNREFUSED: Connection refused - connect(2) for "127.0.0.1" port 56381>):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:35:04 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 12ms (Views: 4.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 11:35:28 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:36:47 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:38:09 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (57.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 58ms (Views: 0.8ms | ActiveRecord: 57.3ms)
+
+
+  [1m[35m (22.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2881283266552597305);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (9.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2881283266552597305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (246.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "flapper-news2_0_development"[0m
+  [1m[35m (220.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "flapper-news2_0_test"[0m
+  [1m[35m (618.8ms)[0m  [1m[35mCREATE DATABASE "flapper-news2_0_development" ENCODING = 'unicode'[0m
+  [1m[35m (413.0ms)[0m  [1m[35mCREATE DATABASE "flapper-news2_0_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (42.6ms)[0m  [1m[35mCREATE TABLE "posts" ("id" serial primary key, "title" character varying, "description" character varying, "author" character varying, "likes" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170310151545)[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-18 10:40:11 UTC], ["updated_at", 2017-03-18 10:40:11 UTC]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (30.7ms)[0m  [1m[35mCREATE TABLE "posts" ("id" serial primary key, "title" character varying, "description" character varying, "author" character varying, "likes" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170310151545)[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-18 10:40:11 UTC], ["updated_at", 2017-03-18 10:40:11 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:42:54 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (101.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (97.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 304ms (Views: 2.5ms | ActiveRecord: 200.2ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 11:43:24 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:45:24 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (107.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (120.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 200ms (Views: 2.4ms | ActiveRecord: 122.5ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:46:01 +0100
+Started POST "/news_page.json" for ::1 at 2017-03-18 11:46:12 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (99.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 203ms (Views: 1.5ms | ActiveRecord: 99.7ms)
+
+
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:47:14 +0100
+Started POST "/news_page.json" for ::1 at 2017-03-18 11:47:19 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (205.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (102.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#index as JSON
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 104ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+  [1m[36mPost Load (81.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 191ms (Views: 3.7ms | ActiveRecord: 83.4ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 11:48:01 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:49:36 +0100
+Started POST "/news_page.json" for ::1 at 2017-03-18 11:49:37 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (206.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (207.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#create as JSON
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 92047ms (Views: 2.2ms | ActiveRecord: 2.7ms)
+
+
+Completed 400 Bad Request in 92057ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:9:in `create'
+  [1m[35m (13.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2881283266552597305);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2881283266552597305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:52:16 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 8ms (Views: 1.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-18 11:52:26 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 11:52:33 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 25749ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:9:in `create'
+Started POST "/news_page.json" for ::1 at 2017-03-18 11:54:49 +0100
+Processing by NewsPageController#create as JSON
+DEPRECATION WARNING: Method to_a is deprecated and will be removed in Rails 5.1, as `ActionController::Parameters` no longer inherits from hash. Using this deprecated behavior exposes potential security problems. If you continue to use this method you may be creating a security vulnerability in your app that can be exploited. Instead, consider using one of these documented methods which are not deprecated: http://api.rubyonrails.org/v5.0.2/classes/ActionController/Parameters.html (called from create at (pry):6)
+Completed 500 Internal Server Error in 101489ms (ActiveRecord: 0.0ms)
+
+
+  
+DRb::DRbConnError (druby://127.0.0.1:56871 - #<Errno::ECONNREFUSED: Connection refused - connect(2) for "127.0.0.1" port 56871>):
+  
+app/controllers/news_page_controller.rb:8:in `create'
+Started POST "/news_page.json" for ::1 at 2017-03-18 11:56:34 +0100
+Processing by NewsPageController#create as JSON
+Completed   in 206037ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-18 12:00:35 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (6.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (uninitialized constant StaitcController):
+  
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:268:in `const_get'
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:268:in `block in constantize'
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:266:in `each'
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:266:in `inject'
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:266:in `constantize'
+actionpack (5.0.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:30:in `serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:00:48 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (105.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 208ms (Views: 2.6ms | ActiveRecord: 108.9ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:00:56 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: news_page):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:9:in `create'
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:01:25 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: news_page):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:9:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:01:43 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (99.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 101ms (Views: 0.9ms | ActiveRecord: 99.8ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:01:53 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: news_page):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:9:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:03:11 +0100
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:03:22 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (94.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (96.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#index as JSON
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+ActionController::ParameterMissing (param is missing or the value is empty: news_page):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:9:in `create'
+Completed 200 OK in 147ms (Views: 2.3ms | ActiveRecord: 50.0ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:05:57 +0100
+Processing by NewsPageController#create as JSON
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.7ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", 2017-03-18 11:06:08 UTC], ["updated_at", 2017-03-18 11:06:08 UTC]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 20.0ms)
+
+
+  
+NoMethodError (undefined method `post_url' for #<NewsPageController:0x007f8e49d5e6c8>
+Did you mean?  post_params):
+  
+app/controllers/news_page_controller.rb:10:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:06:20 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:06:56 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 20ms (Views: 12.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:06:59 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:07:14 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 42162ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: news_page):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:9:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:08:05 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 47ms (Views: 11.8ms | ActiveRecord: 28.7ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:08:15 +0100
+Processing by NewsPageController#create as JSON
+Completed 500 Internal Server Error in 232802ms (ActiveRecord: 0.0ms)
+
+
+  
+DRb::DRbConnError (druby://127.0.0.1:57227 - #<Errno::ECONNREFUSED: Connection refused - connect(2) for "127.0.0.1" port 57227>):
+  
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:12:19 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (127.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 148ms (Views: 10.9ms | ActiveRecord: 127.3ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:12:25 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:13:30 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:13:37 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:15:56 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (101.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 117ms (Views: 12.2ms | ActiveRecord: 99.2ms)
+
+
+  [1m[35mSQL (4.3ms)[0m  [1m[31mDELETE FROM "posts"[0m
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:16:32 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (99.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 101ms (Views: 1.4ms | ActiveRecord: 99.1ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:16:37 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:17:19 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:17:26 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:18:10 +0100
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:18:12 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (299.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (505.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#create as JSON
+Processing by NewsPageController#index as JSON
+Completed 400 Bad Request in 511ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+  [1m[36mPost Load (99.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Completed 200 OK in 683ms (Views: 208.4ms | ActiveRecord: 161.6ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:22:05 +0100
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:22:05 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (204.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (205.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#index as JSON
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (97.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (96.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 303ms (Views: 2.8ms | ActiveRecord: 198.4ms)
+
+
+Completed 200 OK in 302ms (Views: 205.4ms | ActiveRecord: 96.4ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:22:35 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:22:37 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:23:18 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (43.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 45ms (Views: 1.2ms | ActiveRecord: 43.0ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:23:35 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:24:48 +0100
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:24:58 +0100
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:25:04 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (6.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (9.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (13.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#create as JSON
+Processing by NewsPageController#index as JSON
+Processing by NewsPageController#index as JSON
+Completed 400 Bad Request in 201ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+  [1m[36mPost Load (65.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (64.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 203ms (Views: 2.9ms | ActiveRecord: 96.6ms)
+
+
+Completed 200 OK in 214ms (Views: 3.9ms | ActiveRecord: 104.3ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:25:09 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (201.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 203ms (Views: 1.1ms | ActiveRecord: 201.4ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:25:57 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:26:03 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:26:08 +0100
+Processing by NewsPageController#create as JSON
+Completed   in 29112ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:29:08 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (98.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (97.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 200ms (Views: 2.4ms | ActiveRecord: 191.8ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-18 12:29:30 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:29:38 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"oskgfdkogkofdgok", "news_page"=>{"title"=>"Post 1", "description"=>"oskgfdkogkofdgok"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started POST "/news_page.json" for ::1 at 2017-03-18 12:30:03 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"kjdfijoidfioi", "news_page"=>{"title"=>"Post 1", "description"=>"kjdfijoidfioi"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/" for ::1 at 2017-03-20 19:45:17 +0100
+Started GET "/" for ::1 at 2017-03-20 19:45:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (25.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (25.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+  
+ActionController::RoutingError (uninitialized constant StaitcController):
+ActionController::RoutingError (uninitialized constant StaitcController):
+  
+  
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:268:in `const_get'
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:268:in `block in constantize'
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:266:in `each'
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:266:in `inject'
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:266:in `constantize'
+actionpack (5.0.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:30:in `serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:268:in `const_get'
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:268:in `block in constantize'
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:266:in `each'
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:266:in `inject'
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:266:in `constantize'
+actionpack (5.0.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:30:in `serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2017-03-20 19:45:20 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/news_page.json" for ::1 at 2017-03-20 19:45:24 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (14.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 27ms (Views: 2.1ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-20 19:46:19 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 19:46:29 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"dsfmksdfkdl", "news_page"=>{"title"=>"Post 1", "description"=>"dsfmksdfkdl"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-20 19:52:41 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 19:52:50 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"fdgjdiojigo", "news_page"=>{"title"=>"Post 1", "description"=>"fdgjdiojigo"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-20 19:53:20 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 19:53:26 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"djofjsdhgugh", "news_page"=>{"title"=>"Post 1", "description"=>"djofjsdhgugh"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-20 19:54:07 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-20 19:54:33 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 19:54:39 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"xfjodihobn", "news_page"=>{"title"=>"Post 1", "description"=>"xfjodihobn"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-20 19:55:04 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 19:55:10 +0100
+Processing by NewsPageController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-20 19:55:50 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 19:55:55 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"kifdjgiosfjgsio", "news_page"=>{"title"=>"Post 1", "description"=>"kifdjgiosfjgsio"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-20 19:56:32 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 19:56:37 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"kfd;mdf", "news_page"=>{"title"=>"Post 1", "description"=>"kfd;mdf"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-20 19:57:03 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 19:57:07 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"jirgorsigjdgh", "news_page"=>{"title"=>"Post 1", "description"=>"jirgorsigjdgh"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:15:in `post_params'
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-20 19:58:33 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (42.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 54ms (Views: 1.7ms | ActiveRecord: 42.2ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 19:58:38 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"fdkdgdoifgjdofi", "news_page"=>{"title"=>"Post 1", "description"=>"fdkdgdoifgjdofi"}}
+Completed 500 Internal Server Error in 18055ms (ActiveRecord: 0.0ms)
+
+
+  
+DRb::DRbConnError (druby://127.0.0.1:52925 - #<Errno::ECONNREFUSED: Connection refused - connect(2) for "127.0.0.1" port 52925>):
+  
+app/controllers/news_page_controller.rb:8:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-20 19:59:24 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (104.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 314ms (Views: 1.8ms | ActiveRecord: 104.8ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 19:59:29 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"gdgdfgdfgdfg", "news_page"=>{"title"=>"Post 1", "description"=>"gdgdfgdfgdfg"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:9:in `create'
+Started POST "/news_page.json" for ::1 at 2017-03-20 20:00:33 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"gdgdfgdfgdfg", "news_page"=>{"title"=>"Post 1", "description"=>"gdgdfgdfgdfg"}}
+Completed 500 Internal Server Error in 71966ms (ActiveRecord: 0.0ms)
+
+
+  
+DRb::DRbConnError (druby://127.0.0.1:52941 - #<Errno::ECONNREFUSED: Connection refused - connect(2) for "127.0.0.1" port 52941>):
+  
+app/controllers/news_page_controller.rb:8:in `create'
+Started POST "/news_page.json" for ::1 at 2017-03-20 20:01:57 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"gjfogjdfojgodij", "news_page"=>{"title"=>"Post 1", "description"=>"gjfogjdfojgodij"}}
+Completed   in 16927ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-20 20:02:43 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 13ms (Views: 1.6ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 20:03:04 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"Hello World", "news_page"=>{"title"=>"Post 1", "description"=>"Hello World"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Post 1"], ["description", "Hello World"], ["created_at", 2017-03-20 19:03:05 UTC], ["updated_at", 2017-03-20 19:03:05 UTC]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 27.6ms)
+
+
+  
+NoMethodError (undefined method `post_url' for #<NewsPageController:0x007f87bdc7b7e8>
+Did you mean?  post_params):
+  
+app/controllers/news_page_controller.rb:10:in `create'
+Started POST "/news_page.json" for ::1 at 2017-03-20 20:03:40 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"Hello World", "news_page"=>{"title"=>"Post 1", "description"=>"Hello World"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Post 1"], ["description", "Hello World"], ["created_at", 2017-03-20 19:03:40 UTC], ["updated_at", 2017-03-20 19:03:40 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 2.7ms)
+
+
+  
+NoMethodError (undefined method `post_url' for #<NewsPageController:0x007f87be667590>
+Did you mean?  post_params):
+  
+app/controllers/news_page_controller.rb:10:in `create'
+Started POST "/news_page.json" for ::1 at 2017-03-20 20:04:43 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"Hello World", "news_page"=>{"title"=>"Post 1", "description"=>"Hello World"}}
+Completed 400 Bad Request in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:9:in `create'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/news_page.json" for ::1 at 2017-03-20 20:05:43 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 81ms (Views: 12.0ms | ActiveRecord: 67.6ms)
+
+
+  [1m[35mSQL (2.7ms)[0m  [1m[31mDELETE FROM "posts"[0m
+Started GET "/news_page.json" for ::1 at 2017-03-20 20:06:03 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-20 20:06:22 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 20:06:32 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"Hello World", "news_page"=>{"title"=>"Post 1", "description"=>"Hello World"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/news_page_controller.rb:16:in `post_params'
+app/controllers/news_page_controller.rb:9:in `create'
+Started POST "/news_page.json" for ::1 at 2017-03-20 20:08:00 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"Hello World", "news_page"=>{"title"=>"Post 1", "description"=>"Hello World"}}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Post 1"], ["description", "Hello World"], ["created_at", 2017-03-20 19:08:00 UTC], ["updated_at", 2017-03-20 19:08:00 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 7.6ms)
+
+
+  
+NoMethodError (undefined method `post_url' for #<NewsPageController:0x007f87bed7e568>
+Did you mean?  post_params):
+  
+app/controllers/news_page_controller.rb:10:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-20 20:09:07 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-20 20:09:55 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 20ms (Views: 7.2ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 20:13:19 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"fdgdfsgfdsfsdgds", "news_page"=>{"title"=>"Post 1", "description"=>"fdgdfsgfdsfsdgds"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Post 1"], ["description", "fdgdfsgfdsfsdgds"], ["created_at", 2017-03-20 19:13:19 UTC], ["updated_at", 2017-03-20 19:13:19 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 3.2ms)
+
+
+  
+NoMethodError (undefined method `post_url' for #<NewsPageController:0x007fd08d5ee8f8>
+Did you mean?  post_params):
+  
+app/controllers/news_page_controller.rb:10:in `create'
+Started POST "/news_page.json" for ::1 at 2017-03-20 20:16:05 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 2", "description"=>"fdgdfsgfdsfsdgds", "news_page"=>{"title"=>"Post 2", "description"=>"fdgdfsgfdsfsdgds"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Post 2"], ["description", "fdgdfsgfdsfsdgds"], ["created_at", 2017-03-20 19:16:15 UTC], ["updated_at", 2017-03-20 19:16:15 UTC]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 7.4ms)
+
+
+  
+NoMethodError (undefined method `post_url' for #<NewsPageController:0x007fd0921bd450>
+Did you mean?  post_params):
+  
+app/controllers/news_page_controller.rb:10:in `create'
+Started GET "/news_page.json" for ::1 at 2017-03-20 20:20:39 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-20 20:21:26 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (54.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 110ms (Views: 15.3ms | ActiveRecord: 89.4ms)
+
+
+  [1m[35mSQL (3.4ms)[0m  [1m[31mDELETE FROM "posts"[0m
+Started GET "/news_page.json" for ::1 at 2017-03-20 20:21:34 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 20:21:46 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 1", "description"=>"Hello World", "news_page"=>{"title"=>"Post 1", "description"=>"Hello World"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Post 1"], ["description", "Hello World"], ["created_at", 2017-03-20 19:21:46 UTC], ["updated_at", 2017-03-20 19:21:46 UTC]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 10ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-20 20:25:39 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (57.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 57.6ms)
+
+
+  
+NoMethodError (undefined method `post' for #<Post:0x007fd08d399f80>):
+  
+app/models/post.rb:3:in `as_json'
+app/controllers/news_page_controller.rb:4:in `index'
+Started GET "/news_page.json" for ::1 at 2017-03-20 20:25:56 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 27ms (Views: 17.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-20 20:27:00 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (91.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 160ms (Views: 56.8ms | ActiveRecord: 91.0ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 20:27:07 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 2", "description"=>"Hi", "news_page"=>{"title"=>"Post 2", "description"=>"Hi"}}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Post 2"], ["description", "Hi"], ["created_at", 2017-03-20 19:27:07 UTC], ["updated_at", 2017-03-20 19:27:07 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 3.7ms)
+
+
+  
+NoMethodError (undefined method `{"id":8,"title":"Post 2","description":"Hi","author":null,"likes":null,"created_at":"2017-03-20T19:27:07.497Z","updated_at":"2017-03-20T19:27:07.497Z"}_url' for #<NewsPageController:0x007fd0920fefa0>):
+  
+app/controllers/news_page_controller.rb:12:in `create'
+Started GET "/rails/info" for ::1 at 2017-03-20 20:30:53 +0100
+Processing by Rails::InfoController#index as HTML
+  Parameters: {"internal"=>true}
+Redirected to http://localhost:3000/rails/info/routes
+Completed 302 Found in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for ::1 at 2017-03-20 20:30:53 +0100
+Processing by Rails::InfoController#routes as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/igor/.rvm/gems/ruby-2.3.2/gems/railties-5.0.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/igor/.rvm/gems/ruby-2.3.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [3 times] (12.8ms)
+  Rendered /Users/igor/.rvm/gems/ruby-2.3.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (25.0ms)
+  Rendered /Users/igor/.rvm/gems/ruby-2.3.2/gems/railties-5.0.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application (53.5ms)
+Completed 200 OK in 93ms (Views: 80.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 20:31:18 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 2", "description"=>"Hi", "news_page"=>{"title"=>"Post 2", "description"=>"Hi"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Post 2"], ["description", "Hi"], ["created_at", 2017-03-20 19:31:19 UTC], ["updated_at", 2017-03-20 19:31:19 UTC]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 30ms (Views: 0.7ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-20 20:31:28 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 20:31:41 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 3", "description"=>"Hello\n", "news_page"=>{"title"=>"Post 3", "description"=>"Hello\n"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Post 3"], ["description", "Hello\n"], ["created_at", 2017-03-20 19:31:41 UTC], ["updated_at", 2017-03-20 19:31:41 UTC]]
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 9ms (Views: 0.7ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-20 20:31:47 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/news_page.json" for ::1 at 2017-03-20 20:33:13 +0100
+Processing by NewsPageController#create as JSON
+  Parameters: {"title"=>"Post 4", "description"=>"Nice", "news_page"=>{"title"=>"Post 4", "description"=>"Nice"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Post 4"], ["description", "Nice"], ["created_at", 2017-03-20 19:33:13 UTC], ["updated_at", 2017-03-20 19:33:13 UTC]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 34ms (Views: 0.6ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/news_page.json" for ::1 at 2017-03-20 20:33:25 +0100
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (13.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2881283266552597305);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (27.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2881283266552597305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (7945.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "flapper-news2_0_development"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (211.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "flapper-news2_0_development"[0m
+  [1m[35m (213.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "flapper-news2_0_test"[0m
+  [1m[35m (542.5ms)[0m  [1m[35mCREATE DATABASE "flapper-news2_0_development" ENCODING = 'unicode'[0m
+  [1m[35m (415.0ms)[0m  [1m[35mCREATE DATABASE "flapper-news2_0_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (6.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (200.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "flapper-news2_0_development"[0m
+  [1m[35m (138.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "flapper-news2_0_test"[0m
+  [1m[35m (541.1ms)[0m  [1m[35mCREATE DATABASE "flapper-news2_0_development" ENCODING = 'unicode'[0m
+  [1m[35m (392.1ms)[0m  [1m[35mCREATE DATABASE "flapper-news2_0_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (54.9ms)[0m  [1m[35mCREATE TABLE "posts" ("id" serial primary key, "title" character varying, "description" text, "author" character varying, "likes" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170310151545)[0m
+  [1m[35m (20.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-20 19:35:26 UTC], ["updated_at", 2017-03-20 19:35:26 UTC]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE TABLE "posts" ("id" serial primary key, "title" character varying, "description" text, "author" character varying, "likes" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170310151545)[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-20 19:35:26 UTC], ["updated_at", 2017-03-20 19:35:26 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/news_page.json" for ::1 at 2017-03-20 20:36:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by NewsPageController#index as JSON
+  [1m[36mPost Load (12.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 30ms (Views: 3.2ms | ActiveRecord: 17.0ms)
+
+

@@ -1,3 +1,2 @@
-build-assets: sh -c 'cd client/ && ng build --prod && cd .. && rm -rf public && ln -s client/dist/ public'
-rails-server: rails s -p 3500
-#angular-server: sh -c 'cd client/ && ng s -p 3000'
+angular-server: sh -c 'cd client/ ; ng s'
+rails-server: sh -c 'rails s -p 3000'

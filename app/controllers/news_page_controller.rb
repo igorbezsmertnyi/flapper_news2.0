@@ -5,12 +5,13 @@ class NewsPageController < ApplicationController
   end
 
   def create
-    respond_with Post.create(post_params)
+    post = Post.create(post_params)
+    respond_with(post, location: news_page_index_path)
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :description)
+    params.require(:news_page).permit(:title, :description)
   end
 end
