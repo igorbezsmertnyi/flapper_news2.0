@@ -8,22 +8,30 @@ export class PostService {
   constructor(private http: Http) { }
 
   getPosts() {
-    return this.http.get('/news_page.json')
+    return this.http.get('http://localhost:3000/news_page.json')
            .map(response => <Post[]>response.json())
   }
 
-  createPost(post_body) {
-    console.log(post_body);
-    let method = "getDepartments";
-    let body = JSON.stringify({title: post_body.title, description: post_body.description});
-    console.log(body);
+  createPost(postBody) {
+    let body = JSON.stringify({title: postBody.title, description: postBody.description});
     let headers = new Headers({
                                 'Content-Type': 'application/json; charset=utf-8',
                                 'Access-Control-Allow-Origin': '*',
                                 'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS'
                               });
     let options = new RequestOptions({ headers: headers });
-    return this.http.post('/news_page.json', body, options)
+    return this.http.post('http://localhost:3000/news_page.json', body, options)
            .map((res: Response) => res.json())
+  }
+
+  editPost(postId, postBody) {
+    let body = JSON.stringify({title: postBody.title, description: postBody.description});
+    return this.http.put(`http://localhost:3000/news_page/${postId}`, body)
+           .map((res: Response) => res.json())
+  }
+
+  deletePost(postId) {
+    return this.http.delete(`http://localhost:3000/news_page/${postId}.json`)
+            .map(response => response.json())
   }
 }

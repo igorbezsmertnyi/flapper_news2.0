@@ -1,17 +1,27 @@
 <div class="posts-cont">
-  <div *ngFor="let post of posts" class="posts-cont__post-list">
-    <h3>{{post.title}}</h3>
-    <p>
-      {{post.description}}
-    </p>
-    Likes: <i>{{post.likes}}</i>
-  </div>
-
-  <div class="posts-cont__new-post">
-    <form (ngSubmit)="createPost()" class="posts-cont__new-post__form">
-      <input type="text" placeholder="Title" [(ngModel)]="newPost.title" name="title"/>
-      <textarea type="text" placeholder="Description" [(ngModel)]="newPost.description" name="description"></textarea>
-      <button type="submit" name="button">Create</button>
-    </form>
+  <div *ngFor="let post of posts; let i = index;" class="posts-cont__post-list">
+    <div class="posts-cont__list-items">
+      <div class="posts-cont__header">
+        <h3>{{post.title}}</h3>
+        <div class="posts-cont__action-btn">
+          <p class="posts-cont__action-btn__delete-btn" (click)="deletePost(post.id, i)">
+            Delete
+          </p>
+          <p class="posts-cont__action-btn__adit-btn" (click)="deletePost(post.id, i)">
+            Edit
+          </p>
+        </div>
+      </div>
+      <div class="posts-cont__body">
+        <p>
+          {{post.description}}
+        </p>
+      </div>
+    </div>
+    <div class="posts-cont__commnets" *ngIf="post">
+      <comment></comment>
+    </div>
   </div>
 </div>
+
+<edit-form (createPost)="createPost($event)" [status]="status"></edit-form>

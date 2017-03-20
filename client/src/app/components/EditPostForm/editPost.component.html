@@ -1,0 +1,7 @@
+<div class="edit-form">
+  <form (ngSubmit)="post()" class="edit-form__new-post__form">
+    <input type="text" placeholder="Title" [(ngModel)]="newPost.title" name="title"/>
+    <textarea type="text" placeholder="Description" [(ngModel)]="newPost.description" name="description"></textarea>
+    <button type="submit" name="button">Create</button>
+  </form>
+</div>

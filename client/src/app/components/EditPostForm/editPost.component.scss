@@ -1,0 +1,18 @@
+.edit-form {
+  width: 400px;
+  
+  &__new-post {
+    width: 400px;
+    margin-top: 50px;
+
+    &__form {
+      display: flex;
+      flex-flow: column nowrap;
+
+      input,
+      textarea {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

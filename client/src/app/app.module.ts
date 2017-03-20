@@ -6,11 +6,15 @@ import { HttpModule } from '@angular/http';
 import { HomePage } from './containers/homePage/homePage.component';
 import { Posts } from './components/Posts/post.component';
 import { PostService } from './components/Posts/post.service';
+import { Comment } from './components/Comment/comment.component';
+import { EditForm} from './components/EditPostForm/editPost.component';
 
 @NgModule({
   declarations: [
     HomePage,
-    Posts
+    Posts,
+    Comment,
+    EditForm
   ],
   imports: [
     BrowserModule,

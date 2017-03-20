@@ -1,25 +1,31 @@
 .posts-cont {
-  &__post-list {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
+  width: 400px;
 
-    h3, p {
-      margin-right: 10px;
-    }
+  &__post-list {
+    border: 1px solid #87abd1;
+    padding: 10px;
+    margin-bottom: 15px;
   }
 
-  &__new-post {
-    width: 400px;
-    margin-top: 50px;
+  &__list-items {
+    border-bottom: 1px solid #87abd1;
+  }
 
-    &__form {
-      display: flex;
-      flex-flow: column nowrap;
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
 
-      input,
-      textarea {
-        margin-bottom: 15px;
+  &__action-btn {
+    display: flex;
+
+    p {
+      margin-left: 10px;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
