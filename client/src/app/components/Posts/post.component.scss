@@ -1,6 +1,10 @@
 .posts-cont {
   width: 400px;
 
+  &__add-btn {
+    margin-bottom: 15px;
+  }
+
   &__post-list {
     border: 1px solid #87abd1;
     padding: 10px;

@@ -5,7 +5,16 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class PostService {
-  constructor(private http: Http) { }
+  headers: any;
+
+  constructor(private http: Http) {
+    this.headers = new Headers({
+      'Content-Type': 'application/json; charset=utf-8',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS'
+    });
+    this.headers = new RequestOptions({ headers: this.headers })
+  }
 
   getPosts() {
     return this.http.get('/news_page.json')
@@ -14,19 +23,13 @@ export class PostService {
 
   createPost(postBody) {
     let body = JSON.stringify({title: postBody.title, description: postBody.description});
-    let headers = new Headers({
-                                'Content-Type': 'application/json; charset=utf-8',
-                                'Access-Control-Allow-Origin': '*',
-                                'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS'
-                              });
-    let options = new RequestOptions({ headers: headers });
-    return this.http.post('/news_page.json', body, options)
+    return this.http.post('/news_page.json', body, this.headers)
            .map((res: Response) => res.json())
   }
 
-  editPost(postId, postBody) {
-    let body = JSON.stringify({title: postBody.title, description: postBody.description});
-    return this.http.put(`/news_page/${postId}`, body)
+  editPost(post) {
+    let body = JSON.stringify({title: post.title, description: post.description});
+    return this.http.put(`/news_page/${post.id}`, body, this.headers)
            .map((res: Response) => res.json())
   }
 

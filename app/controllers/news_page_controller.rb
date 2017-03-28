@@ -6,12 +6,15 @@ class NewsPageController < ApplicationController
 
   def create
     post = Post.create(post_params)
-    respond_with(post, location: news_page_index_path)
+
+    if post.save
+      respond_with(post, location: news_page_index_path)
+    end
   end
 
   def update
-    post = Post.update(params[:id])
-    respond_with post
+    post = Post.find(params[:id])
+    post.update(post_params)
   end
 
   def destroy

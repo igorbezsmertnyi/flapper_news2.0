@@ -8,19 +8,42 @@ import { Post } from '../Posts/post';
 })
 
 export class EditForm {
-  newPost = [];
+  newPost = {};
 
-  @Input() status: Boolean;
-  @Output() createPost = new EventEmitter();
+  @Input() status: boolean;
+  @Input() postInputData: Object;
+  @Output() Post = new EventEmitter();
 
-  formClear() {
-    if (this.status) {
-      this.newPost = [];
+
+  ngOnChanges() {
+    this.formInit(this.postInputData)
+    this.clearForm()
+  }
+
+  clearForm() {
+    if (typeof this.status !== 'undefined') {
+      if (this.status) {
+        this.newPost = []
+      } else {
+        alert("Post no posted")
+      }
     }
   }
 
-  post() {
-    this.createPost.emit(this.newPost)
-    this.formClear()
+  formInit(data) {
+    if (data.action === 'create') {
+      this.newPost = {}
+    } else {
+      this.newPost = {
+        id: data.postInput.id,
+        title: data.postInput.title,
+        description: data.postInput.description,
+        index: data.index
+      }
+    }
+  }
+
+  sendData() {
+    this.Post.emit(this.newPost)
   }
 }
