@@ -1,0 +1,27 @@
+.comments-container {
+  padding-top: 45px;
+
+  &__comment {
+    padding-left: 15px;
+  }
+
+  &__add-form {
+    padding-left: 15px;
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+
+      textarea {
+        width: 80%;
+        height: 30px;
+      }
+
+      input {
+        width: 20%;
+        margin-left: 10px;
+      }
+    }
+  }
+}

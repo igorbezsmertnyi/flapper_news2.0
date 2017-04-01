@@ -1,0 +1,11 @@
+<div class="preview-container">
+  <div class="preview-container__header">
+    <h4>{{post?.title}}</h4>
+  </div>
+  <div class="preview-container__description">
+    <p>
+      {{post?.description}}
+    </p>
+  </div>
+</div>
+<comment (addComment)="addComment($event)" [comments]="post?.comments" [id]="post?.id"></comment>

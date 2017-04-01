@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommentService } from './comment.service';
 
 @Component({
   selector: 'comment',
@@ -6,4 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./comment.component.scss']
 })
 
-export class Comment {}
+export class Comment {
+  @Input() comments: any;
+  @Input() id: number;
+  newComment = {};
+
+  constructor(private commentService: CommentService) { }
+
+  addComment() {
+    this.commentService.addComment(this.newComment, this.id)
+        .subscribe(data => {
+          this.comments.push(data)
+          this.newComment = {}
+        })
+  }
+}

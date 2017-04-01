@@ -4,6 +4,7 @@ export class Post {
   title: string;
   description: string;
   likes: number;
+  comments: Object;
   created_at: Date;
   updated_at: Date;
 }

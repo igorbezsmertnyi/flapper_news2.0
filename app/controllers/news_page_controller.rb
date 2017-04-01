@@ -4,6 +4,10 @@ class NewsPageController < ApplicationController
     respond_with posts
   end
 
+  def show
+    respond_with Post.find(params[:id])
+  end
+
   def create
     post = Post.create(post_params)
 

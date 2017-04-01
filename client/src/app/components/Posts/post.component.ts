@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { Post } from './post';
 import { PostService } from './post.service';
+import { AppData } from '../../appData.service';
 
 @Component({
   selector: 'posts',
@@ -12,10 +13,13 @@ export class Posts {
   posts: Post[];
   newPost = [];
   formShow: boolean = false;
-  postInputData: Object;
+  postInputData: Object = { action: 'create' };
   status: boolean;
 
-  constructor(private postService: PostService) { }
+  constructor(
+    private postService: PostService,
+    private appData: AppData
+  ) { }
 
   ngOnInit() {
     this.postService.getPosts()
@@ -25,6 +29,10 @@ export class Posts {
             this.formShow = true
           }
         })
+  }
+
+  addPostToStore(post) {
+    this.appData.storePost(post)
   }
 
   formController(action, post, index) {
