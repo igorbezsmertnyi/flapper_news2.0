@@ -6,7 +6,7 @@ import { ShowPost } from './containers/ShowPost/showpost.component';
 
 const routes: Routes = [
   { path: '', component: HomePage },
-  { path: 'post/:id', component: ShowPost }
+  { path: 'news_page/:id', component: ShowPost }
 ]
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
