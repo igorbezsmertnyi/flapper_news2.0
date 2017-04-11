@@ -17,24 +17,24 @@ export class PostService {
   }
 
   getPosts() {
-    return this.http.get('/news_page.json')
+    return this.http.get('/api/v1/news_page.json')
            .map(response => <Post[]>response.json())
   }
 
   createPost(postBody) {
     let body = JSON.stringify({title: postBody.title, description: postBody.description});
-    return this.http.post('/news_page.json', body, this.headers)
+    return this.http.post('/api/v1/news_page.json', body, this.headers)
            .map((res: Response) => res.json())
   }
 
   editPost(post) {
     let body = JSON.stringify({title: post.title, description: post.description});
-    return this.http.put(`/news_page/${post.id}`, body, this.headers)
+    return this.http.put(`/api/v1/news_page/${post.id}`, body, this.headers)
            .map((res: Response) => res.json())
   }
 
   deletePost(postId) {
-    return this.http.delete(`/news_page/${postId}.json`)
+    return this.http.delete(`/api/v1/news_page/${postId}.json`)
             .map(response => response.json())
   }
 }

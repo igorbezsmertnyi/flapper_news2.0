@@ -1,7 +1,9 @@
-class NewsPageController < ApplicationController
+class Api::V1::NewsPageController < ApplicationController
+  include ActionController::Serialization
+
   def index
-    posts = Post.all
-    respond_with posts
+    @posts = Post.all
+    render json: @posts
   end
 
   def show

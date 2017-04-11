@@ -17,7 +17,7 @@ export class PreviewService {
   }
 
   showPost(id) {
-    return this.http.get(`/news_page/${id}.json`)
+    return this.http.get(`/api/v1/news_page/${id}.json`)
            .map(response => <Post[]>response.json())
   }
 }

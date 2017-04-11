@@ -17,7 +17,7 @@ export class CommentService {
 
   addComment(comment, id) {
     let body = JSON.stringify({body: comment.body});
-    return this.http.post(`/news_page/${id}/news_comments.json`, body, this.headers)
+    return this.http.post(`/api/v1/news_page/${id}/news_comments.json`, body, this.headers)
            .map((res: Response) => res.json())
   }
 }
