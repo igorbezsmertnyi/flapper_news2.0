@@ -1,1 +1,1 @@
-angular-assets: sh -c 'cd client/ ; ng build --prod'
+angular-assets: sh -c 'cd client/ ; ng build'

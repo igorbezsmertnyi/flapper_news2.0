@@ -8,7 +8,7 @@ class  Api::V1::NewsCommentsController < ApplicationController
   def create
     post = Post.find(params[:news_page_id])
     comment = post.comments.create(comment_params)
-    respond_with(comment, location: api_v1_news_page_news_comments_path)
+    render json: comment
   end
 
   private

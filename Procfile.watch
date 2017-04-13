@@ -1,0 +1,2 @@
+angular-assets: sh -c 'cd client/ ; ng build --dev --watch'
+rails-server: rails s -p 3000
