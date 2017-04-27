@@ -1,0 +1,67 @@
+@import '../../../styles.scss';
+
+.registration-container {
+  &__form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &__double {
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    &__part,
+    &__full {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+
+      label {
+        font-size: 12px;
+      }
+
+      input {
+        height: 30px;
+      }
+    }
+
+    &__part {
+      width: 50%;
+
+      &:first-child {
+        padding-right: 5px;
+      }
+
+      &:last-child {
+        padding-left: 5px;
+      }
+    }
+
+    &__full {
+      width: 100%;
+    }
+
+    &__submit {
+      width: 100%;
+
+      input {
+        width: 100%;
+        background-color: $picton-blue;
+        color: #fff;
+        padding: 15px;
+        border: 0;
+
+        &:hover {
+          background-color: darken($picton-blue, 10%);
+        }
+
+        &:active {
+          background-color: darken($picton-blue, 20%);
+        }
+      }
+    }
+  }
+}

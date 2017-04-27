@@ -1,0 +1,13 @@
+@mixin dafault-shadow($color: rgba(135, 171, 209, 0.14)) {
+  -webkit-box-shadow: 9px 8px 16px -4px $color;
+  -moz-box-shadow: 9px 8px 16px -4px $color;
+  box-shadow: 9px 8px 16px -4px $color;
+}
+
+@mixin default-gradient() {
+  background: $studio;
+  background: -webkit-linear-gradient(left,$studio, $iris-color, $navy-blue-color, $monza);
+  background: -o-linear-gradient(left,$studio, $iris-color, $navy-blue-color, $monza);
+  background: -moz-linear-gradient(left,$studio, $iris-color, $navy-blue-color, $monza);
+  background: linear-gradient(to right, $studio, $iris-color, $navy-blue-color, $monza); 
+}

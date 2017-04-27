@@ -1,0 +1,33 @@
+<div class="menu-container">
+  <div *ngIf="UserData.id" class="menu-container__account-info">
+    <div class="menu-container__account-info__user-img">
+
+    </div>
+    <div class="menu-container__account-info__user-name">
+      <p>
+        {{UserData.first_name}}
+      </p>
+      <p>
+        {{UserData.last_name}}
+      </p>
+    </div>
+  </div>
+  <div class="menu-container__account-action">
+    <div *ngIf="UserData.id" class="menu-container__button">
+      <a href="#">Account</a>
+    </div>
+    <div *ngIf="!UserData.id" class="menu-container__button" (click)="loginShowClick()">
+      <a href="#login">Log In</a>
+    </div>
+    <div *ngIf="!UserData.id" class="menu-container__button">
+      <a href="/signup">Sign Up</a>
+    </div>
+    <div *ngIf="UserData.id" class="menu-container__button" (click)="logOut()">
+      <a href="#logout">Log Out</a>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="loginShow" class="login-form">
+  <login (UserData)="getCurrentUser($event)"></login>
+</div>

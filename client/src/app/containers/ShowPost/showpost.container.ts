@@ -3,8 +3,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'show-post',
-  templateUrl: './showpost.component.html',
-  styleUrls: ['./showpost.component.scss']
+  templateUrl: './showpost.container.html',
+  styleUrls: ['./showpost.container.scss']
 })
 
 export class ShowPost {

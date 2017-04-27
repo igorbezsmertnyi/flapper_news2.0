@@ -1,8 +1,11 @@
 <div class="comments-container">
   <h4>Comments:</h4>
-  <div *ngFor="let comment of comments" class="comments-container__comment">
+  <div *ngFor="let comment of comments; let i = index;" class="comments-container__comment">
     <p>
       {{comment.body}}
+    </p>
+    <p (click)="deleteComment(comment.id, index)">
+      Delete
     </p>
   </div>
   <div class="comments-container__add-form">

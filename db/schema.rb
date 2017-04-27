@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331185919) do
+ActiveRecord::Schema.define(version: 20170427104226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,17 +20,63 @@ ActiveRecord::Schema.define(version: 20170331185919) do
     t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
     t.index ["post_id"], name: "index_comments_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
-    t.text     "description"
-    t.string   "author",      default: "user"
-    t.integer  "likes",       default: 0
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.string   "token"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["token"], name: "index_sessions_on_token", using: :btree
+    t.index ["user_id"], name: "index_sessions_on_user_id", using: :btree
+  end
+
+  create_table "upvotes", force: :cascade do |t|
+    t.string   "value"
+    t.integer  "post_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_upvotes_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_upvotes_on_user_id", using: :btree
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                                                        null: false
+    t.string   "password_digest",                                              null: false
+    t.string   "first_name",                                                   null: false
+    t.string   "last_name",                                                    null: false
+    t.integer  "age"
+    t.date     "date_birthday"
+    t.string   "country"
+    t.string   "image_url",       default: "/assets/images/no-image-icon.jpg"
+    t.boolean  "activated"
+    t.datetime "activated_at"
+    t.datetime "last_seen"
+    t.string   "api_key"
+    t.string   "token"
+    t.string   "role"
+    t.integer  "session_id"
+    t.datetime "created_at",                                                   null: false
+    t.datetime "updated_at",                                                   null: false
+    t.index ["session_id"], name: "index_users_on_session_id", using: :btree
+    t.index ["token"], name: "index_users_on_token", using: :btree
   end
 
   add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "posts", "users"
+  add_foreign_key "upvotes", "posts"
 end

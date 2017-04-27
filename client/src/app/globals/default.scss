@@ -6,3 +6,96 @@ a:focus {
   color: #000;
   text-decoration: none;
 }
+
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+}
+
+span {
+  font-size: 14px;
+  font-family: Helvetica, sans-serif;
+}
+
+p {
+  font-size: 14px;
+  font-family: 'Noto Serif', serif;
+}
+
+.edit-btn {
+  width: 15px;
+  height: 15px;
+  background-image: url('/assets/images/edit-icon.svg');
+  background-size: contain;
+  background-position: center;
+  margin-right: 8px;
+  opacity: 0.4;
+  filter: grayscale(0.3);
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+    transition: all ease-in-out 0.2s;
+  }
+}
+
+.delete-btn {
+  width: 15px;
+  height: 15px;
+  background-image: url('/assets/images/remove-icon.svg');
+  background-size: contain;
+  background-position: center;
+  margin-right: 4px;
+  opacity: 0.4;
+  filter: grayscale(0.3);
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+    transition: all ease-in-out 0.2s;
+  }
+}
+
+.up-btn {
+  width: 30px;
+  height: 30px;
+  background-image: url('/assets/images/plus.svg');
+  background-size: contain;
+  background-position: center;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+    transition: all ease-in-out 0.2s;
+  }
+}
+
+.dis-btn {
+  width: 30px;
+  height: 30px;
+  background-image: url('/assets/images/minus.svg');
+  background-size: contain;
+  background-position: center;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+    transition: all ease-in-out 0.2s;
+  }
+}
+
+.comment-icon {
+  width: 30px;
+  height: 30px;
+  background-image: url('/assets/images/interface.svg');
+  background-size: contain;
+  background-position: center;
+  opacity: 0.4;
+}

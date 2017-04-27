@@ -1,9 +1,8 @@
 export class Post {
   id: number;
-  author: string;
   title: string;
-  description: string;
-  likes: number;
+  content: string;
+  upvotes: any;
   comments: Object;
   created_at: Date;
   updated_at: Date;

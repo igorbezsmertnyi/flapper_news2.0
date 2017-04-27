@@ -27,31 +27,120 @@
   }
 
   &__post-list {
-    border: 1px solid #87abd1;
-    padding: 10px;
+    position: relative;
+    height: 450px;
+    border: 1px solid rgba(135, 171, 209, 0.15);
     margin-bottom: 15px;
+    background: #fff;
+    @include dafault-shadow();
+
+    &__post-header {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 10px 14px;
+
+      &__line {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        left: 0;
+        bottom: 0;
+        @include default-gradient;
+      }
+    }
   }
 
   &__list-items {
     border-bottom: 1px solid #87abd1;
   }
 
-  &__header {
-    width: 100%;
+  &__user-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__user-name {
+      span {
+        margin-right: 3px;
+      }
+    }
+
+    &__created-at {
+      padding-top: 2px;
+
+      span {
+        font-size: 12px;
+        color: $silver-sand;
+      }
+    }
+
+    &__image-cont {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      border-radius: 100px;
+      overflow: hidden;
+      border-color: transparent;
+      @include dafault-shadow();
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
   }
 
   &__action-btn {
     display: flex;
+  }
 
-    p {
-      margin-left: 10px;
-      cursor: pointer;
+  &__post-body {
+    padding: 0 10px;
+  }
 
-      &:hover {
-        text-decoration: underline;
-      }
+  &__footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__upvotes-cont {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+
+    div {
+      margin-right: 10px;
+    }
+
+    span {
+      font-size: 16px;
+      color: $lynch;
+      opacity: 0.4;
+    }
+  }
+
+  &__comments-count {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 15px;
+
+    div {
+      margin-right: 10px;
+    }
+
+    span {
+      font-size: 16px;
+      color: $lynch;
+      opacity: 0.4;
     }
   }
 }

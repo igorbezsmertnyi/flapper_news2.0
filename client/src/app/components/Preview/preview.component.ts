@@ -16,9 +16,6 @@ export class Preview {
 
   ngOnInit() {
     this.previewService.showPost(this.postId)
-        .subscribe(data => {
-          this.post = data
-          console.log(this.post)
-        })
+        .subscribe(data => this.post = data)
   }
 }

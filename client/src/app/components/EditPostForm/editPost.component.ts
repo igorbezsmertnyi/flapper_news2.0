@@ -37,7 +37,7 @@ export class EditForm {
       this.newPost = {
         id: data.postInput.id,
         title: data.postInput.title,
-        description: data.postInput.description,
+        description: data.postInput.content,
         index: data.index
       }
     }

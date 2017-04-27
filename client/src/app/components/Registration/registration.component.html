@@ -1,0 +1,29 @@
+<div class="registration-container">
+  <form class="registration-container__form">
+    <div class="registration-container__form__double">
+      <div class="registration-container__form__part">
+        <label>First name</label>
+        <input name="first_name" type="text" placeholder="first name" [(ngModel)]="user.first_name" />
+      </div>
+      <div class="registration-container__form__part">
+        <label>Last name</label>
+        <input name="last_name" type="text" placeholder="last name" [(ngModel)]="user.last_name" />
+      </div>
+    </div>
+    <div class="registration-container__form__full">
+      <label>Email</label>
+      <input name="email" type="email" placeholder="email" [(ngModel)]="user.email" />
+    </div>
+    <div class="registration-container__form__full">
+      <label>Password</label>
+      <input name="password" type="password" placeholder="password" [(ngModel)]="user.password" />
+    </div>
+    <div class="registration-container__form__full">
+      <label>Confitmation password</label>
+      <input name="confirmation_password" type="password" placeholder="confiramation password" [(ngModel)]="user.confirtamtion_password" />
+    </div>
+    <div class="registration-container__form__submit">
+      <input type="submit" value="Sign Up" (click)="registerUser()"/>
+    </div>
+  </form>
+</div>

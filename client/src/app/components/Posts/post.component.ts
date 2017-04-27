@@ -1,7 +1,8 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { Post } from './post';
 import { PostService } from './post.service';
-import { AppData } from '../../appData.service';
+import { CookieService } from 'angular2-cookie/core';
+import { COOKIE_KEYS } from '../../app.constans';
 
 @Component({
   selector: 'posts',
@@ -15,11 +16,15 @@ export class Posts {
   formShow: boolean = false;
   postInputData: Object = { action: 'create' };
   status: boolean;
+  current_session: any;
 
   constructor(
     private postService: PostService,
-    private appData: AppData
-  ) { }
+    private _cookieService: CookieService
+  ) {
+
+    this.current_session = this._cookieService.getObject(COOKIE_KEYS.SEESION_HASH)
+  }
 
   ngOnInit() {
     this.postService.getPosts()
@@ -29,10 +34,6 @@ export class Posts {
             this.formShow = true
           }
         })
-  }
-
-  addPostToStore(post) {
-    this.appData.storePost(post)
   }
 
   formController(action, post, index) {
@@ -54,7 +55,7 @@ export class Posts {
   }
 
   postAction(post) {
-    if(typeof post.index !== 'undefined' && post.index) {
+    if(typeof post.index !== 'undefined' || post.index) {
       this.editPost(post)
     } else {
       this.createPost(post)
@@ -79,8 +80,26 @@ export class Posts {
         })
   }
 
+  upvotePost(post, index) {
+    this.postService.upvotePost(post).subscribe(
+      res => {
+        this.posts[index] = res
+      },
+      err => console.log(err)
+    )
+  }
+
+  disupvotePost(post, index) {
+    this.postService.disupvotePost(post).subscribe(
+      res => console.log(res.upvotes),
+      err => console.log(err)
+    )
+  }
+
   deletePost(postId, index) {
     this.postService.deletePost(postId)
         .subscribe(data => this.posts.splice(index, 1))
   }
+
+
 }

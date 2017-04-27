@@ -1,4 +1,4 @@
 class ApplicationController < ActionController::API
   include ActionController::Serialization
-  respond_to :json
+  include SessionHelper
 end

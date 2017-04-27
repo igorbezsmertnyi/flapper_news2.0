@@ -21,4 +21,11 @@ export class Comment {
           this.newComment = {}
         })
   }
+
+  deleteComment(commentId, index) {
+    this.commentService.destroyComment(this.id, commentId).subscribe(
+      res => this.comments.splice(index, 1),
+      err => console.log(err)
+    )
+  }
 }

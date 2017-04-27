@@ -19,7 +19,10 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.scss"
+        "styles.scss",
+        "./app/globals/colors.scss",
+        "./app/globals/default.scss",
+        "./app/globals/grid.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

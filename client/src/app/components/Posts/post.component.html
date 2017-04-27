@@ -1,27 +1,44 @@
 <div class="posts-cont">
   <button class="posts-cont__add-btn" type="button" (click)="formController('create')"></button>
   <div *ngFor="let post of posts; let i = index;" class="posts-cont__post-list">
-    <div class="posts-cont__header">
-      <div>
-        <h3>{{post.title}}</h3>
-        <p>likes: {{post.likes}}</p>
+    <div class="posts-cont__post-list__post-header">
+      <div class="posts-cont__user-info">
+        <div class="posts-cont__user-info__image-cont">
+          <img src="{{post.user.image_url}}" />
+        </div>
+        <div class="posts-cont__user-info__user-name">
+          <span>{{post.user.first_name}}</span>
+          <span>{{post.user.last_name}}</span>
+          <div class="posts-cont__user-info__created-at">
+            <span>{{post.created_at | date}}</span>
+          </div>
+        </div>
       </div>
       <div class="posts-cont__action-btn">
-        <p class="posts-cont__action-btn__delete-btn" (click)="deletePost(post.id, i)">
-          Delete
-        </p>
-        <p class="posts-cont__action-btn__adit-btn" (click)="formController('update', post, i)">
-          Edit
-        </p>
+        <div class="posts-cont__action-btn edit-btn" (click)="formController('update', post, i)"></div>
+        <div class="posts-cont__action-btn delete-btn" (click)="deletePost(post.id, i)"></div>
+      </div>
+      <div class="posts-cont__post-list__post-header__line"></div>
+    </div>
+    <div class="posts-cont__post-body">
+      <a routerLink="/post/{{post.id}}" class="posts-cont__list-items" (click)="addPostToStore(post)">
+        <div class="posts-cont__body">
+          <h3>{{post.title}}</h3>
+          <p>{{post.content}}</p>
+        </div>
+      </a>
+    </div>
+    <div class="posts-cont__footer">
+      <div class="posts-cont__upvotes-cont">
+        <div class="up-btn" (click)="upvotePost(post, i)">{{post | upvoteClass}}</div>
+        <div class="dis-btn" (click)="disupvotePost(post, i)"></div>
+        <span>{{post.upvotes.length}}</span>
+      </div>
+      <div class="posts-cont__comments-count">
+        <div class="comment-icon"></div>
+        <span>{{post.comments.length}}</span>
       </div>
     </div>
-    <a routerLink="/post/{{post.id}}" class="posts-cont__list-items" (click)="addPostToStore(post)">
-      <div class="posts-cont__body">
-        <p>
-          {{post.description}}
-        </p>
-      </div>
-    </a>
   </div>
 </div>
 <div *ngIf="formShow">

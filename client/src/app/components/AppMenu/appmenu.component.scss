@@ -1,0 +1,41 @@
+.menu-container {
+  position: fixed;
+  width: 100px;
+  height: 98%;
+  padding: 8px;
+  background-color: #c1c2ff;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column wrap;
+
+  &__account-info {
+    &__user-name {
+      text-align: center;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  &__account-action {
+
+  }
+}
+
+.login-form {
+  position: absolute;
+  width: 250px;
+  height: 170px;
+  margin: auto;
+  padding: 15px;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: #fff;
+  -webkit-box-shadow: 6px 6px 25px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 6px 25px 2px rgba(0,0,0,0.75);
+  box-shadow: 6px 6px 25px 2px rgba(0,0,0,0.75);
+}

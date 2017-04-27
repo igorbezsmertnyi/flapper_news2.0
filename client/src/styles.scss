@@ -2,3 +2,10 @@
 @import './app/globals/grid.scss';
 @import './app/globals/colors.scss';
 @import './app/globals/default.scss';
+@import './app/globals/mixins.scss';
+@import './app/globals/fonts.scss';
+
+body {
+  margin: 0 !important;
+  background: #f1f1f1;
+}

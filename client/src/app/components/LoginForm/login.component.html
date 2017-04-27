@@ -1,0 +1,15 @@
+<div class="login-container">
+  <form class="login-container__form">
+    <div class="login-container__form__full">
+      <label>Email</label>
+      <input name="email" type="email" placeholder="Email" [(ngModel)]="user.email" />
+    </div>
+    <div class="login-container__form__full">
+      <label>Password</label>
+      <input name="password" type="password" placeholder="Password" [(ngModel)]="user.password" />
+    </div>
+    <div class="login-container__form__submit">
+      <input type="submit" value="Log In" (click)="logIn()"/>
+    </div>
+  </form>
+</div>
