@@ -1,0 +1,5 @@
+<div class="upvotes-cont">
+  <div #up (click)="upvoteController(true)" class="up-btn"></div>
+  <div #dis (click)="upvoteController(false)" class="dis-btn"></div>
+  <span>{{item.upvotes.length - item.disupvotes.length}}</span>
+</div>

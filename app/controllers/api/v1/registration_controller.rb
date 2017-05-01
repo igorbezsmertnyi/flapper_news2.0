@@ -5,7 +5,7 @@ class Api::V1::RegistrationController < UsersController
     if @user.save
       render json: @user
     else
-      render json: { errors: @user.errors.full_messages }
+      render body: @user.errors.full_messages, status: :internal_server_error
     end
   end
 

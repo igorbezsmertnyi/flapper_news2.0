@@ -73,6 +73,10 @@ p {
     opacity: 0.8;
     transition: all ease-in-out 0.2s;
   }
+
+  &--active {
+    opacity: 1;
+  }
 }
 
 .dis-btn {
@@ -88,6 +92,10 @@ p {
   &:hover {
     opacity: 0.8;
     transition: all ease-in-out 0.2s;
+  }
+
+  &--active {
+    opacity: 1;
   }
 }
 

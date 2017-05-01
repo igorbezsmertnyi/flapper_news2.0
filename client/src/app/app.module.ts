@@ -12,7 +12,7 @@ import { PreviewService } from './components/Preview/previewpost.service';
 import { CommentService } from './components/Comment/comment.service';
 import { AuthService } from './auth.service';
 //Pipes
-import { UpvotePipe } from './Pipes/upvote.pipe';
+
 //Containers
 import { AppContainer } from './containers/AppContainer/appContainer.container';
 import { HomePage } from './containers/homePage/homePage.container';
@@ -27,6 +27,7 @@ import { Registration } from './components/Registration/registration.component';
 import { LogIn } from './components/LoginForm/login.component';
 import { AppMenu } from './components/AppMenu/appmenu.component';
 import { LogOut } from './components/LogOut/logout.componet';
+import { Upvote } from './components/Upvote/upvote.component';
 
 @NgModule({
   declarations: [
@@ -42,8 +43,7 @@ import { LogOut } from './components/LogOut/logout.componet';
     LogInPage,
     AppMenu,
     LogOut,
-
-    UpvotePipe
+    Upvote
   ],
   imports: [
     BrowserModule,

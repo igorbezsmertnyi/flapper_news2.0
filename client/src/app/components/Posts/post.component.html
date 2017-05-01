@@ -1,7 +1,7 @@
 <div class="posts-cont">
   <button class="posts-cont__add-btn" type="button" (click)="formController('create')"></button>
   <div *ngFor="let post of posts; let i = index;" class="posts-cont__post-list">
-    <div class="posts-cont__post-list__post-header">
+    <div class="posts-cont__post-list__post-header index={{i}}">
       <div class="posts-cont__user-info">
         <div class="posts-cont__user-info__image-cont">
           <img src="{{post.user.image_url}}" />
@@ -29,11 +29,7 @@
       </a>
     </div>
     <div class="posts-cont__footer">
-      <div class="posts-cont__upvotes-cont">
-        <div class="up-btn" (click)="upvotePost(post, i)">{{post | upvoteClass}}</div>
-        <div class="dis-btn" (click)="disupvotePost(post, i)"></div>
-        <span>{{post.upvotes.length}}</span>
-      </div>
+      <upvote (upvote)="upvoteActions($event)" [item]="post" [index]="i"></upvote>
       <div class="posts-cont__comments-count">
         <div class="comment-icon"></div>
         <span>{{post.comments.length}}</span>
@@ -41,6 +37,7 @@
     </div>
   </div>
 </div>
+
 <div *ngIf="formShow">
   <edit-form (Post)="postAction($event)" [status]="status" [postInputData]="postInputData"></edit-form>
 </div>

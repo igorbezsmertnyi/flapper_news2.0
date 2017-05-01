@@ -21,10 +21,7 @@ export class Posts {
   constructor(
     private postService: PostService,
     private _cookieService: CookieService
-  ) {
-
-    this.current_session = this._cookieService.getObject(COOKIE_KEYS.SEESION_HASH)
-  }
+  ) {this.current_session = this._cookieService.getObject(COOKIE_KEYS.SEESION_HASH)}
 
   ngOnInit() {
     this.postService.getPosts()
@@ -55,6 +52,7 @@ export class Posts {
   }
 
   postAction(post) {
+    console.log(post)
     if(typeof post.index !== 'undefined' || post.index) {
       this.editPost(post)
     } else {
@@ -80,18 +78,24 @@ export class Posts {
         })
   }
 
-  upvotePost(post, index) {
-    this.postService.upvotePost(post).subscribe(
-      res => {
-        this.posts[index] = res
-      },
+  upvoteActions(data) {
+    if (data.action) {
+      this.upvotePost(data)
+    } else {
+      this.disupvotePost(data)
+    }
+  }
+
+  upvotePost(data) {
+    this.postService.upvotePost(data.post).subscribe(
+      res => this.posts[data.index] = res,
       err => console.log(err)
     )
   }
 
-  disupvotePost(post, index) {
-    this.postService.disupvotePost(post).subscribe(
-      res => console.log(res.upvotes),
+  disupvotePost(data) {
+    this.postService.disupvotePost(data.post).subscribe(
+      res => this.posts[data.index] = res,
       err => console.log(err)
     )
   }
@@ -100,6 +104,4 @@ export class Posts {
     this.postService.deletePost(postId)
         .subscribe(data => this.posts.splice(index, 1))
   }
-
-
 }

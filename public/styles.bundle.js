@@ -1,6 +1,6 @@
 webpackJsonp([2,4],{
 
-/***/ 12:
+/***/ 11:
 /***/ (function(module, exports) {
 
 /*
@@ -421,7 +421,7 @@ if(false) {
 /***/ 532:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)();
+exports = module.exports = __webpack_require__(11)();
 // imports
 
 
@@ -436,12 +436,12 @@ exports.push([module.i, "", ""]);
 /***/ 533:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)();
+exports = module.exports = __webpack_require__(11)();
 // imports
 
 
 // module
-exports.push([module.i, "a,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n", ""]);
+exports.push([module.i, "a,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n", ""]);
 
 // exports
 
@@ -451,7 +451,7 @@ exports.push([module.i, "a,\na:hover,\na:active,\na:visited,\na:focus {\n  color
 /***/ 534:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)();
+exports = module.exports = __webpack_require__(11)();
 // imports
 
 
@@ -466,21 +466,21 @@ exports.push([module.i, "#appContainer {\n  width: 100%;\n  padding: 0;\n  margi
 /***/ 535:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)();
+exports = module.exports = __webpack_require__(11)();
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 579:
+/***/ 581:
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(353);
@@ -491,5 +491,5 @@ module.exports = __webpack_require__(352);
 
 /***/ })
 
-},[579]);
+},[581]);
 //# sourceMappingURL=styles.bundle.js.map

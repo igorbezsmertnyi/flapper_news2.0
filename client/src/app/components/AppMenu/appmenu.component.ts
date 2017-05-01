@@ -20,9 +20,8 @@ export class AppMenu {
     let session_hash = this._cookieService.getObject(COOKIE_KEYS.SEESION_HASH)
     if (session_hash) {
       this.authService.validateToken(session_hash).subscribe(
-        res => {
-          this.UserData = res.user
-        }
+        res => this.UserData = res.user,
+        err => this._cookieService.remove(COOKIE_KEYS.SEESION_HASH)
       )
     }
   }

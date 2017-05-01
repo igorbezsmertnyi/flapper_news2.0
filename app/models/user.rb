@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :comments
   has_many :posts
   has_one :session
+  has_many :upvotes
 end

@@ -1,4 +1,5 @@
 class Api::V1::NewsPageController < ApplicationController
+
   def index
     posts = Post.all
     render json: posts
@@ -14,43 +15,83 @@ class Api::V1::NewsPageController < ApplicationController
     if @post.save
       render json: @post
     else
-      render status: :internal_server_error
+      render body: @post.errors.full_messages, status: :internal_server_error
     end
   end
 
   def update
-    post = Post.find(params[:id])
-    post.update(post_params)
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+
+    if @post.save
+      render json: @post
+    else
+      render status: :internal_server_error
+    end
   end
 
   def upvote
     @post = Post.find(params[:id])
 
-    unless @post.upvotes.find_by_user_id(current_user.id)
+    unless upvoted_by?
+
+      if disupvoted_by?
+        vote = disupvoted_by?
+        vote.destroy
+      end
+
       @post.upvotes.new(user_id: current_user.id)
 
       if @post.save
         render json: @post
+      else
+        render body: @post.errors.full_messages, status: :internal_server_error
       end
     else
-      render body: 'already upvoted by current user', status: :not_acceptable
+      vote = upvoted_by?
+      if vote.destroy
+        render json: @post
+      else
+        renderer body: @post.errors.full_messages, status: :internal_server_error
+      end
     end
   end
 
   def disupvote
     @post = Post.find(params[:id])
-    if @post.upvotes.destroy(current_user)
-      render json: @post
+
+    unless disupvoted_by?
+
+      if upvoted_by?
+        vote = upvoted_by?
+        vote.destroy
+      end
+
+      @post.disupvotes.new(user_id: current_user.id)
+
+      if @post.save
+        render json: @post
+      else
+        render body: @post.errors.full_messages, status: :internal_server_error
+      end
+    else
+      vote = disupvoted_by?
+      if vote.destroy
+        render json: @post
+      else
+        renderer body: @post.errors.full_messages, status: :internal_server_error
+      end
     end
   end
 
   def destroy
     post = Post.find(params[:id])
     post.comments.delete_all
+    post.upvotes.delete_all
     if post.delete
       render json: params[:id]
     else
-      render status: :internal_server_error
+      render body: post.errors.full_messages, status: :internal_server_error
     end
   end
 
@@ -58,5 +99,13 @@ class Api::V1::NewsPageController < ApplicationController
 
   def post_params
     params.require(:news_page).permit(:title, :content)
+  end
+
+  def upvoted_by?
+    Post.find(params[:id]).upvotes.find_by_user_id(current_user.id)
+  end
+
+  def disupvoted_by?
+    Post.find(params[:id]).disupvotes.find_by_user_id(current_user.id)
   end
 end

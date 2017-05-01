@@ -37,7 +37,7 @@ export class PostService {
   }
 
   upvotePost(post) {
-    let body = JSON.stringify({likes: post.likes,
+    let body = JSON.stringify({likes: post.upvote,
                                token: this.current_session.token})
     return this.http.put(`${API.V1.NEWS_PAGE_INDEX}/${post.id}/upvote`, body, this.headers)
                .map((res: Response) => res.json())

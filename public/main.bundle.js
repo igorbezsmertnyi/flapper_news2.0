@@ -151,7 +151,7 @@ var LogOut = (function () {
     LogOut = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'log-out',
-            template: __webpack_require__(552)
+            template: __webpack_require__(553)
         }), 
         __metadata('design:paramtypes', [])
     ], LogOut);
@@ -212,7 +212,7 @@ var PostService = (function () {
             .map(function (res) { return res.json(); });
     };
     PostService.prototype.upvotePost = function (post) {
-        var body = JSON.stringify({ likes: post.likes,
+        var body = JSON.stringify({ likes: post.upvote,
             token: this.current_session.token });
         return this.http.put(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + post.id + "/upvote", body, this.headers)
             .map(function (res) { return res.json(); });
@@ -321,7 +321,7 @@ var Registration = (function () {
     Registration = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'registration',
-            template: __webpack_require__(556),
+            template: __webpack_require__(557),
             styles: [__webpack_require__(542)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */]) === 'function' && _a) || Object])
@@ -355,8 +355,8 @@ var LogInPage = (function () {
     LogInPage = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'login-page',
-            template: __webpack_require__(558),
-            styles: [__webpack_require__(544)]
+            template: __webpack_require__(560),
+            styles: [__webpack_require__(545)]
         }), 
         __metadata('design:paramtypes', [])
     ], LogInPage);
@@ -397,8 +397,8 @@ var ShowPost = (function () {
     ShowPost = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'show-post',
-            template: __webpack_require__(559),
-            styles: [__webpack_require__(545)]
+            template: __webpack_require__(561),
+            styles: [__webpack_require__(546)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _a) || Object])
     ], ShowPost);
@@ -431,8 +431,8 @@ var HomePage = (function () {
     HomePage = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'home-page',
-            template: __webpack_require__(560),
-            styles: [__webpack_require__(546)]
+            template: __webpack_require__(562),
+            styles: [__webpack_require__(547)]
         }), 
         __metadata('design:paramtypes', [])
     ], HomePage);
@@ -463,7 +463,7 @@ webpackEmptyContext.id = 347;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(438);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(469);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(468);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(479);
 
 
@@ -481,80 +481,31 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_constans__ = __webpack_require__(51);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UpvotePipe; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var UpvotePipe = (function () {
-    function UpvotePipe(_cookieService) {
-        this._cookieService = _cookieService;
-        this.current_session = this._cookieService.getObject(__WEBPACK_IMPORTED_MODULE_2__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH);
-    }
-    UpvotePipe.prototype.transform = function (value, args) {
-        var _this = this;
-        if (!value)
-            return value;
-        value.upvotes.find(function (val) {
-            if (val.user_id === _this.current_session.id) {
-                return val;
-            }
-        });
-    };
-    UpvotePipe = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({
-            name: 'upvoteClass'
-        }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"]) === 'function' && _a) || Object])
-    ], UpvotePipe);
-    return UpvotePipe;
-    var _a;
-}());
-//# sourceMappingURL=upvote.pipe.js.map
-
-/***/ }),
-
-/***/ 469:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(130);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(429);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routing__ = __webpack_require__(470);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routing__ = __webpack_require__(469);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_cookie_services_cookies_service__ = __webpack_require__(318);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_cookie_services_cookies_service___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular2_cookie_services_cookies_service__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__appData_service__ = __webpack_require__(471);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__appData_service__ = __webpack_require__(470);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Posts_post_service__ = __webpack_require__(310);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Preview_previewpost_service__ = __webpack_require__(311);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Comment_comment_service__ = __webpack_require__(308);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__auth_service__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__Pipes_upvote_pipe__ = __webpack_require__(468);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__containers_AppContainer_appContainer_container__ = __webpack_require__(478);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__containers_homePage_homePage_container__ = __webpack_require__(315);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__containers_ShowPost_showpost_container__ = __webpack_require__(314);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__containers_LogInPage_login_container__ = __webpack_require__(313);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_Posts_post_component__ = __webpack_require__(476);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_Comment_comment_component__ = __webpack_require__(473);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_EditPostForm_editPost_component__ = __webpack_require__(474);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_Preview_preview_component__ = __webpack_require__(477);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_Registration_registration_component__ = __webpack_require__(312);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_LoginForm_login_component__ = __webpack_require__(475);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_AppMenu_appmenu_component__ = __webpack_require__(472);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_LogOut_logout_componet__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__containers_AppContainer_appContainer_container__ = __webpack_require__(478);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__containers_homePage_homePage_container__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__containers_ShowPost_showpost_container__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__containers_LogInPage_login_container__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_Posts_post_component__ = __webpack_require__(475);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_Comment_comment_component__ = __webpack_require__(472);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_EditPostForm_editPost_component__ = __webpack_require__(473);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_Preview_preview_component__ = __webpack_require__(476);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_Registration_registration_component__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_LoginForm_login_component__ = __webpack_require__(474);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_AppMenu_appmenu_component__ = __webpack_require__(471);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_LogOut_logout_componet__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_Upvote_upvote_component__ = __webpack_require__(477);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -595,19 +546,19 @@ var AppModule = (function () {
     AppModule = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_13__containers_homePage_homePage_container__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_16__components_Posts_post_component__["a" /* Posts */],
-                __WEBPACK_IMPORTED_MODULE_17__components_Comment_comment_component__["a" /* Comment */],
-                __WEBPACK_IMPORTED_MODULE_18__components_EditPostForm_editPost_component__["a" /* EditForm */],
-                __WEBPACK_IMPORTED_MODULE_14__containers_ShowPost_showpost_container__["a" /* ShowPost */],
-                __WEBPACK_IMPORTED_MODULE_12__containers_AppContainer_appContainer_container__["a" /* AppContainer */],
-                __WEBPACK_IMPORTED_MODULE_19__components_Preview_preview_component__["a" /* Preview */],
-                __WEBPACK_IMPORTED_MODULE_20__components_Registration_registration_component__["a" /* Registration */],
-                __WEBPACK_IMPORTED_MODULE_21__components_LoginForm_login_component__["a" /* LogIn */],
-                __WEBPACK_IMPORTED_MODULE_15__containers_LogInPage_login_container__["a" /* LogInPage */],
-                __WEBPACK_IMPORTED_MODULE_22__components_AppMenu_appmenu_component__["a" /* AppMenu */],
-                __WEBPACK_IMPORTED_MODULE_23__components_LogOut_logout_componet__["a" /* LogOut */],
-                __WEBPACK_IMPORTED_MODULE_11__Pipes_upvote_pipe__["a" /* UpvotePipe */]
+                __WEBPACK_IMPORTED_MODULE_12__containers_homePage_homePage_container__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_15__components_Posts_post_component__["a" /* Posts */],
+                __WEBPACK_IMPORTED_MODULE_16__components_Comment_comment_component__["a" /* Comment */],
+                __WEBPACK_IMPORTED_MODULE_17__components_EditPostForm_editPost_component__["a" /* EditForm */],
+                __WEBPACK_IMPORTED_MODULE_13__containers_ShowPost_showpost_container__["a" /* ShowPost */],
+                __WEBPACK_IMPORTED_MODULE_11__containers_AppContainer_appContainer_container__["a" /* AppContainer */],
+                __WEBPACK_IMPORTED_MODULE_18__components_Preview_preview_component__["a" /* Preview */],
+                __WEBPACK_IMPORTED_MODULE_19__components_Registration_registration_component__["a" /* Registration */],
+                __WEBPACK_IMPORTED_MODULE_20__components_LoginForm_login_component__["a" /* LogIn */],
+                __WEBPACK_IMPORTED_MODULE_14__containers_LogInPage_login_container__["a" /* LogInPage */],
+                __WEBPACK_IMPORTED_MODULE_21__components_AppMenu_appmenu_component__["a" /* AppMenu */],
+                __WEBPACK_IMPORTED_MODULE_22__components_LogOut_logout_componet__["a" /* LogOut */],
+                __WEBPACK_IMPORTED_MODULE_23__components_Upvote_upvote_component__["a" /* Upvote */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -623,7 +574,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_8__components_Preview_previewpost_service__["a" /* PreviewService */],
                 __WEBPACK_IMPORTED_MODULE_10__auth_service__["a" /* AuthService */]
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_12__containers_AppContainer_appContainer_container__["a" /* AppContainer */], __WEBPACK_IMPORTED_MODULE_22__components_AppMenu_appmenu_component__["a" /* AppMenu */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_11__containers_AppContainer_appContainer_container__["a" /* AppContainer */], __WEBPACK_IMPORTED_MODULE_21__components_AppMenu_appmenu_component__["a" /* AppMenu */]]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
@@ -633,7 +584,7 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 470:
+/***/ 469:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -662,7 +613,7 @@ var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule 
 
 /***/ }),
 
-/***/ 471:
+/***/ 470:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -697,7 +648,7 @@ var AppData = (function () {
 
 /***/ }),
 
-/***/ 472:
+/***/ 471:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -731,9 +682,7 @@ var AppMenu = (function () {
         var _this = this;
         var session_hash = this._cookieService.getObject(__WEBPACK_IMPORTED_MODULE_3__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH);
         if (session_hash) {
-            this.authService.validateToken(session_hash).subscribe(function (res) {
-                _this.UserData = res.user;
-            });
+            this.authService.validateToken(session_hash).subscribe(function (res) { return _this.UserData = res.user; }, function (err) { return _this._cookieService.remove(__WEBPACK_IMPORTED_MODULE_3__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH); });
         }
     };
     AppMenu.prototype.getCurrentUser = function (session) {
@@ -757,7 +706,7 @@ var AppMenu = (function () {
     AppMenu = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-menu',
-            template: __webpack_require__(549),
+            template: __webpack_require__(550),
             styles: [__webpack_require__(536)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"]) === 'function' && _b) || Object])
@@ -769,7 +718,7 @@ var AppMenu = (function () {
 
 /***/ }),
 
-/***/ 473:
+/***/ 472:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -815,7 +764,7 @@ var Comment = (function () {
     Comment = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'comment',
-            template: __webpack_require__(550),
+            template: __webpack_require__(551),
             styles: [__webpack_require__(537)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__comment_service__["a" /* CommentService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__comment_service__["a" /* CommentService */]) === 'function' && _a) || Object])
@@ -827,7 +776,7 @@ var Comment = (function () {
 
 /***/ }),
 
-/***/ 474:
+/***/ 473:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -893,7 +842,7 @@ var EditForm = (function () {
     EditForm = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'edit-form',
-            template: __webpack_require__(551),
+            template: __webpack_require__(552),
             styles: [__webpack_require__(538)]
         }), 
         __metadata('design:paramtypes', [])
@@ -904,7 +853,7 @@ var EditForm = (function () {
 
 /***/ }),
 
-/***/ 475:
+/***/ 474:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -939,7 +888,7 @@ var LogIn = (function () {
     LogIn = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'login',
-            template: __webpack_require__(553),
+            template: __webpack_require__(554),
             styles: [__webpack_require__(539)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */]) === 'function' && _a) || Object])
@@ -951,7 +900,7 @@ var LogIn = (function () {
 
 /***/ }),
 
-/***/ 476:
+/***/ 475:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1010,6 +959,7 @@ var Posts = (function () {
         }
     };
     Posts.prototype.postAction = function (post) {
+        console.log(post);
         if (typeof post.index !== 'undefined' || post.index) {
             this.editPost(post);
         }
@@ -1035,14 +985,21 @@ var Posts = (function () {
             _this.formShow = false;
         });
     };
-    Posts.prototype.upvotePost = function (post, index) {
-        var _this = this;
-        this.postService.upvotePost(post).subscribe(function (res) {
-            _this.posts[index] = res;
-        }, function (err) { return console.log(err); });
+    Posts.prototype.upvoteActions = function (data) {
+        if (data.action) {
+            this.upvotePost(data);
+        }
+        else {
+            this.disupvotePost(data);
+        }
     };
-    Posts.prototype.disupvotePost = function (post, index) {
-        this.postService.disupvotePost(post).subscribe(function (res) { return console.log(res.upvotes); }, function (err) { return console.log(err); });
+    Posts.prototype.upvotePost = function (data) {
+        var _this = this;
+        this.postService.upvotePost(data.post).subscribe(function (res) { return _this.posts[data.index] = res; }, function (err) { return console.log(err); });
+    };
+    Posts.prototype.disupvotePost = function (data) {
+        var _this = this;
+        this.postService.disupvotePost(data.post).subscribe(function (res) { return _this.posts[data.index] = res; }, function (err) { return console.log(err); });
     };
     Posts.prototype.deletePost = function (postId, index) {
         var _this = this;
@@ -1052,7 +1009,7 @@ var Posts = (function () {
     Posts = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'posts',
-            template: __webpack_require__(554),
+            template: __webpack_require__(555),
             styles: [__webpack_require__(540)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__post_service__["a" /* PostService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__post_service__["a" /* PostService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"]) === 'function' && _b) || Object])
@@ -1064,7 +1021,7 @@ var Posts = (function () {
 
 /***/ }),
 
-/***/ 477:
+/***/ 476:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1098,7 +1055,7 @@ var Preview = (function () {
     Preview = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'preview',
-            template: __webpack_require__(555),
+            template: __webpack_require__(556),
             styles: [__webpack_require__(541)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__previewpost_service__["a" /* PreviewService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__previewpost_service__["a" /* PreviewService */]) === 'function' && _a) || Object])
@@ -1107,6 +1064,147 @@ var Preview = (function () {
     var _a;
 }());
 //# sourceMappingURL=preview.component.js.map
+
+/***/ }),
+
+/***/ 477:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_constans__ = __webpack_require__(51);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Upvote; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var Upvote = (function () {
+    function Upvote(_cookieService, renderer, elementRef) {
+        this._cookieService = _cookieService;
+        this.renderer = renderer;
+        this.elementRef = elementRef;
+        this.isUpvoted = false;
+        this.isDisupvoted = false;
+        this.upvote = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.current_session = this._cookieService.getObject(__WEBPACK_IMPORTED_MODULE_2__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH);
+    }
+    Upvote.prototype.ngOnInit = function () {
+        this.isUpvote();
+        this.isDisupvote();
+    };
+    Upvote.prototype.clickUpvote = function () {
+        this.isUpvoted = !this.isUpvoted;
+        if (this.isUpvoted) {
+            this.renderer.setElementClass(this.up.nativeElement, 'up-btn--active', true);
+        }
+        else {
+            this.renderer.setElementClass(this.up.nativeElement, 'up-btn--active', false);
+        }
+    };
+    Upvote.prototype.clickDisupvote = function () {
+        this.isDisupvoted = !this.isDisupvoted;
+        if (this.isDisupvoted) {
+            this.renderer.setElementClass(this.dis.nativeElement, 'dis-btn--active', true);
+        }
+        else {
+            this.renderer.setElementClass(this.dis.nativeElement, 'dis-btn--active', false);
+        }
+    };
+    Upvote.prototype.upvoteController = function (action) {
+        var obj = { index: this.index,
+            post: this.item,
+            action: action };
+        if (action) {
+            if (!this.isUpvoted && !this.isDisupvoted) {
+                this.clickUpvote();
+                this.upvote.emit(obj);
+            }
+            else if (!this.isUpvoted && this.isDisupvoted) {
+                this.clickUpvote();
+                this.clickDisupvote();
+                this.upvote.emit(obj);
+            }
+            else if (this.isUpvoted) {
+                this.clickUpvote();
+                this.upvote.emit(obj);
+            }
+        }
+        else {
+            if (!this.isDisupvoted && !this.isUpvoted) {
+                this.clickDisupvote();
+                this.upvote.emit(obj);
+            }
+            else if (!this.isDisupvoted && this.isUpvoted) {
+                this.clickDisupvote();
+                this.clickUpvote();
+                this.upvote.emit(obj);
+            }
+            else if (this.isDisupvoted) {
+                this.clickDisupvote();
+                this.upvote.emit(obj);
+            }
+        }
+    };
+    Upvote.prototype.isUpvote = function () {
+        var _this = this;
+        this.item.upvotes.map(function (upvote) {
+            if (upvote.user_id === _this.current_session.user.id) {
+                _this.renderer.setElementClass(_this.up.nativeElement, 'up-btn--active', true);
+                _this.isUpvoted = true;
+            }
+        });
+    };
+    Upvote.prototype.isDisupvote = function () {
+        var _this = this;
+        this.item.disupvotes.map(function (disupvote) {
+            if (disupvote.user_id === _this.current_session.user.id) {
+                _this.renderer.setElementClass(_this.dis.nativeElement, 'dis-btn--active', true);
+                _this.isDisupvoted = true;
+            }
+        });
+    };
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('up'), 
+        __metadata('design:type', (typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === 'function' && _a) || Object)
+    ], Upvote.prototype, "up", void 0);
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('dis'), 
+        __metadata('design:type', (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === 'function' && _b) || Object)
+    ], Upvote.prototype, "dis", void 0);
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(), 
+        __metadata('design:type', Number)
+    ], Upvote.prototype, "index", void 0);
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(), 
+        __metadata('design:type', Object)
+    ], Upvote.prototype, "item", void 0);
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(), 
+        __metadata('design:type', Object)
+    ], Upvote.prototype, "upvote", void 0);
+    Upvote = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'upvote',
+            template: __webpack_require__(558),
+            styles: [__webpack_require__(543)]
+        }), 
+        __metadata('design:paramtypes', [(typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"]) === 'function' && _d) || Object, (typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === 'function' && _e) || Object])
+    ], Upvote);
+    return Upvote;
+    var _a, _b, _c, _d, _e;
+}());
+//# sourceMappingURL=upvote.component.js.map
 
 /***/ }),
 
@@ -1132,8 +1230,8 @@ var AppContainer = (function () {
     AppContainer = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-container',
-            template: __webpack_require__(557),
-            styles: [__webpack_require__(543)]
+            template: __webpack_require__(559),
+            styles: [__webpack_require__(544)]
         }), 
         __metadata('design:paramtypes', [])
     ], AppContainer);
@@ -1194,12 +1292,14 @@ var API = {
 /***/ 536:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)();
+exports = module.exports = __webpack_require__(11)();
 // imports
-
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900);", ""]);
 
 // module
-exports.push([module.i, ".menu-container {\n  position: fixed;\n  width: 100px;\n  height: 98%;\n  padding: 8px;\n  background-color: #c1c2ff;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: column wrap;\n          flex-flow: column wrap; }\n  .menu-container__account-info__user-name {\n    text-align: center; }\n    .menu-container__account-info__user-name p {\n      margin: 0; }\n\n.login-form {\n  position: absolute;\n  width: 250px;\n  height: 170px;\n  margin: auto;\n  padding: 15px;\n  left: 0;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 9999;\n  background-color: #fff;\n  box-shadow: 6px 6px 25px 2px rgba(0, 0, 0, 0.75); }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.menu-container {\n  position: fixed;\n  width: 100px;\n  height: 98%;\n  padding: 8px;\n  background-color: #fff;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: column wrap;\n          flex-flow: column wrap;\n  box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n  .menu-container__account-info {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .menu-container__account-info__user-name {\n      text-align: center; }\n      .menu-container__account-info__user-name p {\n        margin: 0 0 0 2px;\n        font-family: Helvetica, sans-serif; }\n    .menu-container__account-info__user-img {\n      width: 75px;\n      height: 75px;\n      margin-right: 10px;\n      border-radius: 100px;\n      overflow: hidden;\n      border-color: transparent;\n      margin-bottom: 15px;\n      box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n      .menu-container__account-info__user-img img {\n        width: 100%;\n        height: 100%;\n        -o-object-fit: contain;\n           object-fit: contain;\n        -o-object-position: center;\n           object-position: center; }\n\n.login-form {\n  position: absolute;\n  width: 250px;\n  height: 170px;\n  margin: auto;\n  padding: 15px;\n  left: 0;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 9999;\n  background-color: #fff;\n  box-shadow: 6px 6px 25px 2px rgba(0, 0, 0, 0.75); }\n", ""]);
 
 // exports
 
@@ -1212,7 +1312,7 @@ module.exports = module.exports.toString();
 /***/ 537:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)();
+exports = module.exports = __webpack_require__(11)();
 // imports
 
 
@@ -1230,7 +1330,7 @@ module.exports = module.exports.toString();
 /***/ 538:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)();
+exports = module.exports = __webpack_require__(11)();
 // imports
 
 
@@ -1248,14 +1348,14 @@ module.exports = module.exports.toString();
 /***/ 539:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)();
+exports = module.exports = __webpack_require__(11)();
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.login-container__form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap; }\n  .login-container__form__full {\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-bottom: 10px; }\n    .login-container__form__full label {\n      font-size: 12px; }\n    .login-container__form__full input {\n      height: 30px; }\n  .login-container__form__submit {\n    width: 100%; }\n    .login-container__form__submit input {\n      width: 100%;\n      background-color: #22A7F0;\n      color: #fff;\n      padding: 15px;\n      border: 0; }\n      .login-container__form__submit input:hover {\n        background-color: #0e8cd1; }\n      .login-container__form__submit input:active {\n        background-color: #0b6ca1; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.login-container__form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap; }\n  .login-container__form__full {\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-bottom: 10px; }\n    .login-container__form__full label {\n      font-size: 12px; }\n    .login-container__form__full input {\n      height: 30px; }\n  .login-container__form__submit {\n    width: 100%; }\n    .login-container__form__submit input {\n      width: 100%;\n      background-color: #22A7F0;\n      color: #fff;\n      padding: 15px;\n      border: 0; }\n      .login-container__form__submit input:hover {\n        background-color: #0e8cd1; }\n      .login-container__form__submit input:active {\n        background-color: #0b6ca1; }\n", ""]);
 
 // exports
 
@@ -1268,14 +1368,14 @@ module.exports = module.exports.toString();
 /***/ 540:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)();
+exports = module.exports = __webpack_require__(11)();
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.posts-cont {\n  width: 100%; }\n  .posts-cont__add-btn {\n    position: fixed;\n    margin: 20px;\n    width: 50px;\n    height: 50px;\n    right: 0;\n    bottom: 0;\n    border-radius: 45px;\n    outline: none;\n    border: 0;\n    background: url(" + __webpack_require__(547) + ") #19B5FE no-repeat center;\n    background-size: 60%;\n    cursor: pointer; }\n    .posts-cont__add-btn:hover {\n      background-color: #22A7F0; }\n    .posts-cont__add-btn:active {\n      background-color: #0b6ca1; }\n  .posts-cont__post-list {\n    position: relative;\n    height: 450px;\n    border: 1px solid rgba(135, 171, 209, 0.15);\n    margin-bottom: 15px;\n    background: #fff;\n    box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n    .posts-cont__post-list__post-header {\n      position: relative;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      padding: 10px 10px 14px; }\n      .posts-cont__post-list__post-header__line {\n        position: absolute;\n        width: 100%;\n        height: 1px;\n        left: 0;\n        bottom: 0;\n        background: #8E44AD;\n        background: linear-gradient(to right, #8E44AD, #763568, #003171, #CF000F); }\n  .posts-cont__list-items {\n    border-bottom: 1px solid #87abd1; }\n  .posts-cont__user-info {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .posts-cont__user-info__user-name span {\n      margin-right: 3px; }\n    .posts-cont__user-info__created-at {\n      padding-top: 2px; }\n      .posts-cont__user-info__created-at span {\n        font-size: 12px;\n        color: #BDC3C7; }\n    .posts-cont__user-info__image-cont {\n      width: 50px;\n      height: 50px;\n      margin-right: 10px;\n      border-radius: 100px;\n      overflow: hidden;\n      border-color: transparent;\n      box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n      .posts-cont__user-info__image-cont img {\n        width: 100%;\n        height: 100%;\n        -o-object-fit: contain;\n           object-fit: contain;\n        -o-object-position: center;\n           object-position: center; }\n  .posts-cont__action-btn {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; }\n  .posts-cont__post-body {\n    padding: 0 10px; }\n  .posts-cont__footer {\n    position: absolute;\n    width: 100%;\n    bottom: 0;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n  .posts-cont__upvotes-cont {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    padding: 10px; }\n    .posts-cont__upvotes-cont div {\n      margin-right: 10px; }\n    .posts-cont__upvotes-cont span {\n      font-size: 16px;\n      color: #6C7A89;\n      opacity: 0.4; }\n  .posts-cont__comments-count {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    padding: 10px 15px; }\n    .posts-cont__comments-count div {\n      margin-right: 10px; }\n    .posts-cont__comments-count span {\n      font-size: 16px;\n      color: #6C7A89;\n      opacity: 0.4; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.posts-cont {\n  width: 100%; }\n  .posts-cont__add-btn {\n    position: fixed;\n    margin: 20px;\n    width: 50px;\n    height: 50px;\n    right: 0;\n    bottom: 0;\n    border-radius: 45px;\n    outline: none;\n    border: 0;\n    background: url(" + __webpack_require__(548) + ") #19B5FE no-repeat center;\n    background-size: 60%;\n    cursor: pointer; }\n    .posts-cont__add-btn:hover {\n      background-color: #22A7F0; }\n    .posts-cont__add-btn:active {\n      background-color: #0b6ca1; }\n  .posts-cont__post-list {\n    position: relative;\n    height: 450px;\n    border: 1px solid rgba(135, 171, 209, 0.15);\n    margin-bottom: 15px;\n    background: #fff;\n    box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n    .posts-cont__post-list__post-header {\n      position: relative;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      padding: 10px 10px 14px; }\n      .posts-cont__post-list__post-header__line {\n        position: absolute;\n        width: 100%;\n        height: 1px;\n        left: 0;\n        bottom: 0;\n        background: #8E44AD;\n        background: linear-gradient(to right, #8E44AD, #763568, #003171, #CF000F); }\n  .posts-cont__list-items {\n    border-bottom: 1px solid #87abd1; }\n  .posts-cont__user-info {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .posts-cont__user-info__user-name span {\n      margin-right: 3px; }\n    .posts-cont__user-info__created-at {\n      padding-top: 2px; }\n      .posts-cont__user-info__created-at span {\n        font-size: 12px;\n        color: #BDC3C7; }\n    .posts-cont__user-info__image-cont {\n      width: 50px;\n      height: 50px;\n      margin-right: 10px;\n      border-radius: 100px;\n      overflow: hidden;\n      border-color: transparent;\n      box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n      .posts-cont__user-info__image-cont img {\n        width: 100%;\n        height: 100%;\n        -o-object-fit: contain;\n           object-fit: contain;\n        -o-object-position: center;\n           object-position: center; }\n  .posts-cont__action-btn {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; }\n  .posts-cont__post-body {\n    padding: 0 10px; }\n  .posts-cont__footer {\n    position: absolute;\n    width: 100%;\n    bottom: 0;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n  .posts-cont__comments-count {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    padding: 10px 15px; }\n    .posts-cont__comments-count div {\n      margin-right: 10px; }\n    .posts-cont__comments-count span {\n      font-size: 16px;\n      color: #6C7A89;\n      opacity: 0.4; }\n", ""]);
 
 // exports
 
@@ -1288,7 +1388,7 @@ module.exports = module.exports.toString();
 /***/ 541:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)();
+exports = module.exports = __webpack_require__(11)();
 // imports
 
 
@@ -1306,14 +1406,14 @@ module.exports = module.exports.toString();
 /***/ 542:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)();
+exports = module.exports = __webpack_require__(11)();
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.registration-container__form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap; }\n  .registration-container__form__double {\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: nowrap;\n        flex-wrap: nowrap; }\n  .registration-container__form__part, .registration-container__form__full {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-bottom: 10px; }\n    .registration-container__form__part label, .registration-container__form__full label {\n      font-size: 12px; }\n    .registration-container__form__part input, .registration-container__form__full input {\n      height: 30px; }\n  .registration-container__form__part {\n    width: 50%; }\n    .registration-container__form__part:first-child {\n      padding-right: 5px; }\n    .registration-container__form__part:last-child {\n      padding-left: 5px; }\n  .registration-container__form__full {\n    width: 100%; }\n  .registration-container__form__submit {\n    width: 100%; }\n    .registration-container__form__submit input {\n      width: 100%;\n      background-color: #22A7F0;\n      color: #fff;\n      padding: 15px;\n      border: 0; }\n      .registration-container__form__submit input:hover {\n        background-color: #0e8cd1; }\n      .registration-container__form__submit input:active {\n        background-color: #0b6ca1; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.registration-container__form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap; }\n  .registration-container__form__double {\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: nowrap;\n        flex-wrap: nowrap; }\n  .registration-container__form__part, .registration-container__form__full {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-bottom: 10px; }\n    .registration-container__form__part label, .registration-container__form__full label {\n      font-size: 12px; }\n    .registration-container__form__part input, .registration-container__form__full input {\n      height: 30px; }\n  .registration-container__form__part {\n    width: 50%; }\n    .registration-container__form__part:first-child {\n      padding-right: 5px; }\n    .registration-container__form__part:last-child {\n      padding-left: 5px; }\n  .registration-container__form__full {\n    width: 100%; }\n  .registration-container__form__submit {\n    width: 100%; }\n    .registration-container__form__submit input {\n      width: 100%;\n      background-color: #22A7F0;\n      color: #fff;\n      padding: 15px;\n      border: 0; }\n      .registration-container__form__submit input:hover {\n        background-color: #0e8cd1; }\n      .registration-container__form__submit input:active {\n        background-color: #0b6ca1; }\n", ""]);
 
 // exports
 
@@ -1326,7 +1426,27 @@ module.exports = module.exports.toString();
 /***/ 543:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)();
+exports = module.exports = __webpack_require__(11)();
+// imports
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900);", ""]);
+
+// module
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.upvotes-cont {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 10px; }\n  .upvotes-cont div {\n    margin-right: 10px; }\n  .upvotes-cont span {\n    font-size: 16px;\n    color: #6C7A89;\n    opacity: 0.4; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 544:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(11)();
 // imports
 
 
@@ -1341,28 +1461,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 544:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(12)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
 /***/ 545:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)();
+exports = module.exports = __webpack_require__(11)();
 // imports
 
 
@@ -1380,7 +1482,7 @@ module.exports = module.exports.toString();
 /***/ 546:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)();
+exports = module.exports = __webpack_require__(11)();
 // imports
 
 
@@ -1398,95 +1500,120 @@ module.exports = module.exports.toString();
 /***/ 547:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "add.6f4ffb5fd215afffeb54.svg";
+exports = module.exports = __webpack_require__(11)();
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 549:
-/***/ (function(module, exports) {
+/***/ 548:
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<div class=\"menu-container\">\n  <div *ngIf=\"UserData.id\" class=\"menu-container__account-info\">\n    <div class=\"menu-container__account-info__user-img\">\n\n    </div>\n    <div class=\"menu-container__account-info__user-name\">\n      <p>\n        {{UserData.first_name}}\n      </p>\n      <p>\n        {{UserData.last_name}}\n      </p>\n    </div>\n  </div>\n  <div class=\"menu-container__account-action\">\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\">\n      <a href=\"#\">Account</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\" (click)=\"loginShowClick()\">\n      <a href=\"#login\">Log In</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\">\n      <a href=\"/signup\">Sign Up</a>\n    </div>\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\" (click)=\"logOut()\">\n      <a href=\"#logout\">Log Out</a>\n    </div>\n  </div>\n</div>\n\n<div *ngIf=\"loginShow\" class=\"login-form\">\n  <login (UserData)=\"getCurrentUser($event)\"></login>\n</div>\n"
+module.exports = __webpack_require__.p + "add.6f4ffb5fd215afffeb54.svg";
 
 /***/ }),
 
 /***/ 550:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"comments-container\">\n  <h4>Comments:</h4>\n  <div *ngFor=\"let comment of comments; let i = index;\" class=\"comments-container__comment\">\n    <p>\n      {{comment.body}}\n    </p>\n    <p (click)=\"deleteComment(comment.id, index)\">\n      Delete\n    </p>\n  </div>\n  <div class=\"comments-container__add-form\">\n    <form>\n      <textarea [(ngModel)]=\"newComment.body\" name=\"body\"></textarea>\n      <input (click)=\"addComment()\" type=\"submit\" value=\"Add\" />\n    </form>\n  </div>\n</div>\n"
+module.exports = "<div class=\"menu-container\">\n  <div *ngIf=\"UserData.id\" class=\"menu-container__account-info\">\n    <div class=\"menu-container__account-info__user-img\">\n      <img src=\"{{UserData.image_url}}\" />\n    </div>\n    <div class=\"menu-container__account-info__user-name\">\n      <p>\n        {{UserData.first_name}}\n      </p>\n      <p>\n        {{UserData.last_name}}\n      </p>\n    </div>\n  </div>\n  <div class=\"menu-container__account-action\">\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\">\n      <a href=\"#\">Account</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\" (click)=\"loginShowClick()\">\n      <a href=\"#login\">Log In</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\">\n      <a href=\"/signup\">Sign Up</a>\n    </div>\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\" (click)=\"logOut()\">\n      <a href=\"#logout\">Log Out</a>\n    </div>\n  </div>\n</div>\n\n<div *ngIf=\"loginShow\" class=\"login-form\">\n  <login (UserData)=\"getCurrentUser($event)\"></login>\n</div>\n"
 
 /***/ }),
 
 /***/ 551:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"edit-form\">\n  <form class=\"edit-form__new-post__form\">\n    <input type=\"text\" placeholder=\"Title\" [(ngModel)]=\"newPost.title\" name=\"title\"/>\n    <textarea type=\"text\" placeholder=\"Description\" [(ngModel)]=\"newPost.content\" name=\"description\"></textarea>\n    <button type=\"submit\" name=\"button\" (click)=\"sendData()\">{{postInputData.action}}</button>\n  </form>\n</div>\n"
+module.exports = "<div class=\"comments-container\">\n  <h4>Comments:</h4>\n  <div *ngFor=\"let comment of comments; let i = index;\" class=\"comments-container__comment\">\n    <p>\n      {{comment.body}}\n    </p>\n    <p (click)=\"deleteComment(comment.id, index)\">\n      Delete\n    </p>\n  </div>\n  <div class=\"comments-container__add-form\">\n    <form>\n      <textarea [(ngModel)]=\"newComment.body\" name=\"body\"></textarea>\n      <input (click)=\"addComment()\" type=\"submit\" value=\"Add\" />\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 552:
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "<div class=\"edit-form\">\n  <form class=\"edit-form__new-post__form\">\n    <input type=\"text\" placeholder=\"Title\" [(ngModel)]=\"newPost.title\" name=\"title\"/>\n    <textarea type=\"text\" placeholder=\"Description\" [(ngModel)]=\"newPost.content\" name=\"description\"></textarea>\n    <button type=\"submit\" name=\"button\" (click)=\"sendData()\">{{postInputData.action}}</button>\n  </form>\n</div>\n"
 
 /***/ }),
 
 /***/ 553:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"login-container\">\n  <form class=\"login-container__form\">\n    <div class=\"login-container__form__full\">\n      <label>Email</label>\n      <input name=\"email\" type=\"email\" placeholder=\"Email\" [(ngModel)]=\"user.email\" />\n    </div>\n    <div class=\"login-container__form__full\">\n      <label>Password</label>\n      <input name=\"password\" type=\"password\" placeholder=\"Password\" [(ngModel)]=\"user.password\" />\n    </div>\n    <div class=\"login-container__form__submit\">\n      <input type=\"submit\" value=\"Log In\" (click)=\"logIn()\"/>\n    </div>\n  </form>\n</div>\n"
+module.exports = ""
 
 /***/ }),
 
 /***/ 554:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"posts-cont\">\n  <button class=\"posts-cont__add-btn\" type=\"button\" (click)=\"formController('create')\"></button>\n  <div *ngFor=\"let post of posts; let i = index;\" class=\"posts-cont__post-list\">\n    <div class=\"posts-cont__post-list__post-header\">\n      <div class=\"posts-cont__user-info\">\n        <div class=\"posts-cont__user-info__image-cont\">\n          <img src=\"{{post.user.image_url}}\" />\n        </div>\n        <div class=\"posts-cont__user-info__user-name\">\n          <span>{{post.user.first_name}}</span>\n          <span>{{post.user.last_name}}</span>\n          <div class=\"posts-cont__user-info__created-at\">\n            <span>{{post.created_at | date}}</span>\n          </div>\n        </div>\n      </div>\n      <div class=\"posts-cont__action-btn\">\n        <div class=\"posts-cont__action-btn edit-btn\" (click)=\"formController('update', post, i)\"></div>\n        <div class=\"posts-cont__action-btn delete-btn\" (click)=\"deletePost(post.id, i)\"></div>\n      </div>\n      <div class=\"posts-cont__post-list__post-header__line\"></div>\n    </div>\n    <div class=\"posts-cont__post-body\">\n      <a routerLink=\"/post/{{post.id}}\" class=\"posts-cont__list-items\" (click)=\"addPostToStore(post)\">\n        <div class=\"posts-cont__body\">\n          <h3>{{post.title}}</h3>\n          <p>{{post.content}}</p>\n        </div>\n      </a>\n    </div>\n    <div class=\"posts-cont__footer\">\n      <div class=\"posts-cont__upvotes-cont\">\n        <div class=\"up-btn\" (click)=\"upvotePost(post, i)\">{{post | upvoteClass}}</div>\n        <div class=\"dis-btn\" (click)=\"disupvotePost(post, i)\"></div>\n        <span>{{post.upvotes.length}}</span>\n      </div>\n      <div class=\"posts-cont__comments-count\">\n        <div class=\"comment-icon\"></div>\n        <span>{{post.comments.length}}</span>\n      </div>\n    </div>\n  </div>\n</div>\n<div *ngIf=\"formShow\">\n  <edit-form (Post)=\"postAction($event)\" [status]=\"status\" [postInputData]=\"postInputData\"></edit-form>\n</div>\n"
+module.exports = "<div class=\"login-container\">\n  <form class=\"login-container__form\">\n    <div class=\"login-container__form__full\">\n      <label>Email</label>\n      <input name=\"email\" type=\"email\" placeholder=\"Email\" [(ngModel)]=\"user.email\" />\n    </div>\n    <div class=\"login-container__form__full\">\n      <label>Password</label>\n      <input name=\"password\" type=\"password\" placeholder=\"Password\" [(ngModel)]=\"user.password\" />\n    </div>\n    <div class=\"login-container__form__submit\">\n      <input type=\"submit\" value=\"Log In\" (click)=\"logIn()\"/>\n    </div>\n  </form>\n</div>\n"
 
 /***/ }),
 
 /***/ 555:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"preview-container\">\n  <div class=\"preview-container__header\">\n    <h4>{{post?.title}}</h4>\n  </div>\n  <div class=\"preview-container__description\">\n    <p>\n      {{post?.description}}\n    </p>\n  </div>\n</div>\n<comment (addComment)=\"addComment($event)\" [comments]=\"post?.comments\" [id]=\"post?.id\"></comment>\n"
+module.exports = "<div class=\"posts-cont\">\n  <button class=\"posts-cont__add-btn\" type=\"button\" (click)=\"formController('create')\"></button>\n  <div *ngFor=\"let post of posts; let i = index;\" class=\"posts-cont__post-list\">\n    <div class=\"posts-cont__post-list__post-header index={{i}}\">\n      <div class=\"posts-cont__user-info\">\n        <div class=\"posts-cont__user-info__image-cont\">\n          <img src=\"{{post.user.image_url}}\" />\n        </div>\n        <div class=\"posts-cont__user-info__user-name\">\n          <span>{{post.user.first_name}}</span>\n          <span>{{post.user.last_name}}</span>\n          <div class=\"posts-cont__user-info__created-at\">\n            <span>{{post.created_at | date}}</span>\n          </div>\n        </div>\n      </div>\n      <div class=\"posts-cont__action-btn\">\n        <div class=\"posts-cont__action-btn edit-btn\" (click)=\"formController('update', post, i)\"></div>\n        <div class=\"posts-cont__action-btn delete-btn\" (click)=\"deletePost(post.id, i)\"></div>\n      </div>\n      <div class=\"posts-cont__post-list__post-header__line\"></div>\n    </div>\n    <div class=\"posts-cont__post-body\">\n      <a routerLink=\"/post/{{post.id}}\" class=\"posts-cont__list-items\" (click)=\"addPostToStore(post)\">\n        <div class=\"posts-cont__body\">\n          <h3>{{post.title}}</h3>\n          <p>{{post.content}}</p>\n        </div>\n      </a>\n    </div>\n    <div class=\"posts-cont__footer\">\n      <upvote (upvote)=\"upvoteActions($event)\" [item]=\"post\" [index]=\"i\"></upvote>\n      <div class=\"posts-cont__comments-count\">\n        <div class=\"comment-icon\"></div>\n        <span>{{post.comments.length}}</span>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div *ngIf=\"formShow\">\n  <edit-form (Post)=\"postAction($event)\" [status]=\"status\" [postInputData]=\"postInputData\"></edit-form>\n</div>\n"
 
 /***/ }),
 
 /***/ 556:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"registration-container\">\n  <form class=\"registration-container__form\">\n    <div class=\"registration-container__form__double\">\n      <div class=\"registration-container__form__part\">\n        <label>First name</label>\n        <input name=\"first_name\" type=\"text\" placeholder=\"first name\" [(ngModel)]=\"user.first_name\" />\n      </div>\n      <div class=\"registration-container__form__part\">\n        <label>Last name</label>\n        <input name=\"last_name\" type=\"text\" placeholder=\"last name\" [(ngModel)]=\"user.last_name\" />\n      </div>\n    </div>\n    <div class=\"registration-container__form__full\">\n      <label>Email</label>\n      <input name=\"email\" type=\"email\" placeholder=\"email\" [(ngModel)]=\"user.email\" />\n    </div>\n    <div class=\"registration-container__form__full\">\n      <label>Password</label>\n      <input name=\"password\" type=\"password\" placeholder=\"password\" [(ngModel)]=\"user.password\" />\n    </div>\n    <div class=\"registration-container__form__full\">\n      <label>Confitmation password</label>\n      <input name=\"confirmation_password\" type=\"password\" placeholder=\"confiramation password\" [(ngModel)]=\"user.confirtamtion_password\" />\n    </div>\n    <div class=\"registration-container__form__submit\">\n      <input type=\"submit\" value=\"Sign Up\" (click)=\"registerUser()\"/>\n    </div>\n  </form>\n</div>\n"
+module.exports = "<div class=\"preview-container\">\n  <div class=\"preview-container__header\">\n    <h4>{{post?.title}}</h4>\n  </div>\n  <div class=\"preview-container__description\">\n    <p>\n      {{post?.description}}\n    </p>\n  </div>\n</div>\n<comment (addComment)=\"addComment($event)\" [comments]=\"post?.comments\" [id]=\"post?.id\"></comment>\n"
 
 /***/ }),
 
 /***/ 557:
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Flapper News</h2>\n<router-outlet></router-outlet>\n"
+module.exports = "<div class=\"registration-container\">\n  <form class=\"registration-container__form\">\n    <div class=\"registration-container__form__double\">\n      <div class=\"registration-container__form__part\">\n        <label>First name</label>\n        <input name=\"first_name\" type=\"text\" placeholder=\"first name\" [(ngModel)]=\"user.first_name\" />\n      </div>\n      <div class=\"registration-container__form__part\">\n        <label>Last name</label>\n        <input name=\"last_name\" type=\"text\" placeholder=\"last name\" [(ngModel)]=\"user.last_name\" />\n      </div>\n    </div>\n    <div class=\"registration-container__form__full\">\n      <label>Email</label>\n      <input name=\"email\" type=\"email\" placeholder=\"email\" [(ngModel)]=\"user.email\" />\n    </div>\n    <div class=\"registration-container__form__full\">\n      <label>Password</label>\n      <input name=\"password\" type=\"password\" placeholder=\"password\" [(ngModel)]=\"user.password\" />\n    </div>\n    <div class=\"registration-container__form__full\">\n      <label>Confitmation password</label>\n      <input name=\"confirmation_password\" type=\"password\" placeholder=\"confiramation password\" [(ngModel)]=\"user.confirtamtion_password\" />\n    </div>\n    <div class=\"registration-container__form__submit\">\n      <input type=\"submit\" value=\"Sign Up\" (click)=\"registerUser()\"/>\n    </div>\n  </form>\n</div>\n"
 
 /***/ }),
 
 /***/ 558:
 /***/ (function(module, exports) {
 
-module.exports = "<login></login>\n"
+module.exports = "<div class=\"upvotes-cont\">\n  <div #up (click)=\"upvoteController(true)\" class=\"up-btn\"></div>\n  <div #dis (click)=\"upvoteController(false)\" class=\"dis-btn\"></div>\n  <span>{{item.upvotes.length - item.disupvotes.length}}</span>\n</div>\n"
 
 /***/ }),
 
 /***/ 559:
 /***/ (function(module, exports) {
 
-module.exports = "<preview [postId]=\"postId\"></preview>\n"
+module.exports = "<h2>Flapper News</h2>\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
 /***/ 560:
 /***/ (function(module, exports) {
 
+module.exports = "<login></login>\n"
+
+/***/ }),
+
+/***/ 561:
+/***/ (function(module, exports) {
+
+module.exports = "<preview [postId]=\"postId\"></preview>\n"
+
+/***/ }),
+
+/***/ 562:
+/***/ (function(module, exports) {
+
 module.exports = "<posts></posts>\n"
 
 /***/ }),
 
-/***/ 577:
+/***/ 579:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(348);
@@ -1494,5 +1621,5 @@ module.exports = __webpack_require__(348);
 
 /***/ })
 
-},[577]);
+},[579]);
 //# sourceMappingURL=main.bundle.js.map
