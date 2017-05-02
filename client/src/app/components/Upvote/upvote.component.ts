@@ -83,20 +83,24 @@ export class Upvote {
   }
 
   isUpvote() {
-    this.item.upvotes.map(upvote => {
-      if(upvote.user_id === this.current_session.user.id) {
-        this.renderer.setElementClass(this.up.nativeElement, 'up-btn--active', true)
-        this.isUpvoted = true
-      }
-    })
+    if(this.current_session) {
+      this.item.upvotes.map(upvote => {
+        if(upvote.user_id === this.current_session.user.id) {
+          this.renderer.setElementClass(this.up.nativeElement, 'up-btn--active', true)
+          this.isUpvoted = true
+        }
+      })
+    }
   }
 
   isDisupvote() {
-    this.item.disupvotes.map(disupvote => {
-      if(disupvote.user_id === this.current_session.user.id) {
-        this.renderer.setElementClass(this.dis.nativeElement, 'dis-btn--active', true)
-        this.isDisupvoted = true
-      }
-    })
+    if(this.current_session) {
+      this.item.disupvotes.map(disupvote => {
+        if(disupvote.user_id === this.current_session.user.id) {
+          this.renderer.setElementClass(this.dis.nativeElement, 'dis-btn--active', true)
+          this.isDisupvoted = true
+        }
+      })
+    }
   }
 }

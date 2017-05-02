@@ -1,6 +1,6 @@
 webpackJsonp([1,4],{
 
-/***/ 133:
+/***/ 134:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9,7 +9,7 @@ webpackJsonp([1,4],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -81,7 +81,7 @@ var AuthService = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_constans__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CommentService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -170,7 +170,7 @@ var LogOut = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PostService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -244,7 +244,7 @@ var PostService = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(51);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreviewService; });
@@ -287,7 +287,7 @@ var PreviewService = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_service__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_service__ = __webpack_require__(134);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Registration; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -307,16 +307,7 @@ var Registration = (function () {
     }
     Registration.prototype.registerUser = function () {
         var _this = this;
-        this.authService.userSignUp(this.user).subscribe(function (res) {
-            if (!res.errors) {
-                _this.user = {};
-                console.log(res);
-            }
-            else {
-                _this.flash_massage = res.errors;
-                console.log(_this.flash_massage);
-            }
-        }, function (err) { return console.log(err); });
+        this.authService.userSignUp(this.user).subscribe(function (res) { return _this.user = {}; }, function (err) { return console.log(err); });
     };
     Registration = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -371,7 +362,7 @@ var LogInPage = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(132);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShowPost; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -400,7 +391,7 @@ var ShowPost = (function () {
             template: __webpack_require__(561),
             styles: [__webpack_require__(546)]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === 'function' && _a) || Object])
     ], ShowPost);
     return ShowPost;
     var _a;
@@ -492,7 +483,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Posts_post_service__ = __webpack_require__(310);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Preview_previewpost_service__ = __webpack_require__(311);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Comment_comment_service__ = __webpack_require__(308);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__auth_service__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__auth_service__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__containers_AppContainer_appContainer_container__ = __webpack_require__(478);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__containers_homePage_homePage_container__ = __webpack_require__(315);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__containers_ShowPost_showpost_container__ = __webpack_require__(314);
@@ -588,7 +579,7 @@ var AppModule = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__containers_homePage_homePage_container__ = __webpack_require__(315);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__containers_ShowPost_showpost_container__ = __webpack_require__(314);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Registration_registration_component__ = __webpack_require__(312);
@@ -653,10 +644,11 @@ var AppData = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_service__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_constans__ = __webpack_require__(51);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppMenu; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -671,23 +663,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AppMenu = (function () {
-    function AppMenu(authService, _cookieService) {
+    function AppMenu(authService, _cookieService, router) {
         this.authService = authService;
         this._cookieService = _cookieService;
+        this.router = router;
         this.loginShow = false;
         this.UserData = {};
     }
     AppMenu.prototype.ngOnInit = function () {
         var _this = this;
-        var session_hash = this._cookieService.getObject(__WEBPACK_IMPORTED_MODULE_3__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH);
+        var session_hash = this._cookieService.getObject(__WEBPACK_IMPORTED_MODULE_4__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH);
         if (session_hash) {
-            this.authService.validateToken(session_hash).subscribe(function (res) { return _this.UserData = res.user; }, function (err) { return _this._cookieService.remove(__WEBPACK_IMPORTED_MODULE_3__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH); });
+            this.authService.validateToken(session_hash).subscribe(function (res) { return _this.UserData = res.user; }, function (err) { return _this._cookieService.remove(__WEBPACK_IMPORTED_MODULE_4__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH); });
         }
     };
     AppMenu.prototype.getCurrentUser = function (session) {
         this.UserData = session.user;
-        this.setCookie(__WEBPACK_IMPORTED_MODULE_3__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH, session);
+        this.setCookie(__WEBPACK_IMPORTED_MODULE_4__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH, session);
         this.loginShowClick();
     };
     AppMenu.prototype.loginShowClick = function () {
@@ -696,8 +690,9 @@ var AppMenu = (function () {
     AppMenu.prototype.logOut = function () {
         var _this = this;
         this.authService.userLogOut().subscribe(function (res) {
-            _this._cookieService.remove(__WEBPACK_IMPORTED_MODULE_3__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH);
+            _this._cookieService.remove(__WEBPACK_IMPORTED_MODULE_4__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH);
             _this.UserData = {};
+            window.location.hash = '';
         });
     };
     AppMenu.prototype.setCookie = function (key, value) {
@@ -709,10 +704,10 @@ var AppMenu = (function () {
             template: __webpack_require__(550),
             styles: [__webpack_require__(536)]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"]) === 'function' && _b) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core__["CookieService"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core__["CookieService"]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === 'function' && _c) || Object])
     ], AppMenu);
     return AppMenu;
-    var _a, _b;
+    var _a, _b, _c;
 }());
 //# sourceMappingURL=appmenu.component.js.map
 
@@ -858,7 +853,8 @@ var EditForm = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_service__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__(134);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogIn; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -871,15 +867,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var LogIn = (function () {
-    function LogIn(authService) {
+    function LogIn(authService, router) {
         this.authService = authService;
+        this.router = router;
         this.user = {};
         this.UserData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
     }
+    LogIn.prototype.ngOnInit = function () {
+        this.currentLocation = this.router.routerState.snapshot.url;
+        window.location.href = this.currentLocation + "#login";
+    };
     LogIn.prototype.logIn = function () {
         var _this = this;
-        this.authService.userLogIn(this.user.email, this.user.password).subscribe(function (res) { return _this.UserData.emit(res); }, function (err) { return console.log(err); });
+        this.authService.userLogIn(this.user.email, this.user.password).subscribe(function (res) {
+            _this.UserData.emit(res);
+            window.location.hash = '';
+            window.location.reload();
+        }, function (err) { return console.log(err); });
     };
     __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(), 
@@ -891,10 +897,10 @@ var LogIn = (function () {
             template: __webpack_require__(554),
             styles: [__webpack_require__(539)]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */]) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === 'function' && _b) || Object])
     ], LogIn);
     return LogIn;
-    var _a;
+    var _a, _b;
 }());
 //# sourceMappingURL=login.component.js.map
 
@@ -959,7 +965,6 @@ var Posts = (function () {
         }
     };
     Posts.prototype.postAction = function (post) {
-        console.log(post);
         if (typeof post.index !== 'undefined' || post.index) {
             this.editPost(post);
         }
@@ -1157,21 +1162,25 @@ var Upvote = (function () {
     };
     Upvote.prototype.isUpvote = function () {
         var _this = this;
-        this.item.upvotes.map(function (upvote) {
-            if (upvote.user_id === _this.current_session.user.id) {
-                _this.renderer.setElementClass(_this.up.nativeElement, 'up-btn--active', true);
-                _this.isUpvoted = true;
-            }
-        });
+        if (this.current_session) {
+            this.item.upvotes.map(function (upvote) {
+                if (upvote.user_id === _this.current_session.user.id) {
+                    _this.renderer.setElementClass(_this.up.nativeElement, 'up-btn--active', true);
+                    _this.isUpvoted = true;
+                }
+            });
+        }
     };
     Upvote.prototype.isDisupvote = function () {
         var _this = this;
-        this.item.disupvotes.map(function (disupvote) {
-            if (disupvote.user_id === _this.current_session.user.id) {
-                _this.renderer.setElementClass(_this.dis.nativeElement, 'dis-btn--active', true);
-                _this.isDisupvoted = true;
-            }
-        });
+        if (this.current_session) {
+            this.item.disupvotes.map(function (disupvote) {
+                if (disupvote.user_id === _this.current_session.user.id) {
+                    _this.renderer.setElementClass(_this.dis.nativeElement, 'dis-btn--active', true);
+                    _this.isDisupvoted = true;
+                }
+            });
+        }
     };
     __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('up'), 
@@ -1275,7 +1284,7 @@ var REQUEST_HEADER = {
     'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS'
 };
 var COOKIE_KEYS = {
-    SEESION_HASH: 'session_hash',
+    SEESION_HASH: 'session_hash_flapper_news',
 };
 var API = {
     V1: {
@@ -1299,7 +1308,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Not
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.menu-container {\n  position: fixed;\n  width: 100px;\n  height: 98%;\n  padding: 8px;\n  background-color: #fff;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: column wrap;\n          flex-flow: column wrap;\n  box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n  .menu-container__account-info {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .menu-container__account-info__user-name {\n      text-align: center; }\n      .menu-container__account-info__user-name p {\n        margin: 0 0 0 2px;\n        font-family: Helvetica, sans-serif; }\n    .menu-container__account-info__user-img {\n      width: 75px;\n      height: 75px;\n      margin-right: 10px;\n      border-radius: 100px;\n      overflow: hidden;\n      border-color: transparent;\n      margin-bottom: 15px;\n      box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n      .menu-container__account-info__user-img img {\n        width: 100%;\n        height: 100%;\n        -o-object-fit: contain;\n           object-fit: contain;\n        -o-object-position: center;\n           object-position: center; }\n\n.login-form {\n  position: absolute;\n  width: 250px;\n  height: 170px;\n  margin: auto;\n  padding: 15px;\n  left: 0;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 9999;\n  background-color: #fff;\n  box-shadow: 6px 6px 25px 2px rgba(0, 0, 0, 0.75); }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.menu-container {\n  position: fixed;\n  width: 100px;\n  height: 98%;\n  padding: 8px;\n  background-color: #fff;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: column wrap;\n          flex-flow: column wrap;\n  box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n  .menu-container__account-info {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .menu-container__account-info__user-name {\n      text-align: center; }\n      .menu-container__account-info__user-name p {\n        margin: 0 0 0 2px;\n        font-family: Helvetica, sans-serif; }\n    .menu-container__account-info__user-img {\n      width: 75px;\n      height: 75px;\n      margin-right: 10px;\n      border-radius: 100px;\n      overflow: hidden;\n      border-color: transparent;\n      margin-bottom: 15px;\n      box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n      .menu-container__account-info__user-img img {\n        width: 100%;\n        height: 100%;\n        -o-object-fit: contain;\n           object-fit: contain;\n        -o-object-position: center;\n           object-position: center; }\n\n.login-form {\n  position: fixed;\n  width: 250px;\n  height: 170px;\n  margin: auto;\n  padding: 15px;\n  left: 0;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 9999;\n  background-color: #fff;\n  box-shadow: 6px 6px 25px 2px rgba(0, 0, 0, 0.75); }\n", ""]);
 
 // exports
 
@@ -1525,7 +1534,7 @@ module.exports = __webpack_require__.p + "add.6f4ffb5fd215afffeb54.svg";
 /***/ 550:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"menu-container\">\n  <div *ngIf=\"UserData.id\" class=\"menu-container__account-info\">\n    <div class=\"menu-container__account-info__user-img\">\n      <img src=\"{{UserData.image_url}}\" />\n    </div>\n    <div class=\"menu-container__account-info__user-name\">\n      <p>\n        {{UserData.first_name}}\n      </p>\n      <p>\n        {{UserData.last_name}}\n      </p>\n    </div>\n  </div>\n  <div class=\"menu-container__account-action\">\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\">\n      <a href=\"#\">Account</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\" (click)=\"loginShowClick()\">\n      <a href=\"#login\">Log In</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\">\n      <a href=\"/signup\">Sign Up</a>\n    </div>\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\" (click)=\"logOut()\">\n      <a href=\"#logout\">Log Out</a>\n    </div>\n  </div>\n</div>\n\n<div *ngIf=\"loginShow\" class=\"login-form\">\n  <login (UserData)=\"getCurrentUser($event)\"></login>\n</div>\n"
+module.exports = "<div class=\"menu-container\">\n  <div *ngIf=\"UserData.id\" class=\"menu-container__account-info\">\n    <div class=\"menu-container__account-info__user-img\">\n      <img src=\"{{UserData.image_url}}\" />\n    </div>\n    <div class=\"menu-container__account-info__user-name\">\n      <p>\n        {{UserData.first_name}}\n      </p>\n      <p>\n        {{UserData.last_name}}\n      </p>\n    </div>\n  </div>\n  <div class=\"menu-container__account-action\">\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\">\n      <a href=\"#\">Account</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\" (click)=\"loginShowClick()\">\n      <a>Log In</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\">\n      <a href=\"/signup\">Sign Up</a>\n    </div>\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\" (click)=\"logOut()\">\n      <a href=\"#logout\">Log Out</a>\n    </div>\n  </div>\n</div>\n\n<div *ngIf=\"loginShow\" class=\"login-form\">\n  <login (UserData)=\"getCurrentUser($event)\"></login>\n</div>\n"
 
 /***/ }),
 
@@ -1567,7 +1576,7 @@ module.exports = "<div class=\"posts-cont\">\n  <button class=\"posts-cont__add-
 /***/ 556:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"preview-container\">\n  <div class=\"preview-container__header\">\n    <h4>{{post?.title}}</h4>\n  </div>\n  <div class=\"preview-container__description\">\n    <p>\n      {{post?.description}}\n    </p>\n  </div>\n</div>\n<comment (addComment)=\"addComment($event)\" [comments]=\"post?.comments\" [id]=\"post?.id\"></comment>\n"
+module.exports = "<div class=\"preview-container\">\n  <div class=\"preview-container__header\">\n    <h4>{{post?.title}}</h4>\n  </div>\n  <div class=\"preview-container__description\">\n    <p>\n      {{post?.content}}\n    </p>\n  </div>\n</div>\n<comment (addComment)=\"addComment($event)\" [comments]=\"post?.comments\" [id]=\"post?.id\"></comment>\n"
 
 /***/ }),
 

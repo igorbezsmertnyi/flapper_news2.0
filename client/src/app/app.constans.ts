@@ -9,7 +9,7 @@ export const REQUEST_HEADER = {
 }
 
 export const COOKIE_KEYS = {
-  SEESION_HASH: 'session_hash',
+  SEESION_HASH: 'session_hash_flapper_news',
 }
 
 export const API = {

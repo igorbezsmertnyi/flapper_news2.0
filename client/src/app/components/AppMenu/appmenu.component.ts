@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { AuthService } from '../../auth.service';
-import { CookieService } from 'angular2-cookie/core';
-import { COOKIE_KEYS } from '../../app.constans';
+import { Component } from '@angular/core'
+import { Router } from '@angular/router'
+import { AuthService } from '../../auth.service'
+import { CookieService } from 'angular2-cookie/core'
+import { COOKIE_KEYS } from '../../app.constans'
 
 @Component({
   selector: 'app-menu',
@@ -13,8 +14,9 @@ export class AppMenu {
   loginShow: boolean = false
   UserData = {}
 
-  constructor(private authService: AuthService,
-              private _cookieService: CookieService) { }
+  constructor(protected authService: AuthService,
+              protected _cookieService: CookieService,
+              private router: Router ) { }
 
   ngOnInit() {
     let session_hash = this._cookieService.getObject(COOKIE_KEYS.SEESION_HASH)
@@ -41,6 +43,7 @@ export class AppMenu {
       res => {
         this._cookieService.remove(COOKIE_KEYS.SEESION_HASH)
         this.UserData = {}
+        window.location.hash = ''
       }
     )
   }

@@ -52,7 +52,6 @@ export class Posts {
   }
 
   postAction(post) {
-    console.log(post)
     if(typeof post.index !== 'undefined' || post.index) {
       this.editPost(post)
     } else {

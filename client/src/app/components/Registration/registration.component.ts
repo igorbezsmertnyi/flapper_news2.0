@@ -9,22 +9,13 @@ import { AuthService } from '../../auth.service';
 
 export class Registration {
   user: any = {}
-  flash_massage: string
 
-  constructor(private authService: AuthService) { }
+  constructor(protected authService: AuthService) { }
 
   registerUser() {
     this.authService.userSignUp(this.user).subscribe(
-      res =>  {
-        if (!res.errors) {
-          this.user = {}
-          console.log(res)
-        } else {
-          this.flash_massage = res.errors
-          console.log(this.flash_massage)
-        }
-      },
-      err =>  console.log(err)
+      res => this.user = {},
+      err => console.log(err)
     )
   }
 }
