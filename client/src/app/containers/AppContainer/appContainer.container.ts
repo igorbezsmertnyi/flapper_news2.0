@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'
 import { environment } from "../../../environments/environment";
 
 @Component({
@@ -7,4 +8,13 @@ import { environment } from "../../../environments/environment";
   styleUrls: ['./appContainer.container.scss']
 })
 
-export class AppContainer { }
+export class AppContainer {
+
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+    let currentLocation = this.router.routerState.snapshot.url
+    window.location.href = `${window.location.host}/${window.location.pathname}`
+    console.log(`${window.location.host}/${window.location.pathname}`)
+  }
+}

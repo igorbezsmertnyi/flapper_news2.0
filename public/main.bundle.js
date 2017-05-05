@@ -72,7 +72,7 @@ var AuthService = (function () {
 
 /***/ }),
 
-/***/ 308:
+/***/ 309:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -127,7 +127,7 @@ var CommentService = (function () {
 
 /***/ }),
 
-/***/ 309:
+/***/ 310:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -161,7 +161,7 @@ var LogOut = (function () {
 
 /***/ }),
 
-/***/ 310:
+/***/ 311:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -238,7 +238,7 @@ var PostService = (function () {
 
 /***/ }),
 
-/***/ 311:
+/***/ 312:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -282,7 +282,7 @@ var PreviewService = (function () {
 
 /***/ }),
 
-/***/ 312:
+/***/ 313:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -324,7 +324,7 @@ var Registration = (function () {
 
 /***/ }),
 
-/***/ 313:
+/***/ 314:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -357,7 +357,7 @@ var LogInPage = (function () {
 
 /***/ }),
 
-/***/ 314:
+/***/ 315:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -400,7 +400,7 @@ var ShowPost = (function () {
 
 /***/ }),
 
-/***/ 315:
+/***/ 316:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -433,7 +433,7 @@ var HomePage = (function () {
 
 /***/ }),
 
-/***/ 347:
+/***/ 348:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -442,12 +442,12 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 347;
+webpackEmptyContext.id = 348;
 
 
 /***/ }),
 
-/***/ 348:
+/***/ 349:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -474,28 +474,28 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(130);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(429);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routing__ = __webpack_require__(469);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_cookie_services_cookies_service__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_cookie_services_cookies_service__ = __webpack_require__(319);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_cookie_services_cookies_service___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular2_cookie_services_cookies_service__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__appData_service__ = __webpack_require__(470);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Posts_post_service__ = __webpack_require__(310);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Preview_previewpost_service__ = __webpack_require__(311);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Comment_comment_service__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Posts_post_service__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Preview_previewpost_service__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Comment_comment_service__ = __webpack_require__(309);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__auth_service__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__containers_AppContainer_appContainer_container__ = __webpack_require__(478);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__containers_homePage_homePage_container__ = __webpack_require__(315);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__containers_ShowPost_showpost_container__ = __webpack_require__(314);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__containers_LogInPage_login_container__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__containers_homePage_homePage_container__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__containers_ShowPost_showpost_container__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__containers_LogInPage_login_container__ = __webpack_require__(314);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_Posts_post_component__ = __webpack_require__(475);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_Comment_comment_component__ = __webpack_require__(472);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_EditPostForm_editPost_component__ = __webpack_require__(473);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_Preview_preview_component__ = __webpack_require__(476);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_Registration_registration_component__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_Registration_registration_component__ = __webpack_require__(313);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_LoginForm_login_component__ = __webpack_require__(474);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_AppMenu_appmenu_component__ = __webpack_require__(471);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_LogOut_logout_componet__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_LogOut_logout_componet__ = __webpack_require__(310);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_Upvote_upvote_component__ = __webpack_require__(477);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -554,6 +554,7 @@ var AppModule = (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_4__app_routing__["a" /* routing */]
             ],
@@ -580,11 +581,11 @@ var AppModule = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__containers_homePage_homePage_container__ = __webpack_require__(315);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__containers_ShowPost_showpost_container__ = __webpack_require__(314);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Registration_registration_component__ = __webpack_require__(312);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__containers_LogInPage_login_container__ = __webpack_require__(313);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_LogOut_logout_componet__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__containers_homePage_homePage_container__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__containers_ShowPost_showpost_container__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Registration_registration_component__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__containers_LogInPage_login_container__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_LogOut_logout_componet__ = __webpack_require__(310);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routing; });
 
 
@@ -672,6 +673,11 @@ var AppMenu = (function () {
         this.loginShow = false;
         this.UserData = {};
     }
+    AppMenu.prototype.onClick = function (e) {
+        if (this.loginShow && e.target.className === 'login-form__background') {
+            this.loginShow = false;
+        }
+    };
     AppMenu.prototype.ngOnInit = function () {
         var _this = this;
         var session_hash = this._cookieService.getObject(__WEBPACK_IMPORTED_MODULE_4__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH);
@@ -698,6 +704,12 @@ var AppMenu = (function () {
     AppMenu.prototype.setCookie = function (key, value) {
         return this._cookieService.putObject(key, value);
     };
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('click', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Object]), 
+        __metadata('design:returntype', void 0)
+    ], AppMenu.prototype, "onClick", null);
     AppMenu = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-menu',
@@ -718,7 +730,7 @@ var AppMenu = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__comment_service__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__comment_service__ = __webpack_require__(309);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Comment; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -853,8 +865,10 @@ var EditForm = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__auth_service__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__validators_validators__ = __webpack_require__(582);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogIn; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -868,20 +882,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var LogIn = (function () {
-    function LogIn(authService, router) {
+    function LogIn(authService, router, fb) {
         this.authService = authService;
         this.router = router;
+        this.fb = fb;
         this.user = {};
         this.UserData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.logInForm = this.fb.group({
+            email: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_4__validators_validators__["a" /* validateEmail */]]),
+            password: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].minLength(8)])]
+        });
     }
     LogIn.prototype.ngOnInit = function () {
         this.currentLocation = this.router.routerState.snapshot.url;
         window.location.href = this.currentLocation + "#login";
     };
-    LogIn.prototype.logIn = function () {
+    LogIn.prototype.logIn = function (f) {
         var _this = this;
-        this.authService.userLogIn(this.user.email, this.user.password).subscribe(function (res) {
+        this.authService.userLogIn(f.control.controls.email.value, f.control.controls.password.value).subscribe(function (res) {
             _this.UserData.emit(res);
             window.location.hash = '';
             window.location.reload();
@@ -897,10 +918,10 @@ var LogIn = (function () {
             template: __webpack_require__(554),
             styles: [__webpack_require__(539)]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === 'function' && _b) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__auth_service__["a" /* AuthService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__auth_service__["a" /* AuthService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* FormBuilder */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* FormBuilder */]) === 'function' && _c) || Object])
     ], LogIn);
     return LogIn;
-    var _a, _b;
+    var _a, _b, _c;
 }());
 //# sourceMappingURL=login.component.js.map
 
@@ -911,7 +932,7 @@ var LogIn = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__post_service__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__post_service__ = __webpack_require__(311);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(51);
@@ -1031,7 +1052,7 @@ var Posts = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__previewpost_service__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__previewpost_service__ = __webpack_require__(312);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Preview; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1222,6 +1243,7 @@ var Upvote = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(132);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppContainer; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1233,18 +1255,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var AppContainer = (function () {
-    function AppContainer() {
+    function AppContainer(router) {
+        this.router = router;
     }
+    AppContainer.prototype.ngOnInit = function () {
+        var currentLocation = this.router.routerState.snapshot.url;
+        window.location.href = window.location.host + "/" + window.location.pathname;
+        console.log(window.location.host + "/" + window.location.pathname);
+    };
     AppContainer = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-container',
             template: __webpack_require__(559),
             styles: [__webpack_require__(544)]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === 'function' && _a) || Object])
     ], AppContainer);
     return AppContainer;
+    var _a;
 }());
 //# sourceMappingURL=appContainer.container.js.map
 
@@ -1308,7 +1338,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Not
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.menu-container {\n  position: fixed;\n  width: 100px;\n  height: 98%;\n  padding: 8px;\n  background-color: #fff;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: column wrap;\n          flex-flow: column wrap;\n  box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n  .menu-container__account-info {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .menu-container__account-info__user-name {\n      text-align: center; }\n      .menu-container__account-info__user-name p {\n        margin: 0 0 0 2px;\n        font-family: Helvetica, sans-serif; }\n    .menu-container__account-info__user-img {\n      width: 75px;\n      height: 75px;\n      margin-right: 10px;\n      border-radius: 100px;\n      overflow: hidden;\n      border-color: transparent;\n      margin-bottom: 15px;\n      box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n      .menu-container__account-info__user-img img {\n        width: 100%;\n        height: 100%;\n        -o-object-fit: contain;\n           object-fit: contain;\n        -o-object-position: center;\n           object-position: center; }\n\n.login-form {\n  position: fixed;\n  width: 250px;\n  height: 170px;\n  margin: auto;\n  padding: 15px;\n  left: 0;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 9999;\n  background-color: #fff;\n  box-shadow: 6px 6px 25px 2px rgba(0, 0, 0, 0.75); }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Helvetica, sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: Helvetica, sans-serif;\n  font-size: 14px; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.menu-container {\n  position: fixed;\n  width: 100px;\n  height: 98%;\n  padding: 8px;\n  background-color: #fff;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: column wrap;\n          flex-flow: column wrap;\n  box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n  .menu-container__account-info {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .menu-container__account-info__user-name {\n      text-align: center; }\n      .menu-container__account-info__user-name p {\n        margin: 0 0 0 2px;\n        font-family: Helvetica, sans-serif; }\n    .menu-container__account-info__user-img {\n      width: 75px;\n      height: 75px;\n      margin-right: 10px;\n      border-radius: 100px;\n      overflow: hidden;\n      border-color: transparent;\n      margin-bottom: 15px;\n      box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n      .menu-container__account-info__user-img img {\n        width: 100%;\n        height: 100%;\n        -o-object-fit: contain;\n           object-fit: contain;\n        -o-object-position: center;\n           object-position: center; }\n\n.login-form {\n  position: fixed;\n  width: 350px;\n  height: 220px;\n  margin: auto;\n  padding: 15px;\n  left: 0;\n  top: 150%;\n  right: 0;\n  bottom: 0;\n  z-index: 9999;\n  background-color: #fff;\n  overflow: hidden;\n  border-radius: 15px;\n  border: 1px solid rgba(135, 171, 209, 0.15);\n  transition: all ease-out .3s;\n  box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n  .login-form__background {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background-color: #fff;\n    opacity: 0.4;\n    left: 0;\n    top: 0;\n    z-index: 1; }\n  .login-form--active {\n    top: 0;\n    transition: all ease-in .3s; }\n", ""]);
 
 // exports
 
@@ -1364,7 +1394,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Not
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.login-container__form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap; }\n  .login-container__form__full {\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-bottom: 10px; }\n    .login-container__form__full label {\n      font-size: 12px; }\n    .login-container__form__full input {\n      height: 30px; }\n  .login-container__form__submit {\n    width: 100%; }\n    .login-container__form__submit input {\n      width: 100%;\n      background-color: #22A7F0;\n      color: #fff;\n      padding: 15px;\n      border: 0; }\n      .login-container__form__submit input:hover {\n        background-color: #0e8cd1; }\n      .login-container__form__submit input:active {\n        background-color: #0b6ca1; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Helvetica, sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: Helvetica, sans-serif;\n  font-size: 14px; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.login-container {\n  width: 100%;\n  height: 100%; }\n  .login-container__form {\n    height: 80%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n    .login-container__form__input-container {\n      width: 100%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-flow: column nowrap;\n              flex-flow: column nowrap;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n    .login-container__form__full {\n      width: 100%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n      margin-bottom: 10px; }\n    .login-container__form__submit {\n      position: absolute;\n      width: 100%;\n      left: 0;\n      bottom: 0; }\n      .login-container__form__submit input {\n        width: 100%;\n        height: 45px;\n        background-color: #BDC3C7;\n        color: #fff;\n        padding: 15px;\n        border: 0;\n        transition: all ease-in-out .3s; }\n        .login-container__form__submit input:hover, .login-container__form__submit input:active {\n          background-color: #BDC3C7; }\n      .login-container__form__submit--active input {\n        background-color: #8E44AD;\n        transition: all ease-in-out .3s; }\n        .login-container__form__submit--active input:hover {\n          background-color: #703688; }\n        .login-container__form__submit--active input:active {\n          background-color: #522764; }\n", ""]);
 
 // exports
 
@@ -1384,7 +1414,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Not
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.posts-cont {\n  width: 100%; }\n  .posts-cont__add-btn {\n    position: fixed;\n    margin: 20px;\n    width: 50px;\n    height: 50px;\n    right: 0;\n    bottom: 0;\n    border-radius: 45px;\n    outline: none;\n    border: 0;\n    background: url(" + __webpack_require__(548) + ") #19B5FE no-repeat center;\n    background-size: 60%;\n    cursor: pointer; }\n    .posts-cont__add-btn:hover {\n      background-color: #22A7F0; }\n    .posts-cont__add-btn:active {\n      background-color: #0b6ca1; }\n  .posts-cont__post-list {\n    position: relative;\n    height: 450px;\n    border: 1px solid rgba(135, 171, 209, 0.15);\n    margin-bottom: 15px;\n    background: #fff;\n    box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n    .posts-cont__post-list__post-header {\n      position: relative;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      padding: 10px 10px 14px; }\n      .posts-cont__post-list__post-header__line {\n        position: absolute;\n        width: 100%;\n        height: 1px;\n        left: 0;\n        bottom: 0;\n        background: #8E44AD;\n        background: linear-gradient(to right, #8E44AD, #763568, #003171, #CF000F); }\n  .posts-cont__list-items {\n    border-bottom: 1px solid #87abd1; }\n  .posts-cont__user-info {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .posts-cont__user-info__user-name span {\n      margin-right: 3px; }\n    .posts-cont__user-info__created-at {\n      padding-top: 2px; }\n      .posts-cont__user-info__created-at span {\n        font-size: 12px;\n        color: #BDC3C7; }\n    .posts-cont__user-info__image-cont {\n      width: 50px;\n      height: 50px;\n      margin-right: 10px;\n      border-radius: 100px;\n      overflow: hidden;\n      border-color: transparent;\n      box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n      .posts-cont__user-info__image-cont img {\n        width: 100%;\n        height: 100%;\n        -o-object-fit: contain;\n           object-fit: contain;\n        -o-object-position: center;\n           object-position: center; }\n  .posts-cont__action-btn {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; }\n  .posts-cont__post-body {\n    padding: 0 10px; }\n  .posts-cont__footer {\n    position: absolute;\n    width: 100%;\n    bottom: 0;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n  .posts-cont__comments-count {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    padding: 10px 15px; }\n    .posts-cont__comments-count div {\n      margin-right: 10px; }\n    .posts-cont__comments-count span {\n      font-size: 16px;\n      color: #6C7A89;\n      opacity: 0.4; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Helvetica, sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: Helvetica, sans-serif;\n  font-size: 14px; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.posts-cont {\n  width: 100%; }\n  .posts-cont__add-btn {\n    position: fixed;\n    margin: 20px;\n    width: 50px;\n    height: 50px;\n    right: 0;\n    bottom: 0;\n    border-radius: 45px;\n    outline: none;\n    border: 0;\n    background: url(" + __webpack_require__(548) + ") #19B5FE no-repeat center;\n    background-size: 60%;\n    cursor: pointer; }\n    .posts-cont__add-btn:hover {\n      background-color: #22A7F0; }\n    .posts-cont__add-btn:active {\n      background-color: #0b6ca1; }\n  .posts-cont__post-list {\n    position: relative;\n    height: 450px;\n    border: 1px solid rgba(135, 171, 209, 0.15);\n    margin-bottom: 25px;\n    background: #fff;\n    border-radius: 15px;\n    box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n    .posts-cont__post-list__post-header {\n      position: relative;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      padding: 10px 10px 14px; }\n      .posts-cont__post-list__post-header__line {\n        position: absolute;\n        width: 100%;\n        height: 1px;\n        left: 0;\n        bottom: 0;\n        background: #8E44AD;\n        background: linear-gradient(to right, #8E44AD, #763568, #003171, #CF000F); }\n  .posts-cont__list-items {\n    border-bottom: 1px solid #87abd1; }\n  .posts-cont__user-info {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .posts-cont__user-info__user-name span {\n      margin-right: 3px; }\n    .posts-cont__user-info__created-at {\n      padding-top: 2px; }\n      .posts-cont__user-info__created-at span {\n        font-size: 12px;\n        color: #BDC3C7; }\n    .posts-cont__user-info__image-cont {\n      width: 50px;\n      height: 50px;\n      margin-right: 10px;\n      border-radius: 100px;\n      overflow: hidden;\n      border-color: transparent;\n      box-shadow: 9px 8px 16px -4px rgba(135, 171, 209, 0.14); }\n      .posts-cont__user-info__image-cont img {\n        width: 100%;\n        height: 100%;\n        -o-object-fit: contain;\n           object-fit: contain;\n        -o-object-position: center;\n           object-position: center; }\n  .posts-cont__action-btn {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; }\n  .posts-cont__post-body {\n    padding: 0 10px; }\n  .posts-cont__footer {\n    position: absolute;\n    width: 100%;\n    bottom: 0;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n  .posts-cont__comments-count {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    padding: 10px 15px; }\n    .posts-cont__comments-count div {\n      margin-right: 10px; }\n    .posts-cont__comments-count span {\n      font-size: 16px;\n      color: #6C7A89;\n      opacity: 0.4; }\n", ""]);
 
 // exports
 
@@ -1422,7 +1452,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Not
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.registration-container__form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap; }\n  .registration-container__form__double {\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: nowrap;\n        flex-wrap: nowrap; }\n  .registration-container__form__part, .registration-container__form__full {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-bottom: 10px; }\n    .registration-container__form__part label, .registration-container__form__full label {\n      font-size: 12px; }\n    .registration-container__form__part input, .registration-container__form__full input {\n      height: 30px; }\n  .registration-container__form__part {\n    width: 50%; }\n    .registration-container__form__part:first-child {\n      padding-right: 5px; }\n    .registration-container__form__part:last-child {\n      padding-left: 5px; }\n  .registration-container__form__full {\n    width: 100%; }\n  .registration-container__form__submit {\n    width: 100%; }\n    .registration-container__form__submit input {\n      width: 100%;\n      background-color: #22A7F0;\n      color: #fff;\n      padding: 15px;\n      border: 0; }\n      .registration-container__form__submit input:hover {\n        background-color: #0e8cd1; }\n      .registration-container__form__submit input:active {\n        background-color: #0b6ca1; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Helvetica, sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: Helvetica, sans-serif;\n  font-size: 14px; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.registration-container__form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap; }\n  .registration-container__form__double {\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: nowrap;\n        flex-wrap: nowrap; }\n  .registration-container__form__part, .registration-container__form__full {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-bottom: 10px; }\n    .registration-container__form__part label, .registration-container__form__full label {\n      font-size: 12px; }\n    .registration-container__form__part input, .registration-container__form__full input {\n      height: 30px; }\n  .registration-container__form__part {\n    width: 50%; }\n    .registration-container__form__part:first-child {\n      padding-right: 5px; }\n    .registration-container__form__part:last-child {\n      padding-left: 5px; }\n  .registration-container__form__full {\n    width: 100%; }\n  .registration-container__form__submit {\n    width: 100%; }\n    .registration-container__form__submit input {\n      width: 100%;\n      background-color: #22A7F0;\n      color: #fff;\n      padding: 15px;\n      border: 0; }\n      .registration-container__form__submit input:hover {\n        background-color: #0e8cd1; }\n      .registration-container__form__submit input:active {\n        background-color: #0b6ca1; }\n", ""]);
 
 // exports
 
@@ -1442,7 +1472,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Not
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.upvotes-cont {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 10px; }\n  .upvotes-cont div {\n    margin-right: 10px; }\n  .upvotes-cont span {\n    font-size: 16px;\n    color: #6C7A89;\n    opacity: 0.4; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #000;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: Helvetica, sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Helvetica, sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: Helvetica, sans-serif;\n  font-size: 14px; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\nbody {\n  margin: 0 !important;\n  background: #f1f1f1; }\n\n.upvotes-cont {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 10px; }\n  .upvotes-cont div {\n    margin-right: 10px; }\n  .upvotes-cont span {\n    font-size: 16px;\n    color: #6C7A89;\n    opacity: 0.4; }\n", ""]);
 
 // exports
 
@@ -1534,7 +1564,7 @@ module.exports = __webpack_require__.p + "add.6f4ffb5fd215afffeb54.svg";
 /***/ 550:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"menu-container\">\n  <div *ngIf=\"UserData.id\" class=\"menu-container__account-info\">\n    <div class=\"menu-container__account-info__user-img\">\n      <img src=\"{{UserData.image_url}}\" />\n    </div>\n    <div class=\"menu-container__account-info__user-name\">\n      <p>\n        {{UserData.first_name}}\n      </p>\n      <p>\n        {{UserData.last_name}}\n      </p>\n    </div>\n  </div>\n  <div class=\"menu-container__account-action\">\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\">\n      <a href=\"#\">Account</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\" (click)=\"loginShowClick()\">\n      <a>Log In</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\">\n      <a href=\"/signup\">Sign Up</a>\n    </div>\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\" (click)=\"logOut()\">\n      <a href=\"#logout\">Log Out</a>\n    </div>\n  </div>\n</div>\n\n<div *ngIf=\"loginShow\" class=\"login-form\">\n  <login (UserData)=\"getCurrentUser($event)\"></login>\n</div>\n"
+module.exports = "<div class=\"menu-container\">\n  <div *ngIf=\"UserData.id\" class=\"menu-container__account-info\">\n    <div class=\"menu-container__account-info__user-img\">\n      <img src=\"{{UserData.image_url}}\" />\n    </div>\n    <div class=\"menu-container__account-info__user-name\">\n      <p>\n        {{UserData.first_name}}\n      </p>\n      <p>\n        {{UserData.last_name}}\n      </p>\n    </div>\n  </div>\n  <div class=\"menu-container__account-action\">\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\">\n      <a href=\"#\">Account</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\" (click)=\"loginShowClick()\">\n      <a>Log In</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\">\n      <a href=\"/signup\">Sign Up</a>\n    </div>\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\" (click)=\"logOut()\">\n      <a href=\"#logout\">Log Out</a>\n    </div>\n  </div>\n</div>\n\n<div *ngIf=\"loginShow\" class=\"login-form__background\"></div>\n<div [ngClass]=\"{'login-form--active': loginShow}\" class=\"login-form\">\n  <login (UserData)=\"getCurrentUser($event)\"></login>\n</div>\n"
 
 /***/ }),
 
@@ -1562,7 +1592,7 @@ module.exports = ""
 /***/ 554:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"login-container\">\n  <form class=\"login-container__form\">\n    <div class=\"login-container__form__full\">\n      <label>Email</label>\n      <input name=\"email\" type=\"email\" placeholder=\"Email\" [(ngModel)]=\"user.email\" />\n    </div>\n    <div class=\"login-container__form__full\">\n      <label>Password</label>\n      <input name=\"password\" type=\"password\" placeholder=\"Password\" [(ngModel)]=\"user.password\" />\n    </div>\n    <div class=\"login-container__form__submit\">\n      <input type=\"submit\" value=\"Log In\" (click)=\"logIn()\"/>\n    </div>\n  </form>\n</div>\n"
+module.exports = "<div class=\"login-container\">\n  <form [formGroup]=\"logInForm\" class=\"login-container__form\" (ngSubmit)=\"logIn(f)\" #f=\"ngForm\">\n    <div class=\"login-container__form__input-container\">\n      <div class=\"login-container__form__full\">\n        <label>Email</label>\n        <input formControlName=\"email\" name=\"email\" type=\"email\" placeholder=\"Email\" />\n      </div>\n      <div class=\"login-container__form__full\">\n        <label>Password</label>\n        <input formControlName=\"password\" name=\"password\" type=\"password\" placeholder=\"Password\" />\n      </div>\n    </div>\n    <div [ngClass]=\"{'login-container__form__submit--active': logInForm.valid}\" class=\"login-container__form__submit\">\n      <input [disabled]=\"!logInForm.valid\" type=\"submit\" value=\"Log In\"/>\n    </div>\n  </form>\n</div>\n"
 
 /***/ }),
 
@@ -1625,8 +1655,25 @@ module.exports = "<posts></posts>\n"
 /***/ 579:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(348);
+module.exports = __webpack_require__(349);
 
+
+/***/ }),
+
+/***/ 582:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = validateEmail;
+function validateEmail(c) {
+    var EMAIL_REGEXP = /^[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/;
+    return EMAIL_REGEXP.test(c.value) ? null : {
+        validateEmail: {
+            valid: false
+        }
+    };
+}
+//# sourceMappingURL=validators.js.map
 
 /***/ })
 

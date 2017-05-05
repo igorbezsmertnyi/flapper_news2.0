@@ -30,8 +30,9 @@
     position: relative;
     height: 450px;
     border: 1px solid rgba(135, 171, 209, 0.15);
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     background: #fff;
+    border-radius: 15px;
     @include default-shadow();
 
     &__post-header {

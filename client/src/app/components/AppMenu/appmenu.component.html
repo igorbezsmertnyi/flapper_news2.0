@@ -28,6 +28,7 @@
   </div>
 </div>
 
-<div *ngIf="loginShow" class="login-form">
+<div *ngIf="loginShow" class="login-form__background"></div>
+<div [ngClass]="{'login-form--active': loginShow}" class="login-form">
   <login (UserData)="getCurrentUser($event)"></login>
 </div>

@@ -1,6 +1,8 @@
 import { Component, Output, EventEmitter } from '@angular/core'
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { Router } from '@angular/router'
 import { AuthService } from '../../auth.service'
+import { validateEmail } from '../../validators/validators'
 
 @Component({
   selector: 'login',
@@ -9,23 +11,31 @@ import { AuthService } from '../../auth.service'
 })
 
 export class LogIn {
+  logInForm: FormGroup
+
   user: any = {}
   currentLocation: string
 
-  @Output() UserData = new EventEmitter();
+  @Output() UserData = new EventEmitter()
 
   constructor(protected authService: AuthService,
-              private router: Router) { }
+              private router: Router,
+              private fb: FormBuilder) {
+    this.logInForm = this.fb.group({
+      email: new FormControl('', [Validators.required, validateEmail]),
+      password: ['', Validators.compose([Validators.required, Validators.minLength(8)])]
+    })
+  }
 
   ngOnInit() {
     this.currentLocation = this.router.routerState.snapshot.url
     window.location.href = `${this.currentLocation}#login`
   }
 
-  logIn() {
+  logIn(f) {
     this.authService.userLogIn(
-      this.user.email,
-      this.user.password
+      f.control.controls.email.value,
+      f.control.controls.password.value
     ).subscribe(
       res => {
         this.UserData.emit(res)

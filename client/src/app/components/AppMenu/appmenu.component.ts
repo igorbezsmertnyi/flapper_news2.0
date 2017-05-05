@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, HostListener } from '@angular/core'
 import { Router } from '@angular/router'
 import { AuthService } from '../../auth.service'
 import { CookieService } from 'angular2-cookie/core'
@@ -17,6 +17,12 @@ export class AppMenu {
   constructor(protected authService: AuthService,
               protected _cookieService: CookieService,
               private router: Router ) { }
+
+  @HostListener('click', ['$event']) onClick(e) {
+    if (this.loginShow && e.target.className === 'login-form__background') {
+      this.loginShow = false
+    }
+  }
 
   ngOnInit() {
     let session_hash = this._cookieService.getObject(COOKIE_KEYS.SEESION_HASH)
