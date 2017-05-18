@@ -1676,9 +1676,8 @@ var _a;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__auth_service__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__validators_validators__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators_validators__ = __webpack_require__(155);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogIn; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1693,24 +1692,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var LogIn = (function () {
-    function LogIn(authService, router, fb) {
+    function LogIn(authService, fb) {
         this.authService = authService;
-        this.router = router;
         this.fb = fb;
         this.hasError = false;
         this.user = {};
         this.UserData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.logInForm = this.fb.group({
-            email: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_4__validators_validators__["a" /* validateEmail */]]),
+            email: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__validators_validators__["a" /* validateEmail */]]),
             password: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].minLength(8)])]
         });
     }
-    LogIn.prototype.ngOnInit = function () {
-        this.currentLocation = this.router.routerState.snapshot.url;
-        window.location.href = this.currentLocation + "#login";
-    };
     LogIn.prototype.logIn = function (f) {
         var _this = this;
         this.authService.userLogIn(f.control.controls.email.value, f.control.controls.password.value).subscribe(function (res) {
@@ -1733,10 +1726,10 @@ LogIn = __decorate([
         template: __webpack_require__(255),
         styles: [__webpack_require__(226)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */]) === "function" && _b || Object])
 ], LogIn);
 
-var _a, _b, _c;
+var _a, _b;
 //# sourceMappingURL=login.component.js.map
 
 /***/ }),
