@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import './app/globals/grid.scss';
 @import './app/globals/colors.scss';
 @import './app/globals/default.scss';
@@ -7,5 +8,5 @@
 
 body {
   margin: 0 !important;
-  background: #f1f1f1;
+  background: #fff;
 }

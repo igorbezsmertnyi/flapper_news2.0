@@ -1,0 +1,13 @@
+@import '../../../../styles.scss';
+
+.third-step {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__editor {
+    width: 100%;
+    height: 100%;
+  }
+}

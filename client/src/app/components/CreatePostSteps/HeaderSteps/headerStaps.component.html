@@ -1,0 +1,7 @@
+<div class="header-steps">
+  <div class="header-steps__items">
+    <div (click)="sendStep(1)" [ngClass]="{'header-steps__item--active': options.firstStep}" class="header-steps__item header-steps__item--first"></div>
+    <div (click)="sendStep(2)" [ngClass]="{'header-steps__item--active': options.secondStep}" class="header-steps__item header-steps__item--second"></div>
+    <div (click)="sendStep(3)" [ngClass]="{'header-steps__item--active': options.thirdStep}" class="header-steps__item header-steps__item--third"></div>
+  </div>
+</div>

@@ -11,10 +11,4 @@ import { environment } from "../../../environments/environment";
 export class AppContainer {
 
   constructor(private router: Router) { }
-
-  ngOnInit() {
-    let currentLocation = this.router.routerState.snapshot.url
-    window.location.href = `${window.location.host}/${window.location.pathname}`
-    console.log(`${window.location.host}/${window.location.pathname}`)
-  }
 }

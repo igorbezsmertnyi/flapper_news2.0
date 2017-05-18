@@ -1,0 +1,48 @@
+@import '../../../../styles.scss';
+
+.header-steps {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+
+  &__items {
+    position: relative;
+    width: 150px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  &__item {
+    width: 15px;
+    height: 15px;
+    background-color: $silver-sand;
+    border-radius: 35px;
+    transition: all ease-out .3s;
+    z-index: 2;
+    cursor: pointer;
+
+    &--active {
+      width: 50%;
+      opacity: 0.8 !important;
+      transition: all ease-in .3s;
+    }
+
+    &--first {
+      background-color: $studio;
+      opacity: 0.3;
+    }
+
+    &--second {
+      background-color: $navy-blue-color;
+      opacity: 0.3;
+    }
+
+    &--third {
+      background-color: $mountain-meadow;
+      opacity: 0.3;
+    }
+  }
+}

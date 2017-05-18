@@ -3,36 +3,13 @@
 .posts-cont {
   width: 100%;
 
-  &__add-btn {
-    position: fixed;
-    margin: 20px;
-    width: 50px;
-    height: 50px;
-    right: 0;
-    bottom: 0;
-    border-radius: 45px;
-    outline: none;
-    border: 0;
-    background: url(../../images/add.svg) $dodger-blue no-repeat center;
-    background-size: 60%;
-    cursor: pointer;
-
-    &:hover {
-      background-color: $picton-blue;
-    }
-
-    &:active {
-      background-color: darken($picton-blue, 20%);
-    }
-  }
-
   &__post-list {
     position: relative;
     height: 450px;
     border: 1px solid rgba(135, 171, 209, 0.15);
     margin-bottom: 25px;
     background: #fff;
-    border-radius: 15px;
+    border-radius: 7px;
     @include default-shadow();
 
     &__post-header {

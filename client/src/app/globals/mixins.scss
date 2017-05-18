@@ -1,4 +1,4 @@
-@mixin default-shadow($color: rgba(135, 171, 209, 0.14)) {
+@mixin default-shadow($color: rgba($eerie-black, 0.11)) {
   -webkit-box-shadow: 9px 8px 16px -4px $color;
   -moz-box-shadow: 9px 8px 16px -4px $color;
   box-shadow: 9px 8px 16px -4px $color;

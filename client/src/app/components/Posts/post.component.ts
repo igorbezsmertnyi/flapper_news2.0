@@ -52,11 +52,12 @@ export class Posts {
   }
 
   postAction(post) {
-    if(typeof post.index !== 'undefined' || post.index) {
-      this.editPost(post)
-    } else {
-      this.createPost(post)
-    }
+    this.createPost(post)
+    // if(typeof post.index !== 'undefined' || post.index) {
+    //   this.editPost(post)
+    // } else {
+    //   this.createPost(post)
+    // }
   }
 
   createPost(post) {

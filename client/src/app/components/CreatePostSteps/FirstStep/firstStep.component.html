@@ -1,0 +1,18 @@
+<div class="first-step-container">
+  <form class="first-step-container__form" [formGroup]="firstStep">
+    <md-input-container class="first-step-container__form__full">
+      <input mdInput formControlName="title" type="text" placeholder="Title" name="title" autocomplete="off">
+    </md-input-container>
+    <md-input-container class="first-step-container__form__full">
+      <textarea mdInput formControlName="subtitle" type="text" placeholder="Description" name="description" autocomplete="off"></textarea>
+    </md-input-container>
+    <md-select formControlName="categories" placeholder="Select Category" class="first-step-container__form__full" (change)="emitForm()">
+      <!-- <md-option *ngFor="let food of foods" [value]="food.value">
+        {{ food.viewValue }}
+      </md-option> -->
+      <md-option *ngFor="let category of categories" [value]="category.value">
+        {{category.value}}
+      </md-option>
+    </md-select>
+  </form>
+</div>

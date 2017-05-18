@@ -1,0 +1,60 @@
+<div class="second-step">
+  <section class="second-step__section">
+    <div [ngClass]="{'second-step__drag-drop--active': isDragenter}"
+         class="second-step__drag-drop"
+         (dragover)="onDragStart($event)"
+         (dragleave)="onDragLeave($event)"
+         (drop)="onDrop($event)">
+      <i class="material-icons second-step__drag-drop__icon"
+         [ngClass]="{'second-step__drag-drop__icon--active': isDragenter}">system_update_alt</i>
+      <input [(ngModel)]="inputValue" id="input_file" class="second-step__drag-drop__input" type="file">
+      <label for="input_file" class="second-step__drag-drop__area"
+             [ngClass]="{'second-step__drag-drop__area--active': isDragenter}">Move image here</label>
+      <img *ngIf="imageShow"
+           [src]="currentImage"
+           [ngStyle]="{'filter': 'blur('+blurValue+'px) grayscale('+grayValue+')'}">
+      <div *ngIf="imageShow" (click)="removePicture()" class="second-step__drag-drop__delete-btn">
+        <i class="material-icons">clear</i>
+      </div>
+
+      <div *ngIf="imageShow" class="second-step__drag-drop__image-overlay"
+           [style.opacity]="overlayValue"
+           [style.background]="color">
+         </div>
+    </div>
+  </section>
+  <section class="second-step__section second-step__overlay-container">
+    <div class="dafault-label">
+      <label>Image overlay</label>
+    </div>
+    <div class="second-step__slider-component">
+      <md-slider [disabled]="!imageShow" (input)="getOverlayValue($event)" [(ngModel)]="overlayValue" min="0" max="1" step="0.01" value="overlayValue"></md-slider>
+      <span>{{(overlayValue * 100).toFixed(0)}}</span>
+    </div>
+    <div class="second-step__colors-container">
+      <label for="overlay_color" class="second-step__colors-container__circle" [style.background]="color"></label>
+      <input id="overlay-color"
+             [disabled]="!imageShow"
+             [(colorPicker)]="color"
+             [value]="color"
+             [cpPosition]="'left'"
+             (colorPickerChange)="getOverlayColor(color)"
+       />
+    </div>
+    <div class="dafault-label">
+      <label>Image bluring</label>
+    </div>
+    <div class="second-step__slider-component">
+      <md-slider [disabled]="!imageShow" (input)="getBlurValue($event)" [(ngModel)]="blurValue" min="0" max="10" step="0.1" value="blurValue"></md-slider>
+      <span>{{((blurValue * 100) / 10).toFixed(0)}}</span>
+    </div>
+
+    <div class="dafault-label">
+      <label>Image grayscale</label>
+    </div>
+    <div class="second-step__slider-component">
+      <md-slider [disabled]="!imageShow" (input)="getGrayValue($event)" [(ngModel)]="grayValue" min="0" max="1" step="0.01" value="grayValue"></md-slider>
+      <span>{{(grayValue * 100).toFixed(0)}}</span>
+    </div>
+  </section>
+</div>

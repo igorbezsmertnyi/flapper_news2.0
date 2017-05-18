@@ -1,5 +1,4 @@
 <div class="posts-cont">
-  <button class="posts-cont__add-btn" type="button" (click)="formController('create')"></button>
   <div *ngFor="let post of posts; let i = index;" class="posts-cont__post-list">
     <div class="posts-cont__post-list__post-header index={{i}}">
       <div class="posts-cont__user-info">
@@ -38,6 +37,4 @@
   </div>
 </div>
 
-<div *ngIf="formShow">
-  <edit-form (Post)="postAction($event)" [status]="status" [postInputData]="postInputData"></edit-form>
-</div>
+<edit-form (Post)="postAction($event)" [status]="status" [postInputData]="postInputData"></edit-form>

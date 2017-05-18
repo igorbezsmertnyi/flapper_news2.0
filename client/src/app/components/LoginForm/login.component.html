@@ -1,13 +1,12 @@
 <div class="login-container">
-  <form [formGroup]="logInForm" class="login-container__form" (ngSubmit)="logIn(f)" #f="ngForm">
+  <p class="login-container__title">Log In</p>
+  <form [ngClass]="{'login-container__form--error': hasError}" [formGroup]="logInForm" class="login-container__form" (ngSubmit)="logIn(f)" #f="ngForm">
     <div class="login-container__form__input-container">
       <div class="login-container__form__full">
-        <label>Email</label>
-        <input formControlName="email" name="email" type="email" placeholder="Email" />
+        <input formControlName="email" name="email" type="email" placeholder="Email" aria-label="email" autofocus />
       </div>
       <div class="login-container__form__full">
-        <label>Password</label>
-        <input formControlName="password" name="password" type="password" placeholder="Password" />
+        <input formControlName="password" name="password" type="password" placeholder="Password" aria-label="password" />
       </div>
     </div>
     <div [ngClass]="{'login-container__form__submit--active': logInForm.valid}" class="login-container__form__submit">

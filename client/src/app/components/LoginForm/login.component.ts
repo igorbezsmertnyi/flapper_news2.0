@@ -13,6 +13,7 @@ import { validateEmail } from '../../validators/validators'
 export class LogIn {
   logInForm: FormGroup
 
+  hasError: boolean = false
   user: any = {}
   currentLocation: string
 
@@ -42,7 +43,9 @@ export class LogIn {
         window.location.hash = ''
         window.location.reload()
       },
-      err => console.log(err)
+      err => {
+        this.hasError = true
+      }
     )
   }
 }

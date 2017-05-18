@@ -98,7 +98,8 @@ class Api::V1::NewsPageController < ApplicationController
   private
 
   def post_params
-    params.require(:news_page).permit(:title, :content)
+    binding.pry_remote
+    params.require(:news_page).permit(:title, :subtitle, :categories, :content)
   end
 
   def upvoted_by?

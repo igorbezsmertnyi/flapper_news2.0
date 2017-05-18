@@ -1,9 +1,12 @@
+@import './colors.scss';
+@import './mixins.scss';
+
 a,
 a:hover,
 a:active,
 a:visited,
 a:focus {
-  color: #000;
+  color: $eerie-black;
   text-decoration: none;
 }
 
@@ -15,7 +18,7 @@ h3 {
 
 span {
   font-size: 14px;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 p {
@@ -24,7 +27,7 @@ p {
 }
 
 label {
-  font-family: Helvetica, sans-serif;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
   font-size: 14px;
   margin-bottom: 7px;
 }
@@ -32,8 +35,17 @@ label {
 input {
   height: 25px;
   padding: 5px;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 14px;
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid $silver-sand;
+  color: $eerie-black;
+  background-color: transparent;
+}
+
+.fixed {
+  overflow: hidden;
 }
 
 .edit-btn {
@@ -119,4 +131,60 @@ input {
   background-size: contain;
   background-position: center;
   opacity: 0.4;
+}
+
+.step-title {
+  p {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 16px;
+    font-family: 'Noto Sans', sans-serif;
+  }
+}
+
+.dafault-label {
+  margin-bottom: 7px;
+
+  label {
+    text-transform: uppercase;
+    color: $silver-light;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+  }
+}
+
+color-picker {
+  .color-picker {
+    border: 1px solid $silver-light !important;
+    @include default-shadow();
+
+    .cursor {
+      border: 2px solid $silver-light !important;
+    }
+
+    .box {
+      .left {
+        .selected-color {
+          @include default-shadow();
+        }
+      }
+    }
+  }
+}
+
+.fr-toolbar,
+.fr-wrapper {
+  box-shadow: none !important;
+  border: 1px solid $silver-light !important;
+}
+
+.fr-box.fr-basic .fr-element {
+  min-height: 300px !important;
+  max-height: 300px !important;
+}
+
+.color-picker {
+  top: 45% !important;
+  left: 51% !important;
 }
