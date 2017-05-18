@@ -3,6 +3,7 @@ node_modules
 client/node_modules
 tmp/
 log/
+public/
 
 # Ignore application configuration
 /config/application.yml

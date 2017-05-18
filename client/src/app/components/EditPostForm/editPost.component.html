@@ -1,4 +1,5 @@
-<div class="edit-form">
+<div class="edit-form"
+     [ngClass]="{'edit-form--active': isOpen}">
   <div class="edit-form__background"
        [ngClass]="{'edit-form__background--active': isOpen,
                    'edit-form__background--show': isShow}"></div>
