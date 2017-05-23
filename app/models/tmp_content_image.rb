@@ -1,0 +1,2 @@
+class TmpContentImage < ApplicationRecord
+end
