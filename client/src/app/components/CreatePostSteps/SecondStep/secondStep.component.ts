@@ -2,6 +2,7 @@ import { Component, Output, EventEmitter, HostListener } from '@angular/core'
 import { MdSliderModule } from '@angular/material'
 import { LOCAL_STORAGE_KEYS } from '../../../app.constans'
 import { LocalStorage } from '../../../localStorage.service'
+import { StateService } from '../../../states.service'
 
 @Component({
   selector: 'second-step-creating',
@@ -28,7 +29,8 @@ export class SecondStep {
 
   second_step: any
 
-  constructor(protected localStorage: LocalStorage) {}
+  constructor(protected localStorage: LocalStorage,
+              private st: StateService) {}
 
   ngOnInit() {
     if (this.localStorage.getData(LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP)) {
@@ -57,6 +59,7 @@ export class SecondStep {
   onDrop(e) {
     e.preventDefault()
     this.imageData = e.dataTransfer.files
+    this.st.spinnrIsOpen(true)
     this.imageLoader()
   }
 
@@ -135,25 +138,31 @@ export class SecondStep {
 
   private imageLoader() {
     if (this.imageData.length) {
-      this.supportedFileTypes.map(type => {
-        if (this.imageData[0].type === type) {
-          let fileReader = new FileReader()
-          fileReader.onload = () => {
-            this.currentImage = fileReader.result
-            this.imageShow = true
-            this.startUpload = false
-            if (fileReader.result) {
-              this.secondStepData.emit(this.emitSecondStep())
-              this.localStorage.setData(this.emitSecondStep(), LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP)
+      if (this.imageData[0].size < 1200000) {
+        this.supportedFileTypes.map(type => {
+          if (this.imageData[0].type === type) {
+            let fileReader = new FileReader()
+            fileReader.onload = () => {
+              this.currentImage = fileReader.result
+              this.imageShow = true
+              this.st.spinnrIsOpen(false)
+              if (fileReader.result) {
+                this.secondStepData.emit(this.emitSecondStep())
+                this.localStorage.setData(this.emitSecondStep(), LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP)
+              }
             }
+            fileReader.readAsDataURL(this.imageData[0])
+          } else {
+            this.isDragenter = false
+            this.imageShow = false
+            console.log("type isn't supported")
           }
-          fileReader.readAsDataURL(this.imageData[0])
-        } else {
-          this.isDragenter = false
-          this.imageShow = false
-          console.log("type isn't supported")
-        }
-      })
+        })
+      } else {
+        this.isDragenter = false
+        this.imageShow = false
+        this.st.spinnrIsOpen(false)
+      }
     }
   }
 }

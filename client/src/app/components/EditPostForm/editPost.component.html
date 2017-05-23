@@ -36,11 +36,6 @@
       <button (click)="stepsControl()" md-button>{{action}}</button>
     </div>
   </div>
-  <button md-fab
-    [ngClass]="{'edit-form__add-btn--active': isOpen}"
-    class="edit-form__add-btn" type="button"
-    (click)="formInit('create')"><md-icon>add</md-icon>
-  </button>
   <button md-fab *ngIf="headerOptions.thirdStep"
     [ngClass]="{'edit-form__full-btn--active': isOpen}"
     class="edit-form__full-btn" type="button"

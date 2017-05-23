@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core'
+import { Component } from '@angular/core'
+import { StateService } from '../../states.service'
 
 @Component({
   selector: 'spinner',
@@ -7,5 +8,17 @@ import { Component, Input } from '@angular/core'
 })
 
 export class Spinner {
-  @Input() isLoaded: boolean = false
+  isOpen:boolean = false
+  isSuccess:boolean = false
+  isError:boolean = false
+
+  constructor(private st: StateService) {
+    this.st.spinnerOpen.subscribe(val => {
+      this.isOpen = val.isOpen
+      if (val.status !== undefined) {
+        val.status ? this.isSuccess = true : this.isError = true
+      }
+      console.log(val, this.isError, this.isSuccess)
+    })
+  }
 }

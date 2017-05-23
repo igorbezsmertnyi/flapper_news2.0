@@ -111,7 +111,6 @@
     }
   }
 
-  &__add-btn,
   &__full-btn {
     position: fixed;
     margin: 20px;
@@ -131,24 +130,6 @@
 
     md-icon {
       padding: 13px 0 !important;
-    }
-  }
-
-  &__add-btn {
-    background-color: $dodger-blue;
-
-    &:hover {
-      background-color: $picton-blue;
-    }
-
-    &:active {
-      background-color: darken($picton-blue, 20%);
-    }
-
-    &--active {
-      top: 0;
-      transform: rotate(45deg);
-      transition: all ease-in-out 0.3s;
     }
   }
 

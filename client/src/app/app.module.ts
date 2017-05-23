@@ -8,8 +8,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
 //Services
+import { StateService } from './states.service';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
-import { AppData } from './appData.service';
 import { PostService } from './components/Posts/post.service';
 import { PreviewService } from './components/Preview/previewpost.service';
 import { CommentService } from './components/Comment/comment.service';
@@ -40,6 +40,7 @@ import { SecondStep } from './components/CreatePostSteps/SecondStep/secondStep.c
 import { ThirdStep } from './components/CreatePostSteps/ThirdStep/thirdStep.component';
 import { HeaderStaps } from './components/CreatePostSteps/HeaderSteps/headerSteps.component';
 import { Spinner } from './components/Spinner/spinner.componnet';
+import { AddPostBtn } from './components/AddPostBtn/addPostBtn.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { Spinner } from './components/Spinner/spinner.componnet';
     SecondStep,
     ThirdStep,
     HeaderStaps,
-    Spinner
+    Spinner,
+    AddPostBtn
   ],
   imports: [
     BrowserModule,
@@ -83,12 +85,12 @@ import { Spinner } from './components/Spinner/spinner.componnet';
   providers: [
     CookieService,
     PostService,
-    AppData,
     CommentService,
     PreviewService,
     AuthService,
-    LocalStorage
+    LocalStorage,
+    StateService
    ],
-  bootstrap: [ AppContainer, AppMenu ]
+  bootstrap: [ AppContainer, AppMenu, Spinner ]
 })
 export class AppModule { }

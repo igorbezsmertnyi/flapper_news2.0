@@ -1,4 +1,9 @@
-<div *ngIf="isLoaded" class="spinner">
-  <div class="dot1"></div>
-  <div class="dot2"></div>
+<div *ngIf="isOpen" class="spinner-container">
+  <div class="spinner-container__spinner"
+       [ngClass]="{'spinner-container__spinner--failure': isError,
+       'spinner-container__spinner--success': isSuccess}"></div>
+  <div class="spinner-container__success"
+       [ngClass]="{'spinner-container__success--active': isSuccess}"></div>
+ <div class="spinner-container__failure"
+      [ngClass]="{'spinner-container__failure--active': isError}"></div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core'
 import { LOCAL_STORAGE_KEYS } from '../../app.constans'
 import { LocalStorage } from '../../localStorage.service'
+import { StateService } from '../../states.service'
 import { Post } from '../Posts/post'
 
 @Component({
@@ -51,7 +52,13 @@ export class EditForm {
   @Input() postInputData: Object
   @Output() Post = new EventEmitter()
 
-  constructor(protected localStorage: LocalStorage) {}
+  constructor(protected localStorage: LocalStorage,
+              private st: StateService) {
+    this.st.formOpen.subscribe(val => {
+      this.isShow = !this.isShow
+      this.isOpen = !this.isOpen
+    })
+  }
 
   ngOnChanges() {
     this.clearForm()

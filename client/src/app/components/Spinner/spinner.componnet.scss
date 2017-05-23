@@ -1,51 +1,195 @@
 @import '../../../styles.scss';
 
-.spinner {
-  margin: 100px auto;
-  width: 40px;
-  height: 40px;
-  position: relative;
-  text-align: center;
+.spinner-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 
-  -webkit-animation: sk-rotate 2.0s infinite linear;
-  animation: sk-rotate 2.0s infinite linear;
-}
+  &__spinner {
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+    border-left: 0.4em solid $dodger-blue;
+    animation: spinner 1.2s infinite linear;
+    -webkit-animation: spinner 1.2s infinite linear;
+    transform: rotate(360deg);
 
-.dot1, .dot2 {
-  width: 60%;
-  height: 60%;
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  background-color: $studio;
-  border-radius: 100%;
+    &--success {
+      transition: all 0.8s ease-in-out;
+      border: 0.4em solid $mountain-meadow;
+    }
 
-  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-  animation: sk-bounce 2.0s infinite ease-in-out;
-}
+    &--failure {
+      transition: all 0.8s ease-in-out;
+      border: 0.4em solid $english-vermillion;
+    }
+  }
 
-.dot2 {
-  top: auto;
-  bottom: 0;
-  -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
-  background-color: $mountain-meadow;
-}
+  @-webkit-keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
 
-@-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
-@keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 
-@-webkit-keyframes sk-bounce {
-  0%, 100% { -webkit-transform: scale(0.0) }
-  50% { -webkit-transform: scale(1.0) }
-}
+  &__success,
+  &__failure {
+    position: absolute;
+    width: 7em;
+    height: 7em;
+    display: none;
 
-@keyframes sk-bounce {
-  0%, 100% {
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
-  } 50% {
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
+    &--active {
+      display: block;
+    }
+  }
+
+  $circle-size: 7em;
+  $icon-height: $circle-size/2;
+  $icon-width: $icon-height/2;
+  $check-left: ($circle-size/6 + $circle-size/12);
+  $check-thickness: 2px;
+
+  &__success {
+    &::after {
+      animation: success 1.2s 1 ease;
+      -webkit-animation: success 1.2s 1 ease;
+      transform: scaleX(-1) rotate(135deg);
+    }
+
+    &::after {
+      opacity: 1;
+      height: $icon-height;
+      width: $icon-width;
+      transform-origin: left top;
+      border-right: $check-thickness solid $mountain-meadow;
+      border-top: $check-thickness solid $mountain-meadow;
+      content: '';
+      left: $check-left;
+      top: $icon-height;
+      position: absolute;
+    }
+  }
+
+  @keyframes success {
+    0% {
+      height: 0;
+      width: 0;
+      opacity: 1;
+    }
+    20% {
+      height: 0;
+      width: $icon-width;
+      opacity: 1;
+    }
+    40% {
+      height: $icon-height;
+      width: $icon-width;
+      opacity: 1;
+    }
+    100% {
+      height: $icon-height;
+      width: $icon-width;
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes success {
+    0% {
+      height: 0;
+      width: 0;
+      opacity: 1;
+    }
+    20% {
+      height: 0;
+      width: $icon-width;
+      opacity: 1;
+    }
+    40% {
+      height: $icon-height;
+      width: $icon-width;
+      opacity: 1;
+    }
+    100% {
+      height: $icon-height;
+      width: $icon-width;
+      opacity: 1;
+    }
+  }
+
+  &__failure {
+    &::before,
+    &::after {
+      content: '';
+      width: 6em;
+      height: $check-thickness;
+      background-color: $english-vermillion;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+
+    &::before {
+      transform: rotate(225deg);
+      animation: before-line 0.7s 1 ease-in;
+      -webkit-animation: before-line 0.7s 1 ease-in;
+    }
+
+    &::after {
+      transform: rotate(315deg);
+      animation: after-line 0.7s 1 ease-in;
+      -webkit-animation: after-line 0.7s 1 ease-in;
+    }
+
+    @keyframes after-line {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(315deg);
+      }
+    }
+    @-webkit-keyframes after-line {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(315deg);
+      }
+    }
+
+    @keyframes before-line {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(225deg);
+      }
+    }
+    @-webkit-keyframes before-line {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(225deg);
+      }
+    }
   }
 }
