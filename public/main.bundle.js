@@ -1,13 +1,307 @@
-webpackJsonp([1,5],[
-/* 0 */,
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */
+webpackJsonp([1,5],{
+
+/***/ 100:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogOut; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var LogOut = (function () {
+    function LogOut() {
+    }
+    LogOut.prototype.ngOnInit = function () {
+    };
+    return LogOut;
+}());
+LogOut = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'log-out',
+        template: __webpack_require__(314)
+    })
+], LogOut);
+
+//# sourceMappingURL=logout.componet.js.map
+
+/***/ }),
+
+/***/ 101:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PostService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var PostService = (function () {
+    function PostService(http, _cookieService) {
+        this.http = http;
+        this._cookieService = _cookieService;
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */](__WEBPACK_IMPORTED_MODULE_3__app_constans__["a" /* REQUEST_HEADER */]);
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({ headers: this.headers });
+        this.current_session = this._cookieService.getObject(__WEBPACK_IMPORTED_MODULE_3__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH);
+    }
+    PostService.prototype.getPosts = function () {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX)
+            .map(function (response) { return response.json(); });
+    };
+    PostService.prototype.createPost = function (postBody) {
+        var body = JSON.stringify({ title: postBody.title,
+            content: postBody.content,
+            token: this.current_session.token });
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX, body, this.headers)
+            .map(function (res) { return res.json(); });
+    };
+    PostService.prototype.editPost = function (post) {
+        var body = JSON.stringify({ title: post.title, description: post.description });
+        return this.http.put(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + post.id, body, this.headers)
+            .map(function (res) { return res.json(); });
+    };
+    PostService.prototype.upvotePost = function (post) {
+        var body = JSON.stringify({ likes: post.upvote,
+            token: this.current_session.token });
+        return this.http.put(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + post.id + "/upvote", body, this.headers)
+            .map(function (res) { return res.json(); });
+    };
+    PostService.prototype.disupvotePost = function (post) {
+        var body = JSON.stringify({ likes: post.likes,
+            token: this.current_session.token });
+        return this.http.put(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + post.id + "/disupvote", body, this.headers)
+            .map(function (res) { return res.json(); });
+    };
+    PostService.prototype.deletePost = function (postId) {
+        return this.http.delete(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + postId)
+            .map(function (response) { return response.json(); });
+    };
+    return PostService;
+}());
+PostService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"]) === "function" && _b || Object])
+], PostService);
+
+var _a, _b;
+//# sourceMappingURL=post.service.js.map
+
+/***/ }),
+
+/***/ 102:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(16);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreviewService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var PreviewService = (function () {
+    function PreviewService(http) {
+        this.http = http;
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ REQUEST_HEADER: __WEBPACK_IMPORTED_MODULE_3__app_constans__["a" /* REQUEST_HEADER */] });
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({ headers: this.headers });
+    }
+    PreviewService.prototype.showPost = function (id) {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + id + ".json")
+            .map(function (response) { return response.json(); });
+    };
+    return PreviewService;
+}());
+PreviewService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _a || Object])
+], PreviewService);
+
+var _a;
+//# sourceMappingURL=previewpost.service.js.map
+
+/***/ }),
+
+/***/ 103:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_service__ = __webpack_require__(53);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Registration; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var Registration = (function () {
+    function Registration(authService) {
+        this.authService = authService;
+        this.user = {};
+    }
+    Registration.prototype.registerUser = function () {
+        var _this = this;
+        this.authService.userSignUp(this.user).subscribe(function (res) { return _this.user = {}; }, function (err) { return console.log(err); });
+    };
+    return Registration;
+}());
+Registration = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'registration',
+        template: __webpack_require__(318),
+        styles: [__webpack_require__(288)]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */]) === "function" && _a || Object])
+], Registration);
+
+var _a;
+//# sourceMappingURL=registration.component.js.map
+
+/***/ }),
+
+/***/ 104:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogInPage; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var LogInPage = (function () {
+    function LogInPage() {
+    }
+    return LogInPage;
+}());
+LogInPage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'login-page',
+        template: __webpack_require__(322),
+        styles: [__webpack_require__(292)]
+    })
+], LogInPage);
+
+//# sourceMappingURL=login.container.js.map
+
+/***/ }),
+
+/***/ 105:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(52);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShowPost; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ShowPost = (function () {
+    function ShowPost(activatedRoute) {
+        this.activatedRoute = activatedRoute;
+    }
+    ShowPost.prototype.ngOnInit = function () {
+        var _this = this;
+        this.activatedRoute.params.subscribe(function (params) {
+            _this.postId = params['id'];
+        });
+    };
+    return ShowPost;
+}());
+ShowPost = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'show-post',
+        template: __webpack_require__(323),
+        styles: [__webpack_require__(293)]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object])
+], ShowPost);
+
+var _a;
+//# sourceMappingURL=showpost.container.js.map
+
+/***/ }),
+
+/***/ 106:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var HomePage = (function () {
+    function HomePage() {
+    }
+    return HomePage;
+}());
+HomePage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'home-page',
+        template: __webpack_require__(324),
+        styles: [__webpack_require__(294)]
+    })
+], HomePage);
+
+//# sourceMappingURL=homePage.container.js.map
+
+/***/ }),
+
+/***/ 16:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -94,565 +388,8 @@ var EDITOR_OPTIONS = {
 //# sourceMappingURL=app.constans.js.map
 
 /***/ }),
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocalStorage; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var LocalStorage = (function () {
-    function LocalStorage() {
-    }
-    LocalStorage.prototype.setData = function (data, key) {
-        return localStorage.setItem(key, JSON.stringify({ data: data })) || false;
-    };
-    LocalStorage.prototype.getData = function (key) {
-        return JSON.parse(localStorage.getItem(key)) || false;
-    };
-    LocalStorage.prototype.removeData = function (key) {
-        return localStorage.removeItem(key) || false;
-    };
-    return LocalStorage;
-}());
-LocalStorage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])()
-], LocalStorage);
-
-//# sourceMappingURL=localStorage.service.js.map
-
-/***/ }),
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var AuthService = (function () {
-    function AuthService(http, _cookieService) {
-        this.http = http;
-        this._cookieService = _cookieService;
-        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */](__WEBPACK_IMPORTED_MODULE_3__app_constans__["a" /* REQUEST_HEADER */]);
-        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({ headers: this.headers });
-        this.current_session = this._cookieService.getObject(__WEBPACK_IMPORTED_MODULE_3__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH);
-    }
-    AuthService.prototype.validateToken = function (session_hash) {
-        var body = JSON.stringify({ token: session_hash.token });
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.VALIDATE_TOKEN, body, this.headers)
-            .map(function (res) { return res.json(); });
-    };
-    AuthService.prototype.userSignUp = function (user) {
-        var body = JSON.stringify({ first_name: user.first_name,
-            last_name: user.last_name,
-            email: user.email,
-            password: user.password });
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.REGISTRATION_INDEX, body, this.headers)
-            .map(function (res) { return res.json(); });
-    };
-    AuthService.prototype.userLogIn = function (email, password) {
-        var _this = this;
-        var body = JSON.stringify({ email: email,
-            password: password });
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.SESSIONS, body, this.headers)
-            .map(function (res) {
-            _this.current_session = res.json();
-            return res.json();
-        });
-    };
-    AuthService.prototype.userLogOut = function () {
-        return this.http.delete(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.SESSIONS + "/" + this.current_session.id, this.headers)
-            .map(function (res) { return res.json(); });
-    };
-    return AuthService;
-}());
-AuthService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"]) === "function" && _b || Object])
-], AuthService);
-
-var _a, _b;
-//# sourceMappingURL=auth.service.js.map
-
-/***/ }),
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_constans__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CommentService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var CommentService = (function () {
-    function CommentService(http, _cookieService) {
-        this.http = http;
-        this._cookieService = _cookieService;
-        this.headers = __WEBPACK_IMPORTED_MODULE_2__app_constans__["a" /* REQUEST_HEADER */];
-        this.headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ headers: this.headers });
-        this.current_user = this._cookieService.getObject(__WEBPACK_IMPORTED_MODULE_2__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH);
-    }
-    CommentService.prototype.addComment = function (comment, id) {
-        var body = JSON.stringify({ body: comment.body,
-            token: this.current_user.token });
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_2__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + id + "/news_comments", body, this.headers)
-            .map(function (res) { return res.json(); });
-    };
-    CommentService.prototype.destroyComment = function (postId, commentId) {
-        return this.http.delete(__WEBPACK_IMPORTED_MODULE_2__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + postId + "/news_comments/" + commentId)
-            .map(function (res) { return res.json(); });
-    };
-    return CommentService;
-}());
-CommentService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"]) === "function" && _b || Object])
-], CommentService);
-
-var _a, _b;
-//# sourceMappingURL=comment.service.js.map
-
-/***/ }),
-/* 78 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogOut; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var LogOut = (function () {
-    function LogOut() {
-    }
-    LogOut.prototype.ngOnInit = function () {
-    };
-    return LogOut;
-}());
-LogOut = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'log-out',
-        template: __webpack_require__(254)
-    })
-], LogOut);
-
-//# sourceMappingURL=logout.componet.js.map
-
-/***/ }),
-/* 79 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PostService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var PostService = (function () {
-    function PostService(http, _cookieService) {
-        this.http = http;
-        this._cookieService = _cookieService;
-        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */](__WEBPACK_IMPORTED_MODULE_3__app_constans__["a" /* REQUEST_HEADER */]);
-        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({ headers: this.headers });
-        this.current_session = this._cookieService.getObject(__WEBPACK_IMPORTED_MODULE_3__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH);
-    }
-    PostService.prototype.getPosts = function () {
-        return this.http.get(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX)
-            .map(function (response) { return response.json(); });
-    };
-    PostService.prototype.createPost = function (postBody) {
-        var body = JSON.stringify({ title: postBody.title,
-            content: postBody.content,
-            token: this.current_session.token });
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX, body, this.headers)
-            .map(function (res) { return res.json(); });
-    };
-    PostService.prototype.editPost = function (post) {
-        var body = JSON.stringify({ title: post.title, description: post.description });
-        return this.http.put(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + post.id, body, this.headers)
-            .map(function (res) { return res.json(); });
-    };
-    PostService.prototype.upvotePost = function (post) {
-        var body = JSON.stringify({ likes: post.upvote,
-            token: this.current_session.token });
-        return this.http.put(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + post.id + "/upvote", body, this.headers)
-            .map(function (res) { return res.json(); });
-    };
-    PostService.prototype.disupvotePost = function (post) {
-        var body = JSON.stringify({ likes: post.likes,
-            token: this.current_session.token });
-        return this.http.put(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + post.id + "/disupvote", body, this.headers)
-            .map(function (res) { return res.json(); });
-    };
-    PostService.prototype.deletePost = function (postId) {
-        return this.http.delete(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + postId)
-            .map(function (response) { return response.json(); });
-    };
-    return PostService;
-}());
-PostService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"]) === "function" && _b || Object])
-], PostService);
-
-var _a, _b;
-//# sourceMappingURL=post.service.js.map
-
-/***/ }),
-/* 80 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(8);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreviewService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var PreviewService = (function () {
-    function PreviewService(http) {
-        this.http = http;
-        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ REQUEST_HEADER: __WEBPACK_IMPORTED_MODULE_3__app_constans__["a" /* REQUEST_HEADER */] });
-        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({ headers: this.headers });
-    }
-    PreviewService.prototype.showPost = function (id) {
-        return this.http.get(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + id + ".json")
-            .map(function (response) { return response.json(); });
-    };
-    return PreviewService;
-}());
-PreviewService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _a || Object])
-], PreviewService);
-
-var _a;
-//# sourceMappingURL=previewpost.service.js.map
-
-/***/ }),
-/* 81 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_service__ = __webpack_require__(37);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Registration; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var Registration = (function () {
-    function Registration(authService) {
-        this.authService = authService;
-        this.user = {};
-    }
-    Registration.prototype.registerUser = function () {
-        var _this = this;
-        this.authService.userSignUp(this.user).subscribe(function (res) { return _this.user = {}; }, function (err) { return console.log(err); });
-    };
-    return Registration;
-}());
-Registration = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'registration',
-        template: __webpack_require__(258),
-        styles: [__webpack_require__(229)]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */]) === "function" && _a || Object])
-], Registration);
-
-var _a;
-//# sourceMappingURL=registration.component.js.map
-
-/***/ }),
-/* 82 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogInPage; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var LogInPage = (function () {
-    function LogInPage() {
-    }
-    return LogInPage;
-}());
-LogInPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'login-page',
-        template: __webpack_require__(262),
-        styles: [__webpack_require__(233)]
-    })
-], LogInPage);
-
-//# sourceMappingURL=login.container.js.map
-
-/***/ }),
-/* 83 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(26);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShowPost; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var ShowPost = (function () {
-    function ShowPost(activatedRoute) {
-        this.activatedRoute = activatedRoute;
-    }
-    ShowPost.prototype.ngOnInit = function () {
-        var _this = this;
-        this.activatedRoute.params.subscribe(function (params) {
-            _this.postId = params['id'];
-        });
-    };
-    return ShowPost;
-}());
-ShowPost = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'show-post',
-        template: __webpack_require__(263),
-        styles: [__webpack_require__(234)]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object])
-], ShowPost);
-
-var _a;
-//# sourceMappingURL=showpost.container.js.map
-
-/***/ }),
-/* 84 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var HomePage = (function () {
-    function HomePage() {
-    }
-    return HomePage;
-}());
-HomePage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'home-page',
-        template: __webpack_require__(264),
-        styles: [__webpack_require__(235)]
-    })
-], HomePage);
-
-//# sourceMappingURL=homePage.container.js.map
-
-/***/ }),
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */,
-/* 106 */,
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */
+/***/ 180:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -661,19 +398,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 122;
+webpackEmptyContext.id = 180;
 
 
 /***/ }),
-/* 123 */
+
+/***/ 181:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(214);
 
 
 
@@ -685,63 +423,51 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 //# sourceMappingURL=main.js.map
 
 /***/ }),
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */
+
+/***/ 196:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_animations__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_routing__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular2_cookie_services_cookies_service__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular2_cookie_services_cookies_service___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_angular2_cookie_services_cookies_service__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__appData_service__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Posts_post_service__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Preview_previewpost_service__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_Comment_comment_service__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__auth_service__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__localStorage_service__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angular2_froala_wysiwyg__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ngx_color_picker__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_animations__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_routing__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__states_service__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angular2_cookie_services_cookies_service__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angular2_cookie_services_cookies_service___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_angular2_cookie_services_cookies_service__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Posts_post_service__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Preview_previewpost_service__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_Comment_comment_service__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__auth_service__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__localStorage_service__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angular2_froala_wysiwyg__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ngx_color_picker__ = __webpack_require__(299);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ngx_color_picker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_ngx_color_picker__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_hammerjs__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_hammerjs__ = __webpack_require__(298);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_hammerjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__containers_AppContainer_appContainer_container__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__containers_homePage_homePage_container__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__containers_ShowPost_showpost_container__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__containers_LogInPage_login_container__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_Posts_post_component__ = __webpack_require__(150);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_Comment_comment_component__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_EditPostForm_editPost_component__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_Preview_preview_component__ = __webpack_require__(151);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_Registration_registration_component__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_LoginForm_login_component__ = __webpack_require__(149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_AppMenu_appmenu_component__ = __webpack_require__(141);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_LogOut_logout_componet__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_Upvote_upvote_component__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_BorderSeparator_border_component__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_CreatePostSteps_FirstStep_firstStep_component__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_CreatePostSteps_SecondStep_secondStep_component__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_CreatePostSteps_ThirdStep_thirdStep_component__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_CreatePostSteps_HeaderSteps_headerSteps_component__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_Spinner_spinner_componnet__ = __webpack_require__(152);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__containers_AppContainer_appContainer_container__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__containers_homePage_homePage_container__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__containers_ShowPost_showpost_container__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__containers_LogInPage_login_container__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_Posts_post_component__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_Comment_comment_component__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_EditPostForm_editPost_component__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_Preview_preview_component__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_Registration_registration_component__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_LoginForm_login_component__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_AppMenu_appmenu_component__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_LogOut_logout_componet__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_Upvote_upvote_component__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_BorderSeparator_border_component__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_CreatePostSteps_FirstStep_firstStep_component__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_CreatePostSteps_SecondStep_secondStep_component__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_CreatePostSteps_ThirdStep_thirdStep_component__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_CreatePostSteps_HeaderSteps_headerSteps_component__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_Spinner_spinner_componnet__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_AddPostBtn_addPostBtn_component__ = __webpack_require__(198);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -790,6 +516,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
@@ -816,7 +543,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_32__components_CreatePostSteps_SecondStep_secondStep_component__["a" /* SecondStep */],
             __WEBPACK_IMPORTED_MODULE_33__components_CreatePostSteps_ThirdStep_thirdStep_component__["a" /* ThirdStep */],
             __WEBPACK_IMPORTED_MODULE_34__components_CreatePostSteps_HeaderSteps_headerSteps_component__["a" /* HeaderStaps */],
-            __WEBPACK_IMPORTED_MODULE_35__components_Spinner_spinner_componnet__["a" /* Spinner */]
+            __WEBPACK_IMPORTED_MODULE_35__components_Spinner_spinner_componnet__["a" /* Spinner */],
+            __WEBPACK_IMPORTED_MODULE_36__components_AddPostBtn_addPostBtn_component__["a" /* AddPostBtn */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
@@ -836,31 +564,32 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_1__angular_material__["e" /* MdButtonModule */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_7_angular2_cookie_services_cookies_service__["CookieService"],
+            __WEBPACK_IMPORTED_MODULE_8_angular2_cookie_services_cookies_service__["CookieService"],
             __WEBPACK_IMPORTED_MODULE_9__components_Posts_post_service__["a" /* PostService */],
-            __WEBPACK_IMPORTED_MODULE_8__appData_service__["a" /* AppData */],
             __WEBPACK_IMPORTED_MODULE_11__components_Comment_comment_service__["a" /* CommentService */],
             __WEBPACK_IMPORTED_MODULE_10__components_Preview_previewpost_service__["a" /* PreviewService */],
             __WEBPACK_IMPORTED_MODULE_12__auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_13__localStorage_service__["a" /* LocalStorage */]
+            __WEBPACK_IMPORTED_MODULE_13__localStorage_service__["a" /* LocalStorage */],
+            __WEBPACK_IMPORTED_MODULE_7__states_service__["a" /* StateService */]
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_17__containers_AppContainer_appContainer_container__["a" /* AppContainer */], __WEBPACK_IMPORTED_MODULE_27__components_AppMenu_appmenu_component__["a" /* AppMenu */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_17__containers_AppContainer_appContainer_container__["a" /* AppContainer */], __WEBPACK_IMPORTED_MODULE_27__components_AppMenu_appmenu_component__["a" /* AppMenu */], __WEBPACK_IMPORTED_MODULE_35__components_Spinner_spinner_componnet__["a" /* Spinner */]]
     })
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
 
 /***/ }),
-/* 139 */
+
+/***/ 197:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__containers_homePage_homePage_container__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__containers_ShowPost_showpost_container__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Registration_registration_component__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__containers_LogInPage_login_container__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_LogOut_logout_componet__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__containers_homePage_homePage_container__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__containers_ShowPost_showpost_container__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Registration_registration_component__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__containers_LogInPage_login_container__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_LogOut_logout_componet__ = __webpack_require__(100);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routing; });
 
 
@@ -879,47 +608,59 @@ var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule 
 //# sourceMappingURL=app.routing.js.map
 
 /***/ }),
-/* 140 */
+
+/***/ 198:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppData; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__states_service__ = __webpack_require__(38);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddPostBtn; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 
-var AppData = (function () {
-    function AppData() {
+
+var AddPostBtn = (function () {
+    function AddPostBtn(st) {
+        this.st = st;
+        this.isOpen = false;
     }
-    AppData.prototype.storePost = function (post) {
-        this.post = post;
+    AddPostBtn.prototype.toggleForm = function () {
+        this.st.formIsOpen(this.isOpen = !this.isOpen);
     };
-    AppData.prototype.sharePost = function () {
-        return this.post;
-    };
-    return AppData;
+    return AddPostBtn;
 }());
-AppData = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])()
-], AppData);
+AddPostBtn = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'add-post-button',
+        template: __webpack_require__(305),
+        styles: [__webpack_require__(276)]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__states_service__["a" /* StateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__states_service__["a" /* StateService */]) === "function" && _a || Object])
+], AddPostBtn);
 
-//# sourceMappingURL=appData.service.js.map
+var _a;
+//# sourceMappingURL=addPostBtn.component.js.map
 
 /***/ }),
-/* 141 */
+
+/***/ 199:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_constans__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_constans__ = __webpack_require__(16);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppMenu; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -985,8 +726,8 @@ __decorate([
 AppMenu = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-menu',
-        template: __webpack_require__(246),
-        styles: [__webpack_require__(218)]
+        template: __webpack_require__(306),
+        styles: [__webpack_require__(277)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core__["CookieService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _c || Object])
 ], AppMenu);
@@ -995,11 +736,12 @@ var _a, _b, _c;
 //# sourceMappingURL=appmenu.component.js.map
 
 /***/ }),
-/* 142 */
+
+/***/ 200:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BorderSeparator; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1016,20 +758,21 @@ var BorderSeparator = (function () {
 BorderSeparator = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'border',
-        template: __webpack_require__(247),
-        styles: [__webpack_require__(219)]
+        template: __webpack_require__(307),
+        styles: [__webpack_require__(278)]
     })
 ], BorderSeparator);
 
 //# sourceMappingURL=border.component.js.map
 
 /***/ }),
-/* 143 */
+
+/***/ 201:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__comment_service__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__comment_service__ = __webpack_require__(99);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Comment; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1072,8 +815,8 @@ __decorate([
 Comment = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'comment',
-        template: __webpack_require__(248),
-        styles: [__webpack_require__(220)]
+        template: __webpack_require__(308),
+        styles: [__webpack_require__(279)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__comment_service__["a" /* CommentService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__comment_service__["a" /* CommentService */]) === "function" && _a || Object])
 ], Comment);
@@ -1082,14 +825,15 @@ var _a;
 //# sourceMappingURL=comment.component.js.map
 
 /***/ }),
-/* 144 */
+
+/***/ 202:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_constans__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__localStorage_service__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_constans__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__localStorage_service__ = __webpack_require__(37);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FirstStep; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1156,8 +900,8 @@ __decorate([
 FirstStep = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'firsr-step-creating',
-        template: __webpack_require__(249),
-        styles: [__webpack_require__(221)]
+        template: __webpack_require__(309),
+        styles: [__webpack_require__(280)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__localStorage_service__["a" /* LocalStorage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__localStorage_service__["a" /* LocalStorage */]) === "function" && _b || Object])
 ], FirstStep);
@@ -1166,11 +910,12 @@ var _a, _b;
 //# sourceMappingURL=firstStep.component.js.map
 
 /***/ }),
-/* 145 */
+
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderStaps; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1202,21 +947,23 @@ __decorate([
 HeaderStaps = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'header-steps',
-        template: __webpack_require__(250),
-        styles: [__webpack_require__(222)]
+        template: __webpack_require__(310),
+        styles: [__webpack_require__(281)]
     })
 ], HeaderStaps);
 
 //# sourceMappingURL=headerSteps.component.js.map
 
 /***/ }),
-/* 146 */
+
+/***/ 204:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_constans__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__localStorage_service__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_constans__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__localStorage_service__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__states_service__ = __webpack_require__(38);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SecondStep; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1230,9 +977,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var SecondStep = (function () {
-    function SecondStep(localStorage) {
+    function SecondStep(localStorage, st) {
         this.localStorage = localStorage;
+        this.st = st;
         this.secondStepData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.isDragenter = false;
         this.startUpload = false;
@@ -1268,6 +1017,7 @@ var SecondStep = (function () {
     SecondStep.prototype.onDrop = function (e) {
         e.preventDefault();
         this.imageData = e.dataTransfer.files;
+        this.st.spinnrIsOpen(true);
         this.imageLoader();
     };
     SecondStep.prototype.getOverlayValue = function (e) {
@@ -1341,26 +1091,33 @@ var SecondStep = (function () {
     SecondStep.prototype.imageLoader = function () {
         var _this = this;
         if (this.imageData.length) {
-            this.supportedFileTypes.map(function (type) {
-                if (_this.imageData[0].type === type) {
-                    var fileReader_1 = new FileReader();
-                    fileReader_1.onload = function () {
-                        _this.currentImage = fileReader_1.result;
-                        _this.imageShow = true;
-                        _this.startUpload = false;
-                        if (fileReader_1.result) {
-                            _this.secondStepData.emit(_this.emitSecondStep());
-                            _this.localStorage.setData(_this.emitSecondStep(), __WEBPACK_IMPORTED_MODULE_1__app_constans__["e" /* LOCAL_STORAGE_KEYS */].POST_CREATING.SECOND_STEP);
-                        }
-                    };
-                    fileReader_1.readAsDataURL(_this.imageData[0]);
-                }
-                else {
-                    _this.isDragenter = false;
-                    _this.imageShow = false;
-                    console.log("type isn't supported");
-                }
-            });
+            if (this.imageData[0].size < 1200000) {
+                this.supportedFileTypes.map(function (type) {
+                    if (_this.imageData[0].type === type) {
+                        var fileReader_1 = new FileReader();
+                        fileReader_1.onload = function () {
+                            _this.currentImage = fileReader_1.result;
+                            _this.imageShow = true;
+                            _this.st.spinnrIsOpen(false);
+                            if (fileReader_1.result) {
+                                _this.secondStepData.emit(_this.emitSecondStep());
+                                _this.localStorage.setData(_this.emitSecondStep(), __WEBPACK_IMPORTED_MODULE_1__app_constans__["e" /* LOCAL_STORAGE_KEYS */].POST_CREATING.SECOND_STEP);
+                            }
+                        };
+                        fileReader_1.readAsDataURL(_this.imageData[0]);
+                    }
+                    else {
+                        _this.isDragenter = false;
+                        _this.imageShow = false;
+                        console.log("type isn't supported");
+                    }
+                });
+            }
+            else {
+                this.isDragenter = false;
+                this.imageShow = false;
+                this.st.spinnrIsOpen(false);
+            }
         }
     };
     return SecondStep;
@@ -1372,23 +1129,24 @@ __decorate([
 SecondStep = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'second-step-creating',
-        template: __webpack_require__(251),
-        styles: [__webpack_require__(223)]
+        template: __webpack_require__(311),
+        styles: [__webpack_require__(282)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__localStorage_service__["a" /* LocalStorage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__localStorage_service__["a" /* LocalStorage */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__localStorage_service__["a" /* LocalStorage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__localStorage_service__["a" /* LocalStorage */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__states_service__["a" /* StateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__states_service__["a" /* StateService */]) === "function" && _b || Object])
 ], SecondStep);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=secondStep.component.js.map
 
 /***/ }),
-/* 147 */
+
+/***/ 205:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_constans__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__localStorage_service__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_constans__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__localStorage_service__ = __webpack_require__(37);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ThirdStep; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1446,8 +1204,8 @@ __decorate([
 ThirdStep = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'third-step-creating',
-        template: __webpack_require__(252),
-        styles: [__webpack_require__(224)]
+        template: __webpack_require__(312),
+        styles: [__webpack_require__(283)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__localStorage_service__["a" /* LocalStorage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__localStorage_service__["a" /* LocalStorage */]) === "function" && _a || Object])
 ], ThirdStep);
@@ -1456,12 +1214,14 @@ var _a;
 //# sourceMappingURL=thirdStep.component.js.map
 
 /***/ }),
-/* 148 */
+
+/***/ 206:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__localStorage_service__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__localStorage_service__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__states_service__ = __webpack_require__(38);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditForm; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1474,9 +1234,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var EditForm = (function () {
-    function EditForm(localStorage) {
+    function EditForm(localStorage, st) {
+        var _this = this;
         this.localStorage = localStorage;
+        this.st = st;
         this.first_step_local = {};
         this.second_step_local = {};
         this.third_step_local = {};
@@ -1505,6 +1268,10 @@ var EditForm = (function () {
         this.isShow = false;
         this.fullEditor = false;
         this.Post = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.st.formOpen.subscribe(function (val) {
+            _this.isShow = !_this.isShow;
+            _this.isOpen = !_this.isOpen;
+        });
     }
     EditForm.prototype.ngOnChanges = function () {
         this.clearForm();
@@ -1660,24 +1427,25 @@ __decorate([
 EditForm = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'edit-form',
-        template: __webpack_require__(253),
-        styles: [__webpack_require__(225)]
+        template: __webpack_require__(313),
+        styles: [__webpack_require__(284)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__localStorage_service__["a" /* LocalStorage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__localStorage_service__["a" /* LocalStorage */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__localStorage_service__["a" /* LocalStorage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__localStorage_service__["a" /* LocalStorage */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__states_service__["a" /* StateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__states_service__["a" /* StateService */]) === "function" && _b || Object])
 ], EditForm);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=editPost.component.js.map
 
 /***/ }),
-/* 149 */
+
+/***/ 207:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators_validators__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators_validators__ = __webpack_require__(213);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogIn; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1723,8 +1491,8 @@ __decorate([
 LogIn = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'login',
-        template: __webpack_require__(255),
-        styles: [__webpack_require__(226)]
+        template: __webpack_require__(315),
+        styles: [__webpack_require__(285)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */]) === "function" && _b || Object])
 ], LogIn);
@@ -1733,15 +1501,16 @@ var _a, _b;
 //# sourceMappingURL=login.component.js.map
 
 /***/ }),
-/* 150 */
+
+/***/ 208:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__post_service__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__post_service__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(16);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Posts; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1843,8 +1612,8 @@ var Posts = (function () {
 Posts = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'posts',
-        template: __webpack_require__(256),
-        styles: [__webpack_require__(227)]
+        template: __webpack_require__(316),
+        styles: [__webpack_require__(286)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__post_service__["a" /* PostService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"]) === "function" && _b || Object])
 ], Posts);
@@ -1853,12 +1622,13 @@ var _a, _b;
 //# sourceMappingURL=post.component.js.map
 
 /***/ }),
-/* 151 */
+
+/***/ 209:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__previewpost_service__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__previewpost_service__ = __webpack_require__(102);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Preview; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1889,8 +1659,8 @@ __decorate([
 Preview = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'preview',
-        template: __webpack_require__(257),
-        styles: [__webpack_require__(228)]
+        template: __webpack_require__(317),
+        styles: [__webpack_require__(287)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__previewpost_service__["a" /* PreviewService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__previewpost_service__["a" /* PreviewService */]) === "function" && _a || Object])
 ], Preview);
@@ -1899,11 +1669,13 @@ var _a;
 //# sourceMappingURL=preview.component.js.map
 
 /***/ }),
-/* 152 */
+
+/***/ 210:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__states_service__ = __webpack_require__(38);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Spinner; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1915,35 +1687,46 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var Spinner = (function () {
-    function Spinner() {
-        this.isLoaded = false;
+    function Spinner(st) {
+        var _this = this;
+        this.st = st;
+        this.isOpen = false;
+        this.isSuccess = false;
+        this.isError = false;
+        this.st.spinnerOpen.subscribe(function (val) {
+            _this.isOpen = val.isOpen;
+            if (val.status !== undefined) {
+                val.status ? _this.isSuccess = true : _this.isError = true;
+            }
+            console.log(val, _this.isError, _this.isSuccess);
+        });
     }
     return Spinner;
 }());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-    __metadata("design:type", Boolean)
-], Spinner.prototype, "isLoaded", void 0);
 Spinner = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'spinner',
-        template: __webpack_require__(259),
-        styles: [__webpack_require__(230)]
-    })
+        template: __webpack_require__(319),
+        styles: [__webpack_require__(289)]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__states_service__["a" /* StateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__states_service__["a" /* StateService */]) === "function" && _a || Object])
 ], Spinner);
 
+var _a;
 //# sourceMappingURL=spinner.componnet.js.map
 
 /***/ }),
-/* 153 */
+
+/***/ 211:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_constans__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_constans__ = __webpack_require__(16);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Upvote; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2071,8 +1854,8 @@ __decorate([
 Upvote = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'upvote',
-        template: __webpack_require__(260),
-        styles: [__webpack_require__(231)]
+        template: __webpack_require__(320),
+        styles: [__webpack_require__(290)]
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _e || Object])
 ], Upvote);
@@ -2081,12 +1864,13 @@ var _a, _b, _c, _d, _e;
 //# sourceMappingURL=upvote.component.js.map
 
 /***/ }),
-/* 154 */
+
+/***/ 212:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(52);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppContainer; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2108,8 +1892,8 @@ var AppContainer = (function () {
 AppContainer = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-container',
-        template: __webpack_require__(261),
-        styles: [__webpack_require__(232)]
+        template: __webpack_require__(321),
+        styles: [__webpack_require__(291)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object])
 ], AppContainer);
@@ -2118,7 +1902,8 @@ var _a;
 //# sourceMappingURL=appContainer.container.js.map
 
 /***/ }),
-/* 155 */
+
+/***/ 213:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2134,7 +1919,8 @@ function validateEmail(c) {
 //# sourceMappingURL=validators.js.map
 
 /***/ }),
-/* 156 */
+
+/***/ 214:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2153,73 +1939,36 @@ var environment = {
 //# sourceMappingURL=environment.js.map
 
 /***/ }),
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */,
-/* 210 */,
-/* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */,
-/* 215 */,
-/* 216 */,
-/* 217 */,
-/* 218 */
+
+/***/ 276:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(7), "");
+exports.i(__webpack_require__(14), "");
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
+
+// module
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.add-btn {\n  position: fixed;\n  margin: 20px;\n  width: 50px;\n  height: 50px;\n  right: 0;\n  bottom: 0;\n  border-radius: 45px;\n  outline: none;\n  border: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  cursor: pointer;\n  transition: all ease-in-out 0.3s;\n  z-index: 100;\n  color: #fff;\n  background-color: #19B5FE; }\n  .add-btn:hover {\n    background-color: #22A7F0; }\n  .add-btn:active {\n    background-color: #0b6ca1; }\n  .add-btn--active {\n    top: 0;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n    transition: all ease-in-out 0.3s; }\n  .add-btn md-icon {\n    padding: 13px 0 !important; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 277:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(6)(false);
+// imports
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2236,12 +1985,13 @@ exports.push([module.i, "/* You can add global styles to this file, and also imp
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 219 */
+
+/***/ 278:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(7), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2258,10 +2008,11 @@ exports.push([module.i, "/* You can add global styles to this file, and also imp
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 220 */
+
+/***/ 279:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
 
 
@@ -2275,10 +2026,11 @@ exports.push([module.i, ".comments-container {\n  padding-top: 45px; }\n  .comme
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 221 */
+
+/***/ 280:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
 
 
@@ -2292,12 +2044,13 @@ exports.push([module.i, ".first-step-container {\n  width: 100%; }\n  .first-ste
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 222 */
+
+/***/ 281:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(7), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2314,12 +2067,13 @@ exports.push([module.i, "/* You can add global styles to this file, and also imp
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 223 */
+
+/***/ 282:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(7), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2336,12 +2090,13 @@ exports.push([module.i, "/* You can add global styles to this file, and also imp
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 224 */
+
+/***/ 283:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(7), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2358,12 +2113,13 @@ exports.push([module.i, "/* You can add global styles to this file, and also imp
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 225 */
+
+/***/ 284:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(7), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2371,7 +2127,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Rob
 exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.edit-form {\n  position: absolute;\n  width: 90px;\n  height: 90px;\n  bottom: 0px;\n  right: 0; }\n  .edit-form--active {\n    position: fixed;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0; }\n  .edit-form__new-post__form {\n    position: absolute;\n    width: 769px;\n    height: 100%;\n    margin: auto;\n    top: 100%;\n    left: 0;\n    right: 0;\n    z-index: 2;\n    overflow: hidden;\n    display: none;\n    transition: all ease-out .3s; }\n    .edit-form__new-post__form--active {\n      display: block; }\n    .edit-form__new-post__form--show {\n      top: 0;\n      transition: all ease-in .3s; }\n    .edit-form__new-post__form--full {\n      width: 90%;\n      transition: all ease-in .3s; }\n    .edit-form__new-post__form__title {\n      width: 100%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      margin: 30px 0; }\n      .edit-form__new-post__form__title span {\n        text-align: center;\n        font-family: 'Noto Sans', sans-serif;\n        font-size: 26px;\n        color: #673ab7;\n        text-transform: uppercase; }\n    .edit-form__new-post__form__steps-container {\n      width: 300%;\n      height: 70%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-flow: row nowrap;\n              flex-flow: row nowrap;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      transition: all ease-in-out .2s; }\n      .edit-form__new-post__form__steps-container__item {\n        width: calc(100% / 3); }\n      .edit-form__new-post__form__steps-container--first, .edit-form__new-post__form__steps-container--second, .edit-form__new-post__form__steps-container--third {\n        transition: all ease-in-out .5s; }\n      .edit-form__new-post__form__steps-container--first {\n        -webkit-transform: translateX(0);\n                transform: translateX(0); }\n      .edit-form__new-post__form__steps-container--second {\n        -webkit-transform: translateX(calc(-100% / 3));\n                transform: translateX(calc(-100% / 3)); }\n      .edit-form__new-post__form__steps-container--third {\n        -webkit-transform: translateX(calc(-200% / 3));\n                transform: translateX(calc(-200% / 3)); }\n  .edit-form__step-button-container button {\n    width: 100%;\n    height: 48px;\n    background-color: rgba(189, 195, 199, 0.5);\n    color: #fff;\n    text-transform: capitalize;\n    transition: all ease-in-out .3s;\n    cursor: not-allowed; }\n  .edit-form__step-button-container--active button {\n    background-color: #33cc99;\n    cursor: pointer; }\n  .edit-form__add-btn, .edit-form__full-btn {\n    position: fixed;\n    margin: 20px;\n    width: 50px;\n    height: 50px;\n    right: 0;\n    bottom: 0;\n    border-radius: 45px;\n    outline: none;\n    border: 0;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    cursor: pointer;\n    transition: all ease-in-out 0.3s;\n    z-index: 100;\n    color: #fff; }\n    .edit-form__add-btn md-icon, .edit-form__full-btn md-icon {\n      padding: 13px 0 !important; }\n  .edit-form__add-btn {\n    background-color: #19B5FE; }\n    .edit-form__add-btn:hover {\n      background-color: #22A7F0; }\n    .edit-form__add-btn:active {\n      background-color: #0b6ca1; }\n    .edit-form__add-btn--active {\n      top: 0;\n      -webkit-transform: rotate(45deg);\n              transform: rotate(45deg);\n      transition: all ease-in-out 0.3s; }\n  .edit-form__full-btn {\n    top: 0;\n    margin-right: 90px;\n    background-color: #5558AA;\n    display: none; }\n    .edit-form__full-btn:hover {\n      background-color: #673ab7; }\n    .edit-form__full-btn:active {\n      background-color: #3b216a; }\n    .edit-form__full-btn--active {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex; }\n  .edit-form__background {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background-color: #fff;\n    left: 0;\n    top: 0;\n    z-index: 1;\n    display: none; }\n    .edit-form__background--active {\n      display: block; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.edit-form {\n  position: absolute;\n  width: 90px;\n  height: 90px;\n  bottom: 0px;\n  right: 0; }\n  .edit-form--active {\n    position: fixed;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0; }\n  .edit-form__new-post__form {\n    position: absolute;\n    width: 769px;\n    height: 100%;\n    margin: auto;\n    top: 100%;\n    left: 0;\n    right: 0;\n    z-index: 2;\n    overflow: hidden;\n    display: none;\n    transition: all ease-out .3s; }\n    .edit-form__new-post__form--active {\n      display: block; }\n    .edit-form__new-post__form--show {\n      top: 0;\n      transition: all ease-in .3s; }\n    .edit-form__new-post__form--full {\n      width: 90%;\n      transition: all ease-in .3s; }\n    .edit-form__new-post__form__title {\n      width: 100%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      margin: 30px 0; }\n      .edit-form__new-post__form__title span {\n        text-align: center;\n        font-family: 'Noto Sans', sans-serif;\n        font-size: 26px;\n        color: #673ab7;\n        text-transform: uppercase; }\n    .edit-form__new-post__form__steps-container {\n      width: 300%;\n      height: 70%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-flow: row nowrap;\n              flex-flow: row nowrap;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      transition: all ease-in-out .2s; }\n      .edit-form__new-post__form__steps-container__item {\n        width: calc(100% / 3); }\n      .edit-form__new-post__form__steps-container--first, .edit-form__new-post__form__steps-container--second, .edit-form__new-post__form__steps-container--third {\n        transition: all ease-in-out .5s; }\n      .edit-form__new-post__form__steps-container--first {\n        -webkit-transform: translateX(0);\n                transform: translateX(0); }\n      .edit-form__new-post__form__steps-container--second {\n        -webkit-transform: translateX(calc(-100% / 3));\n                transform: translateX(calc(-100% / 3)); }\n      .edit-form__new-post__form__steps-container--third {\n        -webkit-transform: translateX(calc(-200% / 3));\n                transform: translateX(calc(-200% / 3)); }\n  .edit-form__step-button-container button {\n    width: 100%;\n    height: 48px;\n    background-color: rgba(189, 195, 199, 0.5);\n    color: #fff;\n    text-transform: capitalize;\n    transition: all ease-in-out .3s;\n    cursor: not-allowed; }\n  .edit-form__step-button-container--active button {\n    background-color: #33cc99;\n    cursor: pointer; }\n  .edit-form__full-btn {\n    position: fixed;\n    margin: 20px;\n    width: 50px;\n    height: 50px;\n    right: 0;\n    bottom: 0;\n    border-radius: 45px;\n    outline: none;\n    border: 0;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    cursor: pointer;\n    transition: all ease-in-out 0.3s;\n    z-index: 100;\n    color: #fff; }\n    .edit-form__full-btn md-icon {\n      padding: 13px 0 !important; }\n  .edit-form__full-btn {\n    top: 0;\n    margin-right: 90px;\n    background-color: #5558AA;\n    display: none; }\n    .edit-form__full-btn:hover {\n      background-color: #673ab7; }\n    .edit-form__full-btn:active {\n      background-color: #3b216a; }\n    .edit-form__full-btn--active {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex; }\n  .edit-form__background {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background-color: #fff;\n    left: 0;\n    top: 0;\n    z-index: 1;\n    display: none; }\n    .edit-form__background--active {\n      display: block; }\n", ""]);
 
 // exports
 
@@ -2380,12 +2136,13 @@ exports.push([module.i, "/* You can add global styles to this file, and also imp
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 226 */
+
+/***/ 285:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(7), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2402,12 +2159,13 @@ exports.push([module.i, "/* You can add global styles to this file, and also imp
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 227 */
+
+/***/ 286:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(7), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2424,10 +2182,11 @@ exports.push([module.i, "/* You can add global styles to this file, and also imp
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 228 */
+
+/***/ 287:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
 
 
@@ -2441,12 +2200,13 @@ exports.push([module.i, "", ""]);
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 229 */
+
+/***/ 288:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(7), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2463,12 +2223,13 @@ exports.push([module.i, "/* You can add global styles to this file, and also imp
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 230 */
+
+/***/ 289:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(7), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2476,7 +2237,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Rob
 exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.spinner {\n  margin: 100px auto;\n  width: 40px;\n  height: 40px;\n  position: relative;\n  text-align: center;\n  -webkit-animation: sk-rotate 2.0s infinite linear;\n  animation: sk-rotate 2.0s infinite linear; }\n\n.dot1, .dot2 {\n  width: 60%;\n  height: 60%;\n  display: inline-block;\n  position: absolute;\n  top: 0;\n  background-color: #673ab7;\n  border-radius: 100%;\n  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;\n  animation: sk-bounce 2.0s infinite ease-in-out; }\n\n.dot2 {\n  top: auto;\n  bottom: 0;\n  -webkit-animation-delay: -1.0s;\n  animation-delay: -1.0s;\n  background-color: #33cc99; }\n\n@-webkit-keyframes sk-rotate {\n  100% {\n    -webkit-transform: rotate(360deg); } }\n\n@keyframes sk-rotate {\n  100% {\n    transform: rotate(360deg);\n    -webkit-transform: rotate(360deg); } }\n\n@-webkit-keyframes sk-bounce {\n  0%, 100% {\n    -webkit-transform: scale(0); }\n  50% {\n    -webkit-transform: scale(1); } }\n\n@keyframes sk-bounce {\n  0%, 100% {\n    transform: scale(0);\n    -webkit-transform: scale(0); }\n  50% {\n    transform: scale(1);\n    -webkit-transform: scale(1); } }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.spinner-container {\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  z-index: 9999; }\n  .spinner-container__spinner {\n    width: 7em;\n    height: 7em;\n    border-radius: 50%;\n    border-left: 0.4em solid #19B5FE;\n    animation: spinner 1.2s infinite linear;\n    -webkit-animation: spinner 1.2s infinite linear;\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); }\n    .spinner-container__spinner--success {\n      transition: all 0.8s ease-in-out;\n      border: 0.4em solid #33cc99; }\n    .spinner-container__spinner--failure {\n      transition: all 0.8s ease-in-out;\n      border: 0.4em solid #C64141; }\n\n@-webkit-keyframes spinner {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n\n@keyframes spinner {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n  .spinner-container__success, .spinner-container__failure {\n    position: absolute;\n    width: 7em;\n    height: 7em;\n    display: none; }\n    .spinner-container__success--active, .spinner-container__failure--active {\n      display: block; }\n  .spinner-container__success::after {\n    animation: success 1.2s 1 ease;\n    -webkit-animation: success 1.2s 1 ease;\n    -webkit-transform: scaleX(-1) rotate(135deg);\n            transform: scaleX(-1) rotate(135deg); }\n  .spinner-container__success::after {\n    opacity: 1;\n    height: 3.5em;\n    width: 1.75em;\n    -webkit-transform-origin: left top;\n            transform-origin: left top;\n    border-right: 2px solid #33cc99;\n    border-top: 2px solid #33cc99;\n    content: '';\n    left: 1.75em;\n    top: 3.5em;\n    position: absolute; }\n\n@keyframes success {\n  0% {\n    height: 0;\n    width: 0;\n    opacity: 1; }\n  20% {\n    height: 0;\n    width: 1.75em;\n    opacity: 1; }\n  40% {\n    height: 3.5em;\n    width: 1.75em;\n    opacity: 1; }\n  100% {\n    height: 3.5em;\n    width: 1.75em;\n    opacity: 1; } }\n\n@-webkit-keyframes success {\n  0% {\n    height: 0;\n    width: 0;\n    opacity: 1; }\n  20% {\n    height: 0;\n    width: 1.75em;\n    opacity: 1; }\n  40% {\n    height: 3.5em;\n    width: 1.75em;\n    opacity: 1; }\n  100% {\n    height: 3.5em;\n    width: 1.75em;\n    opacity: 1; } }\n  .spinner-container__failure::before, .spinner-container__failure::after {\n    content: '';\n    width: 6em;\n    height: 2px;\n    background-color: #C64141;\n    position: absolute;\n    margin: auto;\n    top: 0;\n    bottom: 0;\n    right: 0;\n    left: 0; }\n  .spinner-container__failure::before {\n    -webkit-transform: rotate(225deg);\n            transform: rotate(225deg);\n    animation: before-line 0.7s 1 ease-in;\n    -webkit-animation: before-line 0.7s 1 ease-in; }\n  .spinner-container__failure::after {\n    -webkit-transform: rotate(315deg);\n            transform: rotate(315deg);\n    animation: after-line 0.7s 1 ease-in;\n    -webkit-animation: after-line 0.7s 1 ease-in; }\n\n@keyframes after-line {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(315deg);\n            transform: rotate(315deg); } }\n\n@-webkit-keyframes after-line {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(315deg);\n            transform: rotate(315deg); } }\n\n@keyframes before-line {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(225deg);\n            transform: rotate(225deg); } }\n\n@-webkit-keyframes before-line {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(225deg);\n            transform: rotate(225deg); } }\n", ""]);
 
 // exports
 
@@ -2485,12 +2246,13 @@ exports.push([module.i, "/* You can add global styles to this file, and also imp
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 231 */
+
+/***/ 290:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(7), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2507,10 +2269,11 @@ exports.push([module.i, "/* You can add global styles to this file, and also imp
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 232 */
+
+/***/ 291:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
 
 
@@ -2524,10 +2287,11 @@ exports.push([module.i, "h2 {\n  text-align: center;\n  margin-bottom: 30px; }\n
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 233 */
+
+/***/ 292:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
 
 
@@ -2541,10 +2305,11 @@ exports.push([module.i, "", ""]);
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 234 */
+
+/***/ 293:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
 
 
@@ -2558,10 +2323,11 @@ exports.push([module.i, "", ""]);
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 235 */
+
+/***/ 294:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
 
 
@@ -2575,190 +2341,360 @@ exports.push([module.i, "", ""]);
 module.exports = module.exports.toString();
 
 /***/ }),
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */
+
+/***/ 305:
+/***/ (function(module, exports) {
+
+module.exports = "<button md-fab\n  [ngClass]=\"{'add-btn--active': isOpen}\"\n  class=\"add-btn\" type=\"button\"\n  (click)=\"toggleForm()\"><md-icon>add</md-icon>\n</button>\n"
+
+/***/ }),
+
+/***/ 306:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"menu-container\">\n  <div *ngIf=\"UserData.id\" class=\"menu-container__account-info\">\n    <div class=\"menu-container__account-info__user-img\">\n      <img src=\"{{UserData.image_url}}\" />\n    </div>\n    <div class=\"menu-container__account-info__user-name\">\n      <p>\n        {{UserData.first_name}}\n      </p>\n      <p>\n        {{UserData.last_name}}\n      </p>\n    </div>\n  </div>\n  <div class=\"menu-container__account-action\">\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\">\n      <a href=\"#\">Account</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\" (click)=\"loginShowClick()\">\n      <a>Log In</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\">\n      <a href=\"/signup\">Sign Up</a>\n    </div>\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\" (click)=\"logOut()\">\n      <a href=\"#logout\">Log Out</a>\n    </div>\n  </div>\n</div>\n\n<div *ngIf=\"loginShow\" class=\"login-form__background\"></div>\n<div [ngClass]=\"{'login-form--active': loginShow}\" class=\"login-form\">\n  <login (UserData)=\"getCurrentUser($event)\"></login>\n</div>\n"
 
 /***/ }),
-/* 247 */
+
+/***/ 307:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"border-separator\"></div>\n"
 
 /***/ }),
-/* 248 */
+
+/***/ 308:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"comments-container\">\n  <h4>Comments:</h4>\n  <div *ngFor=\"let comment of comments; let i = index;\" class=\"comments-container__comment\">\n    <p>\n      {{comment.body}}\n    </p>\n    <p (click)=\"deleteComment(comment.id, index)\">\n      Delete\n    </p>\n  </div>\n  <div class=\"comments-container__add-form\">\n    <form>\n      <textarea [(ngModel)]=\"newComment.body\" name=\"body\"></textarea>\n      <input (click)=\"addComment()\" type=\"submit\" value=\"Add\" />\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
-/* 249 */
+
+/***/ 309:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"first-step-container\">\n  <form class=\"first-step-container__form\" [formGroup]=\"firstStep\">\n    <md-input-container class=\"first-step-container__form__full\">\n      <input mdInput formControlName=\"title\" type=\"text\" placeholder=\"Title\" name=\"title\" autocomplete=\"off\">\n    </md-input-container>\n    <md-input-container class=\"first-step-container__form__full\">\n      <textarea mdInput formControlName=\"subtitle\" type=\"text\" placeholder=\"Description\" name=\"description\" autocomplete=\"off\"></textarea>\n    </md-input-container>\n    <md-select formControlName=\"categories\" placeholder=\"Select Category\" class=\"first-step-container__form__full\" (change)=\"emitForm()\">\n      <!-- <md-option *ngFor=\"let food of foods\" [value]=\"food.value\">\n        {{ food.viewValue }}\n      </md-option> -->\n      <md-option *ngFor=\"let category of categories\" [value]=\"category.value\">\n        {{category.value}}\n      </md-option>\n    </md-select>\n  </form>\n</div>\n"
 
 /***/ }),
-/* 250 */
+
+/***/ 310:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"header-steps\">\n  <div class=\"header-steps__items\">\n    <div (click)=\"sendStep(1)\" [ngClass]=\"{'header-steps__item--active': options.firstStep}\" class=\"header-steps__item header-steps__item--first\"></div>\n    <div (click)=\"sendStep(2)\" [ngClass]=\"{'header-steps__item--active': options.secondStep}\" class=\"header-steps__item header-steps__item--second\"></div>\n    <div (click)=\"sendStep(3)\" [ngClass]=\"{'header-steps__item--active': options.thirdStep}\" class=\"header-steps__item header-steps__item--third\"></div>\n  </div>\n</div>\n"
 
 /***/ }),
-/* 251 */
+
+/***/ 311:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"second-step\">\n  <section class=\"second-step__section\">\n    <div [ngClass]=\"{'second-step__drag-drop--active': isDragenter}\"\n         class=\"second-step__drag-drop\"\n         (dragover)=\"onDragStart($event)\"\n         (dragleave)=\"onDragLeave($event)\"\n         (drop)=\"onDrop($event)\">\n      <i class=\"material-icons second-step__drag-drop__icon\"\n         [ngClass]=\"{'second-step__drag-drop__icon--active': isDragenter}\">system_update_alt</i>\n      <input [(ngModel)]=\"inputValue\" id=\"input_file\" class=\"second-step__drag-drop__input\" type=\"file\">\n      <label for=\"input_file\" class=\"second-step__drag-drop__area\"\n             [ngClass]=\"{'second-step__drag-drop__area--active': isDragenter}\">Move image here</label>\n      <img *ngIf=\"imageShow\"\n           [src]=\"currentImage\"\n           [ngStyle]=\"{'filter': 'blur('+blurValue+'px) grayscale('+grayValue+')'}\">\n      <div *ngIf=\"imageShow\" (click)=\"removePicture()\" class=\"second-step__drag-drop__delete-btn\">\n        <i class=\"material-icons\">clear</i>\n      </div>\n\n      <div *ngIf=\"imageShow\" class=\"second-step__drag-drop__image-overlay\"\n           [style.opacity]=\"overlayValue\"\n           [style.background]=\"color\">\n         </div>\n    </div>\n  </section>\n  <section class=\"second-step__section second-step__overlay-container\">\n    <div class=\"dafault-label\">\n      <label>Image overlay</label>\n    </div>\n    <div class=\"second-step__slider-component\">\n      <md-slider [disabled]=\"!imageShow\" (input)=\"getOverlayValue($event)\" [(ngModel)]=\"overlayValue\" min=\"0\" max=\"1\" step=\"0.01\" value=\"overlayValue\"></md-slider>\n      <span>{{(overlayValue * 100).toFixed(0)}}</span>\n    </div>\n    <div class=\"second-step__colors-container\">\n      <label for=\"overlay_color\" class=\"second-step__colors-container__circle\" [style.background]=\"color\"></label>\n      <input id=\"overlay-color\"\n             [disabled]=\"!imageShow\"\n             [(colorPicker)]=\"color\"\n             [value]=\"color\"\n             [cpPosition]=\"'left'\"\n             (colorPickerChange)=\"getOverlayColor(color)\"\n       />\n    </div>\n    <div class=\"dafault-label\">\n      <label>Image bluring</label>\n    </div>\n    <div class=\"second-step__slider-component\">\n      <md-slider [disabled]=\"!imageShow\" (input)=\"getBlurValue($event)\" [(ngModel)]=\"blurValue\" min=\"0\" max=\"10\" step=\"0.1\" value=\"blurValue\"></md-slider>\n      <span>{{((blurValue * 100) / 10).toFixed(0)}}</span>\n    </div>\n\n    <div class=\"dafault-label\">\n      <label>Image grayscale</label>\n    </div>\n    <div class=\"second-step__slider-component\">\n      <md-slider [disabled]=\"!imageShow\" (input)=\"getGrayValue($event)\" [(ngModel)]=\"grayValue\" min=\"0\" max=\"1\" step=\"0.01\" value=\"grayValue\"></md-slider>\n      <span>{{(grayValue * 100).toFixed(0)}}</span>\n    </div>\n  </section>\n</div>\n"
 
 /***/ }),
-/* 252 */
+
+/***/ 312:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"third-step\">\n  <div class=\"third-step__editor\"\n       [froalaEditor]=\"options\"\n       [(froalaModel)]=\"content\"\n       [ngClass]=\"{'third-step__editor--full': fullscreen}\"></div>\n</div>\n"
 
 /***/ }),
-/* 253 */
+
+/***/ 313:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"edit-form\"\n     [ngClass]=\"{'edit-form--active': isOpen}\">\n  <div class=\"edit-form__background\"\n       [ngClass]=\"{'edit-form__background--active': isOpen,\n                   'edit-form__background--show': isShow}\"></div>\n  <div class=\"edit-form__new-post__form\"\n       [ngClass]=\"{'edit-form__new-post__form--active': isOpen,\n                   'edit-form__new-post__form--show': isShow,\n                   'edit-form__new-post__form--full': fullEditor}\">\n    <div class=\"edit-form__new-post__form__title\">\n       <span>create post</span>\n    </div>\n\n    <header-steps *ngIf=\"!fullEditor\" class=\"edit-form__new-post__header\" (goToStep)=\"goToStep($event)\" [options]=\"headerOptions\"></header-steps>\n\n    <div class=\"edit-form__new-post__form__steps-container\"\n         [ngClass]=\"{ 'edit-form__new-post__form__steps-container--first': headerOptions.firstStep,\n         'edit-form__new-post__form__steps-container--second': headerOptions.secondStep,\n         'edit-form__new-post__form__steps-container--third': headerOptions.thirdStep }\">\n      <section class=\"edit-form__new-post__form__steps-container__item\">\n        <firsr-step-creating (firstStepData)=\"firstStepData($event)\"></firsr-step-creating>\n      </section>\n      <section class=\"edit-form__new-post__form__steps-container__item\">\n        <second-step-creating (secondStepData)=\"secondStepData($event)\"></second-step-creating>\n      </section>\n      <section class=\"edit-form__new-post__form__steps-container__item\"\n        [ngClass]=\"{'edit-form__new-post__form__steps-container__item--full': fullEditor}\">\n        <third-step-creating\n          (thirdStepData)=\"thirdStepData($event)\"\n          [fullscreen]=\"fullEditor\">\n        </third-step-creating>\n      </section>\n    </div>\n\n    <div *ngIf=\"!fullEditor\" [ngClass]=\"{'edit-form__step-button-container--active': isValid}\" class=\"edit-form__step-button-container\">\n      <button (click)=\"stepsControl()\" md-button>{{action}}</button>\n    </div>\n  </div>\n  <button md-fab\n    [ngClass]=\"{'edit-form__add-btn--active': isOpen}\"\n    class=\"edit-form__add-btn\" type=\"button\"\n    (click)=\"formInit('create')\"><md-icon>add</md-icon>\n  </button>\n  <button md-fab *ngIf=\"headerOptions.thirdStep\"\n    [ngClass]=\"{'edit-form__full-btn--active': isOpen}\"\n    class=\"edit-form__full-btn\" type=\"button\"\n    ><md-icon>zoom_out_map</md-icon>\n  </button>\n</div>\n"
+module.exports = "<div class=\"edit-form\"\n     [ngClass]=\"{'edit-form--active': isOpen}\">\n  <div class=\"edit-form__background\"\n       [ngClass]=\"{'edit-form__background--active': isOpen,\n                   'edit-form__background--show': isShow}\"></div>\n  <div class=\"edit-form__new-post__form\"\n       [ngClass]=\"{'edit-form__new-post__form--active': isOpen,\n                   'edit-form__new-post__form--show': isShow,\n                   'edit-form__new-post__form--full': fullEditor}\">\n    <div class=\"edit-form__new-post__form__title\">\n       <span>create post</span>\n    </div>\n\n    <header-steps *ngIf=\"!fullEditor\" class=\"edit-form__new-post__header\" (goToStep)=\"goToStep($event)\" [options]=\"headerOptions\"></header-steps>\n\n    <div class=\"edit-form__new-post__form__steps-container\"\n         [ngClass]=\"{ 'edit-form__new-post__form__steps-container--first': headerOptions.firstStep,\n         'edit-form__new-post__form__steps-container--second': headerOptions.secondStep,\n         'edit-form__new-post__form__steps-container--third': headerOptions.thirdStep }\">\n      <section class=\"edit-form__new-post__form__steps-container__item\">\n        <firsr-step-creating (firstStepData)=\"firstStepData($event)\"></firsr-step-creating>\n      </section>\n      <section class=\"edit-form__new-post__form__steps-container__item\">\n        <second-step-creating (secondStepData)=\"secondStepData($event)\"></second-step-creating>\n      </section>\n      <section class=\"edit-form__new-post__form__steps-container__item\"\n        [ngClass]=\"{'edit-form__new-post__form__steps-container__item--full': fullEditor}\">\n        <third-step-creating\n          (thirdStepData)=\"thirdStepData($event)\"\n          [fullscreen]=\"fullEditor\">\n        </third-step-creating>\n      </section>\n    </div>\n\n    <div *ngIf=\"!fullEditor\" [ngClass]=\"{'edit-form__step-button-container--active': isValid}\" class=\"edit-form__step-button-container\">\n      <button (click)=\"stepsControl()\" md-button>{{action}}</button>\n    </div>\n  </div>\n  <button md-fab *ngIf=\"headerOptions.thirdStep\"\n    [ngClass]=\"{'edit-form__full-btn--active': isOpen}\"\n    class=\"edit-form__full-btn\" type=\"button\"\n    ><md-icon>zoom_out_map</md-icon>\n  </button>\n</div>\n"
 
 /***/ }),
-/* 254 */
+
+/***/ 314:
 /***/ (function(module, exports) {
 
 module.exports = ""
 
 /***/ }),
-/* 255 */
+
+/***/ 315:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"login-container\">\n  <p class=\"login-container__title\">Log In</p>\n  <form [ngClass]=\"{'login-container__form--error': hasError}\" [formGroup]=\"logInForm\" class=\"login-container__form\" (ngSubmit)=\"logIn(f)\" #f=\"ngForm\">\n    <div class=\"login-container__form__input-container\">\n      <div class=\"login-container__form__full\">\n        <input formControlName=\"email\" name=\"email\" type=\"email\" placeholder=\"Email\" aria-label=\"email\" autofocus />\n      </div>\n      <div class=\"login-container__form__full\">\n        <input formControlName=\"password\" name=\"password\" type=\"password\" placeholder=\"Password\" aria-label=\"password\" />\n      </div>\n    </div>\n    <div [ngClass]=\"{'login-container__form__submit--active': logInForm.valid}\" class=\"login-container__form__submit\">\n      <input [disabled]=\"!logInForm.valid\" type=\"submit\" value=\"Log In\"/>\n    </div>\n  </form>\n</div>\n"
 
 /***/ }),
-/* 256 */
+
+/***/ 316:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"posts-cont\">\n  <div *ngFor=\"let post of posts; let i = index;\" class=\"posts-cont__post-list\">\n    <div class=\"posts-cont__post-list__post-header index={{i}}\">\n      <div class=\"posts-cont__user-info\">\n        <div class=\"posts-cont__user-info__image-cont\">\n          <img src=\"{{post.user.image_url}}\" />\n        </div>\n        <div class=\"posts-cont__user-info__user-name\">\n          <span>{{post.user.first_name}}</span>\n          <span>{{post.user.last_name}}</span>\n          <div class=\"posts-cont__user-info__created-at\">\n            <span>{{post.created_at | date}}</span>\n          </div>\n        </div>\n      </div>\n      <div class=\"posts-cont__action-btn\">\n        <div class=\"posts-cont__action-btn edit-btn\" (click)=\"formController('update', post, i)\"></div>\n        <div class=\"posts-cont__action-btn delete-btn\" (click)=\"deletePost(post.id, i)\"></div>\n      </div>\n      <div class=\"posts-cont__post-list__post-header__line\"></div>\n    </div>\n    <div class=\"posts-cont__post-body\">\n      <a routerLink=\"/post/{{post.id}}\" class=\"posts-cont__list-items\" (click)=\"addPostToStore(post)\">\n        <div class=\"posts-cont__body\">\n          <h3>{{post.title}}</h3>\n          <p>{{post.content}}</p>\n        </div>\n      </a>\n    </div>\n    <div class=\"posts-cont__footer\">\n      <upvote (upvote)=\"upvoteActions($event)\" [item]=\"post\" [index]=\"i\"></upvote>\n      <div class=\"posts-cont__comments-count\">\n        <div class=\"comment-icon\"></div>\n        <span>{{post.comments.length}}</span>\n      </div>\n    </div>\n  </div>\n</div>\n\n<edit-form (Post)=\"postAction($event)\" [status]=\"status\" [postInputData]=\"postInputData\"></edit-form>\n"
 
 /***/ }),
-/* 257 */
+
+/***/ 317:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"preview-container\">\n  <div class=\"preview-container__header\">\n    <h4>{{post?.title}}</h4>\n  </div>\n  <div class=\"preview-container__description\">\n    <p>\n      {{post?.content}}\n    </p>\n  </div>\n</div>\n<comment (addComment)=\"addComment($event)\" [comments]=\"post?.comments\" [id]=\"post?.id\"></comment>\n"
 
 /***/ }),
-/* 258 */
+
+/***/ 318:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"registration-container\">\n  <form class=\"registration-container__form\">\n    <div class=\"registration-container__form__double\">\n      <div class=\"registration-container__form__part\">\n        <label>First name</label>\n        <input name=\"first_name\" type=\"text\" placeholder=\"first name\" [(ngModel)]=\"user.first_name\" />\n      </div>\n      <div class=\"registration-container__form__part\">\n        <label>Last name</label>\n        <input name=\"last_name\" type=\"text\" placeholder=\"last name\" [(ngModel)]=\"user.last_name\" />\n      </div>\n    </div>\n    <div class=\"registration-container__form__full\">\n      <label>Email</label>\n      <input name=\"email\" type=\"email\" placeholder=\"email\" [(ngModel)]=\"user.email\" />\n    </div>\n    <div class=\"registration-container__form__full\">\n      <label>Password</label>\n      <input name=\"password\" type=\"password\" placeholder=\"password\" [(ngModel)]=\"user.password\" />\n    </div>\n    <div class=\"registration-container__form__full\">\n      <label>Confitmation password</label>\n      <input name=\"confirmation_password\" type=\"password\" placeholder=\"confiramation password\" [(ngModel)]=\"user.confirtamtion_password\" />\n    </div>\n    <div class=\"registration-container__form__submit\">\n      <input type=\"submit\" value=\"Sign Up\" (click)=\"registerUser()\"/>\n    </div>\n  </form>\n</div>\n"
 
 /***/ }),
-/* 259 */
+
+/***/ 319:
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"isLoaded\" class=\"spinner\">\n  <div class=\"dot1\"></div>\n  <div class=\"dot2\"></div>\n</div>\n"
+module.exports = "<div *ngIf=\"isOpen\" class=\"spinner-container\">\n  <div class=\"spinner-container__spinner\"\n       [ngClass]=\"{'spinner-container__spinner--failure': isError,\n       'spinner-container__spinner--success': isSuccess}\"></div>\n  <div class=\"spinner-container__success\"\n       [ngClass]=\"{'spinner-container__success--active': isSuccess}\"></div>\n <div class=\"spinner-container__failure\"\n      [ngClass]=\"{'spinner-container__failure--active': isError}\"></div>\n</div>\n"
 
 /***/ }),
-/* 260 */
+
+/***/ 320:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"upvotes-cont\">\n  <div #up (click)=\"upvoteController(true)\" class=\"up-btn\"></div>\n  <div #dis (click)=\"upvoteController(false)\" class=\"dis-btn\"></div>\n  <span>{{item.upvotes.length - item.disupvotes.length}}</span>\n</div>\n"
 
 /***/ }),
-/* 261 */
+
+/***/ 321:
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Flapper News</h2>\n<router-outlet></router-outlet>\n"
+module.exports = "<h2>Flapper News</h2>\n<add-post-button></add-post-button>\n<router-outlet></router-outlet>\n"
 
 /***/ }),
-/* 262 */
+
+/***/ 322:
 /***/ (function(module, exports) {
 
 module.exports = "<login></login>\n"
 
 /***/ }),
-/* 263 */
+
+/***/ 323:
 /***/ (function(module, exports) {
 
 module.exports = "<preview [postId]=\"postId\"></preview>\n"
 
 /***/ }),
-/* 264 */
+
+/***/ 324:
 /***/ (function(module, exports) {
 
 module.exports = "<posts></posts>\n"
 
 /***/ }),
-/* 265 */,
-/* 266 */,
-/* 267 */,
-/* 268 */,
-/* 269 */,
-/* 270 */,
-/* 271 */,
-/* 272 */,
-/* 273 */,
-/* 274 */,
-/* 275 */,
-/* 276 */,
-/* 277 */,
-/* 278 */,
-/* 279 */,
-/* 280 */,
-/* 281 */,
-/* 282 */,
-/* 283 */,
-/* 284 */,
-/* 285 */,
-/* 286 */,
-/* 287 */,
-/* 288 */,
-/* 289 */,
-/* 290 */,
-/* 291 */,
-/* 292 */,
-/* 293 */,
-/* 294 */,
-/* 295 */,
-/* 296 */,
-/* 297 */,
-/* 298 */,
-/* 299 */,
-/* 300 */,
-/* 301 */,
-/* 302 */,
-/* 303 */,
-/* 304 */,
-/* 305 */,
-/* 306 */,
-/* 307 */,
-/* 308 */,
-/* 309 */,
-/* 310 */,
-/* 311 */,
-/* 312 */,
-/* 313 */,
-/* 314 */,
-/* 315 */,
-/* 316 */,
-/* 317 */,
-/* 318 */,
-/* 319 */
+
+/***/ 37:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocalStorage; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var LocalStorage = (function () {
+    function LocalStorage() {
+    }
+    LocalStorage.prototype.setData = function (data, key) {
+        return localStorage.setItem(key, JSON.stringify({ data: data })) || false;
+    };
+    LocalStorage.prototype.getData = function (key) {
+        return JSON.parse(localStorage.getItem(key)) || false;
+    };
+    LocalStorage.prototype.removeData = function (key) {
+        return localStorage.removeItem(key) || false;
+    };
+    return LocalStorage;
+}());
+LocalStorage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])()
+], LocalStorage);
+
+//# sourceMappingURL=localStorage.service.js.map
+
+/***/ }),
+
+/***/ 38:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs__ = __webpack_require__(326);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StateService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var StateService = (function () {
+    function StateService() {
+        this._formOpen = new __WEBPACK_IMPORTED_MODULE_1_rxjs__["Subject"]();
+        this.formOpen = this._formOpen.asObservable();
+        this._spinnerOpen = new __WEBPACK_IMPORTED_MODULE_1_rxjs__["Subject"]();
+        this.spinnerOpen = this._spinnerOpen.asObservable();
+    }
+    StateService.prototype.formIsOpen = function (isOpen) {
+        if (isOpen === void 0) { isOpen = false; }
+        this._formOpen.next(isOpen);
+    };
+    StateService.prototype.spinnrIsOpen = function (isOpen, status) {
+        if (isOpen === void 0) { isOpen = false; }
+        if (status === void 0) { status = undefined; }
+        this._spinnerOpen.next({ isOpen: isOpen, status: status });
+    };
+    return StateService;
+}());
+StateService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])()
+], StateService);
+
+//# sourceMappingURL=states.service.js.map
+
+/***/ }),
+
+/***/ 53:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var AuthService = (function () {
+    function AuthService(http, _cookieService) {
+        this.http = http;
+        this._cookieService = _cookieService;
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */](__WEBPACK_IMPORTED_MODULE_3__app_constans__["a" /* REQUEST_HEADER */]);
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({ headers: this.headers });
+        this.current_session = this._cookieService.getObject(__WEBPACK_IMPORTED_MODULE_3__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH);
+    }
+    AuthService.prototype.validateToken = function (session_hash) {
+        var body = JSON.stringify({ token: session_hash.token });
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.VALIDATE_TOKEN, body, this.headers)
+            .map(function (res) { return res.json(); });
+    };
+    AuthService.prototype.userSignUp = function (user) {
+        var body = JSON.stringify({ first_name: user.first_name,
+            last_name: user.last_name,
+            email: user.email,
+            password: user.password });
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.REGISTRATION_INDEX, body, this.headers)
+            .map(function (res) { return res.json(); });
+    };
+    AuthService.prototype.userLogIn = function (email, password) {
+        var _this = this;
+        var body = JSON.stringify({ email: email,
+            password: password });
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.SESSIONS, body, this.headers)
+            .map(function (res) {
+            _this.current_session = res.json();
+            return res.json();
+        });
+    };
+    AuthService.prototype.userLogOut = function () {
+        return this.http.delete(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.SESSIONS + "/" + this.current_session.id, this.headers)
+            .map(function (res) { return res.json(); });
+    };
+    return AuthService;
+}());
+AuthService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"]) === "function" && _b || Object])
+], AuthService);
+
+var _a, _b;
+//# sourceMappingURL=auth.service.js.map
+
+/***/ }),
+
+/***/ 579:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(123);
+module.exports = __webpack_require__(181);
 
+
+/***/ }),
+
+/***/ 99:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_constans__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CommentService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var CommentService = (function () {
+    function CommentService(http, _cookieService) {
+        this.http = http;
+        this._cookieService = _cookieService;
+        this.headers = __WEBPACK_IMPORTED_MODULE_2__app_constans__["a" /* REQUEST_HEADER */];
+        this.headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ headers: this.headers });
+        this.current_user = this._cookieService.getObject(__WEBPACK_IMPORTED_MODULE_2__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH);
+    }
+    CommentService.prototype.addComment = function (comment, id) {
+        var body = JSON.stringify({ body: comment.body,
+            token: this.current_user.token });
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_2__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + id + "/news_comments", body, this.headers)
+            .map(function (res) { return res.json(); });
+    };
+    CommentService.prototype.destroyComment = function (postId, commentId) {
+        return this.http.delete(__WEBPACK_IMPORTED_MODULE_2__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + postId + "/news_comments/" + commentId)
+            .map(function (res) { return res.json(); });
+    };
+    return CommentService;
+}());
+CommentService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"]) === "function" && _b || Object])
+], CommentService);
+
+var _a, _b;
+//# sourceMappingURL=comment.service.js.map
 
 /***/ })
-],[319]);
+
+},[579]);
 //# sourceMappingURL=main.bundle.js.map
