@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       resources :sessions, only: [:create, :destroy]
 
       post '/validate_token' => 'sessions#validate_token'
+
+      post '/upload_content_image' => 'post_content_image#image_upload'
+      delete '/delete_content_image/:id' => 'post_content_image#image_remove'
     end
   end
 

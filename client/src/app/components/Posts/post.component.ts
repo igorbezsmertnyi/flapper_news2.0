@@ -3,6 +3,7 @@ import { Post } from './post';
 import { PostService } from './post.service';
 import { CookieService } from 'angular2-cookie/core';
 import { COOKIE_KEYS } from '../../app.constans';
+import { StateService } from '../../states.service'
 
 @Component({
   selector: 'posts',
@@ -18,10 +19,11 @@ export class Posts {
   status: boolean;
   current_session: any;
 
-  constructor(
-    private postService: PostService,
-    private _cookieService: CookieService
-  ) {this.current_session = this._cookieService.getObject(COOKIE_KEYS.SEESION_HASH)}
+  constructor(private postService: PostService,
+              protected _cookieService: CookieService,
+              private st: StateService) {
+    this.current_session = this._cookieService.getObject(COOKIE_KEYS.SEESION_HASH)
+  }
 
   ngOnInit() {
     this.postService.getPosts()
@@ -52,6 +54,7 @@ export class Posts {
   }
 
   postAction(post) {
+    this.st.spinnrIsOpen(true)
     this.createPost(post)
     // if(typeof post.index !== 'undefined' || post.index) {
     //   this.editPost(post)
@@ -61,12 +64,14 @@ export class Posts {
   }
 
   createPost(post) {
+
     this.postService.createPost(post)
         .subscribe(data => {
+          this.st.spinnrIsOpen(true, true)
           this.posts.push(data)
           this.status = true
           this.formShow = false
-        })
+        }, err => this.st.spinnrIsOpen(true, false))
   }
 
   editPost(post) {

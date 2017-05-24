@@ -17,8 +17,16 @@ export class Spinner {
       this.isOpen = val.isOpen
       if (val.status !== undefined) {
         val.status ? this.isSuccess = true : this.isError = true
+        this.timeOutClosing()
       }
-      console.log(val, this.isError, this.isSuccess)
     })
+  }
+
+  timeOutClosing() {
+    setTimeout(() => {
+      this.isOpen = false
+      this.isSuccess = false
+      this.isError = false
+    }, 1500)
   }
 }

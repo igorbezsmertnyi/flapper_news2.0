@@ -19,7 +19,7 @@ export class PostService {
 
   getPosts() {
     return this.http.get(API.V1.NEWS_PAGE_INDEX)
-           .map(response => <Post[]>response.json())
+               .map(response => <Post[]>response.json())
   }
 
   createPost(post) {
@@ -31,13 +31,13 @@ export class PostService {
                                content: post.content,
                                token: this.current_session.token});
     return this.http.post(API.V1.NEWS_PAGE_INDEX, body, this.headers)
-           .map((res: Response) => res.json())
+               .map((res: Response) => res.json())
   }
 
   editPost(post) {
     let body = JSON.stringify({title: post.title, description: post.description});
     return this.http.put(`${API.V1.NEWS_PAGE_INDEX}/${post.id}`, body, this.headers)
-           .map((res: Response) => res.json())
+               .map((res: Response) => res.json())
   }
 
   upvotePost(post) {
@@ -56,6 +56,12 @@ export class PostService {
 
   deletePost(postId) {
     return this.http.delete(`${API.V1.NEWS_PAGE_INDEX}/${postId}`)
-            .map(response => response.json())
+               .map(response => response.json())
+  }
+
+  deleteContentImage(id) {
+    return this.http.delete(`${API.V1.DELETE_CONTENT_IMAGE}/${id}`)
+               .map((res: Response) => res.json())
+
   }
 }

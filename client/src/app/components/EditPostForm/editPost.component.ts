@@ -153,12 +153,12 @@ export class EditForm {
   }
 
   clearForm() {
-    if (typeof this.status !== 'undefined') {
-      if (this.status) {
-        this.newPost = []
-      } else {
-        alert("Post no posted")
-      }
+    if (this.status) {
+      this.st.formIsOpen(false)
+      this.localStorage.removeData(LOCAL_STORAGE_KEYS.POST_CREATING.FIRST_STEP)
+      this.localStorage.removeData(LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP)
+      this.localStorage.removeData(LOCAL_STORAGE_KEYS.POST_CREATING.THIRD_STEP)
+      this.newPost = []
     }
   }
 

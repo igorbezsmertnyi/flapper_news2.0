@@ -25,13 +25,16 @@ export const API = {
     REGISTRATION_INDEX: '/api/v1/registration',
     NEWS_PAGE_INDEX: '/api/v1/news_page',
     SESSIONS: '/api/v1/sessions',
-    VALIDATE_TOKEN: '/api/v1/validate_token'
+    VALIDATE_TOKEN: '/api/v1/validate_token',
+    UPLOAD_CONTENT_IMAGE: '/api/v1/upload_content_image',
+    DELETE_CONTENT_IMAGE: '/api/v1/delete_content_image'
   }
 }
 
 export const EDITOR_OPTIONS = {
   placeholderText: 'Enter Your Content Here!',
   charCounterCount: false,
+  imageUploadURL: API.V1.UPLOAD_CONTENT_IMAGE,
   iframe: false,
   toolbarBottom: ['bold',
                   'italic',
