@@ -5,4 +5,5 @@ class PostSerializer < ApplicationSerializer
   belongs_to :user
   has_many :upvotes
   has_many :disupvotes
+  has_one :cover
 end

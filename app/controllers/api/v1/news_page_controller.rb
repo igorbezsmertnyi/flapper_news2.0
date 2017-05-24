@@ -1,8 +1,7 @@
 class Api::V1::NewsPageController < ApplicationController
 
   def index
-    posts = Post.all
-    render json: posts
+    render json: Post.all
   end
 
   def show
@@ -11,6 +10,9 @@ class Api::V1::NewsPageController < ApplicationController
 
   def create
     @post = Post.create(post_params.merge(user: current_user))
+    @post.create_cover(cover_data(cover_params))
+
+    save_sover_image(cover_params[:image])
 
     if @post.save
       render json: @post
@@ -86,9 +88,8 @@ class Api::V1::NewsPageController < ApplicationController
 
   def destroy
     post = Post.find(params[:id])
-    post.comments.delete_all
-    post.upvotes.delete_all
-    if post.delete
+
+    if post.destroy
       render json: params[:id]
     else
       render body: post.errors.full_messages, status: :internal_server_error
@@ -98,8 +99,12 @@ class Api::V1::NewsPageController < ApplicationController
   private
 
   def post_params
-    binding.pry_remote
     params.require(:news_page).permit(:title, :subtitle, :categories, :content)
+  end
+
+  def cover_params
+    params.require(:news_page).permit([:cover => [:color, :opacity, :blur, :gray]],
+                                      [:image => [:source, [:file => [:name, :size, :type]]]])
   end
 
   def upvoted_by?

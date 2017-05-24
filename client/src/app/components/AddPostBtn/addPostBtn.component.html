@@ -1,4 +1,4 @@
-<button md-fab
+<button *ngIf="isShow" md-fab
   [ngClass]="{'add-btn--active': isOpen}"
   class="add-btn" type="button"
   (click)="toggleForm()"><md-icon>add</md-icon>

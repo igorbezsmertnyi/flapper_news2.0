@@ -1,14 +1,11 @@
 class CreateCovers < ActiveRecord::Migration[5.0]
-  def up
-    add_attachment :covers, :image
-  end
-
-  def down
-    remove_attachment :covers, :image
-  end
-
   def change
     create_table :covers do |t|
+      t.string :color
+      t.string :opacity
+      t.string :blur
+      t.string :gray
+      t.string :image_url
 
       t.timestamps
     end

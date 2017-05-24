@@ -9,7 +9,7 @@ class Api::V1::SessionsController < UsersController
 
       render json: @session
     else
-      render json: { errors: @session.errors.full_messages }
+      render body: @session.errors.full_messages, status: :internal_server_error
     end
   end
 

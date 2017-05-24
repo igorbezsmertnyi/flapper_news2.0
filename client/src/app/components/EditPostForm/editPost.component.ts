@@ -153,12 +153,12 @@ export class EditForm {
   }
 
   clearForm() {
-    if (typeof this.status !== 'undefined') {
-      if (this.status) {
-        this.newPost = []
-      } else {
-        alert("Post no posted")
-      }
+    if (this.status) {
+      this.st.formIsOpen(false)
+      this.localStorage.removeData(LOCAL_STORAGE_KEYS.POST_CREATING.FIRST_STEP)
+      this.localStorage.removeData(LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP)
+      this.localStorage.removeData(LOCAL_STORAGE_KEYS.POST_CREATING.THIRD_STEP)
+      this.newPost = []
     }
   }
 
@@ -189,16 +189,16 @@ export class EditForm {
     this.newPost = {
       title: this.firstStep.title,
       subtitle: this.firstStep.subtitle,
-      category: this.firstStep.categories,
+      categories: this.firstStep.categories,
       cover: {
+        color: this.secondStep.overlay.color,
+        opacity: this.secondStep.overlay.opacity,
+        blur: this.secondStep.overlay.blur,
+        gray: this.secondStep.overlay.gray
+      },
+      image: {
         file: this.secondStep.file,
-        source: this.secondStep.source,
-        overlay: {
-          color: this.secondStep.overlay.color,
-          opacity: this.secondStep.overlay.opacity,
-          blur: this.secondStep.overlay.blur,
-          gray: this.secondStep.overlay.gray
-        }
+        source: this.secondStep.source
       },
       content: this.thirdStep.content
     }
