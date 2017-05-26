@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core'
 import { LOCAL_STORAGE_KEYS } from '../../app.constans'
 import { LocalStorage } from '../../localStorage.service'
 import { StateService } from '../../states.service'
+import { StoreService } from '../../store.service'
 import { Post } from '../Posts/post'
 
 @Component({
@@ -45,7 +46,6 @@ export class EditForm {
   }
 
   isOpen: boolean = false
-  isShow: boolean = false
   fullEditor: boolean = false
 
   @Input() status: boolean
@@ -53,15 +53,59 @@ export class EditForm {
   @Output() Post = new EventEmitter()
 
   constructor(protected localStorage: LocalStorage,
-              private st: StateService) {
-    this.st.formOpen.subscribe(val => {
-      this.isShow = !this.isShow
-      this.isOpen = !this.isOpen
+              private st: StateService,
+              protected sr: StoreService) {
+    this.st.formOpen.subscribe(val => this.isOpen = val)
+
+    this.sr.firstStep.subscribe(val => {
+      if (val) {
+        this.firstStep = val
+        this.localStorage.setData(val, LOCAL_STORAGE_KEYS.POST_CREATING.FIRST_STEP)
+        this.isValid = true
+        this.firstStepIsValid = true
+      } else {
+        this.isValid = false
+        this.firstStepIsValid = false
+      }
+    })
+
+    this.sr.secondStep.subscribe(val => {
+      if (val) {
+        this.secondStep = val
+        this.localStorage.setData(val, LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP)
+        this.isValid = true
+        this.secondStepIsValid = true
+      } else {
+        this.isValid = false
+        this.secondStepIsValid = false
+      }
+    })
+
+    this.sr.thirdStep.subscribe(val => {
+      if (val) {
+        this.thirdStep = val
+        this.localStorage.setData(val, LOCAL_STORAGE_KEYS.POST_CREATING.THIRD_STEP)
+        this.isValid = true
+        this.thirdStepIsValid = true
+      } else {
+        this.isValid = false
+        this.thirdStepIsValid = false
+      }
+    })
+
+    this.st.postStatus.subscribe(val => {
+      val ? this.clearForm() : null
     })
   }
 
-  ngOnChanges() {
-    this.clearForm()
+  ngOnInit() {
+    let firstStep = this.localStorage.getData(LOCAL_STORAGE_KEYS.POST_CREATING.FIRST_STEP)
+    let secondStep = this.localStorage.getData(LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP)
+    let thirdStep = this.localStorage.getData(LOCAL_STORAGE_KEYS.POST_CREATING.THIRD_STEP)
+
+    firstStep ? this.sr.setFistStepData(firstStep.data) : undefined
+    secondStep ? this.sr.setSecondStepData(secondStep.data) : undefined
+    thirdStep ? this.sr.setThirdStepData(thirdStep.data) : undefined
   }
 
   stepsControl() {
@@ -153,13 +197,11 @@ export class EditForm {
   }
 
   clearForm() {
-    if (this.status) {
-      this.st.formIsOpen(false)
-      this.localStorage.removeData(LOCAL_STORAGE_KEYS.POST_CREATING.FIRST_STEP)
-      this.localStorage.removeData(LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP)
-      this.localStorage.removeData(LOCAL_STORAGE_KEYS.POST_CREATING.THIRD_STEP)
-      this.newPost = []
-    }
+    this.st.formIsOpen(false)
+    this.localStorage.removeData(LOCAL_STORAGE_KEYS.POST_CREATING.FIRST_STEP)
+    this.localStorage.removeData(LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP)
+    this.localStorage.removeData(LOCAL_STORAGE_KEYS.POST_CREATING.THIRD_STEP)
+    this.newPost = []
   }
 
   setFullEditor() {
@@ -168,11 +210,7 @@ export class EditForm {
 
   formInit(data) {
     this.isOpen = !this.isOpen
-    this.isShow = !this.isShow
     document.body.classList.toggle('fixed')
-    setTimeout(() => {
-      this.isShow = true
-    }, 200)
     // if (data.action === 'create') {
     //   this.newPost = {}
     // } else {
@@ -200,7 +238,7 @@ export class EditForm {
         file: this.secondStep.file,
         source: this.secondStep.source
       },
-      content: this.thirdStep.content
+      content: this.thirdStep
     }
     this.Post.emit(this.newPost)
   }

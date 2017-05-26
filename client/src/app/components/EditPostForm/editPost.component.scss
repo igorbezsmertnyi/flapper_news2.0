@@ -21,7 +21,7 @@
       width: 769px;
       height: 100%;
       margin: auto;
-      top: 100%;
+      top: 0;
       left: 0;
       right: 0;
       z-index: 2;
@@ -31,11 +31,6 @@
 
       &--active {
         display: block;
-      }
-
-      &--show {
-        top: 0;
-        transition: all ease-in .3s;
       }
 
       &--full {

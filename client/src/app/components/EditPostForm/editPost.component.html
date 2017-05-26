@@ -1,11 +1,9 @@
 <div class="edit-form"
      [ngClass]="{'edit-form--active': isOpen}">
   <div class="edit-form__background"
-       [ngClass]="{'edit-form__background--active': isOpen,
-                   'edit-form__background--show': isShow}"></div>
+       [ngClass]="{'edit-form__background--active': isOpen}"></div>
   <div class="edit-form__new-post__form"
        [ngClass]="{'edit-form__new-post__form--active': isOpen,
-                   'edit-form__new-post__form--show': isShow,
                    'edit-form__new-post__form--full': fullEditor}">
     <div class="edit-form__new-post__form__title">
        <span>create post</span>
@@ -18,14 +16,15 @@
          'edit-form__new-post__form__steps-container--second': headerOptions.secondStep,
          'edit-form__new-post__form__steps-container--third': headerOptions.thirdStep }">
       <section class="edit-form__new-post__form__steps-container__item">
-        <firsr-step-creating (firstStepData)="firstStepData($event)"></firsr-step-creating>
+        <firsr-step-creating [status]="status" (firstStepData)="firstStepData($event)"></firsr-step-creating>
       </section>
       <section class="edit-form__new-post__form__steps-container__item">
-        <second-step-creating (secondStepData)="secondStepData($event)"></second-step-creating>
+        <second-step-creating [status]="status" (secondStepData)="secondStepData($event)"></second-step-creating>
       </section>
       <section class="edit-form__new-post__form__steps-container__item"
         [ngClass]="{'edit-form__new-post__form__steps-container__item--full': fullEditor}">
         <third-step-creating
+          [status]="status"
           (thirdStepData)="thirdStepData($event)"
           [fullscreen]="fullEditor">
         </third-step-creating>
@@ -37,6 +36,7 @@
     </div>
   </div>
   <button md-fab *ngIf="headerOptions.thirdStep"
+    [disabled]="true"
     [ngClass]="{'edit-form__full-btn--active': isOpen}"
     class="edit-form__full-btn" type="button"
     ><md-icon>zoom_out_map</md-icon>

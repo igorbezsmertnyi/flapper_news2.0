@@ -3,6 +3,7 @@ import { Router } from '@angular/router'
 import { AuthService } from '../../auth.service'
 import { CookieService } from 'angular2-cookie/core'
 import { COOKIE_KEYS } from '../../app.constans'
+import { StoreService } from '../../store.service'
 
 @Component({
   selector: 'app-menu',
@@ -16,7 +17,8 @@ export class AppMenu {
 
   constructor(protected authService: AuthService,
               protected _cookieService: CookieService,
-              private router: Router ) { }
+              private router: Router,
+              protected sr: StoreService) { }
 
   @HostListener('click', ['$event']) onClick(e) {
     if (this.loginShow && e.target.className === 'login-form__background') {
@@ -28,7 +30,10 @@ export class AppMenu {
     let session_hash = this._cookieService.getObject(COOKIE_KEYS.SEESION_HASH)
     if (session_hash) {
       this.authService.validateToken(session_hash).subscribe(
-        res => this.UserData = res.user,
+        res => {
+          this.UserData = res.user
+          this.sr.setCurrentSession(res.user)
+        },
         err => this._cookieService.remove(COOKIE_KEYS.SEESION_HASH)
       )
     }
@@ -37,6 +42,7 @@ export class AppMenu {
   getCurrentUser(session) {
     this.UserData = session.user
     this.setCookie(COOKIE_KEYS.SEESION_HASH, session)
+    this.sr.setCurrentSession(session)
     this.loginShowClick()
   }
 
@@ -50,6 +56,7 @@ export class AppMenu {
         this._cookieService.remove(COOKIE_KEYS.SEESION_HASH)
         this.UserData = {}
         window.location.hash = ''
+        this.sr.setCurrentSession({})
       }
     )
   }

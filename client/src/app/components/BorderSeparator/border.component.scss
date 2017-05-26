@@ -1,8 +1,0 @@
-@import '../../../styles.scss';
-
-.border-separator {
-  @include default-gradient();
-  height: 1px;
-  width: 100%;
-  margin-bottom: 15px;
-}

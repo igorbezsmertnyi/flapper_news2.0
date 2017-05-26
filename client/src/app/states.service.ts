@@ -15,4 +15,10 @@ export class StateService {
   spinnrIsOpen(isOpen:boolean = false, status:boolean = undefined) {
     this._spinnerOpen.next({isOpen, status})
   }
+
+  _postStatus = new Subject<boolean>()
+  postStatus = this._postStatus.asObservable()
+  setPostStatus(status:boolean) {
+    this._postStatus.next(status)
+  }
 }

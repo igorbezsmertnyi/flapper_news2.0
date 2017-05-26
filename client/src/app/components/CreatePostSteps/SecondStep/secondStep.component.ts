@@ -1,8 +1,7 @@
-import { Component, Output, EventEmitter, HostListener } from '@angular/core'
+import { Component, Output, EventEmitter, Input, HostListener } from '@angular/core'
 import { MdSliderModule } from '@angular/material'
-import { LOCAL_STORAGE_KEYS } from '../../../app.constans'
-import { LocalStorage } from '../../../localStorage.service'
 import { StateService } from '../../../states.service'
+import { StoreService } from '../../../store.service'
 
 @Component({
   selector: 'second-step-creating',
@@ -11,6 +10,7 @@ import { StateService } from '../../../states.service'
 })
 
 export class SecondStep {
+  @Input() status:boolean = false
   @Output() secondStepData = new EventEmitter()
 
   isDragenter: boolean = false
@@ -29,21 +29,22 @@ export class SecondStep {
 
   second_step: any
 
-  constructor(protected localStorage: LocalStorage,
-              private st: StateService) {}
+  constructor(private st: StateService,
+              protected sr: StoreService) {
+    this.sr.secondStep.subscribe(val => {
+      if (val) {
+        this.imageShow = true
+        this.currentImage = val.source
+        this.overlayValue = val.overlay.opacity
+        this.color = val.overlay.color
+        this.blurValue = val.overlay.blur
+        this.grayValue = val.overlay.gray
+      }
+    })
 
-  ngOnInit() {
-    if (this.localStorage.getData(LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP)) {
-      this.second_step = this.localStorage.getData(LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP)
-      this.imageShow = true
-      this.currentImage = this.second_step.data.source
-      this.overlayValue = this.second_step.data.overlay.opacity
-      this.color = this.second_step.data.overlay.color
-      this.blurValue = this.second_step.data.overlay.blur
-      this.grayValue = this.second_step.data.overlay.gray
-
-      this.secondStepData.emit(this.second_step.data)
-    }
+    this.st.postStatus.subscribe(val => {
+      val ? this.removePicture() : null
+    })
   }
 
   onDragStart(e) {
@@ -65,31 +66,29 @@ export class SecondStep {
 
   getOverlayValue(e) {
     this.overlayValue = e.value.toFixed(2)
-    this.secondStepData.emit(this.emitSecondStep())
-    this.localStorage.setData(this.emitSecondStep(), LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP)
+    this.sr.setSecondStepData(this.emitSecondStep())
   }
 
   getOverlayColor(c) {
     this.color = c
-    this.secondStepData.emit(this.emitSecondStep())
-    this.localStorage.setData(this.emitSecondStep(), LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP)
+    this.sr.setSecondStepData(this.emitSecondStep())
   }
 
   getBlurValue(b) {
     this.blurValue = b.value
-    this.secondStepData.emit(this.emitSecondStep())
-    this.localStorage.setData(this.emitSecondStep(), LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP)
+
+    this.sr.setSecondStepData(this.emitSecondStep())
   }
 
   getGrayValue(g) {
     this.grayValue = g.value.toFixed(2)
-    this.secondStepData.emit(this.emitSecondStep())
-    this.localStorage.setData(this.emitSecondStep(), LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP)
+
+    this.sr.setSecondStepData(this.emitSecondStep())
   }
 
   removePicture() {
     this.currentImage = ''
-    this.secondStepData.emit()
+    this.sr.setSecondStepData(false)
     this.imageShow = false
     this.isDragenter = false
     this.overlayValue = 0
@@ -147,8 +146,7 @@ export class SecondStep {
               this.imageShow = true
               this.st.spinnrIsOpen(false)
               if (fileReader.result) {
-                this.secondStepData.emit(this.emitSecondStep())
-                this.localStorage.setData(this.emitSecondStep(), LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP)
+                this.sr.setSecondStepData(this.emitSecondStep())
               }
             }
             fileReader.readAsDataURL(this.imageData[0])

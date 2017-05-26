@@ -4,6 +4,7 @@ import { PostService } from './post.service';
 import { CookieService } from 'angular2-cookie/core';
 import { COOKIE_KEYS } from '../../app.constans';
 import { StateService } from '../../states.service'
+import { StoreService} from '../../store.service'
 
 @Component({
   selector: 'posts',
@@ -14,15 +15,17 @@ import { StateService } from '../../states.service'
 export class Posts {
   posts: Post[];
   newPost = [];
-  formShow: boolean = false;
+  formActive: boolean = false;
   postInputData: Object = { action: 'create' };
   status: boolean;
   current_session: any;
 
   constructor(private postService: PostService,
               protected _cookieService: CookieService,
-              private st: StateService) {
-    this.current_session = this._cookieService.getObject(COOKIE_KEYS.SEESION_HASH)
+              private st: StateService,
+              protected sr: StoreService) {
+    this.st.formOpen.subscribe(val => this.formActive = val)
+    this.sr.userSession.subscribe(val => this.current_session = val)
   }
 
   ngOnInit() {
@@ -30,13 +33,13 @@ export class Posts {
         .subscribe(data => {
           this.posts = data
           if (this.posts.length === 0) {
-            this.formShow = true
+            this.formActive = true
           }
         })
   }
 
   formController(action, post, index) {
-    this.formShow = true
+    this.formActive = true
     this.status = undefined
 
     if (action === 'create') {
@@ -64,14 +67,17 @@ export class Posts {
   }
 
   createPost(post) {
-
     this.postService.createPost(post)
         .subscribe(data => {
           this.st.spinnrIsOpen(true, true)
           this.posts.push(data)
+          this.st.setPostStatus(true)
           this.status = true
-          this.formShow = false
-        }, err => this.st.spinnrIsOpen(true, false))
+          this.formActive = false
+        }, err => {
+          this.st.setPostStatus(false)
+          this.st.spinnrIsOpen(true, false)
+        })
   }
 
   editPost(post) {
@@ -79,7 +85,7 @@ export class Posts {
         .subscribe(data => {
           this.ngOnInit()
           this.status = true
-          this.formShow = false
+          this.formActive = false
         })
   }
 

@@ -7,9 +7,6 @@
       <textarea mdInput formControlName="subtitle" type="text" placeholder="Description" name="description" autocomplete="off"></textarea>
     </md-input-container>
     <md-select formControlName="categories" placeholder="Select Category" class="first-step-container__form__full" (change)="emitForm()">
-      <!-- <md-option *ngFor="let food of foods" [value]="food.value">
-        {{ food.viewValue }}
-      </md-option> -->
       <md-option *ngFor="let category of categories" [value]="category.value">
         {{category.value}}
       </md-option>

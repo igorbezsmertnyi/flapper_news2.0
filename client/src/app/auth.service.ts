@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Http, RequestOptions, Headers, Response } from '@angular/http';
-import { CookieService } from 'angular2-cookie/core';
-import { REQUEST_HEADER, API, COOKIE_KEYS } from './app.constans';
-import 'rxjs/add/operator/map';
+import { Injectable } from '@angular/core'
+import { Http, RequestOptions, Headers, Response } from '@angular/http'
+import { CookieService } from 'angular2-cookie/core'
+import { REQUEST_HEADER, API, COOKIE_KEYS } from './app.constans'
+import 'rxjs/add/operator/map'
 
 @Injectable()
 export class AuthService {
-  headers: any;
-  current_session: any;
+  headers: any
+  current_session: any
 
   constructor(private http: Http,
               private _cookieService: CookieService) {

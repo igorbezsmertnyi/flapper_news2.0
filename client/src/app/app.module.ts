@@ -9,6 +9,7 @@ import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
 //Services
 import { StateService } from './states.service';
+import { StoreService } from './store.service';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { PostService } from './components/Posts/post.service';
 import { PreviewService } from './components/Preview/previewpost.service';
@@ -34,7 +35,6 @@ import { LogIn } from './components/LoginForm/login.component';
 import { AppMenu } from './components/AppMenu/appmenu.component';
 import { LogOut } from './components/LogOut/logout.componet';
 import { Upvote } from './components/Upvote/upvote.component';
-import { BorderSeparator } from './components/BorderSeparator/border.component';
 import { FirstStep } from './components/CreatePostSteps/FirstStep/firstStep.component';
 import { SecondStep } from './components/CreatePostSteps/SecondStep/secondStep.component';
 import { ThirdStep } from './components/CreatePostSteps/ThirdStep/thirdStep.component';
@@ -57,7 +57,6 @@ import { AddPostBtn } from './components/AddPostBtn/addPostBtn.component';
     AppMenu,
     LogOut,
     Upvote,
-    BorderSeparator,
     FirstStep,
     SecondStep,
     ThirdStep,
@@ -89,7 +88,8 @@ import { AddPostBtn } from './components/AddPostBtn/addPostBtn.component';
     PreviewService,
     AuthService,
     LocalStorage,
-    StateService
+    StateService,
+    StoreService
    ],
   bootstrap: [ AppContainer, AppMenu, Spinner ]
 })

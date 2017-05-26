@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Output, Input } from '@angular/core'
 import { EDITOR_OPTIONS } from '../../../app.constans'
-import { LOCAL_STORAGE_KEYS } from '../../../app.constans'
-import { LocalStorage } from '../../../localStorage.service'
 import { PostService } from '../../Posts/post.service'
+import { StoreService } from '../../../store.service'
+import { StateService } from '../../../states.service'
 
 @Component({
   selector: 'third-step-creating',
@@ -12,11 +12,13 @@ import { PostService } from '../../Posts/post.service'
 
 export class ThirdStep {
   content: any
+  @Input() status:boolean = false
   @Input() fullscreen: boolean = false
   @Output() thirdStepData = new EventEmitter()
 
-  constructor(protected localStorage: LocalStorage,
-              private postService: PostService) {}
+  constructor(private postService: PostService,
+              protected sr: StoreService,
+              protected st: StateService) {}
 
   public options: Object = {
     placeholderText: 'Enter Your Content Here!',
@@ -28,14 +30,21 @@ export class ThirdStep {
     events: {
       'froalaEditor.contentChanged': (e, editor) => {
         this.content = editor.html.get()
-        this.thirdStepData.emit({content: this.content})
-        this.localStorage.setData({content: this.content}, LOCAL_STORAGE_KEYS.POST_CREATING.THIRD_STEP)
+        this.sr.setThirdStepData(this.content)
       },
       'froalaEditor.initialized': (e, editor) => {
-        if (this.localStorage.getData(LOCAL_STORAGE_KEYS.POST_CREATING.THIRD_STEP)) {
-          this.thirdStepData.emit({content: this.localStorage.getData(LOCAL_STORAGE_KEYS.POST_CREATING.THIRD_STEP).data.content})
-          editor.html.set(this.localStorage.getData(LOCAL_STORAGE_KEYS.POST_CREATING.THIRD_STEP).data.content)
-        }
+        this.sr.thirdStep.subscribe(val => {
+          console.log(val)
+          if (val) {
+            editor.html.set(val)
+          } else {
+            editor.html.set('')
+          }
+        })
+
+        this.st.postStatus.subscribe(val => {
+          val ? editor.html.set('') : null
+        })
       },
       'froalaEditor.image.inserted': (e, editor, $img, response) => {
         $img[0].setAttribute('data-id', JSON.parse(response).id)

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core'
 import { StateService } from '../../states.service'
-import { CookieService } from 'angular2-cookie'
-import { COOKIE_KEYS } from '../../app.constans'
+import { StoreService } from '../../store.service'
 
 @Component({
   selector: 'add-post-button',
@@ -15,15 +14,12 @@ export class AddPostBtn {
   current_session:any
 
   constructor(private st: StateService,
-              protected _cookieService: CookieService) {
+              protected sr: StoreService) {
     this.st.formOpen.subscribe(val => this.isOpen = val)
-    this.current_session = this._cookieService.getObject(COOKIE_KEYS.SEESION_HASH)
-  }
-
-  ngOnInit() {
-    if (this.current_session) {
-      this.isShow = true
-    }
+    this.sr.userSession.subscribe(val => {
+      this.current_session = val
+      Boolean(val.id) ? this.isShow = true : this.isShow = false
+    })
   }
 
   toggleForm() {

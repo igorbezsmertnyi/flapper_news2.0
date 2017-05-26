@@ -32,13 +32,12 @@
       <span>{{(overlayValue * 100).toFixed(0)}}</span>
     </div>
     <div class="second-step__colors-container">
-      <label for="overlay_color" class="second-step__colors-container__circle" [style.background]="color"></label>
-      <input id="overlay-color"
-             [disabled]="!imageShow"
+      <label class="second-step__colors-container__circle" [style.background]="color"></label>
+      <input [disabled]="!imageShow"
              [(colorPicker)]="color"
              [value]="color"
              [cpPosition]="'left'"
-             (colorPickerChange)="getOverlayColor(color)"
+             (colorPickerChange)="getOverlayColor($event)"
        />
     </div>
     <div class="dafault-label">

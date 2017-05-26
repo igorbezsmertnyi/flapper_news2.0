@@ -1,7 +1,7 @@
-import { Component, Output, EventEmitter, HostListener } from '@angular/core'
+import { Component, Output, EventEmitter, Input, HostListener } from '@angular/core'
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
-import { LOCAL_STORAGE_KEYS } from '../../../app.constans'
-import { LocalStorage } from '../../../localStorage.service'
+import { StoreService } from '../../../store.service'
+import { StateService } from '../../../states.service'
 
 @Component({
   selector: 'firsr-step-creating',
@@ -19,10 +19,32 @@ export class FirstStep {
     { value: 'option 3' },
   ]
 
+  @Input() status:boolean = false
   @Output() firstStepData = new EventEmitter()
 
   constructor(private fb: FormBuilder,
-              protected localStorage: LocalStorage) {
+              protected sr: StoreService,
+              protected st: StateService) {
+    this.sr.firstStep.subscribe(val => {
+      if (val) {
+        this.firstStep.setValue({
+          title: val.title,
+          subtitle: val.subtitle,
+          categories: val.categories
+        })
+      }
+    })
+
+    this.st.postStatus.subscribe(val => {
+      if (val) {
+        this.firstStep.setValue({
+          title: '',
+          subtitle: '',
+          categories: ''
+        })
+      }
+    })
+
     this.firstStep = this.fb.group({
       title: ['', Validators.required],
       subtitle: ['', Validators.required],
@@ -30,26 +52,11 @@ export class FirstStep {
     })
   }
 
-  ngOnInit() {
-    if (this.localStorage.getData(LOCAL_STORAGE_KEYS.POST_CREATING.FIRST_STEP)) {
-      let first_step = this.localStorage.getData(LOCAL_STORAGE_KEYS.POST_CREATING.FIRST_STEP)
-
-      this.firstStep.setValue({
-        title: first_step.data.title,
-        subtitle: first_step.data.subtitle,
-        categories: first_step.data.categories
-      })
-
-      this.firstStepData.emit(this.firstStep.value)
-    }
-  }
-
   @HostListener('keyup', ['$event']) emitForm(e) {
     if (this.firstStep.valid) {
-      this.localStorage.setData(this.firstStep.value, LOCAL_STORAGE_KEYS.POST_CREATING.FIRST_STEP)
-      this.firstStepData.emit(this.firstStep.value)
+      this.sr.setFistStepData(this.firstStep.value)
     } else {
-      this.firstStepData.emit(false)
+      this.sr.setFistStepData(false)
     }
   }
 }
