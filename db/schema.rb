@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20170523210032) do
     t.string   "subtitle"
     t.string   "categories"
     t.text     "content"
+    t.string   "post_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
@@ -77,16 +78,6 @@ ActiveRecord::Schema.define(version: 20170523210032) do
     t.datetime "updated_at", null: false
     t.index ["token"], name: "index_sessions_on_token", using: :btree
     t.index ["user_id"], name: "index_sessions_on_user_id", using: :btree
-  end
-
-  create_table "tmp_content_images", force: :cascade do |t|
-    t.string   "image_url"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   create_table "upvotes", force: :cascade do |t|

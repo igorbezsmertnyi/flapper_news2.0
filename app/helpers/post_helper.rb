@@ -18,4 +18,8 @@ module PostHelper
       @post.cover.save
     end
   end
+
+  def generate_post_url(title)
+    @post.post_url = title.parameterize
+  end
 end

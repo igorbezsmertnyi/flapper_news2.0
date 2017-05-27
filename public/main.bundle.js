@@ -79,7 +79,7 @@ var LogOut = (function () {
 LogOut = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'log-out',
-        template: __webpack_require__(313)
+        template: __webpack_require__(315)
     })
 ], LogOut);
 
@@ -116,8 +116,8 @@ var PreviewService = (function () {
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ REQUEST_HEADER: __WEBPACK_IMPORTED_MODULE_3__app_constans__["a" /* REQUEST_HEADER */] });
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({ headers: this.headers });
     }
-    PreviewService.prototype.showPost = function (id) {
-        return this.http.get(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + id + ".json")
+    PreviewService.prototype.showPost = function (url) {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + url + ".json")
             .map(function (response) { return response.json(); });
     };
     return PreviewService;
@@ -164,8 +164,8 @@ var Registration = (function () {
 Registration = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'registration',
-        template: __webpack_require__(317),
-        styles: [__webpack_require__(288)]
+        template: __webpack_require__(319),
+        styles: [__webpack_require__(289)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */]) === "function" && _a || Object])
 ], Registration);
@@ -196,8 +196,8 @@ var LogInPage = (function () {
 LogInPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'login-page',
-        template: __webpack_require__(321),
-        styles: [__webpack_require__(292)]
+        template: __webpack_require__(324),
+        styles: [__webpack_require__(294)]
     })
 ], LogInPage);
 
@@ -230,6 +230,7 @@ var ShowPost = (function () {
     ShowPost.prototype.ngOnInit = function () {
         var _this = this;
         this.activatedRoute.params.subscribe(function (params) {
+            console.log(params);
             _this.postId = params['id'];
         });
     };
@@ -238,8 +239,8 @@ var ShowPost = (function () {
 ShowPost = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'show-post',
-        template: __webpack_require__(322),
-        styles: [__webpack_require__(293)]
+        template: __webpack_require__(325),
+        styles: [__webpack_require__(295)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object])
 ], ShowPost);
@@ -270,8 +271,8 @@ var HomePage = (function () {
 HomePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'home-page',
-        template: __webpack_require__(323),
-        styles: [__webpack_require__(294)]
+        template: __webpack_require__(326),
+        styles: [__webpack_require__(296)]
     })
 ], HomePage);
 
@@ -336,7 +337,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(216);
 
 
 
@@ -364,15 +365,15 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__store_service__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angular2_cookie_services_cookies_service__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angular2_cookie_services_cookies_service___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_angular2_cookie_services_cookies_service__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Posts_post_service__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Posts_post_service__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_Preview_previewpost_service__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_Comment_comment_service__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__auth_service__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__localStorage_service__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_angular2_froala_wysiwyg__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ngx_color_picker__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_angular2_froala_wysiwyg__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ngx_color_picker__ = __webpack_require__(301);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ngx_color_picker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_ngx_color_picker__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_hammerjs__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_hammerjs__ = __webpack_require__(300);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_hammerjs__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__containers_AppContainer_appContainer_container__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__containers_homePage_homePage_container__ = __webpack_require__(106);
@@ -380,7 +381,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__containers_LogInPage_login_container__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_Posts_post_component__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_Comment_comment_component__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_EditPostForm_editPost_component__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__containers_EditPostForm_editPost_component__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_Preview_preview_component__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_Registration_registration_component__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_LoginForm_login_component__ = __webpack_require__(208);
@@ -393,6 +394,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_CreatePostSteps_HeaderSteps_headerSteps_component__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_Spinner_spinner_componnet__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_AddPostBtn_addPostBtn_component__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_FavoritsPost_favoritPost_component__ = __webpack_require__(207);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -442,6 +444,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
@@ -453,7 +456,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_19__containers_homePage_homePage_container__["a" /* HomePage */],
             __WEBPACK_IMPORTED_MODULE_22__components_Posts_post_component__["a" /* Posts */],
             __WEBPACK_IMPORTED_MODULE_23__components_Comment_comment_component__["a" /* Comment */],
-            __WEBPACK_IMPORTED_MODULE_24__components_EditPostForm_editPost_component__["a" /* EditForm */],
+            __WEBPACK_IMPORTED_MODULE_24__containers_EditPostForm_editPost_component__["a" /* EditForm */],
             __WEBPACK_IMPORTED_MODULE_20__containers_ShowPost_showpost_container__["a" /* ShowPost */],
             __WEBPACK_IMPORTED_MODULE_18__containers_AppContainer_appContainer_container__["a" /* AppContainer */],
             __WEBPACK_IMPORTED_MODULE_25__components_Preview_preview_component__["a" /* Preview */],
@@ -468,7 +471,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_33__components_CreatePostSteps_ThirdStep_thirdStep_component__["a" /* ThirdStep */],
             __WEBPACK_IMPORTED_MODULE_34__components_CreatePostSteps_HeaderSteps_headerSteps_component__["a" /* HeaderStaps */],
             __WEBPACK_IMPORTED_MODULE_35__components_Spinner_spinner_componnet__["a" /* Spinner */],
-            __WEBPACK_IMPORTED_MODULE_36__components_AddPostBtn_addPostBtn_component__["a" /* AddPostBtn */]
+            __WEBPACK_IMPORTED_MODULE_36__components_AddPostBtn_addPostBtn_component__["a" /* AddPostBtn */],
+            __WEBPACK_IMPORTED_MODULE_37__components_FavoritsPost_favoritPost_component__["a" /* FavoritPost */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
@@ -497,7 +501,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_7__states_service__["a" /* StateService */],
             __WEBPACK_IMPORTED_MODULE_8__store_service__["a" /* StoreService */]
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_18__containers_AppContainer_appContainer_container__["a" /* AppContainer */], __WEBPACK_IMPORTED_MODULE_28__components_AppMenu_appmenu_component__["a" /* AppMenu */], __WEBPACK_IMPORTED_MODULE_35__components_Spinner_spinner_componnet__["a" /* Spinner */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_18__containers_AppContainer_appContainer_container__["a" /* AppContainer */], __WEBPACK_IMPORTED_MODULE_35__components_Spinner_spinner_componnet__["a" /* Spinner */]]
     })
 ], AppModule);
 
@@ -575,8 +579,8 @@ var AddPostBtn = (function () {
 AddPostBtn = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'add-post-button',
-        template: __webpack_require__(305),
-        styles: [__webpack_require__(277)]
+        template: __webpack_require__(307),
+        styles: [__webpack_require__(278)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__states_service__["a" /* StateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__states_service__["a" /* StateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__store_service__["a" /* StoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__store_service__["a" /* StoreService */]) === "function" && _b || Object])
 ], AddPostBtn);
@@ -669,8 +673,8 @@ __decorate([
 AppMenu = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-menu',
-        template: __webpack_require__(306),
-        styles: [__webpack_require__(278)]
+        template: __webpack_require__(308),
+        styles: [__webpack_require__(279)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core__["CookieService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__store_service__["a" /* StoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__store_service__["a" /* StoreService */]) === "function" && _d || Object])
 ], AppMenu);
@@ -728,8 +732,8 @@ __decorate([
 Comment = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'comment',
-        template: __webpack_require__(307),
-        styles: [__webpack_require__(279)]
+        template: __webpack_require__(309),
+        styles: [__webpack_require__(280)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__comment_service__["a" /* CommentService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__comment_service__["a" /* CommentService */]) === "function" && _a || Object])
 ], Comment);
@@ -826,8 +830,8 @@ __decorate([
 FirstStep = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'firsr-step-creating',
-        template: __webpack_require__(308),
-        styles: [__webpack_require__(280)]
+        template: __webpack_require__(310),
+        styles: [__webpack_require__(281)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__store_service__["a" /* StoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__store_service__["a" /* StoreService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__states_service__["a" /* StateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__states_service__["a" /* StateService */]) === "function" && _c || Object])
 ], FirstStep);
@@ -873,8 +877,8 @@ __decorate([
 HeaderStaps = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'header-steps',
-        template: __webpack_require__(309),
-        styles: [__webpack_require__(281)]
+        template: __webpack_require__(311),
+        styles: [__webpack_require__(282)]
     })
 ], HeaderStaps);
 
@@ -1055,8 +1059,8 @@ __decorate([
 SecondStep = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'second-step-creating',
-        template: __webpack_require__(310),
-        styles: [__webpack_require__(282)]
+        template: __webpack_require__(312),
+        styles: [__webpack_require__(283)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__states_service__["a" /* StateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__states_service__["a" /* StateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__store_service__["a" /* StoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__store_service__["a" /* StoreService */]) === "function" && _b || Object])
 ], SecondStep);
@@ -1072,7 +1076,7 @@ var _a, _b;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_constans__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Posts_post_service__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Posts_post_service__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_service__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__states_service__ = __webpack_require__(24);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ThirdStep; });
@@ -1113,7 +1117,6 @@ var ThirdStep = (function () {
                 },
                 'froalaEditor.initialized': function (e, editor) {
                     _this.sr.thirdStep.subscribe(function (val) {
-                        console.log(val);
                         if (val) {
                             editor.html.set(val);
                         }
@@ -1155,8 +1158,8 @@ __decorate([
 ThirdStep = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'third-step-creating',
-        template: __webpack_require__(311),
-        styles: [__webpack_require__(283)]
+        template: __webpack_require__(313),
+        styles: [__webpack_require__(284)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__Posts_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__Posts_post_service__["a" /* PostService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__store_service__["a" /* StoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__store_service__["a" /* StoreService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__states_service__["a" /* StateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__states_service__["a" /* StateService */]) === "function" && _c || Object])
 ], ThirdStep);
@@ -1167,6 +1170,546 @@ var _a, _b, _c;
 /***/ }),
 
 /***/ 207:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Posts_post_service__ = __webpack_require__(54);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FavoritPost; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var FavoritPost = (function () {
+    function FavoritPost(postService) {
+        this.postService = postService;
+        this.favoritPost = {};
+        this.isHover = false;
+    }
+    FavoritPost.prototype.onHover = function (i) {
+        document.getElementById(i).classList.add('favorit-post__content__hover-info--active');
+    };
+    FavoritPost.prototype.onUnHover = function (i) {
+        document.getElementById(i).classList.remove('favorit-post__content__hover-info--active');
+    };
+    FavoritPost.prototype.ngOnInit = function () {
+        var _this = this;
+        this.postService.getPosts()
+            .subscribe(function (data) {
+            _this.favoritPost = data;
+            _this.favoritPost = _this.favoritPost.slice(0, 4);
+        }, function (err) { return console.log(err); });
+    };
+    return FavoritPost;
+}());
+FavoritPost = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'favorit-post',
+        template: __webpack_require__(314),
+        styles: [__webpack_require__(285)]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__Posts_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__Posts_post_service__["a" /* PostService */]) === "function" && _a || Object])
+], FavoritPost);
+
+var _a;
+//# sourceMappingURL=favoritPost.component.js.map
+
+/***/ }),
+
+/***/ 208:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators_validators__ = __webpack_require__(215);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogIn; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var LogIn = (function () {
+    function LogIn(authService, fb) {
+        this.authService = authService;
+        this.fb = fb;
+        this.hasError = false;
+        this.user = {};
+        this.UserData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.logInForm = this.fb.group({
+            email: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__validators_validators__["a" /* validateEmail */]]),
+            password: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].minLength(8)])]
+        });
+    }
+    LogIn.prototype.logIn = function (f) {
+        var _this = this;
+        this.authService.userLogIn(f.control.controls.email.value, f.control.controls.password.value).subscribe(function (res) {
+            _this.UserData.emit(res);
+            window.location.hash = '';
+            window.location.reload();
+        }, function (err) {
+            _this.hasError = true;
+        });
+    };
+    return LogIn;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", Object)
+], LogIn.prototype, "UserData", void 0);
+LogIn = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'login',
+        template: __webpack_require__(316),
+        styles: [__webpack_require__(286)]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */]) === "function" && _b || Object])
+], LogIn);
+
+var _a, _b;
+//# sourceMappingURL=login.component.js.map
+
+/***/ }),
+
+/***/ 209:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__post_service__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__states_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_service__ = __webpack_require__(25);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Posts; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var Posts = (function () {
+    function Posts(postService, _cookieService, st, sr) {
+        var _this = this;
+        this.postService = postService;
+        this._cookieService = _cookieService;
+        this.st = st;
+        this.sr = sr;
+        this.newPost = [];
+        this.formActive = false;
+        this.postInputData = { action: 'create' };
+        this.current_session = {};
+        this.st.formOpen.subscribe(function (val) { return _this.formActive = val; });
+        this.sr.userSession.subscribe(function (val) { return _this.current_session = val; });
+    }
+    Posts.prototype.ngOnInit = function () {
+        var _this = this;
+        this.postService.getPosts()
+            .subscribe(function (data) {
+            _this.posts = data;
+            if (_this.posts.length === 0) {
+                _this.formActive = true;
+            }
+        });
+    };
+    Posts.prototype.formController = function (action, post, index) {
+        this.formActive = true;
+        this.status = undefined;
+        if (action === 'create') {
+            this.postInputData = {
+                action: 'create'
+            };
+        }
+        else {
+            this.postInputData = {
+                action: 'update',
+                postInput: post,
+                index: index
+            };
+        }
+    };
+    Posts.prototype.postAction = function (post) {
+        this.st.spinnrIsOpen(true);
+        this.createPost(post);
+        // if(typeof post.index !== 'undefined' || post.index) {
+        //   this.editPost(post)
+        // } else {
+        //   this.createPost(post)
+        // }
+    };
+    Posts.prototype.createPost = function (post) {
+        var _this = this;
+        this.postService.createPost(post)
+            .subscribe(function (data) {
+            _this.st.spinnrIsOpen(true, true);
+            _this.posts.push(data);
+            _this.st.setPostStatus(true);
+            _this.status = true;
+            _this.formActive = false;
+        }, function (err) {
+            _this.st.setPostStatus(false);
+            _this.st.spinnrIsOpen(true, false);
+        });
+    };
+    Posts.prototype.editPost = function (post) {
+        var _this = this;
+        this.postService.editPost(post)
+            .subscribe(function (data) {
+            _this.ngOnInit();
+            _this.status = true;
+            _this.formActive = false;
+        });
+    };
+    Posts.prototype.upvoteActions = function (data) {
+        if (data.action) {
+            this.upvotePost(data);
+        }
+        else {
+            this.disupvotePost(data);
+        }
+    };
+    Posts.prototype.upvotePost = function (data) {
+        var _this = this;
+        this.postService.upvotePost(data.post).subscribe(function (res) { return _this.posts[data.index] = res; }, function (err) { return console.log(err); });
+    };
+    Posts.prototype.disupvotePost = function (data) {
+        var _this = this;
+        this.postService.disupvotePost(data.post).subscribe(function (res) { return _this.posts[data.index] = res; }, function (err) { return console.log(err); });
+    };
+    Posts.prototype.deletePost = function (postId, index) {
+        var _this = this;
+        this.postService.deletePost(postId)
+            .subscribe(function (data) { return _this.posts.splice(index, 1); });
+    };
+    return Posts;
+}());
+Posts = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'posts',
+        template: __webpack_require__(317),
+        styles: [__webpack_require__(287)]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__post_service__["a" /* PostService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__states_service__["a" /* StateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__states_service__["a" /* StateService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__store_service__["a" /* StoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__store_service__["a" /* StoreService */]) === "function" && _d || Object])
+], Posts);
+
+var _a, _b, _c, _d;
+//# sourceMappingURL=post.component.js.map
+
+/***/ }),
+
+/***/ 210:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__previewpost_service__ = __webpack_require__(102);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Preview; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var Preview = (function () {
+    function Preview(previewService) {
+        this.previewService = previewService;
+    }
+    Preview.prototype.ngOnInit = function () {
+        var _this = this;
+        this.previewService.showPost(this.postId)
+            .subscribe(function (data) { return _this.post = data; });
+    };
+    return Preview;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", Number)
+], Preview.prototype, "postId", void 0);
+Preview = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'preview',
+        template: __webpack_require__(318),
+        styles: [__webpack_require__(288)]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__previewpost_service__["a" /* PreviewService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__previewpost_service__["a" /* PreviewService */]) === "function" && _a || Object])
+], Preview);
+
+var _a;
+//# sourceMappingURL=preview.component.js.map
+
+/***/ }),
+
+/***/ 211:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__states_service__ = __webpack_require__(24);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Spinner; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var Spinner = (function () {
+    function Spinner(st) {
+        var _this = this;
+        this.st = st;
+        this.isOpen = false;
+        this.isSuccess = false;
+        this.isError = false;
+        this.st.spinnerOpen.subscribe(function (val) {
+            _this.isOpen = val.isOpen;
+            if (val.status !== undefined) {
+                val.status ? _this.isSuccess = true : _this.isError = true;
+                _this.timeOutClosing();
+            }
+        });
+    }
+    Spinner.prototype.timeOutClosing = function () {
+        var _this = this;
+        setTimeout(function () {
+            _this.isOpen = false;
+            _this.isSuccess = false;
+            _this.isError = false;
+        }, 1500);
+    };
+    return Spinner;
+}());
+Spinner = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'spinner',
+        template: __webpack_require__(320),
+        styles: [__webpack_require__(290)]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__states_service__["a" /* StateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__states_service__["a" /* StateService */]) === "function" && _a || Object])
+], Spinner);
+
+var _a;
+//# sourceMappingURL=spinner.componnet.js.map
+
+/***/ }),
+
+/***/ 212:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_constans__ = __webpack_require__(23);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Upvote; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var Upvote = (function () {
+    function Upvote(_cookieService, renderer, elementRef) {
+        this._cookieService = _cookieService;
+        this.renderer = renderer;
+        this.elementRef = elementRef;
+        this.isUpvoted = false;
+        this.isDisupvoted = false;
+        this.upvote = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.current_session = this._cookieService.getObject(__WEBPACK_IMPORTED_MODULE_2__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH);
+    }
+    Upvote.prototype.ngOnInit = function () {
+        this.isUpvote();
+        this.isDisupvote();
+    };
+    Upvote.prototype.clickUpvote = function () {
+        this.isUpvoted = !this.isUpvoted;
+        if (this.isUpvoted) {
+            this.renderer.setElementClass(this.up.nativeElement, 'up-btn--active', true);
+        }
+        else {
+            this.renderer.setElementClass(this.up.nativeElement, 'up-btn--active', false);
+        }
+    };
+    Upvote.prototype.clickDisupvote = function () {
+        this.isDisupvoted = !this.isDisupvoted;
+        if (this.isDisupvoted) {
+            this.renderer.setElementClass(this.dis.nativeElement, 'dis-btn--active', true);
+        }
+        else {
+            this.renderer.setElementClass(this.dis.nativeElement, 'dis-btn--active', false);
+        }
+    };
+    Upvote.prototype.upvoteController = function (action) {
+        var obj = { index: this.index,
+            post: this.item,
+            action: action };
+        if (action) {
+            if (!this.isUpvoted && !this.isDisupvoted) {
+                this.clickUpvote();
+                this.upvote.emit(obj);
+            }
+            else if (!this.isUpvoted && this.isDisupvoted) {
+                this.clickUpvote();
+                this.clickDisupvote();
+                this.upvote.emit(obj);
+            }
+            else if (this.isUpvoted) {
+                this.clickUpvote();
+                this.upvote.emit(obj);
+            }
+        }
+        else {
+            if (!this.isDisupvoted && !this.isUpvoted) {
+                this.clickDisupvote();
+                this.upvote.emit(obj);
+            }
+            else if (!this.isDisupvoted && this.isUpvoted) {
+                this.clickDisupvote();
+                this.clickUpvote();
+                this.upvote.emit(obj);
+            }
+            else if (this.isDisupvoted) {
+                this.clickDisupvote();
+                this.upvote.emit(obj);
+            }
+        }
+    };
+    Upvote.prototype.isUpvote = function () {
+        var _this = this;
+        if (this.current_session) {
+            this.item.upvotes.map(function (upvote) {
+                if (upvote.user_id === _this.current_session.user.id) {
+                    _this.renderer.setElementClass(_this.up.nativeElement, 'up-btn--active', true);
+                    _this.isUpvoted = true;
+                }
+            });
+        }
+    };
+    Upvote.prototype.isDisupvote = function () {
+        var _this = this;
+        if (this.current_session) {
+            this.item.disupvotes.map(function (disupvote) {
+                if (disupvote.user_id === _this.current_session.user.id) {
+                    _this.renderer.setElementClass(_this.dis.nativeElement, 'dis-btn--active', true);
+                    _this.isDisupvoted = true;
+                }
+            });
+        }
+    };
+    return Upvote;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('up'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
+], Upvote.prototype, "up", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('dis'),
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _b || Object)
+], Upvote.prototype, "dis", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", Number)
+], Upvote.prototype, "index", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], Upvote.prototype, "item", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", Object)
+], Upvote.prototype, "upvote", void 0);
+Upvote = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'upvote',
+        template: __webpack_require__(321),
+        styles: [__webpack_require__(291)]
+    }),
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _e || Object])
+], Upvote);
+
+var _a, _b, _c, _d, _e;
+//# sourceMappingURL=upvote.component.js.map
+
+/***/ }),
+
+/***/ 213:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(52);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppContainer; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AppContainer = (function () {
+    function AppContainer(router) {
+        this.router = router;
+    }
+    return AppContainer;
+}());
+AppContainer = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-container',
+        template: __webpack_require__(322),
+        styles: [__webpack_require__(292)]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object])
+], AppContainer);
+
+var _a;
+//# sourceMappingURL=appContainer.container.js.map
+
+/***/ }),
+
+/***/ 214:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1415,8 +1958,8 @@ __decorate([
 EditForm = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'edit-form',
-        template: __webpack_require__(312),
-        styles: [__webpack_require__(284)]
+        template: __webpack_require__(323),
+        styles: [__webpack_require__(293)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__localStorage_service__["a" /* LocalStorage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__localStorage_service__["a" /* LocalStorage */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__states_service__["a" /* StateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__states_service__["a" /* StateService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__store_service__["a" /* StoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__store_service__["a" /* StoreService */]) === "function" && _c || Object])
 ], EditForm);
@@ -1426,492 +1969,7 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 208:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators_validators__ = __webpack_require__(214);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogIn; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var LogIn = (function () {
-    function LogIn(authService, fb) {
-        this.authService = authService;
-        this.fb = fb;
-        this.hasError = false;
-        this.user = {};
-        this.UserData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.logInForm = this.fb.group({
-            email: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__validators_validators__["a" /* validateEmail */]]),
-            password: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].minLength(8)])]
-        });
-    }
-    LogIn.prototype.logIn = function (f) {
-        var _this = this;
-        this.authService.userLogIn(f.control.controls.email.value, f.control.controls.password.value).subscribe(function (res) {
-            _this.UserData.emit(res);
-            window.location.hash = '';
-            window.location.reload();
-        }, function (err) {
-            _this.hasError = true;
-        });
-    };
-    return LogIn;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
-    __metadata("design:type", Object)
-], LogIn.prototype, "UserData", void 0);
-LogIn = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'login',
-        template: __webpack_require__(314),
-        styles: [__webpack_require__(285)]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */]) === "function" && _b || Object])
-], LogIn);
-
-var _a, _b;
-//# sourceMappingURL=login.component.js.map
-
-/***/ }),
-
-/***/ 209:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__post_service__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__states_service__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_service__ = __webpack_require__(25);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Posts; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var Posts = (function () {
-    function Posts(postService, _cookieService, st, sr) {
-        var _this = this;
-        this.postService = postService;
-        this._cookieService = _cookieService;
-        this.st = st;
-        this.sr = sr;
-        this.newPost = [];
-        this.formActive = false;
-        this.postInputData = { action: 'create' };
-        this.st.formOpen.subscribe(function (val) { return _this.formActive = val; });
-        this.sr.userSession.subscribe(function (val) { return _this.current_session = val; });
-    }
-    Posts.prototype.ngOnInit = function () {
-        var _this = this;
-        this.postService.getPosts()
-            .subscribe(function (data) {
-            _this.posts = data;
-            if (_this.posts.length === 0) {
-                _this.formActive = true;
-            }
-        });
-    };
-    Posts.prototype.formController = function (action, post, index) {
-        this.formActive = true;
-        this.status = undefined;
-        if (action === 'create') {
-            this.postInputData = {
-                action: 'create'
-            };
-        }
-        else {
-            this.postInputData = {
-                action: 'update',
-                postInput: post,
-                index: index
-            };
-        }
-    };
-    Posts.prototype.postAction = function (post) {
-        this.st.spinnrIsOpen(true);
-        this.createPost(post);
-        // if(typeof post.index !== 'undefined' || post.index) {
-        //   this.editPost(post)
-        // } else {
-        //   this.createPost(post)
-        // }
-    };
-    Posts.prototype.createPost = function (post) {
-        var _this = this;
-        this.postService.createPost(post)
-            .subscribe(function (data) {
-            _this.st.spinnrIsOpen(true, true);
-            _this.posts.push(data);
-            _this.st.setPostStatus(true);
-            _this.status = true;
-            _this.formActive = false;
-        }, function (err) {
-            _this.st.setPostStatus(false);
-            _this.st.spinnrIsOpen(true, false);
-        });
-    };
-    Posts.prototype.editPost = function (post) {
-        var _this = this;
-        this.postService.editPost(post)
-            .subscribe(function (data) {
-            _this.ngOnInit();
-            _this.status = true;
-            _this.formActive = false;
-        });
-    };
-    Posts.prototype.upvoteActions = function (data) {
-        if (data.action) {
-            this.upvotePost(data);
-        }
-        else {
-            this.disupvotePost(data);
-        }
-    };
-    Posts.prototype.upvotePost = function (data) {
-        var _this = this;
-        this.postService.upvotePost(data.post).subscribe(function (res) { return _this.posts[data.index] = res; }, function (err) { return console.log(err); });
-    };
-    Posts.prototype.disupvotePost = function (data) {
-        var _this = this;
-        this.postService.disupvotePost(data.post).subscribe(function (res) { return _this.posts[data.index] = res; }, function (err) { return console.log(err); });
-    };
-    Posts.prototype.deletePost = function (postId, index) {
-        var _this = this;
-        this.postService.deletePost(postId)
-            .subscribe(function (data) { return _this.posts.splice(index, 1); });
-    };
-    return Posts;
-}());
-Posts = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'posts',
-        template: __webpack_require__(315),
-        styles: [__webpack_require__(286)]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__post_service__["a" /* PostService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__states_service__["a" /* StateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__states_service__["a" /* StateService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__store_service__["a" /* StoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__store_service__["a" /* StoreService */]) === "function" && _d || Object])
-], Posts);
-
-var _a, _b, _c, _d;
-//# sourceMappingURL=post.component.js.map
-
-/***/ }),
-
-/***/ 210:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__previewpost_service__ = __webpack_require__(102);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Preview; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var Preview = (function () {
-    function Preview(previewService) {
-        this.previewService = previewService;
-    }
-    Preview.prototype.ngOnInit = function () {
-        var _this = this;
-        this.previewService.showPost(this.postId)
-            .subscribe(function (data) { return _this.post = data; });
-    };
-    return Preview;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-    __metadata("design:type", Number)
-], Preview.prototype, "postId", void 0);
-Preview = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'preview',
-        template: __webpack_require__(316),
-        styles: [__webpack_require__(287)]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__previewpost_service__["a" /* PreviewService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__previewpost_service__["a" /* PreviewService */]) === "function" && _a || Object])
-], Preview);
-
-var _a;
-//# sourceMappingURL=preview.component.js.map
-
-/***/ }),
-
-/***/ 211:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__states_service__ = __webpack_require__(24);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Spinner; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var Spinner = (function () {
-    function Spinner(st) {
-        var _this = this;
-        this.st = st;
-        this.isOpen = false;
-        this.isSuccess = false;
-        this.isError = false;
-        this.st.spinnerOpen.subscribe(function (val) {
-            _this.isOpen = val.isOpen;
-            if (val.status !== undefined) {
-                val.status ? _this.isSuccess = true : _this.isError = true;
-                _this.timeOutClosing();
-            }
-        });
-    }
-    Spinner.prototype.timeOutClosing = function () {
-        var _this = this;
-        setTimeout(function () {
-            _this.isOpen = false;
-            _this.isSuccess = false;
-            _this.isError = false;
-        }, 1500);
-    };
-    return Spinner;
-}());
-Spinner = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'spinner',
-        template: __webpack_require__(318),
-        styles: [__webpack_require__(289)]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__states_service__["a" /* StateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__states_service__["a" /* StateService */]) === "function" && _a || Object])
-], Spinner);
-
-var _a;
-//# sourceMappingURL=spinner.componnet.js.map
-
-/***/ }),
-
-/***/ 212:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_constans__ = __webpack_require__(23);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Upvote; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var Upvote = (function () {
-    function Upvote(_cookieService, renderer, elementRef) {
-        this._cookieService = _cookieService;
-        this.renderer = renderer;
-        this.elementRef = elementRef;
-        this.isUpvoted = false;
-        this.isDisupvoted = false;
-        this.upvote = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.current_session = this._cookieService.getObject(__WEBPACK_IMPORTED_MODULE_2__app_constans__["b" /* COOKIE_KEYS */].SEESION_HASH);
-    }
-    Upvote.prototype.ngOnInit = function () {
-        this.isUpvote();
-        this.isDisupvote();
-    };
-    Upvote.prototype.clickUpvote = function () {
-        this.isUpvoted = !this.isUpvoted;
-        if (this.isUpvoted) {
-            this.renderer.setElementClass(this.up.nativeElement, 'up-btn--active', true);
-        }
-        else {
-            this.renderer.setElementClass(this.up.nativeElement, 'up-btn--active', false);
-        }
-    };
-    Upvote.prototype.clickDisupvote = function () {
-        this.isDisupvoted = !this.isDisupvoted;
-        if (this.isDisupvoted) {
-            this.renderer.setElementClass(this.dis.nativeElement, 'dis-btn--active', true);
-        }
-        else {
-            this.renderer.setElementClass(this.dis.nativeElement, 'dis-btn--active', false);
-        }
-    };
-    Upvote.prototype.upvoteController = function (action) {
-        var obj = { index: this.index,
-            post: this.item,
-            action: action };
-        if (action) {
-            if (!this.isUpvoted && !this.isDisupvoted) {
-                this.clickUpvote();
-                this.upvote.emit(obj);
-            }
-            else if (!this.isUpvoted && this.isDisupvoted) {
-                this.clickUpvote();
-                this.clickDisupvote();
-                this.upvote.emit(obj);
-            }
-            else if (this.isUpvoted) {
-                this.clickUpvote();
-                this.upvote.emit(obj);
-            }
-        }
-        else {
-            if (!this.isDisupvoted && !this.isUpvoted) {
-                this.clickDisupvote();
-                this.upvote.emit(obj);
-            }
-            else if (!this.isDisupvoted && this.isUpvoted) {
-                this.clickDisupvote();
-                this.clickUpvote();
-                this.upvote.emit(obj);
-            }
-            else if (this.isDisupvoted) {
-                this.clickDisupvote();
-                this.upvote.emit(obj);
-            }
-        }
-    };
-    Upvote.prototype.isUpvote = function () {
-        var _this = this;
-        if (this.current_session) {
-            this.item.upvotes.map(function (upvote) {
-                if (upvote.user_id === _this.current_session.user.id) {
-                    _this.renderer.setElementClass(_this.up.nativeElement, 'up-btn--active', true);
-                    _this.isUpvoted = true;
-                }
-            });
-        }
-    };
-    Upvote.prototype.isDisupvote = function () {
-        var _this = this;
-        if (this.current_session) {
-            this.item.disupvotes.map(function (disupvote) {
-                if (disupvote.user_id === _this.current_session.user.id) {
-                    _this.renderer.setElementClass(_this.dis.nativeElement, 'dis-btn--active', true);
-                    _this.isDisupvoted = true;
-                }
-            });
-        }
-    };
-    return Upvote;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('up'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
-], Upvote.prototype, "up", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('dis'),
-    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _b || Object)
-], Upvote.prototype, "dis", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-    __metadata("design:type", Number)
-], Upvote.prototype, "index", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-    __metadata("design:type", Object)
-], Upvote.prototype, "item", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
-    __metadata("design:type", Object)
-], Upvote.prototype, "upvote", void 0);
-Upvote = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'upvote',
-        template: __webpack_require__(319),
-        styles: [__webpack_require__(290)]
-    }),
-    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _e || Object])
-], Upvote);
-
-var _a, _b, _c, _d, _e;
-//# sourceMappingURL=upvote.component.js.map
-
-/***/ }),
-
-/***/ 213:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(52);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppContainer; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var AppContainer = (function () {
-    function AppContainer(router) {
-        this.router = router;
-    }
-    return AppContainer;
-}());
-AppContainer = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-container',
-        template: __webpack_require__(320),
-        styles: [__webpack_require__(291)]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object])
-], AppContainer);
-
-var _a;
-//# sourceMappingURL=appContainer.container.js.map
-
-/***/ }),
-
-/***/ 214:
+/***/ 215:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1928,7 +1986,7 @@ function validateEmail(c) {
 
 /***/ }),
 
-/***/ 215:
+/***/ 216:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2135,35 +2193,12 @@ StoreService = __decorate([
 
 /***/ }),
 
-/***/ 277:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(6)(false);
-// imports
-exports.i(__webpack_require__(15), "");
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
-
-// module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.add-btn {\n  position: fixed;\n  margin: 20px;\n  width: 50px;\n  height: 50px;\n  right: 0;\n  bottom: 0;\n  border-radius: 45px;\n  outline: none;\n  border: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  cursor: pointer;\n  transition: all ease-in-out 0.3s;\n  z-index: 100;\n  color: #fff;\n  background-color: #19B5FE; }\n  .add-btn:hover {\n    background-color: #22A7F0; }\n  .add-btn:active {\n    background-color: #0b6ca1; }\n  .add-btn--active {\n    top: 0;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n    transition: all ease-in-out 0.3s; }\n  .add-btn md-icon {\n    padding: 13px 0 !important; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
 /***/ 278:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(15), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2171,7 +2206,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Rob
 exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.menu-container {\n  position: fixed;\n  width: 100px;\n  height: 98%;\n  padding: 8px;\n  background-color: #fff;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: column wrap;\n          flex-flow: column wrap;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  .menu-container__account-info {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .menu-container__account-info__user-name {\n      text-align: center; }\n      .menu-container__account-info__user-name p {\n        margin: 0 0 0 2px;\n        font-family: Helvetica, sans-serif; }\n    .menu-container__account-info__user-img {\n      width: 75px;\n      height: 75px;\n      margin-right: 10px;\n      border-radius: 100px;\n      overflow: hidden;\n      border-color: transparent;\n      margin-bottom: 15px;\n      box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n      .menu-container__account-info__user-img img {\n        width: 100%;\n        height: 100%;\n        -o-object-fit: contain;\n           object-fit: contain;\n        -o-object-position: center;\n           object-position: center; }\n\n.login-form {\n  position: fixed;\n  width: 350px;\n  height: 220px;\n  margin: auto;\n  padding: 15px;\n  left: 0;\n  top: 150%;\n  right: 0;\n  bottom: 0;\n  z-index: 9999;\n  background-color: #fff;\n  overflow: hidden;\n  border-radius: 7px;\n  transition: all ease-out .3s;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  .login-form__background {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background-color: #000;\n    opacity: 0.4;\n    left: 0;\n    top: 0;\n    z-index: 1; }\n  .login-form--active {\n    top: 0;\n    transition: all ease-in .3s; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.add-btn {\n  position: fixed;\n  margin: 20px;\n  width: 50px;\n  height: 50px;\n  right: 0;\n  bottom: 0;\n  border-radius: 45px;\n  outline: none;\n  border: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  cursor: pointer;\n  transition: all ease-in-out 0.3s;\n  z-index: 100;\n  color: #fff;\n  background-color: #19B5FE; }\n  .add-btn:hover {\n    background-color: #22A7F0; }\n  .add-btn:active {\n    background-color: #0b6ca1; }\n  .add-btn--active {\n    top: 0;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n    transition: all ease-in-out 0.3s; }\n  .add-btn md-icon {\n    padding: 13px 0 !important; }\n", ""]);
 
 // exports
 
@@ -2186,10 +2221,15 @@ module.exports = module.exports.toString();
 
 exports = module.exports = __webpack_require__(6)(false);
 // imports
-
+exports.i(__webpack_require__(14), "");
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
 
 // module
-exports.push([module.i, ".comments-container {\n  padding-top: 45px; }\n  .comments-container__comment {\n    padding-left: 15px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n  .comments-container__add-form {\n    padding-left: 15px; }\n    .comments-container__add-form form {\n      width: 100%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-flow: row nowrap;\n              flex-flow: row nowrap; }\n      .comments-container__add-form form textarea {\n        width: 80%;\n        height: 30px; }\n      .comments-container__add-form form input {\n        width: 20%;\n        margin-left: 10px; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.menu-container {\n  position: fixed;\n  width: 100px;\n  height: 98%;\n  top: 0;\n  padding: 8px;\n  background-color: #fff;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: column wrap;\n          flex-flow: column wrap;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  .menu-container__account-info {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .menu-container__account-info__user-name {\n      text-align: center; }\n      .menu-container__account-info__user-name p {\n        margin: 0 0 0 2px;\n        font-family: Helvetica, sans-serif; }\n    .menu-container__account-info__user-img {\n      width: 75px;\n      height: 75px;\n      margin-right: 10px;\n      border-radius: 100px;\n      overflow: hidden;\n      border-color: transparent;\n      margin-bottom: 15px;\n      box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n      .menu-container__account-info__user-img img {\n        width: 100%;\n        height: 100%;\n        -o-object-fit: contain;\n           object-fit: contain;\n        -o-object-position: center;\n           object-position: center; }\n\n.login-form {\n  position: fixed;\n  width: 350px;\n  height: 220px;\n  margin: auto;\n  padding: 15px;\n  left: 0;\n  top: 150%;\n  right: 0;\n  bottom: 0;\n  z-index: 9999;\n  background-color: #fff;\n  overflow: hidden;\n  border-radius: 7px;\n  transition: all ease-out .3s;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  .login-form__background {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background-color: #000;\n    opacity: 0.4;\n    left: 0;\n    top: 0;\n    z-index: 1; }\n  .login-form--active {\n    top: 0;\n    transition: all ease-in .3s; }\n", ""]);
 
 // exports
 
@@ -2207,7 +2247,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, ".first-step-container {\n  width: 100%; }\n  .first-step-container__form {\n    width: 100%;\n    height: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: column nowrap;\n            flex-flow: column nowrap; }\n    .first-step-container__form__full {\n      width: 100%;\n      margin-bottom: 45px; }\n      .first-step-container__form__full:first-child {\n        margin-bottom: 30px; }\n      .first-step-container__form__full input {\n        font-size: 18px;\n        text-align: left;\n        width: 100%; }\n", ""]);
+exports.push([module.i, ".comments-container {\n  padding-top: 45px; }\n  .comments-container__comment {\n    padding-left: 15px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n  .comments-container__add-form {\n    padding-left: 15px; }\n    .comments-container__add-form form {\n      width: 100%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-flow: row nowrap;\n              flex-flow: row nowrap; }\n      .comments-container__add-form form textarea {\n        width: 80%;\n        height: 30px; }\n      .comments-container__add-form form input {\n        width: 20%;\n        margin-left: 10px; }\n", ""]);
 
 // exports
 
@@ -2222,15 +2262,10 @@ module.exports = module.exports.toString();
 
 exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(15), "");
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
+
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.header-steps {\n  position: relative;\n  width: 100%;\n  height: 20px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .header-steps__items {\n    position: relative;\n    width: 150px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row nowrap;\n            flex-flow: row nowrap;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n  .header-steps__item {\n    width: 15px;\n    height: 15px;\n    background-color: #BDC3C7;\n    border-radius: 35px;\n    transition: all ease-out .3s;\n    z-index: 2;\n    cursor: pointer; }\n    .header-steps__item--active {\n      width: 50%;\n      opacity: 0.8 !important;\n      transition: all ease-in .3s; }\n    .header-steps__item--first {\n      background-color: #673ab7;\n      opacity: 0.3; }\n    .header-steps__item--second {\n      background-color: #003171;\n      opacity: 0.3; }\n    .header-steps__item--third {\n      background-color: #33cc99;\n      opacity: 0.3; }\n", ""]);
+exports.push([module.i, ".first-step-container {\n  width: 100%; }\n  .first-step-container__form {\n    width: 100%;\n    height: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: column nowrap;\n            flex-flow: column nowrap; }\n    .first-step-container__form__full {\n      width: 100%;\n      margin-bottom: 45px; }\n      .first-step-container__form__full:first-child {\n        margin-bottom: 30px; }\n      .first-step-container__form__full input {\n        font-size: 18px;\n        text-align: left;\n        width: 100%; }\n", ""]);
 
 // exports
 
@@ -2245,7 +2280,7 @@ module.exports = module.exports.toString();
 
 exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(15), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2253,7 +2288,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Rob
 exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.second-step {\n  height: 100%;\n  position: relative;\n  padding: 15px 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row; }\n  .second-step__section {\n    width: 50%; }\n  .second-step__drag-drop {\n    position: relative;\n    width: 310px;\n    height: 310px;\n    background-color: rgba(189, 195, 199, 0.2);\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    outline: 2px dashed #BDC3C7;\n    outline-offset: -10px;\n    transition: all ease-in-out .3s;\n    overflow: hidden;\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n    .second-step__drag-drop--active {\n      background-color: rgba(189, 195, 199, 0.1);\n      outline-offset: -20px;\n      outline: 2px dashed #673ab7;\n      transition: all ease-in-out .3s; }\n    .second-step__drag-drop__input {\n      display: none; }\n    .second-step__drag-drop__icon {\n      font-size: 36px;\n      color: #BDC3C7;\n      margin-bottom: 7px;\n      transition: all ease-in-out .3s; }\n      .second-step__drag-drop__icon--active {\n        color: #673ab7;\n        margin-bottom: 15px;\n        transition: all ease-in-out .3s; }\n    .second-step__drag-drop__area {\n      font-family: Roboto,\"Helvetica Neue\",sans-serif;\n      font-size: 18px;\n      color: #BDC3C7;\n      font-weight: inherit;\n      cursor: pointer;\n      transition: all ease-in-out .3s; }\n      .second-step__drag-drop__area--active {\n        color: #673ab7;\n        transition: all ease-in-out .3s; }\n    .second-step__drag-drop img {\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      -o-object-fit: cover;\n         object-fit: cover; }\n    .second-step__drag-drop__spinner {\n      position: absolute; }\n    .second-step__drag-drop__delete-btn {\n      position: absolute;\n      width: 24px;\n      height: 24px;\n      top: 0;\n      right: 0;\n      background-color: #000;\n      cursor: pointer;\n      opacity: 0.8;\n      z-index: 10; }\n      .second-step__drag-drop__delete-btn i {\n        font-size: 24px;\n        color: #fff; }\n    .second-step__drag-drop__image-overlay {\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      z-index: 1;\n      top: 0;\n      left: 0; }\n  .second-step__colors-container {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row nowrap;\n            flex-flow: row nowrap;\n    margin-bottom: 20px; }\n    .second-step__colors-container__circle {\n      width: 36px;\n      height: 36px;\n      border-radius: 20px;\n      margin-right: 10px;\n      box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11);\n      cursor: pointer; }\n    .second-step__colors-container input {\n      font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\nmd-slider {\n  width: 90%; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.header-steps {\n  position: relative;\n  width: 100%;\n  height: 20px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .header-steps__items {\n    position: relative;\n    width: 150px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row nowrap;\n            flex-flow: row nowrap;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n  .header-steps__item {\n    width: 15px;\n    height: 15px;\n    background-color: #BDC3C7;\n    border-radius: 35px;\n    transition: all ease-out .3s;\n    z-index: 2;\n    cursor: pointer; }\n    .header-steps__item--active {\n      width: 50%;\n      opacity: 0.8 !important;\n      transition: all ease-in .3s; }\n    .header-steps__item--first {\n      background-color: #673ab7;\n      opacity: 0.3; }\n    .header-steps__item--second {\n      background-color: #003171;\n      opacity: 0.3; }\n    .header-steps__item--third {\n      background-color: #33cc99;\n      opacity: 0.3; }\n", ""]);
 
 // exports
 
@@ -2268,7 +2303,7 @@ module.exports = module.exports.toString();
 
 exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(15), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2276,7 +2311,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Rob
 exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.third-step {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .third-step__editor {\n    width: 100%;\n    height: 100%; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.second-step {\n  height: 100%;\n  position: relative;\n  padding: 15px 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row; }\n  .second-step__section {\n    width: 50%; }\n  .second-step__drag-drop {\n    position: relative;\n    width: 310px;\n    height: 310px;\n    background-color: rgba(189, 195, 199, 0.2);\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    outline: 2px dashed #BDC3C7;\n    outline-offset: -10px;\n    transition: all ease-in-out .3s;\n    overflow: hidden;\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n    .second-step__drag-drop--active {\n      background-color: rgba(189, 195, 199, 0.1);\n      outline-offset: -20px;\n      outline: 2px dashed #673ab7;\n      transition: all ease-in-out .3s; }\n    .second-step__drag-drop__input {\n      display: none; }\n    .second-step__drag-drop__icon {\n      font-size: 36px;\n      color: #BDC3C7;\n      margin-bottom: 7px;\n      transition: all ease-in-out .3s; }\n      .second-step__drag-drop__icon--active {\n        color: #673ab7;\n        margin-bottom: 15px;\n        transition: all ease-in-out .3s; }\n    .second-step__drag-drop__area {\n      font-family: Roboto,\"Helvetica Neue\",sans-serif;\n      font-size: 18px;\n      color: #BDC3C7;\n      font-weight: inherit;\n      cursor: pointer;\n      transition: all ease-in-out .3s; }\n      .second-step__drag-drop__area--active {\n        color: #673ab7;\n        transition: all ease-in-out .3s; }\n    .second-step__drag-drop img {\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      -o-object-fit: cover;\n         object-fit: cover; }\n    .second-step__drag-drop__spinner {\n      position: absolute; }\n    .second-step__drag-drop__delete-btn {\n      position: absolute;\n      width: 24px;\n      height: 24px;\n      top: 0;\n      right: 0;\n      background-color: #000;\n      cursor: pointer;\n      opacity: 0.8;\n      z-index: 10; }\n      .second-step__drag-drop__delete-btn i {\n        font-size: 24px;\n        color: #fff; }\n    .second-step__drag-drop__image-overlay {\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      z-index: 1;\n      top: 0;\n      left: 0; }\n  .second-step__colors-container {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row nowrap;\n            flex-flow: row nowrap;\n    margin-bottom: 20px; }\n    .second-step__colors-container__circle {\n      width: 36px;\n      height: 36px;\n      border-radius: 20px;\n      margin-right: 10px;\n      box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11);\n      cursor: pointer; }\n    .second-step__colors-container input {\n      font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\nmd-slider {\n  width: 90%; }\n", ""]);
 
 // exports
 
@@ -2291,7 +2326,7 @@ module.exports = module.exports.toString();
 
 exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(15), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2299,7 +2334,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Rob
 exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.edit-form {\n  position: absolute;\n  width: 90px;\n  height: 90px;\n  bottom: 0px;\n  right: 0; }\n  .edit-form--active {\n    position: fixed;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0; }\n  .edit-form__new-post__form {\n    position: absolute;\n    width: 769px;\n    height: 100%;\n    margin: auto;\n    top: 0;\n    left: 0;\n    right: 0;\n    z-index: 2;\n    overflow: hidden;\n    display: none;\n    transition: all ease-out .3s; }\n    .edit-form__new-post__form--active {\n      display: block; }\n    .edit-form__new-post__form--full {\n      width: 90%;\n      transition: all ease-in .3s; }\n    .edit-form__new-post__form__title {\n      width: 100%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      margin: 30px 0; }\n      .edit-form__new-post__form__title span {\n        text-align: center;\n        font-family: 'Noto Sans', sans-serif;\n        font-size: 26px;\n        color: #673ab7;\n        text-transform: uppercase; }\n    .edit-form__new-post__form__steps-container {\n      width: 300%;\n      height: 70%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-flow: row nowrap;\n              flex-flow: row nowrap;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      transition: all ease-in-out .2s; }\n      .edit-form__new-post__form__steps-container__item {\n        width: calc(100% / 3); }\n      .edit-form__new-post__form__steps-container--first, .edit-form__new-post__form__steps-container--second, .edit-form__new-post__form__steps-container--third {\n        transition: all ease-in-out .5s; }\n      .edit-form__new-post__form__steps-container--first {\n        -webkit-transform: translateX(0);\n                transform: translateX(0); }\n      .edit-form__new-post__form__steps-container--second {\n        -webkit-transform: translateX(calc(-100% / 3));\n                transform: translateX(calc(-100% / 3)); }\n      .edit-form__new-post__form__steps-container--third {\n        -webkit-transform: translateX(calc(-200% / 3));\n                transform: translateX(calc(-200% / 3)); }\n  .edit-form__step-button-container button {\n    width: 100%;\n    height: 48px;\n    background-color: rgba(189, 195, 199, 0.5);\n    color: #fff;\n    text-transform: capitalize;\n    transition: all ease-in-out .3s;\n    cursor: not-allowed; }\n  .edit-form__step-button-container--active button {\n    background-color: #33cc99;\n    cursor: pointer; }\n  .edit-form__full-btn {\n    position: fixed;\n    margin: 20px;\n    width: 50px;\n    height: 50px;\n    right: 0;\n    bottom: 0;\n    border-radius: 45px;\n    outline: none;\n    border: 0;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    cursor: pointer;\n    transition: all ease-in-out 0.3s;\n    z-index: 100;\n    color: #fff; }\n    .edit-form__full-btn md-icon {\n      padding: 13px 0 !important; }\n  .edit-form__full-btn {\n    top: 0;\n    margin-right: 90px;\n    background-color: #5558AA;\n    display: none; }\n    .edit-form__full-btn:hover {\n      background-color: #673ab7; }\n    .edit-form__full-btn:active {\n      background-color: #3b216a; }\n    .edit-form__full-btn--active {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex; }\n  .edit-form__background {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background-color: #fff;\n    left: 0;\n    top: 0;\n    z-index: 1;\n    display: none; }\n    .edit-form__background--active {\n      display: block; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.third-step {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .third-step__editor {\n    width: 100%;\n    height: 100%; }\n", ""]);
 
 // exports
 
@@ -2314,7 +2349,7 @@ module.exports = module.exports.toString();
 
 exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(15), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2322,7 +2357,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Rob
 exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.login-container {\n  width: 100%;\n  height: 100%; }\n  .login-container__title {\n    width: 100%;\n    text-align: center;\n    font-family: 'Noto Sans', sans-serif;\n    font-size: 22px;\n    margin-top: 0;\n    color: #181819; }\n  .login-container__form {\n    height: 56%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n    .login-container__form__input-container {\n      width: 100%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-flow: column nowrap;\n              flex-flow: column nowrap;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n    .login-container__form__full {\n      width: 100%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n      margin-bottom: 10px; }\n      .login-container__form__full input {\n        text-align: center;\n        font-size: 16px;\n        border-bottom: 1px solid #BDC3C7;\n        margin-bottom: 5px; }\n    .login-container__form__submit {\n      position: absolute;\n      width: 100%;\n      left: 0;\n      bottom: 0; }\n      .login-container__form__submit input {\n        width: 100%;\n        height: 48px;\n        background-color: #BDC3C7;\n        color: #fff;\n        padding: 15px;\n        border: 0;\n        transition: all ease-in-out .3s;\n        cursor: not-allowed; }\n        .login-container__form__submit input:hover, .login-container__form__submit input:active {\n          background-color: #BDC3C7; }\n      .login-container__form__submit--active input {\n        background-color: #33cc99;\n        transition: all ease-in-out .3s;\n        cursor: pointer; }\n        .login-container__form__submit--active input:hover {\n          background-color: #29a37a; }\n        .login-container__form__submit--active input:active {\n          background-color: #1f7a5c; }\n    .login-container__form--error input[type=\"submit\"] {\n      background-color: #C64141; }\n    .login-container__form--error input[type=\"email\"],\n    .login-container__form--error input[type=\"password\"] {\n      color: #C64141 !important; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.favorit-post {\n  margin-bottom: 25px; }\n  .favorit-post__header {\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row nowrap;\n            flex-flow: row nowrap;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .favorit-post__header i {\n      width: 24px;\n      margin-right: 7px; }\n    .favorit-post__header p {\n      font-size: 12px;\n      font-family: Helvetica, sans-serif;\n      font-weight: 700;\n      text-transform: uppercase;\n      color: #181819;\n      margin: 0; }\n  .favorit-post__content {\n    width: 100%;\n    margin: 15px 0;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row nowrap;\n            flex-flow: row nowrap;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n    .favorit-post__content__item {\n      position: relative;\n      width: calc((100% / 4) - 15px);\n      height: 175px;\n      border-radius: 7px;\n      overflow: hidden;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n      .favorit-post__content__item a {\n        height: 100%; }\n      .favorit-post__content__item img {\n        width: 100%;\n        height: 100%;\n        -o-object-fit: cover;\n           object-fit: cover; }\n      .favorit-post__content__item__static-overlay {\n        position: absolute;\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        background-color: #000;\n        opacity: 0.3;\n        z-index: 3; }\n      .favorit-post__content__item__overlay {\n        position: absolute;\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        z-index: 2; }\n      .favorit-post__content__item__title {\n        position: absolute;\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        z-index: 4;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center; }\n        .favorit-post__content__item__title h5 {\n          color: #fff;\n          font-family: Helvetica, sans-serif;\n          font-weight: 800;\n          font-size: 16px;\n          text-align: center;\n          text-transform: uppercase; }\n    .favorit-post__content__hover-info {\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      top: 0;\n      left: 0;\n      opacity: 0;\n      transition: all ease-in-out 0.2s;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      z-index: 5; }\n      .favorit-post__content__hover-info__background {\n        position: absolute;\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        background-color: #000;\n        opacity: 0.6;\n        z-index: 1; }\n      .favorit-post__content__hover-info__data {\n        -webkit-transform: scale(0);\n                transform: scale(0);\n        transition: all ease-in-out 0.2s;\n        z-index: 2;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-orient: vertical;\n        -webkit-box-direction: normal;\n            -ms-flex-flow: column nowrap;\n                flex-flow: column nowrap;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center; }\n        .favorit-post__content__hover-info__data span {\n          font-size: 16px;\n          color: #fff;\n          font-family: Helvetica, sans-serif;\n          text-transform: uppercase;\n          margin-bottom: 12px;\n          display: -webkit-box;\n          display: -ms-flexbox;\n          display: flex;\n          -webkit-box-align: center;\n              -ms-flex-align: center;\n                  align-items: center; }\n          .favorit-post__content__hover-info__data span i {\n            margin-right: 7px; }\n      .favorit-post__content__hover-info--active {\n        opacity: 1;\n        transition: all ease-in-out 0.2s; }\n        .favorit-post__content__hover-info--active div:not(.favorit-post__content__hover-info__background) {\n          -webkit-transform: scale(1);\n                  transform: scale(1);\n          transition: all ease-in-out 0.2s; }\n", ""]);
 
 // exports
 
@@ -2337,7 +2372,7 @@ module.exports = module.exports.toString();
 
 exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(15), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2345,7 +2380,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Rob
 exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.posts-cont {\n  width: 100%; }\n  .posts-cont__post-list {\n    position: relative;\n    height: 450px;\n    border: 1px solid rgba(135, 171, 209, 0.15);\n    margin-bottom: 25px;\n    background: #fff;\n    border-radius: 7px;\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n    .posts-cont__post-list__post-header {\n      position: relative;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      padding: 10px 10px 14px; }\n      .posts-cont__post-list__post-header__line {\n        position: absolute;\n        width: 100%;\n        height: 1px;\n        left: 0;\n        bottom: 0;\n        background: #673ab7;\n        background: linear-gradient(to right, #673ab7, #763568, #003171, #CF000F); }\n  .posts-cont__list-items {\n    border-bottom: 1px solid #87abd1; }\n  .posts-cont__user-info {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .posts-cont__user-info__user-name span {\n      margin-right: 3px; }\n    .posts-cont__user-info__created-at {\n      padding-top: 2px; }\n      .posts-cont__user-info__created-at span {\n        font-size: 12px;\n        color: #BDC3C7; }\n    .posts-cont__user-info__image-cont {\n      width: 50px;\n      height: 50px;\n      margin-right: 10px;\n      border-radius: 100px;\n      overflow: hidden;\n      border-color: transparent;\n      box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n      .posts-cont__user-info__image-cont img {\n        width: 100%;\n        height: 100%;\n        -o-object-fit: contain;\n           object-fit: contain;\n        -o-object-position: center;\n           object-position: center; }\n  .posts-cont__action-btn {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; }\n  .posts-cont__post-body {\n    padding: 0 10px; }\n  .posts-cont__footer {\n    position: absolute;\n    width: 100%;\n    bottom: 0;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n  .posts-cont__comments-count {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    padding: 10px 15px; }\n    .posts-cont__comments-count div {\n      margin-right: 10px; }\n    .posts-cont__comments-count span {\n      font-size: 16px;\n      color: #92b0b3;\n      opacity: 0.4; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.login-container {\n  width: 100%;\n  height: 100%; }\n  .login-container__title {\n    width: 100%;\n    text-align: center;\n    font-family: 'Noto Sans', sans-serif;\n    font-size: 22px;\n    margin-top: 0;\n    color: #181819; }\n  .login-container__form {\n    height: 56%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n    .login-container__form__input-container {\n      width: 100%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-flow: column nowrap;\n              flex-flow: column nowrap;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n    .login-container__form__full {\n      width: 100%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n      margin-bottom: 10px; }\n      .login-container__form__full input {\n        text-align: center;\n        font-size: 16px;\n        border-bottom: 1px solid #BDC3C7;\n        margin-bottom: 5px; }\n    .login-container__form__submit {\n      position: absolute;\n      width: 100%;\n      left: 0;\n      bottom: 0; }\n      .login-container__form__submit input {\n        width: 100%;\n        height: 48px;\n        background-color: #BDC3C7;\n        color: #fff;\n        padding: 15px;\n        border: 0;\n        transition: all ease-in-out .3s;\n        cursor: not-allowed; }\n        .login-container__form__submit input:hover, .login-container__form__submit input:active {\n          background-color: #BDC3C7; }\n      .login-container__form__submit--active input {\n        background-color: #33cc99;\n        transition: all ease-in-out .3s;\n        cursor: pointer; }\n        .login-container__form__submit--active input:hover {\n          background-color: #29a37a; }\n        .login-container__form__submit--active input:active {\n          background-color: #1f7a5c; }\n    .login-container__form--error input[type=\"submit\"] {\n      background-color: #C64141; }\n    .login-container__form--error input[type=\"email\"],\n    .login-container__form--error input[type=\"password\"] {\n      color: #C64141 !important; }\n", ""]);
 
 // exports
 
@@ -2356,6 +2391,29 @@ module.exports = module.exports.toString();
 /***/ }),
 
 /***/ 287:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(6)(false);
+// imports
+exports.i(__webpack_require__(14), "");
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
+
+// module
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.posts-cont {\n  width: 100%; }\n  .posts-cont__title {\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row nowrap;\n            flex-flow: row nowrap;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .posts-cont__title i {\n      width: 24px;\n      margin-right: 7px; }\n    .posts-cont__title p {\n      font-size: 12px;\n      font-family: Helvetica, sans-serif;\n      font-weight: 700;\n      text-transform: uppercase;\n      color: #181819;\n      margin: 0; }\n  .posts-cont__list {\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row wrap;\n            flex-flow: row wrap; }\n  .posts-cont__post-list {\n    position: relative;\n    width: calc((100% / 2) - 10px);\n    height: 550px;\n    margin-bottom: 35px;\n    margin-right: 20px;\n    background: #fff;\n    border-radius: 7px;\n    overflow: hidden;\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n    .posts-cont__post-list:nth-child(even) {\n      margin-right: 0; }\n    .posts-cont__post-list__post-header {\n      position: relative;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      padding: 10px 10px 14px; }\n  .posts-cont__post-body {\n    padding: 0;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    overflow: hidden;\n    width: 100%;\n    height: 480px; }\n    .posts-cont__post-body img {\n      width: 100%;\n      height: 100%;\n      -o-object-fit: cover;\n         object-fit: cover;\n      z-index: 1; }\n    .posts-cont__post-body__item {\n      position: relative;\n      height: 100%; }\n      .posts-cont__post-body__item__overlay {\n        position: absolute;\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        z-index: 2; }\n      .posts-cont__post-body__item__static-overlay {\n        position: absolute;\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        background-color: #000;\n        opacity: 0.3;\n        z-index: 3; }\n      .posts-cont__post-body__item__content {\n        position: absolute;\n        width: calc(100% - 60px);\n        height: 100%;\n        top: 0;\n        left: 0;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center;\n        -webkit-box-orient: vertical;\n        -webkit-box-direction: normal;\n            -ms-flex-flow: column nowrap;\n                flex-flow: column nowrap;\n        z-index: 4;\n        color: #fff;\n        padding: 15px 30px; }\n        .posts-cont__post-body__item__content h3 {\n          font-size: 24px;\n          font-weight: 800;\n          text-transform: uppercase;\n          text-align: center;\n          margin-bottom: 0; }\n        .posts-cont__post-body__item__content p {\n          font-size: 16px;\n          font-weight: lighter;\n          font-family: Helvetica, sans-serif;\n          text-transform: uppercase;\n          text-align: center; }\n  .posts-cont__user-info {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .posts-cont__user-info__user-name span {\n      margin-right: 3px; }\n    .posts-cont__user-info__created-at {\n      padding-top: 2px; }\n      .posts-cont__user-info__created-at span {\n        font-size: 12px;\n        color: #BDC3C7; }\n    .posts-cont__user-info__image-cont {\n      width: 50px;\n      height: 50px;\n      margin-right: 10px;\n      border-radius: 100px;\n      overflow: hidden;\n      border-color: transparent;\n      box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n      .posts-cont__user-info__image-cont img {\n        width: 100%;\n        height: 100%;\n        -o-object-fit: contain;\n           object-fit: contain;\n        -o-object-position: center;\n           object-position: center; }\n  .posts-cont__action-btn {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .posts-cont__action-btn i {\n      transition: all ease-in-out 0.4s;\n      cursor: pointer;\n      color: #BDC3C7; }\n      .posts-cont__action-btn i:hover {\n        transition: all ease-in-out 0.4s;\n        color: #8d8d8d; }\n    .posts-cont__action-btn__edit i {\n      font-size: 25px;\n      font-weight: lighter; }\n    .posts-cont__action-btn__remove i {\n      font-size: 28px;\n      font-weight: 800; }\n  .posts-cont__footer {\n    position: absolute;\n    width: 100%;\n    bottom: 0;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    z-index: 5; }\n  .posts-cont__comments-count {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    padding: 10px 15px; }\n    .posts-cont__comments-count div {\n      margin-right: 10px; }\n    .posts-cont__comments-count span {\n      font-size: 16px;\n      color: #fff;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n      .posts-cont__comments-count span i {\n        margin-right: 7px;\n        font-size: 32px; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 288:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(false);
@@ -2373,35 +2431,12 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 288:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(6)(false);
-// imports
-exports.i(__webpack_require__(15), "");
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
-
-// module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.registration-container__form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap; }\n  .registration-container__form__double {\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: nowrap;\n        flex-wrap: nowrap; }\n  .registration-container__form__part, .registration-container__form__full {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-bottom: 10px; }\n    .registration-container__form__part label, .registration-container__form__full label {\n      font-size: 12px; }\n    .registration-container__form__part input, .registration-container__form__full input {\n      height: 30px; }\n  .registration-container__form__part {\n    width: 50%; }\n    .registration-container__form__part:first-child {\n      padding-right: 5px; }\n    .registration-container__form__part:last-child {\n      padding-left: 5px; }\n  .registration-container__form__full {\n    width: 100%; }\n  .registration-container__form__submit {\n    width: 100%; }\n    .registration-container__form__submit input {\n      width: 100%;\n      background-color: #22A7F0;\n      color: #fff;\n      padding: 15px;\n      border: 0; }\n      .registration-container__form__submit input:hover {\n        background-color: #0e8cd1; }\n      .registration-container__form__submit input:active {\n        background-color: #0b6ca1; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
 /***/ 289:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(15), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2409,7 +2444,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Rob
 exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.spinner-container {\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  z-index: 9999; }\n  .spinner-container__spinner {\n    width: 7em;\n    height: 7em;\n    border-radius: 50%;\n    border-left: 0.4em solid #19B5FE;\n    animation: spinner 1.2s infinite linear;\n    -webkit-animation: spinner 1.2s infinite linear;\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); }\n    .spinner-container__spinner--success {\n      transition: all 0.8s ease-in-out;\n      border: 0.4em solid #33cc99; }\n    .spinner-container__spinner--failure {\n      transition: all 0.8s ease-in-out;\n      border: 0.4em solid #C64141; }\n\n@-webkit-keyframes spinner {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n\n@keyframes spinner {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n  .spinner-container__success, .spinner-container__failure {\n    position: absolute;\n    width: 7em;\n    height: 7em;\n    display: none; }\n    .spinner-container__success--active, .spinner-container__failure--active {\n      display: block; }\n  .spinner-container__success::after {\n    animation: success 1.2s 1 ease;\n    -webkit-animation: success 1.2s 1 ease;\n    -webkit-transform: scaleX(-1) rotate(135deg);\n            transform: scaleX(-1) rotate(135deg); }\n  .spinner-container__success::after {\n    opacity: 1;\n    height: 3.5em;\n    width: 1.75em;\n    -webkit-transform-origin: left top;\n            transform-origin: left top;\n    border-right: 2px solid #33cc99;\n    border-top: 2px solid #33cc99;\n    content: '';\n    left: 1.75em;\n    top: 3.5em;\n    position: absolute; }\n\n@keyframes success {\n  0% {\n    height: 0;\n    width: 0;\n    opacity: 1; }\n  20% {\n    height: 0;\n    width: 1.75em;\n    opacity: 1; }\n  40% {\n    height: 3.5em;\n    width: 1.75em;\n    opacity: 1; }\n  100% {\n    height: 3.5em;\n    width: 1.75em;\n    opacity: 1; } }\n\n@-webkit-keyframes success {\n  0% {\n    height: 0;\n    width: 0;\n    opacity: 1; }\n  20% {\n    height: 0;\n    width: 1.75em;\n    opacity: 1; }\n  40% {\n    height: 3.5em;\n    width: 1.75em;\n    opacity: 1; }\n  100% {\n    height: 3.5em;\n    width: 1.75em;\n    opacity: 1; } }\n  .spinner-container__failure::before, .spinner-container__failure::after {\n    content: '';\n    width: 6em;\n    height: 2px;\n    background-color: #C64141;\n    position: absolute;\n    margin: auto;\n    top: 0;\n    bottom: 0;\n    right: 0;\n    left: 0; }\n  .spinner-container__failure::before {\n    -webkit-transform: rotate(225deg);\n            transform: rotate(225deg);\n    animation: before-line 0.7s 1 ease-in;\n    -webkit-animation: before-line 0.7s 1 ease-in; }\n  .spinner-container__failure::after {\n    -webkit-transform: rotate(315deg);\n            transform: rotate(315deg);\n    animation: after-line 0.7s 1 ease-in;\n    -webkit-animation: after-line 0.7s 1 ease-in; }\n\n@keyframes after-line {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(315deg);\n            transform: rotate(315deg); } }\n\n@-webkit-keyframes after-line {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(315deg);\n            transform: rotate(315deg); } }\n\n@keyframes before-line {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(225deg);\n            transform: rotate(225deg); } }\n\n@-webkit-keyframes before-line {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(225deg);\n            transform: rotate(225deg); } }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.registration-container__form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap; }\n  .registration-container__form__double {\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: nowrap;\n        flex-wrap: nowrap; }\n  .registration-container__form__part, .registration-container__form__full {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-bottom: 10px; }\n    .registration-container__form__part label, .registration-container__form__full label {\n      font-size: 12px; }\n    .registration-container__form__part input, .registration-container__form__full input {\n      height: 30px; }\n  .registration-container__form__part {\n    width: 50%; }\n    .registration-container__form__part:first-child {\n      padding-right: 5px; }\n    .registration-container__form__part:last-child {\n      padding-left: 5px; }\n  .registration-container__form__full {\n    width: 100%; }\n  .registration-container__form__submit {\n    width: 100%; }\n    .registration-container__form__submit input {\n      width: 100%;\n      background-color: #22A7F0;\n      color: #fff;\n      padding: 15px;\n      border: 0; }\n      .registration-container__form__submit input:hover {\n        background-color: #0e8cd1; }\n      .registration-container__form__submit input:active {\n        background-color: #0b6ca1; }\n", ""]);
 
 // exports
 
@@ -2424,7 +2459,7 @@ module.exports = module.exports.toString();
 
 exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.i(__webpack_require__(15), "");
+exports.i(__webpack_require__(14), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
@@ -2432,7 +2467,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Rob
 exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\n.post-line-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .post-line-container__line {\n    width: 1440px; }\n    @media (max-width: 1920px) {\n      .post-line-container__line {\n        width: 768px; } }\n    @media (max-width: 1200px) {\n      .post-line-container__line {\n        width: 540px; } }\n    @media (max-width: 990px) {\n      .post-line-container__line {\n        width: 460px; } }\n    @media (max-width: 768px) {\n      .post-line-container__line {\n        width: calc(100% - 30px);\n        margin: 0 15px; } }\n    @media (max-width: 375px) {\n      .post-line-container__line {\n        width: calc(100% - 20px);\n        margin: 0 10px; } }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.edit-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/edit-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 8px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .edit-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.delete-btn {\n  width: 15px;\n  height: 15px;\n  background-image: url(\"/assets/images/remove-icon.svg\");\n  background-size: contain;\n  background-position: center;\n  margin-right: 4px;\n  opacity: 0.4;\n  -webkit-filter: grayscale(0.3);\n          filter: grayscale(0.3);\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .delete-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.comment-icon {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/interface.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.upvotes-cont {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 10px; }\n  .upvotes-cont div {\n    margin-right: 10px; }\n  .upvotes-cont span {\n    font-size: 16px;\n    color: #92b0b3;\n    opacity: 0.4; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.spinner-container {\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  z-index: 9999; }\n  .spinner-container__spinner {\n    width: 7em;\n    height: 7em;\n    border-radius: 50%;\n    border-left: 0.4em solid #19B5FE;\n    animation: spinner 1.2s infinite linear;\n    -webkit-animation: spinner 1.2s infinite linear;\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); }\n    .spinner-container__spinner--success {\n      transition: all 0.8s ease-in-out;\n      border: 0.4em solid #33cc99; }\n    .spinner-container__spinner--failure {\n      transition: all 0.8s ease-in-out;\n      border: 0.4em solid #C64141; }\n\n@-webkit-keyframes spinner {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n\n@keyframes spinner {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n  .spinner-container__success, .spinner-container__failure {\n    position: absolute;\n    width: 7em;\n    height: 7em;\n    display: none; }\n    .spinner-container__success--active, .spinner-container__failure--active {\n      display: block; }\n  .spinner-container__success::after {\n    animation: success 1.2s 1 ease;\n    -webkit-animation: success 1.2s 1 ease;\n    -webkit-transform: scaleX(-1) rotate(135deg);\n            transform: scaleX(-1) rotate(135deg); }\n  .spinner-container__success::after {\n    opacity: 1;\n    height: 3.5em;\n    width: 1.75em;\n    -webkit-transform-origin: left top;\n            transform-origin: left top;\n    border-right: 2px solid #33cc99;\n    border-top: 2px solid #33cc99;\n    content: '';\n    left: 1.75em;\n    top: 3.5em;\n    position: absolute; }\n\n@keyframes success {\n  0% {\n    height: 0;\n    width: 0;\n    opacity: 1; }\n  20% {\n    height: 0;\n    width: 1.75em;\n    opacity: 1; }\n  40% {\n    height: 3.5em;\n    width: 1.75em;\n    opacity: 1; }\n  100% {\n    height: 3.5em;\n    width: 1.75em;\n    opacity: 1; } }\n\n@-webkit-keyframes success {\n  0% {\n    height: 0;\n    width: 0;\n    opacity: 1; }\n  20% {\n    height: 0;\n    width: 1.75em;\n    opacity: 1; }\n  40% {\n    height: 3.5em;\n    width: 1.75em;\n    opacity: 1; }\n  100% {\n    height: 3.5em;\n    width: 1.75em;\n    opacity: 1; } }\n  .spinner-container__failure::before, .spinner-container__failure::after {\n    content: '';\n    width: 6em;\n    height: 2px;\n    background-color: #C64141;\n    position: absolute;\n    margin: auto;\n    top: 0;\n    bottom: 0;\n    right: 0;\n    left: 0; }\n  .spinner-container__failure::before {\n    -webkit-transform: rotate(225deg);\n            transform: rotate(225deg);\n    animation: before-line 0.7s 1 ease-in;\n    -webkit-animation: before-line 0.7s 1 ease-in; }\n  .spinner-container__failure::after {\n    -webkit-transform: rotate(315deg);\n            transform: rotate(315deg);\n    animation: after-line 0.7s 1 ease-in;\n    -webkit-animation: after-line 0.7s 1 ease-in; }\n\n@keyframes after-line {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(315deg);\n            transform: rotate(315deg); } }\n\n@-webkit-keyframes after-line {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(315deg);\n            transform: rotate(315deg); } }\n\n@keyframes before-line {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(225deg);\n            transform: rotate(225deg); } }\n\n@-webkit-keyframes before-line {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(225deg);\n            transform: rotate(225deg); } }\n", ""]);
 
 // exports
 
@@ -2447,10 +2482,15 @@ module.exports = module.exports.toString();
 
 exports = module.exports = __webpack_require__(6)(false);
 // imports
-
+exports.i(__webpack_require__(14), "");
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
 
 // module
-exports.push([module.i, "h2 {\n  text-align: center;\n  margin-bottom: 30px; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.upvotes-cont {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 10px; }\n  .upvotes-cont div {\n    margin-right: 10px; }\n  .upvotes-cont span {\n    font-size: 16px;\n    color: #fff; }\n", ""]);
 
 // exports
 
@@ -2468,7 +2508,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "h2 {\n  text-align: center;\n  margin-bottom: 30px; }\n\n.app-container {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: row;\n          flex-flow: row; }\n  .app-container__app-menu {\n    width: 125px;\n    height: 100vh; }\n  .app-container__page-content {\n    width: calc(100% - 116px);\n    padding: 0 25px; }\n", ""]);
 
 // exports
 
@@ -2483,10 +2523,15 @@ module.exports = module.exports.toString();
 
 exports = module.exports = __webpack_require__(6)(false);
 // imports
-
+exports.i(__webpack_require__(14), "");
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n#appContainer {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  overflow-x: hidden; }\n\na,\na:hover,\na:active,\na:visited,\na:focus {\n  color: #181819;\n  text-decoration: none; }\n\nh3 {\n  font-size: 18px;\n  font-weight: 700;\n  font-family: 'Roboto', sans-serif; }\n\nspan {\n  font-size: 14px;\n  font-family: 'Noto Sans', sans-serif; }\n\np {\n  font-size: 14px;\n  font-family: 'Noto Serif', serif; }\n\nlabel {\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  margin-bottom: 7px; }\n\ninput {\n  height: 25px;\n  padding: 5px;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  outline: none;\n  border: 0;\n  border-bottom: 1px solid #BDC3C7;\n  color: #181819;\n  background-color: transparent; }\n\n.fixed {\n  overflow: hidden; }\n\n.up-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/plus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .up-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .up-btn--active {\n    opacity: 1; }\n\n.dis-btn {\n  width: 30px;\n  height: 30px;\n  background-image: url(\"/assets/images/minus.svg\");\n  background-size: contain;\n  background-position: center;\n  opacity: 0.4;\n  cursor: pointer;\n  transition: all ease-in-out 0.2s; }\n  .dis-btn:hover {\n    opacity: 0.8;\n    transition: all ease-in-out 0.2s; }\n  .dis-btn--active {\n    opacity: 1; }\n\n.step-title p {\n  text-align: center;\n  margin-top: 25px;\n  font-size: 16px;\n  font-family: 'Noto Sans', sans-serif; }\n\n.dafault-label {\n  margin-bottom: 7px; }\n  .dafault-label label {\n    text-transform: uppercase;\n    color: #c0c0c0;\n    font-size: 14px;\n    font-weight: 300;\n    font-family: Roboto,\"Helvetica Neue\",sans-serif; }\n\ncolor-picker .color-picker {\n  border: 1px solid #c0c0c0 !important;\n  box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n  color-picker .color-picker .cursor {\n    border: 2px solid #c0c0c0 !important; }\n  color-picker .color-picker .box .left .selected-color {\n    box-shadow: 9px 8px 16px -4px rgba(24, 24, 25, 0.11); }\n\n.fr-toolbar,\n.fr-wrapper {\n  box-shadow: none !important;\n  border: 1px solid #c0c0c0 !important; }\n\n.fr-box.fr-basic .fr-element {\n  min-height: 300px !important;\n  max-height: 300px !important; }\n\n.color-picker {\n  top: 45% !important;\n  left: 51% !important; }\n\nbody {\n  margin: 0 !important;\n  background: #fff; }\n\n.edit-form {\n  position: absolute;\n  width: 90px;\n  height: 90px;\n  bottom: 0px;\n  right: 0;\n  z-index: 99; }\n  .edit-form--active {\n    position: fixed;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0; }\n  .edit-form__new-post__form {\n    position: absolute;\n    width: 769px;\n    height: 100%;\n    margin: auto;\n    top: 0;\n    left: 0;\n    right: 0;\n    z-index: 2;\n    overflow: hidden;\n    display: none;\n    transition: all ease-out .3s; }\n    .edit-form__new-post__form--active {\n      display: block; }\n    .edit-form__new-post__form--full {\n      width: 90%;\n      transition: all ease-in .3s; }\n    .edit-form__new-post__form__title {\n      width: 100%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      margin: 30px 0; }\n      .edit-form__new-post__form__title span {\n        text-align: center;\n        font-family: 'Noto Sans', sans-serif;\n        font-size: 26px;\n        color: #673ab7;\n        text-transform: uppercase; }\n    .edit-form__new-post__form__steps-container {\n      width: 300%;\n      height: 70%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-flow: row nowrap;\n              flex-flow: row nowrap;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      transition: all ease-in-out .2s; }\n      .edit-form__new-post__form__steps-container__item {\n        width: calc(100% / 3); }\n      .edit-form__new-post__form__steps-container--first, .edit-form__new-post__form__steps-container--second, .edit-form__new-post__form__steps-container--third {\n        transition: all ease-in-out .5s; }\n      .edit-form__new-post__form__steps-container--first {\n        -webkit-transform: translateX(0);\n                transform: translateX(0); }\n      .edit-form__new-post__form__steps-container--second {\n        -webkit-transform: translateX(calc(-100% / 3));\n                transform: translateX(calc(-100% / 3)); }\n      .edit-form__new-post__form__steps-container--third {\n        -webkit-transform: translateX(calc(-200% / 3));\n                transform: translateX(calc(-200% / 3)); }\n  .edit-form__step-button-container button {\n    width: 100%;\n    height: 48px;\n    background-color: rgba(189, 195, 199, 0.5);\n    color: #fff;\n    text-transform: capitalize;\n    transition: all ease-in-out .3s;\n    cursor: not-allowed; }\n  .edit-form__step-button-container--active button {\n    background-color: #33cc99;\n    cursor: pointer; }\n  .edit-form__full-btn {\n    position: fixed;\n    margin: 20px;\n    width: 50px;\n    height: 50px;\n    right: 0;\n    bottom: 0;\n    border-radius: 45px;\n    outline: none;\n    border: 0;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    cursor: pointer;\n    transition: all ease-in-out 0.3s;\n    z-index: 100;\n    color: #fff; }\n    .edit-form__full-btn md-icon {\n      padding: 13px 0 !important; }\n  .edit-form__full-btn {\n    top: 0;\n    margin-right: 90px;\n    background-color: #5558AA;\n    display: none; }\n    .edit-form__full-btn:hover {\n      background-color: #673ab7; }\n    .edit-form__full-btn:active {\n      background-color: #3b216a; }\n    .edit-form__full-btn--active {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex; }\n  .edit-form__background {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background-color: #fff;\n    left: 0;\n    top: 0;\n    z-index: 1;\n    display: none; }\n    .edit-form__background--active {\n      display: block; }\n", ""]);
 
 // exports
 
@@ -2514,136 +2559,179 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 305:
-/***/ (function(module, exports) {
+/***/ 295:
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<button *ngIf=\"isShow\" md-fab\n  [ngClass]=\"{'add-btn--active': isOpen}\"\n  class=\"add-btn\" type=\"button\"\n  (click)=\"toggleForm()\"><md-icon>add</md-icon>\n</button>\n"
+exports = module.exports = __webpack_require__(6)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 306:
-/***/ (function(module, exports) {
+/***/ 296:
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<div class=\"menu-container\">\n  <div *ngIf=\"UserData.id\" class=\"menu-container__account-info\">\n    <div class=\"menu-container__account-info__user-img\">\n      <img src=\"{{UserData.image_url}}\" />\n    </div>\n    <div class=\"menu-container__account-info__user-name\">\n      <p>\n        {{UserData.first_name}}\n      </p>\n      <p>\n        {{UserData.last_name}}\n      </p>\n    </div>\n  </div>\n  <div class=\"menu-container__account-action\">\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\">\n      <a href=\"#\">Account</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\" (click)=\"loginShowClick()\">\n      <a>Log In</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\">\n      <a href=\"/signup\">Sign Up</a>\n    </div>\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\" (click)=\"logOut()\">\n      <a href=\"#logout\">Log Out</a>\n    </div>\n  </div>\n</div>\n\n<div *ngIf=\"loginShow\" class=\"login-form__background\"></div>\n<div [ngClass]=\"{'login-form--active': loginShow}\" class=\"login-form\">\n  <login (UserData)=\"getCurrentUser($event)\"></login>\n</div>\n"
+exports = module.exports = __webpack_require__(6)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
 
 /***/ }),
 
 /***/ 307:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"comments-container\">\n  <h4>Comments:</h4>\n  <div *ngFor=\"let comment of comments; let i = index;\" class=\"comments-container__comment\">\n    <p>\n      {{comment.body}}\n    </p>\n    <p (click)=\"deleteComment(comment.id, index)\">\n      Delete\n    </p>\n  </div>\n  <div class=\"comments-container__add-form\">\n    <form>\n      <textarea [(ngModel)]=\"newComment.body\" name=\"body\"></textarea>\n      <input (click)=\"addComment()\" type=\"submit\" value=\"Add\" />\n    </form>\n  </div>\n</div>\n"
+module.exports = "<button *ngIf=\"isShow\" md-fab\n  [ngClass]=\"{'add-btn--active': isOpen}\"\n  class=\"add-btn\" type=\"button\"\n  (click)=\"toggleForm()\"><md-icon>add</md-icon>\n</button>\n"
 
 /***/ }),
 
 /***/ 308:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"first-step-container\">\n  <form class=\"first-step-container__form\" [formGroup]=\"firstStep\">\n    <md-input-container class=\"first-step-container__form__full\">\n      <input mdInput formControlName=\"title\" type=\"text\" placeholder=\"Title\" name=\"title\" autocomplete=\"off\">\n    </md-input-container>\n    <md-input-container class=\"first-step-container__form__full\">\n      <textarea mdInput formControlName=\"subtitle\" type=\"text\" placeholder=\"Description\" name=\"description\" autocomplete=\"off\"></textarea>\n    </md-input-container>\n    <md-select formControlName=\"categories\" placeholder=\"Select Category\" class=\"first-step-container__form__full\" (change)=\"emitForm()\">\n      <md-option *ngFor=\"let category of categories\" [value]=\"category.value\">\n        {{category.value}}\n      </md-option>\n    </md-select>\n  </form>\n</div>\n"
+module.exports = "<div class=\"menu-container\">\n  <div *ngIf=\"UserData.id\" class=\"menu-container__account-info\">\n    <div class=\"menu-container__account-info__user-img\">\n      <img src=\"{{UserData.image_url}}\" />\n    </div>\n    <div class=\"menu-container__account-info__user-name\">\n      <p>\n        {{UserData.first_name}}\n      </p>\n      <p>\n        {{UserData.last_name}}\n      </p>\n    </div>\n  </div>\n  <div class=\"menu-container__account-action\">\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\">\n      <a href=\"#\">Account</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\" (click)=\"loginShowClick()\">\n      <a>Log In</a>\n    </div>\n    <div *ngIf=\"!UserData.id\" class=\"menu-container__button\">\n      <a href=\"/signup\">Sign Up</a>\n    </div>\n    <div *ngIf=\"UserData.id\" class=\"menu-container__button\" (click)=\"logOut()\">\n      <a href=\"#logout\">Log Out</a>\n    </div>\n  </div>\n</div>\n\n<div *ngIf=\"loginShow\" class=\"login-form__background\"></div>\n<div [ngClass]=\"{'login-form--active': loginShow}\" class=\"login-form\">\n  <login (UserData)=\"getCurrentUser($event)\"></login>\n</div>\n"
 
 /***/ }),
 
 /***/ 309:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header-steps\">\n  <div class=\"header-steps__items\">\n    <div (click)=\"sendStep(1)\" [ngClass]=\"{'header-steps__item--active': options.firstStep}\" class=\"header-steps__item header-steps__item--first\"></div>\n    <div (click)=\"sendStep(2)\" [ngClass]=\"{'header-steps__item--active': options.secondStep}\" class=\"header-steps__item header-steps__item--second\"></div>\n    <div (click)=\"sendStep(3)\" [ngClass]=\"{'header-steps__item--active': options.thirdStep}\" class=\"header-steps__item header-steps__item--third\"></div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"comments-container\">\n  <h4>Comments:</h4>\n  <div *ngFor=\"let comment of comments; let i = index;\" class=\"comments-container__comment\">\n    <p>\n      {{comment.body}}\n    </p>\n    <p (click)=\"deleteComment(comment.id, index)\">\n      Delete\n    </p>\n  </div>\n  <div class=\"comments-container__add-form\">\n    <form>\n      <textarea [(ngModel)]=\"newComment.body\" name=\"body\"></textarea>\n      <input (click)=\"addComment()\" type=\"submit\" value=\"Add\" />\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 310:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"second-step\">\n  <section class=\"second-step__section\">\n    <div [ngClass]=\"{'second-step__drag-drop--active': isDragenter}\"\n         class=\"second-step__drag-drop\"\n         (dragover)=\"onDragStart($event)\"\n         (dragleave)=\"onDragLeave($event)\"\n         (drop)=\"onDrop($event)\">\n      <i class=\"material-icons second-step__drag-drop__icon\"\n         [ngClass]=\"{'second-step__drag-drop__icon--active': isDragenter}\">system_update_alt</i>\n      <input [(ngModel)]=\"inputValue\" id=\"input_file\" class=\"second-step__drag-drop__input\" type=\"file\">\n      <label for=\"input_file\" class=\"second-step__drag-drop__area\"\n             [ngClass]=\"{'second-step__drag-drop__area--active': isDragenter}\">Move image here</label>\n      <img *ngIf=\"imageShow\"\n           [src]=\"currentImage\"\n           [ngStyle]=\"{'filter': 'blur('+blurValue+'px) grayscale('+grayValue+')'}\">\n      <div *ngIf=\"imageShow\" (click)=\"removePicture()\" class=\"second-step__drag-drop__delete-btn\">\n        <i class=\"material-icons\">clear</i>\n      </div>\n\n      <div *ngIf=\"imageShow\" class=\"second-step__drag-drop__image-overlay\"\n           [style.opacity]=\"overlayValue\"\n           [style.background]=\"color\">\n         </div>\n    </div>\n  </section>\n  <section class=\"second-step__section second-step__overlay-container\">\n    <div class=\"dafault-label\">\n      <label>Image overlay</label>\n    </div>\n    <div class=\"second-step__slider-component\">\n      <md-slider [disabled]=\"!imageShow\" (input)=\"getOverlayValue($event)\" [(ngModel)]=\"overlayValue\" min=\"0\" max=\"1\" step=\"0.01\" value=\"overlayValue\"></md-slider>\n      <span>{{(overlayValue * 100).toFixed(0)}}</span>\n    </div>\n    <div class=\"second-step__colors-container\">\n      <label class=\"second-step__colors-container__circle\" [style.background]=\"color\"></label>\n      <input [disabled]=\"!imageShow\"\n             [(colorPicker)]=\"color\"\n             [value]=\"color\"\n             [cpPosition]=\"'left'\"\n             (colorPickerChange)=\"getOverlayColor($event)\"\n       />\n    </div>\n    <div class=\"dafault-label\">\n      <label>Image bluring</label>\n    </div>\n    <div class=\"second-step__slider-component\">\n      <md-slider [disabled]=\"!imageShow\" (input)=\"getBlurValue($event)\" [(ngModel)]=\"blurValue\" min=\"0\" max=\"10\" step=\"0.1\" value=\"blurValue\"></md-slider>\n      <span>{{((blurValue * 100) / 10).toFixed(0)}}</span>\n    </div>\n\n    <div class=\"dafault-label\">\n      <label>Image grayscale</label>\n    </div>\n    <div class=\"second-step__slider-component\">\n      <md-slider [disabled]=\"!imageShow\" (input)=\"getGrayValue($event)\" [(ngModel)]=\"grayValue\" min=\"0\" max=\"1\" step=\"0.01\" value=\"grayValue\"></md-slider>\n      <span>{{(grayValue * 100).toFixed(0)}}</span>\n    </div>\n  </section>\n</div>\n"
+module.exports = "<div class=\"first-step-container\">\n  <form class=\"first-step-container__form\" [formGroup]=\"firstStep\">\n    <md-input-container class=\"first-step-container__form__full\">\n      <input mdInput formControlName=\"title\" type=\"text\" placeholder=\"Title\" name=\"title\" autocomplete=\"off\">\n    </md-input-container>\n    <md-input-container class=\"first-step-container__form__full\">\n      <textarea mdInput formControlName=\"subtitle\" type=\"text\" placeholder=\"Description\" name=\"description\" autocomplete=\"off\"></textarea>\n    </md-input-container>\n    <md-select formControlName=\"categories\" placeholder=\"Select Category\" class=\"first-step-container__form__full\" (change)=\"emitForm()\">\n      <md-option *ngFor=\"let category of categories\" [value]=\"category.value\">\n        {{category.value}}\n      </md-option>\n    </md-select>\n  </form>\n</div>\n"
 
 /***/ }),
 
 /***/ 311:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"third-step\">\n  <div class=\"third-step__editor\"\n       [froalaEditor]=\"options\"\n       [(froalaModel)]=\"content\"\n       [ngClass]=\"{'third-step__editor--full': fullscreen}\"></div>\n</div>\n"
+module.exports = "<div class=\"header-steps\">\n  <div class=\"header-steps__items\">\n    <div (click)=\"sendStep(1)\" [ngClass]=\"{'header-steps__item--active': options.firstStep}\" class=\"header-steps__item header-steps__item--first\"></div>\n    <div (click)=\"sendStep(2)\" [ngClass]=\"{'header-steps__item--active': options.secondStep}\" class=\"header-steps__item header-steps__item--second\"></div>\n    <div (click)=\"sendStep(3)\" [ngClass]=\"{'header-steps__item--active': options.thirdStep}\" class=\"header-steps__item header-steps__item--third\"></div>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 312:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"edit-form\"\n     [ngClass]=\"{'edit-form--active': isOpen}\">\n  <div class=\"edit-form__background\"\n       [ngClass]=\"{'edit-form__background--active': isOpen}\"></div>\n  <div class=\"edit-form__new-post__form\"\n       [ngClass]=\"{'edit-form__new-post__form--active': isOpen,\n                   'edit-form__new-post__form--full': fullEditor}\">\n    <div class=\"edit-form__new-post__form__title\">\n       <span>create post</span>\n    </div>\n\n    <header-steps *ngIf=\"!fullEditor\" class=\"edit-form__new-post__header\" (goToStep)=\"goToStep($event)\" [options]=\"headerOptions\"></header-steps>\n\n    <div class=\"edit-form__new-post__form__steps-container\"\n         [ngClass]=\"{ 'edit-form__new-post__form__steps-container--first': headerOptions.firstStep,\n         'edit-form__new-post__form__steps-container--second': headerOptions.secondStep,\n         'edit-form__new-post__form__steps-container--third': headerOptions.thirdStep }\">\n      <section class=\"edit-form__new-post__form__steps-container__item\">\n        <firsr-step-creating [status]=\"status\" (firstStepData)=\"firstStepData($event)\"></firsr-step-creating>\n      </section>\n      <section class=\"edit-form__new-post__form__steps-container__item\">\n        <second-step-creating [status]=\"status\" (secondStepData)=\"secondStepData($event)\"></second-step-creating>\n      </section>\n      <section class=\"edit-form__new-post__form__steps-container__item\"\n        [ngClass]=\"{'edit-form__new-post__form__steps-container__item--full': fullEditor}\">\n        <third-step-creating\n          [status]=\"status\"\n          (thirdStepData)=\"thirdStepData($event)\"\n          [fullscreen]=\"fullEditor\">\n        </third-step-creating>\n      </section>\n    </div>\n\n    <div *ngIf=\"!fullEditor\" [ngClass]=\"{'edit-form__step-button-container--active': isValid}\" class=\"edit-form__step-button-container\">\n      <button (click)=\"stepsControl()\" md-button>{{action}}</button>\n    </div>\n  </div>\n  <button md-fab *ngIf=\"headerOptions.thirdStep\"\n    [disabled]=\"true\"\n    [ngClass]=\"{'edit-form__full-btn--active': isOpen}\"\n    class=\"edit-form__full-btn\" type=\"button\"\n    ><md-icon>zoom_out_map</md-icon>\n  </button>\n</div>\n"
+module.exports = "<div class=\"second-step\">\n  <section class=\"second-step__section\">\n    <div [ngClass]=\"{'second-step__drag-drop--active': isDragenter}\"\n         class=\"second-step__drag-drop\"\n         (dragover)=\"onDragStart($event)\"\n         (dragleave)=\"onDragLeave($event)\"\n         (drop)=\"onDrop($event)\">\n      <i class=\"material-icons second-step__drag-drop__icon\"\n         [ngClass]=\"{'second-step__drag-drop__icon--active': isDragenter}\">system_update_alt</i>\n      <input [(ngModel)]=\"inputValue\" id=\"input_file\" class=\"second-step__drag-drop__input\" type=\"file\">\n      <label for=\"input_file\" class=\"second-step__drag-drop__area\"\n             [ngClass]=\"{'second-step__drag-drop__area--active': isDragenter}\">Move image here</label>\n      <img *ngIf=\"imageShow\"\n           [src]=\"currentImage\"\n           [ngStyle]=\"{'filter': 'blur('+blurValue+'px) grayscale('+grayValue+')'}\">\n      <div *ngIf=\"imageShow\" (click)=\"removePicture()\" class=\"second-step__drag-drop__delete-btn\">\n        <i class=\"material-icons\">clear</i>\n      </div>\n\n      <div *ngIf=\"imageShow\" class=\"second-step__drag-drop__image-overlay\"\n           [style.opacity]=\"overlayValue\"\n           [style.background]=\"color\">\n         </div>\n    </div>\n  </section>\n  <section class=\"second-step__section second-step__overlay-container\">\n    <div class=\"dafault-label\">\n      <label>Image overlay</label>\n    </div>\n    <div class=\"second-step__slider-component\">\n      <md-slider [disabled]=\"!imageShow\" (input)=\"getOverlayValue($event)\" [(ngModel)]=\"overlayValue\" min=\"0\" max=\"1\" step=\"0.01\" value=\"overlayValue\"></md-slider>\n      <span>{{(overlayValue * 100).toFixed(0)}}</span>\n    </div>\n    <div class=\"second-step__colors-container\">\n      <label class=\"second-step__colors-container__circle\" [style.background]=\"color\"></label>\n      <input [disabled]=\"!imageShow\"\n             [(colorPicker)]=\"color\"\n             [value]=\"color\"\n             [cpPosition]=\"'left'\"\n             (colorPickerChange)=\"getOverlayColor($event)\"\n       />\n    </div>\n    <div class=\"dafault-label\">\n      <label>Image bluring</label>\n    </div>\n    <div class=\"second-step__slider-component\">\n      <md-slider [disabled]=\"!imageShow\" (input)=\"getBlurValue($event)\" [(ngModel)]=\"blurValue\" min=\"0\" max=\"10\" step=\"0.1\" value=\"blurValue\"></md-slider>\n      <span>{{((blurValue * 100) / 10).toFixed(0)}}</span>\n    </div>\n\n    <div class=\"dafault-label\">\n      <label>Image grayscale</label>\n    </div>\n    <div class=\"second-step__slider-component\">\n      <md-slider [disabled]=\"!imageShow\" (input)=\"getGrayValue($event)\" [(ngModel)]=\"grayValue\" min=\"0\" max=\"1\" step=\"0.01\" value=\"grayValue\"></md-slider>\n      <span>{{(grayValue * 100).toFixed(0)}}</span>\n    </div>\n  </section>\n</div>\n"
 
 /***/ }),
 
 /***/ 313:
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "<div class=\"third-step\">\n  <div class=\"third-step__editor\"\n       [froalaEditor]=\"options\"\n       [(froalaModel)]=\"content\"\n       [ngClass]=\"{'third-step__editor--full': fullscreen}\"></div>\n</div>\n"
 
 /***/ }),
 
 /***/ 314:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"login-container\">\n  <p class=\"login-container__title\">Log In</p>\n  <form [ngClass]=\"{'login-container__form--error': hasError}\" [formGroup]=\"logInForm\" class=\"login-container__form\" (ngSubmit)=\"logIn(f)\" #f=\"ngForm\">\n    <div class=\"login-container__form__input-container\">\n      <div class=\"login-container__form__full\">\n        <input formControlName=\"email\" name=\"email\" type=\"email\" placeholder=\"Email\" aria-label=\"email\" autofocus />\n      </div>\n      <div class=\"login-container__form__full\">\n        <input formControlName=\"password\" name=\"password\" type=\"password\" placeholder=\"Password\" aria-label=\"password\" />\n      </div>\n    </div>\n    <div [ngClass]=\"{'login-container__form__submit--active': logInForm.valid}\" class=\"login-container__form__submit\">\n      <input [disabled]=\"!logInForm.valid\" type=\"submit\" value=\"Log In\"/>\n    </div>\n  </form>\n</div>\n"
+module.exports = "<div class=\"favorit-post\">\n  <div class=\"favorit-post__header\">\n    <i class=\"material-icons\">star_rate</i>\n    <p>favorit posts</p>\n  </div>\n  <div class=\"favorit-post__content\">\n    <div *ngFor=\"let post of favoritPost; let i = index;\"\n         class=\"favorit-post__content__item\"\n         (mouseover)=\"onHover(i)\"\n         (mouseleave)=\"onUnHover(i)\">\n      <a href=\"/post/{{post.post_url}}\">\n        <div class=\"favorit-post__content__item__title\">\n          <h5>{{post.title}}</h5>\n        </div>\n        <div class=\"favorit-post__content__item__static-overlay\"></div>\n        <div class=\"favorit-post__content__item__overlay\"\n             [style.opacity]=\"post.cover.opacity\"\n             [style.background]=\"post.cover.color\"></div>\n        <img src=\"{{post.cover.image_url}}\"\n             [ngStyle]=\"{'filter': 'blur('+post.cover.blur+'px) grayscale('+post.cover.gray+')'}\" />\n        <div id=\"{{i}}\" class=\"favorit-post__content__hover-info\">\n          <div class=\"favorit-post__content__hover-info__data\">\n            <span>\n              <i class=\"material-icons\">visibility</i>\n              11,000\n            </span>\n            <span>\n              <i class=\"material-icons\">comment</i>\n              {{post.comments.length}}\n            </span>\n          </div>\n          <div class=\"favorit-post__content__hover-info__background\"></div>\n        </div>\n       </a>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 315:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"posts-cont\">\n  <div *ngFor=\"let post of posts; let i = index;\" class=\"posts-cont__post-list\">\n    <div class=\"posts-cont__post-list__post-header index={{i}}\">\n      <div class=\"posts-cont__user-info\">\n        <div class=\"posts-cont__user-info__image-cont\">\n          <img src=\"{{post.user.image_url}}\" />\n        </div>\n        <div class=\"posts-cont__user-info__user-name\">\n          <span>{{post.user.first_name}}</span>\n          <span>{{post.user.last_name}}</span>\n          <div class=\"posts-cont__user-info__created-at\">\n            <span>{{post.created_at | date}}</span>\n          </div>\n        </div>\n      </div>\n      <div class=\"posts-cont__action-btn\">\n        <div class=\"posts-cont__action-btn edit-btn\" (click)=\"formController('update', post, i)\"></div>\n        <div class=\"posts-cont__action-btn delete-btn\" (click)=\"deletePost(post.id, i)\"></div>\n      </div>\n      <div class=\"posts-cont__post-list__post-header__line\"></div>\n    </div>\n    <div class=\"posts-cont__post-body\">\n      <a routerLink=\"/post/{{post.id}}\" class=\"posts-cont__list-items\" (click)=\"addPostToStore(post)\">\n        <div class=\"posts-cont__body\">\n          <h3>{{post.title}}</h3>\n          <p>{{post.content}}</p>\n        </div>\n      </a>\n    </div>\n    <div class=\"posts-cont__footer\">\n      <upvote (upvote)=\"upvoteActions($event)\" [item]=\"post\" [index]=\"i\"></upvote>\n      <div class=\"posts-cont__comments-count\">\n        <div class=\"comment-icon\"></div>\n        <span>{{post.comments.length}}</span>\n      </div>\n    </div>\n  </div>\n</div>\n\n<edit-form (Post)=\"postAction($event)\" [postInputData]=\"postInputData\"></edit-form>\n"
+module.exports = ""
 
 /***/ }),
 
 /***/ 316:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"preview-container\">\n  <div class=\"preview-container__header\">\n    <h4>{{post?.title}}</h4>\n  </div>\n  <div class=\"preview-container__description\">\n    <p>\n      {{post?.content}}\n    </p>\n  </div>\n</div>\n<comment (addComment)=\"addComment($event)\" [comments]=\"post?.comments\" [id]=\"post?.id\"></comment>\n"
+module.exports = "<div class=\"login-container\">\n  <p class=\"login-container__title\">Log In</p>\n  <form [ngClass]=\"{'login-container__form--error': hasError}\" [formGroup]=\"logInForm\" class=\"login-container__form\" (ngSubmit)=\"logIn(f)\" #f=\"ngForm\">\n    <div class=\"login-container__form__input-container\">\n      <div class=\"login-container__form__full\">\n        <input formControlName=\"email\" name=\"email\" type=\"email\" placeholder=\"Email\" aria-label=\"email\" autofocus />\n      </div>\n      <div class=\"login-container__form__full\">\n        <input formControlName=\"password\" name=\"password\" type=\"password\" placeholder=\"Password\" aria-label=\"password\" />\n      </div>\n    </div>\n    <div [ngClass]=\"{'login-container__form__submit--active': logInForm.valid}\" class=\"login-container__form__submit\">\n      <input [disabled]=\"!logInForm.valid\" type=\"submit\" value=\"Log In\"/>\n    </div>\n  </form>\n</div>\n"
 
 /***/ }),
 
 /***/ 317:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"registration-container\">\n  <form class=\"registration-container__form\">\n    <div class=\"registration-container__form__double\">\n      <div class=\"registration-container__form__part\">\n        <label>First name</label>\n        <input name=\"first_name\" type=\"text\" placeholder=\"first name\" [(ngModel)]=\"user.first_name\" />\n      </div>\n      <div class=\"registration-container__form__part\">\n        <label>Last name</label>\n        <input name=\"last_name\" type=\"text\" placeholder=\"last name\" [(ngModel)]=\"user.last_name\" />\n      </div>\n    </div>\n    <div class=\"registration-container__form__full\">\n      <label>Email</label>\n      <input name=\"email\" type=\"email\" placeholder=\"email\" [(ngModel)]=\"user.email\" />\n    </div>\n    <div class=\"registration-container__form__full\">\n      <label>Password</label>\n      <input name=\"password\" type=\"password\" placeholder=\"password\" [(ngModel)]=\"user.password\" />\n    </div>\n    <div class=\"registration-container__form__full\">\n      <label>Confitmation password</label>\n      <input name=\"confirmation_password\" type=\"password\" placeholder=\"confiramation password\" [(ngModel)]=\"user.confirtamtion_password\" />\n    </div>\n    <div class=\"registration-container__form__submit\">\n      <input type=\"submit\" value=\"Sign Up\" (click)=\"registerUser()\"/>\n    </div>\n  </form>\n</div>\n"
+module.exports = "<div class=\"posts-cont\">\n  <div class=\"posts-cont__title\">\n    <i class=\"material-icons\">local_activity</i>\n    <p>Resently added post</p>\n  </div>\n  <div class=\"posts-cont__list\">\n    <div *ngFor=\"let post of posts; let i = index;\" class=\"posts-cont__post-list\">\n      <div class=\"posts-cont__post-list__post-header index={{i}}\">\n        <div class=\"posts-cont__user-info\">\n          <div class=\"posts-cont__user-info__image-cont\">\n            <img src=\"{{post.user.image_url}}\" />\n          </div>\n          <div class=\"posts-cont__user-info__user-name\">\n            <span>{{post.user.first_name}}</span>\n            <span>{{post.user.last_name}}</span>\n            <div class=\"posts-cont__user-info__created-at\">\n              <span>{{post.created_at | date}}</span>\n            </div>\n          </div>\n        </div>\n        <div *ngIf=\"current_session.id === post.user.id\" class=\"posts-cont__action-btn\">\n          <div class=\"posts-cont__action-btn__edit\" (click)=\"formController('update', post, i)\">\n            <i class=\"material-icons\">mode_edit</i>\n          </div>\n          <div class=\"posts-cont__action-btn__remove\" (click)=\"deletePost(post.id, i)\">\n            <i class=\"material-icons\">clear</i>\n          </div>\n        </div>\n      </div>\n      <div class=\"posts-cont__post-body\">\n        <a routerLink=\"/post/{{post.post_url}}\" class=\"posts-cont__post-body__item\" (click)=\"addPostToStore(post)\">\n          <div class=\"posts-cont__post-body__item__static-overlay\"></div>\n          <div class=\"posts-cont__post-body__item__overlay\"\n            [style.opacity]=\"post.cover.opacity\"\n            [style.background]=\"post.cover.color\"></div>\n          <img src=\"{{post.cover.image_url}}\"\n               [ngStyle]=\"{'filter': 'blur('+post.cover.blur+'px) grayscale('+post.cover.gray+')'}\" />\n          <div class=\"posts-cont__post-body__item__content\">\n            <h3>{{post.title}}</h3>\n            <p>{{post.subtitle}}</p>\n          </div>\n        </a>\n      </div>\n      <div class=\"posts-cont__footer\">\n        <upvote (upvote)=\"upvoteActions($event)\" [item]=\"post\" [index]=\"i\"></upvote>\n        <div class=\"posts-cont__comments-count\">\n          <span>\n            <i class=\"material-icons\">comment</i>\n            {{post.comments.length}}\n          </span>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<edit-form (Post)=\"postAction($event)\" [postInputData]=\"postInputData\"></edit-form>\n"
 
 /***/ }),
 
 /***/ 318:
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"isOpen\" class=\"spinner-container\">\n  <div class=\"spinner-container__spinner\"\n       [ngClass]=\"{'spinner-container__spinner--failure': isError,\n       'spinner-container__spinner--success': isSuccess}\"></div>\n  <div class=\"spinner-container__success\"\n       [ngClass]=\"{'spinner-container__success--active': isSuccess}\"></div>\n <div class=\"spinner-container__failure\"\n      [ngClass]=\"{'spinner-container__failure--active': isError}\"></div>\n</div>\n"
+module.exports = "<div class=\"preview-container\">\n  <div class=\"preview-container__header\">\n    <h4>{{post?.title}}</h4>\n  </div>\n  <div class=\"preview-container__description\">\n    <p>\n      {{post?.content}}\n    </p>\n  </div>\n</div>\n<comment (addComment)=\"addComment($event)\" [comments]=\"post?.comments\" [id]=\"post?.id\"></comment>\n"
 
 /***/ }),
 
 /***/ 319:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"upvotes-cont\">\n  <div #up (click)=\"upvoteController(true)\" class=\"up-btn\"></div>\n  <div #dis (click)=\"upvoteController(false)\" class=\"dis-btn\"></div>\n  <span>{{item.upvotes.length - item.disupvotes.length}}</span>\n</div>\n"
+module.exports = "<div class=\"registration-container\">\n  <form class=\"registration-container__form\">\n    <div class=\"registration-container__form__double\">\n      <div class=\"registration-container__form__part\">\n        <label>First name</label>\n        <input name=\"first_name\" type=\"text\" placeholder=\"first name\" [(ngModel)]=\"user.first_name\" />\n      </div>\n      <div class=\"registration-container__form__part\">\n        <label>Last name</label>\n        <input name=\"last_name\" type=\"text\" placeholder=\"last name\" [(ngModel)]=\"user.last_name\" />\n      </div>\n    </div>\n    <div class=\"registration-container__form__full\">\n      <label>Email</label>\n      <input name=\"email\" type=\"email\" placeholder=\"email\" [(ngModel)]=\"user.email\" />\n    </div>\n    <div class=\"registration-container__form__full\">\n      <label>Password</label>\n      <input name=\"password\" type=\"password\" placeholder=\"password\" [(ngModel)]=\"user.password\" />\n    </div>\n    <div class=\"registration-container__form__full\">\n      <label>Confitmation password</label>\n      <input name=\"confirmation_password\" type=\"password\" placeholder=\"confiramation password\" [(ngModel)]=\"user.confirtamtion_password\" />\n    </div>\n    <div class=\"registration-container__form__submit\">\n      <input type=\"submit\" value=\"Sign Up\" (click)=\"registerUser()\"/>\n    </div>\n  </form>\n</div>\n"
 
 /***/ }),
 
 /***/ 320:
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Flapper News</h2>\n<add-post-button></add-post-button>\n<router-outlet></router-outlet>\n"
+module.exports = "<div *ngIf=\"isOpen\" class=\"spinner-container\">\n  <div class=\"spinner-container__spinner\"\n       [ngClass]=\"{'spinner-container__spinner--failure': isError,\n       'spinner-container__spinner--success': isSuccess}\"></div>\n  <div class=\"spinner-container__success\"\n       [ngClass]=\"{'spinner-container__success--active': isSuccess}\"></div>\n <div class=\"spinner-container__failure\"\n      [ngClass]=\"{'spinner-container__failure--active': isError}\"></div>\n</div>\n"
 
 /***/ }),
 
 /***/ 321:
 /***/ (function(module, exports) {
 
-module.exports = "<login></login>\n"
+module.exports = "<div class=\"upvotes-cont\">\n  <div #up (click)=\"upvoteController(true)\" class=\"up-btn\"></div>\n  <div #dis (click)=\"upvoteController(false)\" class=\"dis-btn\"></div>\n  <span>{{item.upvotes.length - item.disupvotes.length}}</span>\n</div>\n"
 
 /***/ }),
 
 /***/ 322:
 /***/ (function(module, exports) {
 
-module.exports = "<preview [postId]=\"postId\"></preview>\n"
+module.exports = "<div class=\"app-container\">\n  <div class=\"app-container__app-menu\">\n    <app-menu></app-menu>\n  </div>\n  <div class=\"app-container__page-content\">\n    <h2>Flapper News</h2>\n    <add-post-button></add-post-button>\n    <router-outlet></router-outlet>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 323:
 /***/ (function(module, exports) {
 
-module.exports = "<posts></posts>\n"
+module.exports = "<div class=\"edit-form\"\n     [ngClass]=\"{'edit-form--active': isOpen}\">\n  <div class=\"edit-form__background\"\n       [ngClass]=\"{'edit-form__background--active': isOpen}\"></div>\n  <div class=\"edit-form__new-post__form\"\n       [ngClass]=\"{'edit-form__new-post__form--active': isOpen,\n                   'edit-form__new-post__form--full': fullEditor}\">\n    <div class=\"edit-form__new-post__form__title\">\n       <span>create post</span>\n    </div>\n\n    <header-steps *ngIf=\"!fullEditor\" class=\"edit-form__new-post__header\" (goToStep)=\"goToStep($event)\" [options]=\"headerOptions\"></header-steps>\n\n    <div class=\"edit-form__new-post__form__steps-container\"\n         [ngClass]=\"{ 'edit-form__new-post__form__steps-container--first': headerOptions.firstStep,\n         'edit-form__new-post__form__steps-container--second': headerOptions.secondStep,\n         'edit-form__new-post__form__steps-container--third': headerOptions.thirdStep }\">\n      <section class=\"edit-form__new-post__form__steps-container__item\">\n        <firsr-step-creating [status]=\"status\" (firstStepData)=\"firstStepData($event)\"></firsr-step-creating>\n      </section>\n      <section class=\"edit-form__new-post__form__steps-container__item\">\n        <second-step-creating [status]=\"status\" (secondStepData)=\"secondStepData($event)\"></second-step-creating>\n      </section>\n      <section class=\"edit-form__new-post__form__steps-container__item\"\n        [ngClass]=\"{'edit-form__new-post__form__steps-container__item--full': fullEditor}\">\n        <third-step-creating\n          [status]=\"status\"\n          (thirdStepData)=\"thirdStepData($event)\"\n          [fullscreen]=\"fullEditor\">\n        </third-step-creating>\n      </section>\n    </div>\n\n    <div *ngIf=\"!fullEditor\" [ngClass]=\"{'edit-form__step-button-container--active': isValid}\" class=\"edit-form__step-button-container\">\n      <button (click)=\"stepsControl()\" md-button>{{action}}</button>\n    </div>\n  </div>\n  <button md-fab *ngIf=\"headerOptions.thirdStep\"\n    [disabled]=\"true\"\n    [ngClass]=\"{'edit-form__full-btn--active': isOpen}\"\n    class=\"edit-form__full-btn\" type=\"button\"\n    ><md-icon>zoom_out_map</md-icon>\n  </button>\n</div>\n"
+
+/***/ }),
+
+/***/ 324:
+/***/ (function(module, exports) {
+
+module.exports = "<login></login>\n"
+
+/***/ }),
+
+/***/ 325:
+/***/ (function(module, exports) {
+
+module.exports = "<preview [postId]=\"postId\"></preview>\n"
+
+/***/ }),
+
+/***/ 326:
+/***/ (function(module, exports) {
+
+module.exports = "<favorit-post></favorit-post>\n<posts></posts>\n"
 
 /***/ }),
 
@@ -2720,15 +2808,7 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 577:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(183);
-
-
-/***/ }),
-
-/***/ 70:
+/***/ 54:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2812,7 +2892,15 @@ PostService = __decorate([
 var _a, _b;
 //# sourceMappingURL=post.service.js.map
 
+/***/ }),
+
+/***/ 580:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(183);
+
+
 /***/ })
 
-},[577]);
+},[580]);
 //# sourceMappingURL=main.bundle.js.map

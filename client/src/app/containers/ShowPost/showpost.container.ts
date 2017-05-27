@@ -14,6 +14,7 @@ export class ShowPost {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: Params) => {
+      console.log(params)
       this.postId = params['id']
     })
   }

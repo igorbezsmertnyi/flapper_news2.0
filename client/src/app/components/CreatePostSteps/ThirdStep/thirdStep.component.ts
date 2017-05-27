@@ -34,7 +34,6 @@ export class ThirdStep {
       },
       'froalaEditor.initialized': (e, editor) => {
         this.sr.thirdStep.subscribe(val => {
-          console.log(val)
           if (val) {
             editor.html.set(val)
           } else {

@@ -1,37 +1,54 @@
 <div class="posts-cont">
-  <div *ngFor="let post of posts; let i = index;" class="posts-cont__post-list">
-    <div class="posts-cont__post-list__post-header index={{i}}">
-      <div class="posts-cont__user-info">
-        <div class="posts-cont__user-info__image-cont">
-          <img src="{{post.user.image_url}}" />
+  <div class="posts-cont__title">
+    <i class="material-icons">local_activity</i>
+    <p>Resently added post</p>
+  </div>
+  <div class="posts-cont__list">
+    <div *ngFor="let post of posts; let i = index;" class="posts-cont__post-list">
+      <div class="posts-cont__post-list__post-header index={{i}}">
+        <div class="posts-cont__user-info">
+          <div class="posts-cont__user-info__image-cont">
+            <img src="{{post.user.image_url}}" />
+          </div>
+          <div class="posts-cont__user-info__user-name">
+            <span>{{post.user.first_name}}</span>
+            <span>{{post.user.last_name}}</span>
+            <div class="posts-cont__user-info__created-at">
+              <span>{{post.created_at | date}}</span>
+            </div>
+          </div>
         </div>
-        <div class="posts-cont__user-info__user-name">
-          <span>{{post.user.first_name}}</span>
-          <span>{{post.user.last_name}}</span>
-          <div class="posts-cont__user-info__created-at">
-            <span>{{post.created_at | date}}</span>
+        <div *ngIf="current_session.id === post.user.id" class="posts-cont__action-btn">
+          <div class="posts-cont__action-btn__edit" (click)="formController('update', post, i)">
+            <i class="material-icons">mode_edit</i>
+          </div>
+          <div class="posts-cont__action-btn__remove" (click)="deletePost(post.id, i)">
+            <i class="material-icons">clear</i>
           </div>
         </div>
       </div>
-      <div class="posts-cont__action-btn">
-        <div class="posts-cont__action-btn edit-btn" (click)="formController('update', post, i)"></div>
-        <div class="posts-cont__action-btn delete-btn" (click)="deletePost(post.id, i)"></div>
+      <div class="posts-cont__post-body">
+        <a routerLink="/post/{{post.post_url}}" class="posts-cont__post-body__item" (click)="addPostToStore(post)">
+          <div class="posts-cont__post-body__item__static-overlay"></div>
+          <div class="posts-cont__post-body__item__overlay"
+            [style.opacity]="post.cover.opacity"
+            [style.background]="post.cover.color"></div>
+          <img src="{{post.cover.image_url}}"
+               [ngStyle]="{'filter': 'blur('+post.cover.blur+'px) grayscale('+post.cover.gray+')'}" />
+          <div class="posts-cont__post-body__item__content">
+            <h3>{{post.title}}</h3>
+            <p>{{post.subtitle}}</p>
+          </div>
+        </a>
       </div>
-      <div class="posts-cont__post-list__post-header__line"></div>
-    </div>
-    <div class="posts-cont__post-body">
-      <a routerLink="/post/{{post.id}}" class="posts-cont__list-items" (click)="addPostToStore(post)">
-        <div class="posts-cont__body">
-          <h3>{{post.title}}</h3>
-          <p>{{post.content}}</p>
+      <div class="posts-cont__footer">
+        <upvote (upvote)="upvoteActions($event)" [item]="post" [index]="i"></upvote>
+        <div class="posts-cont__comments-count">
+          <span>
+            <i class="material-icons">comment</i>
+            {{post.comments.length}}
+          </span>
         </div>
-      </a>
-    </div>
-    <div class="posts-cont__footer">
-      <upvote (upvote)="upvoteActions($event)" [item]="post" [index]="i"></upvote>
-      <div class="posts-cont__comments-count">
-        <div class="comment-icon"></div>
-        <span>{{post.comments.length}}</span>
       </div>
     </div>
   </div>
