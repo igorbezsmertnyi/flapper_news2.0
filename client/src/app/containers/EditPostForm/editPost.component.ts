@@ -3,7 +3,7 @@ import { LOCAL_STORAGE_KEYS } from '../../app.constans'
 import { LocalStorage } from '../../localStorage.service'
 import { StateService } from '../../states.service'
 import { StoreService } from '../../store.service'
-import { Post } from '../Posts/post'
+import { Post } from '../../components/Posts/post'
 
 @Component({
   selector: 'edit-form',

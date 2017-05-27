@@ -5,7 +5,7 @@ class Api::V1::NewsPageController < ApplicationController
   end
 
   def show
-    render json: Post.find(params[:id])
+    render json: Post.find_by(post_url: params[:id])
   end
 
   def create
@@ -13,6 +13,7 @@ class Api::V1::NewsPageController < ApplicationController
     @post.create_cover(cover_data(cover_params))
 
     save_sover_image(cover_params[:image])
+    generate_post_url(post_params[:title])
 
     if @post.save
       render json: @post

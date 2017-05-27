@@ -18,7 +18,7 @@ export class Posts {
   formActive: boolean = false;
   postInputData: Object = { action: 'create' };
   status: boolean;
-  current_session: any;
+  current_session: any = {}
 
   constructor(private postService: PostService,
               protected _cookieService: CookieService,

@@ -10,8 +10,8 @@ import { COOKIE_KEYS } from '../../app.constans'
 })
 
 export class Upvote {
-  @ViewChild('up') up:ElementRef;
-  @ViewChild('dis') dis:ElementRef;
+  @ViewChild('up') up:ElementRef
+  @ViewChild('dis') dis:ElementRef
 
   current_session: any
   isUpvoted: boolean = false

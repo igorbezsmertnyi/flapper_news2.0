@@ -1,5 +1,7 @@
 class PostSerializer < ApplicationSerializer
-  attributes :id, :title, :content, :comments, :created_at
+  attributes :id, :title, :subtitle, :content,
+             :comments, :post_url, :categories,
+             :created_at
 
   has_many :comments
   belongs_to :user

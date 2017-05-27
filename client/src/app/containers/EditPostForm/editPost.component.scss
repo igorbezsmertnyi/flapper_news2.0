@@ -6,6 +6,7 @@
   height: 90px;
   bottom: 0px;
   right: 0;
+  z-index: 99;
 
   &--active {
     position: fixed;

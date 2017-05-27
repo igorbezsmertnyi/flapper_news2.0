@@ -28,7 +28,7 @@ import { LogInPage } from './containers/LogInPage/login.container';
 //Components
 import { Posts } from './components/Posts/post.component';
 import { Comment } from './components/Comment/comment.component';
-import { EditForm } from './components/EditPostForm/editPost.component';
+import { EditForm } from './containers/EditPostForm/editPost.component';
 import { Preview } from './components/Preview/preview.component';
 import { Registration } from './components/Registration/registration.component';
 import { LogIn } from './components/LoginForm/login.component';
@@ -41,6 +41,7 @@ import { ThirdStep } from './components/CreatePostSteps/ThirdStep/thirdStep.comp
 import { HeaderStaps } from './components/CreatePostSteps/HeaderSteps/headerSteps.component';
 import { Spinner } from './components/Spinner/spinner.componnet';
 import { AddPostBtn } from './components/AddPostBtn/addPostBtn.component';
+import { FavoritPost } from './components/FavoritsPost/favoritPost.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { AddPostBtn } from './components/AddPostBtn/addPostBtn.component';
     ThirdStep,
     HeaderStaps,
     Spinner,
-    AddPostBtn
+    AddPostBtn,
+    FavoritPost
   ],
   imports: [
     BrowserModule,
@@ -91,6 +93,6 @@ import { AddPostBtn } from './components/AddPostBtn/addPostBtn.component';
     StateService,
     StoreService
    ],
-  bootstrap: [ AppContainer, AppMenu, Spinner ]
+  bootstrap: [ AppContainer, Spinner ]
 })
 export class AppModule { }

@@ -1,0 +1,37 @@
+<div class="favorit-post">
+  <div class="favorit-post__header">
+    <i class="material-icons">star_rate</i>
+    <p>favorit posts</p>
+  </div>
+  <div class="favorit-post__content">
+    <div *ngFor="let post of favoritPost; let i = index;"
+         class="favorit-post__content__item"
+         (mouseover)="onHover(i)"
+         (mouseleave)="onUnHover(i)">
+      <a href="/post/{{post.post_url}}">
+        <div class="favorit-post__content__item__title">
+          <h5>{{post.title}}</h5>
+        </div>
+        <div class="favorit-post__content__item__static-overlay"></div>
+        <div class="favorit-post__content__item__overlay"
+             [style.opacity]="post.cover.opacity"
+             [style.background]="post.cover.color"></div>
+        <img src="{{post.cover.image_url}}"
+             [ngStyle]="{'filter': 'blur('+post.cover.blur+'px) grayscale('+post.cover.gray+')'}" />
+        <div id="{{i}}" class="favorit-post__content__hover-info">
+          <div class="favorit-post__content__hover-info__data">
+            <span>
+              <i class="material-icons">visibility</i>
+              11,000
+            </span>
+            <span>
+              <i class="material-icons">comment</i>
+              {{post.comments.length}}
+            </span>
+          </div>
+          <div class="favorit-post__content__hover-info__background"></div>
+        </div>
+       </a>
+    </div>
+  </div>
+</div>

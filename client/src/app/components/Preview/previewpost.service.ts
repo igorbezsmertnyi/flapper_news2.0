@@ -13,8 +13,8 @@ export class PreviewService {
     this.headers = new RequestOptions({ headers: this.headers })
   }
 
-  showPost(id) {
-    return this.http.get(`${API.V1.NEWS_PAGE_INDEX}/${id}.json`)
+  showPost(url) {
+    return this.http.get(`${API.V1.NEWS_PAGE_INDEX}/${url}.json`)
            .map(response => <Post[]>response.json())
   }
 }
