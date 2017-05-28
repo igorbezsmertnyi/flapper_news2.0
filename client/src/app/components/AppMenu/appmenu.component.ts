@@ -13,7 +13,7 @@ import { StoreService } from '../../store.service'
 
 export class AppMenu {
   loginShow: boolean = false
-  UserData = {}
+  UserData:any = {}
 
   constructor(protected authService: AuthService,
               protected _cookieService: CookieService,

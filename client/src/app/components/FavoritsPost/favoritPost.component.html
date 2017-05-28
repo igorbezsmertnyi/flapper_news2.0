@@ -16,8 +16,10 @@
         <div class="favorit-post__content__item__overlay"
              [style.opacity]="post.cover.opacity"
              [style.background]="post.cover.color"></div>
-        <img src="{{post.cover.image_url}}"
-             [ngStyle]="{'filter': 'blur('+post.cover.blur+'px) grayscale('+post.cover.gray+')'}" />
+        <div class="favorit-post__content__item__image">
+          <img src="{{post.cover.image_url}}"
+               [ngStyle]="{'filter': 'blur('+post.cover.blur+'px) grayscale('+post.cover.gray+')'}" />
+        </div>
         <div id="{{i}}" class="favorit-post__content__hover-info">
           <div class="favorit-post__content__hover-info__data">
             <span>

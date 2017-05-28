@@ -12,18 +12,35 @@
       </p>
     </div>
   </div>
+  <div *ngIf="UserData.id" class="menu-container__user-menu">
+    <div class="menu-container__button">
+      <a href="/"><i class="material-icons">home</i></a>
+    </div>
+    <div class="menu-container__button">
+      <a href="#"><i class="material-icons">mail_outline</i></a>
+    </div>
+    <div class="menu-container__button">
+      <a href="#"><i class="material-icons">bookmark_border</i></a>
+    </div>
+    <div class="menu-container__button">
+      <a href="#"><i class="material-icons">settings</i></a>
+    </div>
+  </div>
   <div class="menu-container__account-action">
-    <div *ngIf="UserData.id" class="menu-container__button">
-      <a href="#">Account</a>
+    <div *ngIf="!UserData.id" class="menu-container__button menu-container__account-action__log-in" (click)="loginShowClick()">
+      <a>
+        <i class="material-icons">lock_open</i>
+        Log In
+      </a>
     </div>
-    <div *ngIf="!UserData.id" class="menu-container__button" (click)="loginShowClick()">
-      <a>Log In</a>
+    <div *ngIf="!UserData.id" class="menu-container__button menu-container__account-action__sign-up">
+      <a href="/signup">
+        <i class="material-icons">input</i>
+        Sign Up
+      </a>
     </div>
-    <div *ngIf="!UserData.id" class="menu-container__button">
-      <a href="/signup">Sign Up</a>
-    </div>
-    <div *ngIf="UserData.id" class="menu-container__button" (click)="logOut()">
-      <a href="#logout">Log Out</a>
+    <div *ngIf="UserData.id" class="menu-container__button menu-container__account-action__log-out" (click)="logOut()">
+      <a href="#logout"><i class="material-icons">power_settings_new</i></a>
     </div>
   </div>
 </div>
