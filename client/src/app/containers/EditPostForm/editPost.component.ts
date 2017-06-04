@@ -46,6 +46,7 @@ export class EditForm {
   }
 
   isOpen: boolean = false
+  isEdit: boolean = false
   fullEditor: boolean = false
 
   @Input() status: boolean
@@ -56,11 +57,12 @@ export class EditForm {
               private st: StateService,
               protected sr: StoreService) {
     this.st.formOpen.subscribe(val => this.isOpen = val)
+    this.st.postUpdate.subscribe(val => this.isEdit = val)
 
     this.sr.firstStep.subscribe(val => {
       if (val) {
         this.firstStep = val
-        this.localStorage.setData(val, LOCAL_STORAGE_KEYS.POST_CREATING.FIRST_STEP)
+        !this.isEdit ? this.localStorage.setData(val, LOCAL_STORAGE_KEYS.POST_CREATING.FIRST_STEP) : null
         this.isValid = true
         this.firstStepIsValid = true
       } else {
@@ -72,7 +74,7 @@ export class EditForm {
     this.sr.secondStep.subscribe(val => {
       if (val) {
         this.secondStep = val
-        this.localStorage.setData(val, LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP)
+        !this.isEdit ? this.localStorage.setData(val, LOCAL_STORAGE_KEYS.POST_CREATING.SECOND_STEP) : null
         this.isValid = true
         this.secondStepIsValid = true
       } else {
@@ -84,7 +86,7 @@ export class EditForm {
     this.sr.thirdStep.subscribe(val => {
       if (val) {
         this.thirdStep = val
-        this.localStorage.setData(val, LOCAL_STORAGE_KEYS.POST_CREATING.THIRD_STEP)
+        !this.isEdit ? this.localStorage.setData(val, LOCAL_STORAGE_KEYS.POST_CREATING.THIRD_STEP) : null
         this.isValid = true
         this.thirdStepIsValid = true
       } else {
@@ -106,6 +108,10 @@ export class EditForm {
     firstStep ? this.sr.setFistStepData(firstStep.data) : undefined
     secondStep ? this.sr.setSecondStepData(secondStep.data) : undefined
     thirdStep ? this.sr.setThirdStepData(thirdStep.data) : undefined
+  }
+
+  ngOnChanges() {
+    console.log(this.postInputData)
   }
 
   stepsControl() {
@@ -225,6 +231,7 @@ export class EditForm {
 
   emitPost() {
     this.newPost = {
+      id: this.postInputData,
       title: this.firstStep.title,
       subtitle: this.firstStep.subtitle,
       categories: this.firstStep.categories,

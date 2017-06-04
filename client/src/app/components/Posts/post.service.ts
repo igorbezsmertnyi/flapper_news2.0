@@ -29,14 +29,20 @@ export class PostService {
                                image: post.image,
                                cover: post.cover,
                                content: post.content,
-                               token: this.current_session.token});
+                               token: this.current_session.token})
     return this.http.post(API.V1.NEWS_PAGE_INDEX, body, this.headers)
                .map((res: Response) => res.json())
   }
 
   editPost(post) {
-    let body = JSON.stringify({title: post.title, description: post.description});
-    return this.http.put(`${API.V1.NEWS_PAGE_INDEX}/${post.id}`, body, this.headers)
+    let body = JSON.stringify({title: post.title,
+                               subtitle: post.subtitle,
+                               categories: post.categories,
+                               image: post.image,
+                               cover: post.cover,
+                               content: post.content,
+                               token: this.current_session.token})
+    return this.http.put(`${API.V1.NEWS_PAGE_INDEX}/${post.id.postId}`, body, this.headers)
                .map((res: Response) => res.json())
   }
 

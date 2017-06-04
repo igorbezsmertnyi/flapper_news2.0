@@ -19,7 +19,7 @@
           </div>
         </div>
         <div *ngIf="current_session.id === post.user.id" class="posts-cont__action-btn">
-          <div class="posts-cont__action-btn__edit" (click)="formController('update', post, i)">
+          <div class="posts-cont__action-btn__edit" (click)="editPostInit('update', post, i)">
             <i class="material-icons">mode_edit</i>
           </div>
           <div class="posts-cont__action-btn__remove" (click)="deletePost(post.id, i)">

@@ -21,4 +21,10 @@ export class StateService {
   setPostStatus(status:boolean) {
     this._postStatus.next(status)
   }
+
+  _postUpdate = new Subject<boolean>()
+  postUpdate = this._postUpdate.asObservable()
+  postIsUpdate(isUpdate:boolean = false) {
+    this._postUpdate.next(isUpdate)
+  }
 }

@@ -31,6 +31,26 @@ export const API = {
   }
 }
 
+export const INITIAL_STATES = {
+  POST: {
+    FIRST_STEP: {
+      title: null,
+      subtitle: null,
+      categories: null
+    },
+    SECOND_STEP: {
+      source: null,
+      overlay: {
+        color: '#fff',
+        opacity: 0,
+        blur: 0,
+        gray: 0
+      }
+    },
+    THIRD_STEP: null
+  }
+}
+
 export const EDITOR_OPTIONS = {
   placeholderText: 'Enter Your Content Here!',
   charCounterCount: false,
