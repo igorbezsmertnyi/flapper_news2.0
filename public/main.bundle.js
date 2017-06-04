@@ -7,7 +7,7 @@ webpackJsonp([1,5],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_constans__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_constans__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
@@ -95,7 +95,7 @@ LogOut = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(17);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreviewService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -312,6 +312,117 @@ LocalStorage = __decorate([
 ], LocalStorage);
 
 //# sourceMappingURL=localStorage.service.js.map
+
+/***/ }),
+
+/***/ 17:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export CONSTANS */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return REQUEST_HEADER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return LOCAL_STORAGE_KEYS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return COOKIE_KEYS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return API; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return INITIAL_STATES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return EDITOR_OPTIONS; });
+var CONSTANS = {};
+var REQUEST_HEADER = {
+    'Content-Type': 'application/json; charset=utf-8',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS'
+};
+var LOCAL_STORAGE_KEYS = {
+    POST_CREATING: {
+        FIRST_STEP: 'first_step_local_local_storage',
+        SECOND_STEP: 'second_step_local_local_storage',
+        THIRD_STEP: 'third_step_local_local_storage'
+    }
+};
+var COOKIE_KEYS = {
+    SEESION_HASH: 'session_hash_flapper_news',
+};
+var API = {
+    V1: {
+        REGISTRATION_INDEX: '/api/v1/registration',
+        NEWS_PAGE_INDEX: '/api/v1/news_page',
+        SESSIONS: '/api/v1/sessions',
+        VALIDATE_TOKEN: '/api/v1/validate_token',
+        UPLOAD_CONTENT_IMAGE: '/api/v1/upload_content_image',
+        DELETE_CONTENT_IMAGE: '/api/v1/delete_content_image'
+    }
+};
+var INITIAL_STATES = {
+    POST: {
+        FIRST_STEP: {
+            title: null,
+            subtitle: null,
+            categories: null
+        },
+        SECOND_STEP: {
+            source: null,
+            overlay: {
+                color: '#fff',
+                opacity: 0,
+                blur: 0,
+                gray: 0
+            }
+        },
+        THIRD_STEP: null
+    }
+};
+var EDITOR_OPTIONS = {
+    placeholderText: 'Enter Your Content Here!',
+    charCounterCount: false,
+    imageUploadURL: API.V1.UPLOAD_CONTENT_IMAGE,
+    iframe: false,
+    toolbarBottom: ['bold',
+        'italic',
+        'underline',
+        'strikeThrough',
+        'subscript',
+        'superscript',
+        '|',
+        'fontFamily',
+        'fontSize',
+        'color',
+        'inlineStyle',
+        'paragraphStyle',
+        '|',
+        'paragraphFormat',
+        'align',
+        'formatOL',
+        'formatUL',
+        'outdent',
+        'indent',
+        'quote',
+        '-',
+        'insertLink',
+        'insertImage',
+        'insertVideo',
+        '|',
+        'emoticons',
+        'specialCharacters',
+        'insertHR',
+        'selectAll',
+        'clearFormatting',
+        '|',
+        'print',
+        'spellChecker',
+        'help',
+        '|',
+        'undo',
+        'redo'],
+    htmlAllowedStyleProps: ['font-family',
+        'font-size',
+        'background',
+        'color',
+        'width',
+        'text-align',
+        'vertical-align',
+        'background-color']
+};
+//# sourceMappingURL=app.constans.js.map
 
 /***/ }),
 
@@ -545,6 +656,7 @@ var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__states_service__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_service__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(17);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddPostBtn; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -558,6 +670,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AddPostBtn = (function () {
     function AddPostBtn(st, sr) {
         var _this = this;
@@ -565,14 +678,24 @@ var AddPostBtn = (function () {
         this.sr = sr;
         this.isOpen = false;
         this.isShow = false;
+        this.isEdit = false;
         this.st.formOpen.subscribe(function (val) { return _this.isOpen = val; });
         this.sr.userSession.subscribe(function (val) {
             _this.current_session = val;
             Boolean(val.id) ? _this.isShow = true : _this.isShow = false;
         });
+        this.st.postUpdate.subscribe(function (val) {
+            _this.isEdit = val;
+        });
     }
     AddPostBtn.prototype.toggleForm = function () {
         this.st.formIsOpen(this.isOpen = !this.isOpen);
+        if (this.isEdit) {
+            this.sr.setFistStepData(__WEBPACK_IMPORTED_MODULE_3__app_constans__["d" /* INITIAL_STATES */].POST.FIRST_STEP);
+            this.sr.setSecondStepData(__WEBPACK_IMPORTED_MODULE_3__app_constans__["d" /* INITIAL_STATES */].POST.SECOND_STEP);
+            this.sr.setThirdStepData(__WEBPACK_IMPORTED_MODULE_3__app_constans__["d" /* INITIAL_STATES */].POST.THIRD_STEP);
+            this.st.postIsUpdate(false);
+        }
     };
     return AddPostBtn;
 }());
@@ -599,7 +722,7 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_constans__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_constans__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_service__ = __webpack_require__(25);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppMenu; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -751,6 +874,7 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_service__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__states_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_constans__ = __webpack_require__(17);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FirstStep; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -765,6 +889,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FirstStep = (function () {
     function FirstStep(fb, sr, st) {
         var _this = this;
@@ -775,7 +900,7 @@ var FirstStep = (function () {
         this.categories = [
             { value: 'option 1' },
             { value: 'option 2' },
-            { value: 'option 3' },
+            { value: 'option 3' }
         ];
         this.status = false;
         this.firstStepData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
@@ -790,11 +915,7 @@ var FirstStep = (function () {
         });
         this.st.postStatus.subscribe(function (val) {
             if (val) {
-                _this.firstStep.setValue({
-                    title: '',
-                    subtitle: '',
-                    categories: ''
-                });
+                _this.firstStep.setValue(__WEBPACK_IMPORTED_MODULE_4__app_constans__["d" /* INITIAL_STATES */].POST.FIRST_STEP);
             }
         });
         this.firstStep = this.fb.group({
@@ -915,6 +1036,7 @@ var SecondStep = (function () {
         this.secondStepData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.isDragenter = false;
         this.startUpload = false;
+        this.imageDidChange = false;
         this.supportedFileTypes = ['image/png', 'image/jpeg', 'image/gif'];
         this.imageShow = false;
         this.currentImage = '';
@@ -1035,7 +1157,6 @@ var SecondStep = (function () {
                     else {
                         _this.isDragenter = false;
                         _this.imageShow = false;
-                        console.log("type isn't supported");
                     }
                 });
             }
@@ -1075,7 +1196,7 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_constans__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_constans__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Posts_post_service__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_service__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__states_service__ = __webpack_require__(24);
@@ -1106,10 +1227,10 @@ var ThirdStep = (function () {
         this.options = {
             placeholderText: 'Enter Your Content Here!',
             charCounterCount: false,
-            imageUploadURL: __WEBPACK_IMPORTED_MODULE_1__app_constans__["d" /* EDITOR_OPTIONS */].imageUploadURL,
+            imageUploadURL: __WEBPACK_IMPORTED_MODULE_1__app_constans__["e" /* EDITOR_OPTIONS */].imageUploadURL,
             iframe: false,
-            toolbarButtons: __WEBPACK_IMPORTED_MODULE_1__app_constans__["d" /* EDITOR_OPTIONS */].toolbarBottom,
-            htmlAllowedStyleProps: __WEBPACK_IMPORTED_MODULE_1__app_constans__["d" /* EDITOR_OPTIONS */].htmlAllowedStyleProps,
+            toolbarButtons: __WEBPACK_IMPORTED_MODULE_1__app_constans__["e" /* EDITOR_OPTIONS */].toolbarBottom,
+            htmlAllowedStyleProps: __WEBPACK_IMPORTED_MODULE_1__app_constans__["e" /* EDITOR_OPTIONS */].htmlAllowedStyleProps,
             events: {
                 'froalaEditor.contentChanged': function (e, editor) {
                     _this.content = editor.html.get();
@@ -1322,9 +1443,11 @@ var Posts = (function () {
         this.newPost = [];
         this.formActive = false;
         this.postInputData = { action: 'create' };
+        this.postIsUpdate = false;
         this.current_session = {};
         this.st.formOpen.subscribe(function (val) { return _this.formActive = val; });
         this.sr.userSession.subscribe(function (val) { return _this.current_session = val; });
+        this.st.postUpdate.subscribe(function (val) { return _this.postIsUpdate = val; });
     }
     Posts.prototype.ngOnInit = function () {
         var _this = this;
@@ -1336,30 +1459,38 @@ var Posts = (function () {
             }
         });
     };
-    Posts.prototype.formController = function (action, post, index) {
-        this.formActive = true;
-        this.status = undefined;
-        if (action === 'create') {
-            this.postInputData = {
-                action: 'create'
-            };
-        }
-        else {
-            this.postInputData = {
-                action: 'update',
-                postInput: post,
-                index: index
-            };
-        }
+    Posts.prototype.editPostInit = function (action, post, index) {
+        this.st.formIsOpen(true);
+        this.st.postIsUpdate(true);
+        var _firstStep = {
+            title: post.title,
+            subtitle: post.subtitle,
+            categories: post.categories,
+        };
+        var _secondStep = {
+            overlay: {
+                color: post.cover.color,
+                opacity: post.cover.opacity,
+                blur: post.cover.blur,
+                gray: post.cover.gray
+            },
+            source: post.cover.image_url
+        };
+        this.sr.setFistStepData(_firstStep);
+        this.sr.setSecondStepData(_secondStep);
+        this.sr.setThirdStepData(post.content);
+        this.postInputData = {
+            postId: post.id,
+        };
     };
     Posts.prototype.postAction = function (post) {
         this.st.spinnrIsOpen(true);
-        this.createPost(post);
-        // if(typeof post.index !== 'undefined' || post.index) {
-        //   this.editPost(post)
-        // } else {
-        //   this.createPost(post)
-        // }
+        if (this.postIsUpdate) {
+            this.editPost(post);
+        }
+        else {
+            this.createPost(post);
+        }
     };
     Posts.prototype.createPost = function (post) {
         var _this = this;
@@ -1380,8 +1511,13 @@ var Posts = (function () {
         this.postService.editPost(post)
             .subscribe(function (data) {
             _this.ngOnInit();
+            _this.st.spinnrIsOpen(true, true);
+            _this.st.setPostStatus(true);
             _this.status = true;
             _this.formActive = false;
+        }, function (err) {
+            _this.st.setPostStatus(false);
+            _this.st.spinnrIsOpen(true, false);
         });
     };
     Posts.prototype.upvoteActions = function (data) {
@@ -1532,7 +1668,7 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_constans__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_constans__ = __webpack_require__(17);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Upvote; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1714,7 +1850,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_constans__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_constans__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__localStorage_service__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__states_service__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_service__ = __webpack_require__(25);
@@ -1764,13 +1900,15 @@ var EditForm = (function () {
             thirdStep: false
         };
         this.isOpen = false;
+        this.isEdit = false;
         this.fullEditor = false;
         this.Post = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.st.formOpen.subscribe(function (val) { return _this.isOpen = val; });
+        this.st.postUpdate.subscribe(function (val) { return _this.isEdit = val; });
         this.sr.firstStep.subscribe(function (val) {
             if (val) {
                 _this.firstStep = val;
-                _this.localStorage.setData(val, __WEBPACK_IMPORTED_MODULE_1__app_constans__["e" /* LOCAL_STORAGE_KEYS */].POST_CREATING.FIRST_STEP);
+                !_this.isEdit ? _this.localStorage.setData(val, __WEBPACK_IMPORTED_MODULE_1__app_constans__["f" /* LOCAL_STORAGE_KEYS */].POST_CREATING.FIRST_STEP) : null;
                 _this.isValid = true;
                 _this.firstStepIsValid = true;
             }
@@ -1782,7 +1920,7 @@ var EditForm = (function () {
         this.sr.secondStep.subscribe(function (val) {
             if (val) {
                 _this.secondStep = val;
-                _this.localStorage.setData(val, __WEBPACK_IMPORTED_MODULE_1__app_constans__["e" /* LOCAL_STORAGE_KEYS */].POST_CREATING.SECOND_STEP);
+                !_this.isEdit ? _this.localStorage.setData(val, __WEBPACK_IMPORTED_MODULE_1__app_constans__["f" /* LOCAL_STORAGE_KEYS */].POST_CREATING.SECOND_STEP) : null;
                 _this.isValid = true;
                 _this.secondStepIsValid = true;
             }
@@ -1794,7 +1932,7 @@ var EditForm = (function () {
         this.sr.thirdStep.subscribe(function (val) {
             if (val) {
                 _this.thirdStep = val;
-                _this.localStorage.setData(val, __WEBPACK_IMPORTED_MODULE_1__app_constans__["e" /* LOCAL_STORAGE_KEYS */].POST_CREATING.THIRD_STEP);
+                !_this.isEdit ? _this.localStorage.setData(val, __WEBPACK_IMPORTED_MODULE_1__app_constans__["f" /* LOCAL_STORAGE_KEYS */].POST_CREATING.THIRD_STEP) : null;
                 _this.isValid = true;
                 _this.thirdStepIsValid = true;
             }
@@ -1808,12 +1946,15 @@ var EditForm = (function () {
         });
     }
     EditForm.prototype.ngOnInit = function () {
-        var firstStep = this.localStorage.getData(__WEBPACK_IMPORTED_MODULE_1__app_constans__["e" /* LOCAL_STORAGE_KEYS */].POST_CREATING.FIRST_STEP);
-        var secondStep = this.localStorage.getData(__WEBPACK_IMPORTED_MODULE_1__app_constans__["e" /* LOCAL_STORAGE_KEYS */].POST_CREATING.SECOND_STEP);
-        var thirdStep = this.localStorage.getData(__WEBPACK_IMPORTED_MODULE_1__app_constans__["e" /* LOCAL_STORAGE_KEYS */].POST_CREATING.THIRD_STEP);
+        var firstStep = this.localStorage.getData(__WEBPACK_IMPORTED_MODULE_1__app_constans__["f" /* LOCAL_STORAGE_KEYS */].POST_CREATING.FIRST_STEP);
+        var secondStep = this.localStorage.getData(__WEBPACK_IMPORTED_MODULE_1__app_constans__["f" /* LOCAL_STORAGE_KEYS */].POST_CREATING.SECOND_STEP);
+        var thirdStep = this.localStorage.getData(__WEBPACK_IMPORTED_MODULE_1__app_constans__["f" /* LOCAL_STORAGE_KEYS */].POST_CREATING.THIRD_STEP);
         firstStep ? this.sr.setFistStepData(firstStep.data) : undefined;
         secondStep ? this.sr.setSecondStepData(secondStep.data) : undefined;
         thirdStep ? this.sr.setThirdStepData(thirdStep.data) : undefined;
+    };
+    EditForm.prototype.ngOnChanges = function () {
+        console.log(this.postInputData);
     };
     EditForm.prototype.stepsControl = function () {
         if (this.isValid) {
@@ -1900,9 +2041,9 @@ var EditForm = (function () {
     };
     EditForm.prototype.clearForm = function () {
         this.st.formIsOpen(false);
-        this.localStorage.removeData(__WEBPACK_IMPORTED_MODULE_1__app_constans__["e" /* LOCAL_STORAGE_KEYS */].POST_CREATING.FIRST_STEP);
-        this.localStorage.removeData(__WEBPACK_IMPORTED_MODULE_1__app_constans__["e" /* LOCAL_STORAGE_KEYS */].POST_CREATING.SECOND_STEP);
-        this.localStorage.removeData(__WEBPACK_IMPORTED_MODULE_1__app_constans__["e" /* LOCAL_STORAGE_KEYS */].POST_CREATING.THIRD_STEP);
+        this.localStorage.removeData(__WEBPACK_IMPORTED_MODULE_1__app_constans__["f" /* LOCAL_STORAGE_KEYS */].POST_CREATING.FIRST_STEP);
+        this.localStorage.removeData(__WEBPACK_IMPORTED_MODULE_1__app_constans__["f" /* LOCAL_STORAGE_KEYS */].POST_CREATING.SECOND_STEP);
+        this.localStorage.removeData(__WEBPACK_IMPORTED_MODULE_1__app_constans__["f" /* LOCAL_STORAGE_KEYS */].POST_CREATING.THIRD_STEP);
         this.newPost = [];
     };
     EditForm.prototype.setFullEditor = function () {
@@ -1924,6 +2065,7 @@ var EditForm = (function () {
     };
     EditForm.prototype.emitPost = function () {
         this.newPost = {
+            id: this.postInputData,
             title: this.firstStep.title,
             subtitle: this.firstStep.subtitle,
             categories: this.firstStep.categories,
@@ -2006,97 +2148,6 @@ var environment = {
 
 /***/ }),
 
-/***/ 23:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export CONSTANS */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return REQUEST_HEADER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return LOCAL_STORAGE_KEYS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return COOKIE_KEYS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return API; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return EDITOR_OPTIONS; });
-var CONSTANS = {};
-var REQUEST_HEADER = {
-    'Content-Type': 'application/json; charset=utf-8',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS'
-};
-var LOCAL_STORAGE_KEYS = {
-    POST_CREATING: {
-        FIRST_STEP: 'first_step_local_local_storage',
-        SECOND_STEP: 'second_step_local_local_storage',
-        THIRD_STEP: 'third_step_local_local_storage'
-    }
-};
-var COOKIE_KEYS = {
-    SEESION_HASH: 'session_hash_flapper_news',
-};
-var API = {
-    V1: {
-        REGISTRATION_INDEX: '/api/v1/registration',
-        NEWS_PAGE_INDEX: '/api/v1/news_page',
-        SESSIONS: '/api/v1/sessions',
-        VALIDATE_TOKEN: '/api/v1/validate_token',
-        UPLOAD_CONTENT_IMAGE: '/api/v1/upload_content_image',
-        DELETE_CONTENT_IMAGE: '/api/v1/delete_content_image'
-    }
-};
-var EDITOR_OPTIONS = {
-    placeholderText: 'Enter Your Content Here!',
-    charCounterCount: false,
-    imageUploadURL: API.V1.UPLOAD_CONTENT_IMAGE,
-    iframe: false,
-    toolbarBottom: ['bold',
-        'italic',
-        'underline',
-        'strikeThrough',
-        'subscript',
-        'superscript',
-        '|',
-        'fontFamily',
-        'fontSize',
-        'color',
-        'inlineStyle',
-        'paragraphStyle',
-        '|',
-        'paragraphFormat',
-        'align',
-        'formatOL',
-        'formatUL',
-        'outdent',
-        'indent',
-        'quote',
-        '-',
-        'insertLink',
-        'insertImage',
-        'insertVideo',
-        '|',
-        'emoticons',
-        'specialCharacters',
-        'insertHR',
-        'selectAll',
-        'clearFormatting',
-        '|',
-        'print',
-        'spellChecker',
-        'help',
-        '|',
-        'undo',
-        'redo'],
-    htmlAllowedStyleProps: ['font-family',
-        'font-size',
-        'background',
-        'color',
-        'width',
-        'text-align',
-        'vertical-align',
-        'background-color']
-};
-//# sourceMappingURL=app.constans.js.map
-
-/***/ }),
-
 /***/ 24:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2121,6 +2172,8 @@ var StateService = (function () {
         this.spinnerOpen = this._spinnerOpen.asObservable();
         this._postStatus = new __WEBPACK_IMPORTED_MODULE_1_rxjs__["Subject"]();
         this.postStatus = this._postStatus.asObservable();
+        this._postUpdate = new __WEBPACK_IMPORTED_MODULE_1_rxjs__["Subject"]();
+        this.postUpdate = this._postUpdate.asObservable();
     }
     StateService.prototype.formIsOpen = function (isOpen) {
         if (isOpen === void 0) { isOpen = false; }
@@ -2133,6 +2186,10 @@ var StateService = (function () {
     };
     StateService.prototype.setPostStatus = function (status) {
         this._postStatus.next(status);
+    };
+    StateService.prototype.postIsUpdate = function (isUpdate) {
+        if (isUpdate === void 0) { isUpdate = false; }
+        this._postUpdate.next(isUpdate);
     };
     return StateService;
 }());
@@ -2668,7 +2725,7 @@ module.exports = "<div class=\"login-container\">\n  <p class=\"login-container_
 /***/ 317:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"posts-cont\">\n  <div class=\"posts-cont__title\">\n    <i class=\"material-icons\">local_activity</i>\n    <p>Resently added post</p>\n  </div>\n  <div class=\"posts-cont__list\">\n    <div *ngFor=\"let post of posts; let i = index;\" class=\"posts-cont__post-list\">\n      <div class=\"posts-cont__post-list__post-header index={{i}}\">\n        <div class=\"posts-cont__user-info\">\n          <div class=\"posts-cont__user-info__image-cont\">\n            <img src=\"{{post.user.image_url}}\" />\n          </div>\n          <div class=\"posts-cont__user-info__user-name\">\n            <span>{{post.user.first_name}}</span>\n            <span>{{post.user.last_name}}</span>\n            <div class=\"posts-cont__user-info__created-at\">\n              <span>{{post.created_at | date}}</span>\n            </div>\n          </div>\n        </div>\n        <div *ngIf=\"current_session.id === post.user.id\" class=\"posts-cont__action-btn\">\n          <div class=\"posts-cont__action-btn__edit\" (click)=\"formController('update', post, i)\">\n            <i class=\"material-icons\">mode_edit</i>\n          </div>\n          <div class=\"posts-cont__action-btn__remove\" (click)=\"deletePost(post.id, i)\">\n            <i class=\"material-icons\">clear</i>\n          </div>\n        </div>\n      </div>\n      <div class=\"posts-cont__post-body\">\n        <a routerLink=\"/post/{{post.post_url}}\" class=\"posts-cont__post-body__item\" (click)=\"addPostToStore(post)\">\n          <div class=\"posts-cont__post-body__item__static-overlay\"></div>\n          <div class=\"posts-cont__post-body__item__overlay\"\n            [style.opacity]=\"post.cover.opacity\"\n            [style.background]=\"post.cover.color\"></div>\n          <img src=\"{{post.cover.image_url}}\"\n               [ngStyle]=\"{'filter': 'blur('+post.cover.blur+'px) grayscale('+post.cover.gray+')'}\" />\n          <div class=\"posts-cont__post-body__item__content\">\n            <h3>{{post.title}}</h3>\n            <p>{{post.subtitle}}</p>\n          </div>\n        </a>\n      </div>\n      <div class=\"posts-cont__footer\">\n        <upvote (upvote)=\"upvoteActions($event)\" [item]=\"post\" [index]=\"i\"></upvote>\n        <div class=\"posts-cont__comments-count\">\n          <span>\n            <i class=\"material-icons\">comment</i>\n            {{post.comments.length}}\n          </span>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<edit-form (Post)=\"postAction($event)\" [postInputData]=\"postInputData\"></edit-form>\n"
+module.exports = "<div class=\"posts-cont\">\n  <div class=\"posts-cont__title\">\n    <i class=\"material-icons\">local_activity</i>\n    <p>Resently added post</p>\n  </div>\n  <div class=\"posts-cont__list\">\n    <div *ngFor=\"let post of posts; let i = index;\" class=\"posts-cont__post-list\">\n      <div class=\"posts-cont__post-list__post-header index={{i}}\">\n        <div class=\"posts-cont__user-info\">\n          <div class=\"posts-cont__user-info__image-cont\">\n            <img src=\"{{post.user.image_url}}\" />\n          </div>\n          <div class=\"posts-cont__user-info__user-name\">\n            <span>{{post.user.first_name}}</span>\n            <span>{{post.user.last_name}}</span>\n            <div class=\"posts-cont__user-info__created-at\">\n              <span>{{post.created_at | date}}</span>\n            </div>\n          </div>\n        </div>\n        <div *ngIf=\"current_session.id === post.user.id\" class=\"posts-cont__action-btn\">\n          <div class=\"posts-cont__action-btn__edit\" (click)=\"editPostInit('update', post, i)\">\n            <i class=\"material-icons\">mode_edit</i>\n          </div>\n          <div class=\"posts-cont__action-btn__remove\" (click)=\"deletePost(post.id, i)\">\n            <i class=\"material-icons\">clear</i>\n          </div>\n        </div>\n      </div>\n      <div class=\"posts-cont__post-body\">\n        <a routerLink=\"/post/{{post.post_url}}\" class=\"posts-cont__post-body__item\" (click)=\"addPostToStore(post)\">\n          <div class=\"posts-cont__post-body__item__static-overlay\"></div>\n          <div class=\"posts-cont__post-body__item__overlay\"\n            [style.opacity]=\"post.cover.opacity\"\n            [style.background]=\"post.cover.color\"></div>\n          <img src=\"{{post.cover.image_url}}\"\n               [ngStyle]=\"{'filter': 'blur('+post.cover.blur+'px) grayscale('+post.cover.gray+')'}\" />\n          <div class=\"posts-cont__post-body__item__content\">\n            <h3>{{post.title}}</h3>\n            <p>{{post.subtitle}}</p>\n          </div>\n        </a>\n      </div>\n      <div class=\"posts-cont__footer\">\n        <upvote (upvote)=\"upvoteActions($event)\" [item]=\"post\" [index]=\"i\"></upvote>\n        <div class=\"posts-cont__comments-count\">\n          <span>\n            <i class=\"material-icons\">comment</i>\n            {{post.comments.length}}\n          </span>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<edit-form (Post)=\"postAction($event)\" [postInputData]=\"postInputData\"></edit-form>\n"
 
 /***/ }),
 
@@ -2743,7 +2800,7 @@ module.exports = "<favorit-post></favorit-post>\n<posts></posts>\n"
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
@@ -2816,7 +2873,7 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constans__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PostService; });
@@ -2858,8 +2915,14 @@ var PostService = (function () {
             .map(function (res) { return res.json(); });
     };
     PostService.prototype.editPost = function (post) {
-        var body = JSON.stringify({ title: post.title, description: post.description });
-        return this.http.put(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + post.id, body, this.headers)
+        var body = JSON.stringify({ title: post.title,
+            subtitle: post.subtitle,
+            categories: post.categories,
+            image: post.image,
+            cover: post.cover,
+            content: post.content,
+            token: this.current_session.token });
+        return this.http.put(__WEBPACK_IMPORTED_MODULE_3__app_constans__["c" /* API */].V1.NEWS_PAGE_INDEX + "/" + post.id.postId, body, this.headers)
             .map(function (res) { return res.json(); });
     };
     PostService.prototype.upvotePost = function (post) {

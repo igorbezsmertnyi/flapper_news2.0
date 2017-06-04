@@ -15,6 +15,7 @@ export class SecondStep {
 
   isDragenter: boolean = false
   startUpload: boolean = false
+  imageDidChange: boolean = false
 
   supportedFileTypes: string[] = ['image/png', 'image/jpeg', 'image/gif']
 
@@ -76,13 +77,11 @@ export class SecondStep {
 
   getBlurValue(b) {
     this.blurValue = b.value
-
     this.sr.setSecondStepData(this.emitSecondStep())
   }
 
   getGrayValue(g) {
     this.grayValue = g.value.toFixed(2)
-
     this.sr.setSecondStepData(this.emitSecondStep())
   }
 
@@ -153,7 +152,6 @@ export class SecondStep {
           } else {
             this.isDragenter = false
             this.imageShow = false
-            console.log("type isn't supported")
           }
         })
       } else {

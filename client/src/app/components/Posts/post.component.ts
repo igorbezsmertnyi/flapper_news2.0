@@ -17,6 +17,7 @@ export class Posts {
   newPost = [];
   formActive: boolean = false;
   postInputData: Object = { action: 'create' };
+  postIsUpdate: boolean = false
   status: boolean;
   current_session: any = {}
 
@@ -26,6 +27,7 @@ export class Posts {
               protected sr: StoreService) {
     this.st.formOpen.subscribe(val => this.formActive = val)
     this.sr.userSession.subscribe(val => this.current_session = val)
+    this.st.postUpdate.subscribe(val => this.postIsUpdate = val)
   }
 
   ngOnInit() {
@@ -38,32 +40,42 @@ export class Posts {
         })
   }
 
-  formController(action, post, index) {
-    this.formActive = true
-    this.status = undefined
+  editPostInit(action, post, index) {
+    this.st.formIsOpen(true)
+    this.st.postIsUpdate(true)
 
-    if (action === 'create') {
-      this.postInputData = {
-        action: 'create'
-      }
+    let _firstStep = {
+      title: post.title,
+      subtitle: post.subtitle,
+      categories: post.categories,
     }
-    else {
-      this.postInputData = {
-        action: 'update',
-        postInput: post,
-        index: index
-      }
+
+    let _secondStep = {
+      overlay: {
+        color: post.cover.color,
+        opacity: post.cover.opacity,
+        blur: post.cover.blur,
+        gray: post.cover.gray
+      },
+      source: post.cover.image_url
+    }
+
+    this.sr.setFistStepData(_firstStep)
+    this.sr.setSecondStepData(_secondStep)
+    this.sr.setThirdStepData(post.content)
+
+    this.postInputData = {
+      postId: post.id,
     }
   }
 
   postAction(post) {
     this.st.spinnrIsOpen(true)
-    this.createPost(post)
-    // if(typeof post.index !== 'undefined' || post.index) {
-    //   this.editPost(post)
-    // } else {
-    //   this.createPost(post)
-    // }
+    if (this.postIsUpdate) {
+      this.editPost(post)
+    } else {
+      this.createPost(post)
+    }
   }
 
   createPost(post) {
@@ -84,8 +96,13 @@ export class Posts {
     this.postService.editPost(post)
         .subscribe(data => {
           this.ngOnInit()
+          this.st.spinnrIsOpen(true, true)
+          this.st.setPostStatus(true)
           this.status = true
           this.formActive = false
+        }, err => {
+          this.st.setPostStatus(false)
+          this.st.spinnrIsOpen(true, false)
         })
   }
 

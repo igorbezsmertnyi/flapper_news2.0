@@ -2,6 +2,7 @@ import { Component, Output, EventEmitter, Input, HostListener } from '@angular/c
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { StoreService } from '../../../store.service'
 import { StateService } from '../../../states.service'
+import { INITIAL_STATES } from '../../../app.constans'
 
 @Component({
   selector: 'firsr-step-creating',
@@ -16,7 +17,7 @@ export class FirstStep {
   categories: object = [
     { value: 'option 1' },
     { value: 'option 2' },
-    { value: 'option 3' },
+    { value: 'option 3' }
   ]
 
   @Input() status:boolean = false
@@ -37,11 +38,7 @@ export class FirstStep {
 
     this.st.postStatus.subscribe(val => {
       if (val) {
-        this.firstStep.setValue({
-          title: '',
-          subtitle: '',
-          categories: ''
-        })
+        this.firstStep.setValue(INITIAL_STATES.POST.FIRST_STEP)
       }
     })
 

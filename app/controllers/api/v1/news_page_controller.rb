@@ -12,7 +12,7 @@ class Api::V1::NewsPageController < ApplicationController
     @post = Post.create(post_params.merge(user: current_user))
     @post.create_cover(cover_data(cover_params))
 
-    save_sover_image(cover_params[:image])
+    save_cover_image(cover_params[:image])
     generate_post_url(post_params[:title])
 
     if @post.save
@@ -25,6 +25,13 @@ class Api::V1::NewsPageController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
+    @post.cover.update(cover_data(cover_params))
+
+    if cover_params[:image][:file]
+      update_cover_image(cover_params[:image])
+    end
+
+    update_post_url(post_params[:title])
 
     if @post.save
       render json: @post
